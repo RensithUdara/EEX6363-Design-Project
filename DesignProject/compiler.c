@@ -71,11 +71,11 @@ DataType get_data_type_from_node(ASTNode *node)
     return TYPE_INTEGER;
 }
 
-int in_same_class(ASTNode *node1, ASTNode *node2)
+int in_same_class(char *class1, char *class2)
 {
     // Stub implementation
-    (void)node1;
-    (void)node2; // Suppress unused parameter warnings
+    (void)class1;
+    (void)class2; // Suppress unused parameter warnings
     return 0;
 }
 
@@ -99,12 +99,12 @@ DataType string_to_data_type(const char *str)
 }
 
 // Stub parser function
-ASTNode *parse_program()
+int parse_program()
 {
     printf("Note: Parser is stubbed - using minimal AST\n");
-    // Return a minimal program node
-    ast_root = create_ast_node(NODE_PROGRAM);
-    return ast_root;
+    // Create a minimal program node
+    ast_root = create_ast_node(AST_PROGRAM, 1, 1);
+    return ast_root ? 0 : -1;
 }
 
 // Global compilation statistics
@@ -471,8 +471,6 @@ int run_syntax_analysis(const char *filename)
 
     // Call the parser (this would be yyparse() in a Bison-based system)
     // For our TMA03 system, we'd call the recursive descent parser
-    extern int parse_program();
-
     int parse_result = parse_program();
 
     fclose(yyin);
