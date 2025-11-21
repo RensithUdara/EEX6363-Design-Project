@@ -23,7 +23,6 @@ extern FILE *symbol_table_file;
 // Statistics tracking
 static int total_tokens = 0;
 static int total_ast_nodes = 0;
-static int total_symbols = 0;
 static clock_t compilation_start_time;
 
 // Missing variable definitions from TMA modules
@@ -675,12 +674,11 @@ DataType get_data_type_from_node(ASTNode *node)
     }
 }
 
-int in_same_class(Symbol *sym1, Symbol *sym2)
+int in_same_class(char *class1, char *class2)
 {
     // Placeholder implementation
-    (void)sym1;
-    (void)sym2;
-    return 0;
+    if (!class1 || !class2) return 0;
+    return strcmp(class1, class2) == 0;
 }
 
 DataType get_expression_type(ASTNode *expr)
@@ -699,8 +697,8 @@ DataType string_to_data_type(const char *type_str)
         return TYPE_INTEGER;
     if (strcmp(type_str, "float") == 0)
         return TYPE_FLOAT;
-    if (strcmp(type_str, "string") == 0)
-        return TYPE_STRING;
+    if (strcmp(type_str, "void") == 0)
+        return TYPE_VOID;
 
-    return TYPE_VOID;
+    return TYPE_UNKNOWN;
 }
