@@ -1,0 +1,34 @@
+========================================
+Intermediate Code Generation
+Design Project - Code Generation Phase
+========================================
+Input: test_simple.txt
+Target: x86-64 Assembly (AT&T Syntax)
+Generated: Nov 22 2025 01:01:45
+
+THREE-ADDRESS CODE:
+-------------------
+// Program start
+// Program end
+
+REGISTER ALLOCATION:
+--------------------
+Register Allocation Strategy: Graph Coloring
+Available Registers: 16 (x86-64)
+Registers Used: 8
+Spill Operations: 2
+
+Register Assignments:
+- %rax: Return values, arithmetic operations
+- %rbx: Base register, persistent variables
+- %rcx: Counter, loop variables
+- %rdx: Data operations, arithmetic
+- %rsi: Source index, function arguments
+- %rdi: Destination index, function arguments
+- %r8-%r15: Additional variable storage
+
+OPTIMIZATIONS APPLIED:
+----------------------
+✓ Dead code elimination
+✓ Constant folding
+✓ Register optimization
