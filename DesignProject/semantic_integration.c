@@ -8,7 +8,13 @@
 // External declarations for parser and lexer
 extern int yyparse(void);
 extern FILE *yyin;
-extern ASTNode *ast_root;
+
+// Global variables definitions
+ASTNode *ast_root = NULL;
+int error_count = 0;
+int max_errors = 10;
+int semantic_error_count = 0;
+int semantic_warning_count = 0;
 
 // Forward declarations for functions we implement
 void build_symbol_tables(ASTNode *root);
