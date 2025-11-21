@@ -18,7 +18,7 @@ void cleanup_semantic_analyzer(void);
 int get_semantic_error_count(void);
 int get_semantic_warning_count(void);
 
-// Parser integration functions  
+// Parser integration functions
 ASTNode *parse_input_file(const char *filename);
 void setup_parser_input(FILE *input_file);
 
