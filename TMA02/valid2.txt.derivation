@@ -1,0 +1,59 @@
+inheritanceOpt → ε
+visibility → public
+fParams → ε
+returnType → void
+funcHead → func id ( fParams ) => returnType
+funcDecl → funcHead ;
+memberDecl → funcDecl
+visibilityMemberList → ε
+visibilityMemberList → visibility memberDecl visibilityMemberList
+classDecl → class id inheritanceOpt { visibilityMemberList } ;
+classOrImplOrFunc → classDecl
+fParams → ε
+returnType → void
+funcHead → func id ( fParams ) => returnType
+factor → intLit
+termPrime → ε
+term → factor termPrime
+arithExprPrime → ε
+arithExpr → term arithExprPrime
+relExprPrime → ε
+relExpr → arithExpr relExprPrime
+expr → relExpr
+simpleStmt → write ( expr )
+statement → simpleStmt ;
+localVarDeclOrStmt → statement
+varDeclOrStmtList → ε
+varDeclOrStmtList → localVarDeclOrStmt varDeclOrStmtList
+funcBody → { varDeclOrStmtList }
+funcDef → funcHead funcBody
+funcDefList → ε
+funcDefList → funcDef funcDefList
+implDef → implement id { funcDefList }
+classOrImplOrFunc → implDef
+fParams → ε
+returnType → void
+funcHead → func id ( fParams ) => returnType
+type → id
+arraySizeList → ε
+varDecl → id : type arraySizeList ;
+localVarDecl → local varDecl
+localVarDeclOrStmt → localVarDecl
+aParams → ε
+idMemberTail → ( aParams )
+idStmtTail → . id idMemberTail
+idStmt → id idStmtTail
+simpleStmt → idStmt
+statement → simpleStmt ;
+localVarDeclOrStmt → statement
+varDeclOrStmtList → ε
+varDeclOrStmtList → localVarDeclOrStmt varDeclOrStmtList
+varDeclOrStmtList → localVarDeclOrStmt varDeclOrStmtList
+funcBody → { varDeclOrStmtList }
+funcDef → funcHead funcBody
+classOrImplOrFunc → funcDef
+classOrImplOrFuncList → ε
+classOrImplOrFuncList → classOrImplOrFunc classOrImplOrFuncList
+classOrImplOrFuncList → classOrImplOrFunc classOrImplOrFuncList
+classOrImplOrFuncList → classOrImplOrFunc classOrImplOrFuncList
+prog → classOrImplOrFuncList
