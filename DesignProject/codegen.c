@@ -1062,3 +1062,26 @@ void print_memory_layout_info(CodeGenContext *ctx)
     printf("  Spill area: %d bytes\n", ctx->memory_layout.spill_area_size);
     printf("  Max call arguments: %d\n", ctx->memory_layout.max_call_args);
 }
+
+// Calculate spill priority for register allocator
+int calculate_spill_priority(CodeGenContext* ctx, Register reg) {
+    if (!ctx || reg < 0 || reg >= MAX_REGISTERS) return 1000; // High penalty for invalid
+    
+    RegisterDescriptor* desc = &ctx->registers[reg];
+    int priority = 0;
+    
+    // Prefer to spill registers that haven't been used recently
+    priority += (instructions_generated - desc->last_use);
+    
+    // Prefer caller-saved over callee-saved (cheaper to spill)
+    if (is_caller_saved(reg)) {
+        priority -= 10;
+    } else if (is_callee_saved(reg)) {
+        priority += 10;
+    }
+    
+    // Add existing spill cost
+    priority += desc->spill_cost;
+    
+    return priority;
+}
