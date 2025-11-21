@@ -1,0 +1,49 @@
+type → integer
+arraySizeList → ε
+type → integer
+arraySizeList → ε
+fParamsTail → ε
+fParamsTail → , id : type arraySizeList fParamsTail
+fParams → id : type arraySizeList fParamsTail
+returnType → void
+funcHead → func id ( fParams ) => returnType
+factorTail → ε
+factor → id factorTail
+termPrime → ε
+term → factor termPrime
+arithExprPrime → ε
+arithExpr → term arithExprPrime
+relOp → <
+factorTail → ε
+factor → id factorTail
+termPrime → ε
+term → factor termPrime
+arithExprPrime → ε
+arithExpr → term arithExprPrime
+relExprPrime → relOp arithExpr
+relExpr → arithExpr relExprPrime
+expr → relExpr
+factorTail → ε
+factor → id factorTail
+termPrime → ε
+term → factor termPrime
+arithExprPrime → ε
+arithExpr → term arithExprPrime
+relExprPrime → ε
+relExpr → arithExpr relExprPrime
+expr → relExpr
+simpleStmt → write ( expr )
+statement → simpleStmt ;
+statementList → ε
+statementList → statement statementList
+statBlock → { statementList }
+factorTail → ε
+factor → id factorTail
+termPrime → ε
+term → factor termPrime
+arithExprPrime → ε
+arithExpr → term arithExprPrime
+relExprPrime → ε
+relExpr → arithExpr relExprPrime
+expr → relExpr
+simpleStmt → write ( expr )
