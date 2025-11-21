@@ -42,7 +42,7 @@ typedef struct
 extern int yylex();
 extern void yyerror(const char *s);
 extern FILE *yyin;
-extern ASTNode *ast_root;
+
 extern void print_ast(ASTNode *node, int indent);
 
 // Function prototypes
@@ -56,6 +56,56 @@ int run_semantic_analysis();
 int run_code_generation(const char *output_file, CompilerOptions *options);
 void print_compilation_summary(CompilerOptions *options);
 const char *get_phase_name(CompilationPhase phase);
+
+// Global variables needed by TMA03 components
+ASTNode *ast_root = NULL;
+int max_errors = 20;
+int error_count = 0;
+
+// Missing functions from semantic.c - stub implementations
+DataType get_data_type_from_node(ASTNode *node)
+{
+    if (!node)
+        return TYPE_UNKNOWN;
+    // Stub implementation
+    return TYPE_INTEGER;
+}
+
+int in_same_class(ASTNode *node1, ASTNode *node2)
+{
+    // Stub implementation
+    (void)node1;
+    (void)node2; // Suppress unused parameter warnings
+    return 0;
+}
+
+DataType get_expression_type(ASTNode *expr)
+{
+    if (!expr)
+        return TYPE_UNKNOWN;
+    // Stub implementation
+    return TYPE_INTEGER;
+}
+
+DataType string_to_data_type(const char *str)
+{
+    if (!str)
+        return TYPE_UNKNOWN;
+    if (strcmp(str, "integer") == 0)
+        return TYPE_INTEGER;
+    if (strcmp(str, "float") == 0)
+        return TYPE_FLOAT;
+    return TYPE_UNKNOWN;
+}
+
+// Stub parser function
+ASTNode *parse_program()
+{
+    printf("Note: Parser is stubbed - using minimal AST\n");
+    // Return a minimal program node
+    ast_root = create_ast_node(NODE_PROGRAM);
+    return ast_root;
+}
 
 // Global compilation statistics
 static struct
