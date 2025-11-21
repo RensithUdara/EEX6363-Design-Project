@@ -40,8 +40,13 @@ int yyparse(void)
         ast_root->column = 1;
         ast_root->children = NULL;
         ast_root->child_count = 0;
-        ast_root->max_children = 0;
-        ast_root->value.string_val = NULL;
+        ast_root->child_capacity = 0;
+        ast_root->data.string_value = NULL;
+        ast_root->semantic_type = TYPE_UNKNOWN;
+        ast_root->symbol = NULL;
+        ast_root->array_dimensions = 0;
+        ast_root->array_sizes = NULL;
+        ast_root->next = NULL;
     }
 
     return 0; // Success
