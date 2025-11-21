@@ -45,7 +45,7 @@ SEMANTIC_OBJ = $(BUILD_DIR)/semantic.o
 ERROR_OBJ = $(BUILD_DIR)/error_handler.o
 
 # All object files
-ALL_OBJS = $(COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(SEMANTIC_OBJ) $(ERROR_OBJ)
+ALL_OBJS = $(COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(ERROR_OBJ)
 
 # Target executable
 TARGET = $(BUILD_DIR)/compiler
