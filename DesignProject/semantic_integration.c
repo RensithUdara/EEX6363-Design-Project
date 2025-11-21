@@ -12,9 +12,7 @@ void analyze_scopes_and_visibility(ASTNode *root);
 
 // Integration state variables
 static int integration_initialized = 0;
-static ASTNode *ast_root = NULL;
-static char *current_input_filename = NULL;
-static int semantic_warning_count = 0;
+// Note: ast_root and semantic_warning_count are declared in header as extern
 
 // Integration initialization
 void initialize_semantic_analyzer(void)
@@ -24,8 +22,7 @@ void initialize_semantic_analyzer(void)
 
     printf("Initializing semantic analyzer integration...\n");
 
-    // Initialize warning counter (errors handled by TMA3)
-    semantic_warning_count = 0;
+    // Initialize integration (errors/warnings handled by TMA3)
 
     integration_initialized = 1;
     printf("Semantic analyzer integration initialized\n");
@@ -88,9 +85,9 @@ ASTNode *parse_input_file(const char *filename)
     ASTNode *expression = create_ast_node(AST_BINARY_EXPR, 3, 5);
 
     // Add children to program (simplified)
-    add_child_node(program, declaration);
-    add_child_node(program, assignment);
-    add_child_node(program, expression);
+    add_child(program, declaration);
+    add_child(program, assignment);
+    add_child(program, expression);
 
     return program;
 }
@@ -257,11 +254,4 @@ void report_semantic_error(const char *message, int line, int column)
     // Error count is managed by TMA3's error handler
 }
 
-void report_semantic_warning(const char *message, int line, int column)
-{
-    if (!message)
-        return;
-
-    printf("Semantic Warning at line %d, column %d: %s\n", line, column, message);
-    semantic_warning_count++;
-}
+// Note: report_semantic_warning is implemented in ast.c
