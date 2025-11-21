@@ -655,3 +655,40 @@ int main(int argc, char *argv[])
 
     return result;
 }
+
+// Missing function stubs for TMA03 compatibility
+DataType get_data_type_from_node(ASTNode *node) {
+    if (!node) return TYPE_VOID;
+    
+    switch (node->type) {
+    case AST_INT_LITERAL:
+        return TYPE_INTEGER;
+    case AST_FLOAT_LITERAL:
+        return TYPE_FLOAT;
+    case AST_STRING_LITERAL:
+        return TYPE_STRING;
+    default:
+        return TYPE_VOID;
+    }
+}
+
+int in_same_class(Symbol *sym1, Symbol *sym2) {
+    // Placeholder implementation
+    (void)sym1; (void)sym2;
+    return 0;
+}
+
+DataType get_expression_type(ASTNode *expr) {
+    if (!expr) return TYPE_VOID;
+    return get_data_type_from_node(expr);
+}
+
+DataType string_to_data_type(const char *type_str) {
+    if (!type_str) return TYPE_VOID;
+    
+    if (strcmp(type_str, "integer") == 0) return TYPE_INTEGER;
+    if (strcmp(type_str, "float") == 0) return TYPE_FLOAT;
+    if (strcmp(type_str, "string") == 0) return TYPE_STRING;
+    
+    return TYPE_VOID;
+}
