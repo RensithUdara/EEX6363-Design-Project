@@ -46,7 +46,9 @@ ERROR_OBJ = $(BUILD_DIR)/error_handler.o
 
 # All object files
 SEMANTIC_INT_OBJ = $(BUILD_DIR)/semantic_integration.o
-ALL_OBJS = $(COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
+OUTPUT_GEN_OBJ = $(BUILD_DIR)/output_generator.o
+ENHANCED_COMPILER_OBJ = $(BUILD_DIR)/enhanced_compiler.o
+ALL_OBJS = $(ENHANCED_COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ) $(OUTPUT_GEN_OBJ)
 
 # Target executable
 TARGET = $(BUILD_DIR)/compiler
@@ -117,10 +119,15 @@ $(REGISTER_OBJ): $(REGISTER_SRC) register_allocator.h | $(BUILD_DIR)
 	@echo "Compiling register allocator..."
 	$(CC) $(CFLAGS) $(INCLUDES) -c $(REGISTER_SRC) -o $(REGISTER_OBJ)
 
-# Compile main compiler
-$(COMPILER_OBJ): $(COMPILER_SRC) codegen.h register_allocator.h | $(BUILD_DIR)
-	@echo "Compiling main compiler..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(COMPILER_SRC) -o $(COMPILER_OBJ)
+# Compile output generator
+$(OUTPUT_GEN_OBJ): output_generator.c output_generator.h | $(BUILD_DIR)
+	@echo "Compiling output generator..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c output_generator.c -o $(OUTPUT_GEN_OBJ)
+
+# Compile enhanced compiler
+$(ENHANCED_COMPILER_OBJ): enhanced_compiler.c output_generator.h codegen.h register_allocator.h semantic_integration.h | $(BUILD_DIR)
+	@echo "Compiling enhanced compiler..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c enhanced_compiler.c -o $(ENHANCED_COMPILER_OBJ)
 
 # Link final executable
 $(TARGET): $(ALL_OBJS)
