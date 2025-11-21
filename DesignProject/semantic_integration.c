@@ -152,9 +152,9 @@ ASTNode *parse_input_file(const char *filename)
     printf("Creating sample AST structure...\n");
 
     // Add some sample child nodes to demonstrate structure
-    ASTNode *declaration = create_ast_node(AST_DECLARATION, 2, 1);
-    ASTNode *assignment = create_ast_node(AST_ASSIGNMENT, 3, 1);
-    ASTNode *expression = create_ast_node(AST_EXPRESSION, 3, 5);
+    ASTNode *declaration = create_ast_node(AST_VAR_DECL, 2, 1);
+    ASTNode *assignment = create_ast_node(AST_ASSIGN_STMT, 3, 1);
+    ASTNode *expression = create_ast_node(AST_BINARY_EXPR, 3, 5);
 
     if (declaration && assignment && expression)
     {
@@ -188,15 +188,15 @@ void build_symbol_tables(ASTNode *root)
         printf("  - Building global symbol table\n");
         break;
 
-    case AST_DECLARATION:
+    case AST_VAR_DECL:
         printf("  - Processing variable declaration\n");
         break;
 
-    case AST_FUNCTION:
+    case AST_FUNC_DEF:
         printf("  - Processing function declaration\n");
         break;
 
-    case AST_CLASS:
+    case AST_CLASS_DECL:
         printf("  - Processing class declaration\n");
         break;
 
@@ -223,15 +223,15 @@ void perform_type_checking(ASTNode *root)
 
     switch (root->type)
     {
-    case AST_ASSIGNMENT:
+    case AST_ASSIGN_STMT:
         printf("  - Validating assignment types\n");
         break;
 
-    case AST_EXPRESSION:
+    case AST_BINARY_EXPR:
         printf("  - Checking expression types\n");
         break;
 
-    case AST_FUNCTION_CALL:
+    case AST_FUNC_CALL_EXPR:
         printf("  - Validating function call parameters\n");
         break;
 
@@ -285,11 +285,11 @@ DataType get_expression_type_analysis(ASTNode *expr)
 
     switch (expr->type)
     {
-    case AST_NUMBER:
+    case AST_INT_LITERAL:
         return TYPE_INTEGER;
-    case AST_FLOAT:
+    case AST_FLOAT_LITERAL:
         return TYPE_FLOAT;
-    case AST_IDENTIFIER:
+    case AST_ID:
         // Look up identifier type in symbol table
         return TYPE_INTEGER; // Simplified
     default:
