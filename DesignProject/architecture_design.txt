@@ -1,0 +1,118 @@
+========================================
+Design Project - Architecture Design
+========================================
+Generated: November 22, 2025
+
+COMPILER ARCHITECTURE OVERVIEW:
+===============================
+
+1. FOUR-PHASE COMPILATION PIPELINE:
+   ├── Phase 1: Lexical Analysis (TMA1)
+   │   ├── Input: Source code (.txt files)
+   │   ├── Output: Token stream
+   │   └── Files: scanner.l, lex.yy.c
+   │
+   ├── Phase 2: Syntax Analysis (TMA2)
+   │   ├── Input: Token stream
+   │   ├── Output: Abstract Syntax Tree (AST)
+   │   └── Files: parser.y, parser.tab.c
+   │
+   ├── Phase 3: Semantic Analysis (TMA3)
+   │   ├── Input: AST
+   │   ├── Output: Annotated AST + Symbol Tables
+   │   └── Files: semantic.c, ast.c, error_handler.c
+   │
+   └── Phase 4: Code Generation (NEW)
+       ├── Input: Annotated AST + Symbol Tables
+       ├── Output: x86-64 Assembly Code
+       └── Files: codegen.c, register_allocator.c
+
+2. REGISTER ALLOCATION STRATEGIES:
+   ├── Linear Scan Algorithm
+   ├── Graph Coloring Algorithm
+   ├── Simple Stack-based Allocation
+   └── Hybrid Approach (Context-sensitive)
+
+3. MEMORY MANAGEMENT:
+   ├── Stack Frame Management
+   ├── Variable Lifetime Analysis
+   ├── Automatic Spill/Reload Generation
+   └── Function Call Conventions
+
+4. OUTPUT FILE GENERATION:
+   ├── Dynamic file naming (input_filename_output_type.txt)
+   ├── Comprehensive analysis reports
+   ├── Symbol table documentation
+   └── Performance metrics tracking
+
+5. TARGET ARCHITECTURE:
+   ├── Target: x86-64 (64-bit)
+   ├── Assembly Syntax: AT&T
+   ├── Calling Convention: System V ABI
+   └── Register Set: 16 general-purpose registers
+
+COMPONENT INTEGRATION:
+=====================
+
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│  Enhanced       │    │  Semantic       │    │  Code Generator │
+│  Compiler.c     │───▶│  Integration.c  │───▶│  codegen.c      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│  Output         │    │  Symbol Table   │    │  Register       │
+│  Generator      │    │  Management     │    │  Allocator      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+
+DESIGN DECISIONS:
+================
+
+1. MODULAR ARCHITECTURE:
+   - Separation of concerns between phases
+   - Clean interfaces between components
+   - Extensible design for future enhancements
+
+2. ERROR HANDLING:
+   - Comprehensive error reporting
+   - Phase-specific error recovery
+   - Detailed error location tracking
+
+3. OPTIMIZATION OPPORTUNITIES:
+   - Dead code elimination
+   - Constant folding
+   - Register optimization
+   - Memory access optimization
+
+4. QUALITY ASSURANCE:
+   - Automated testing framework
+   - Comprehensive test suite
+   - Performance benchmarking
+   - Code coverage analysis
+
+IMPLEMENTATION STATUS:
+====================
+✅ Lexical Analysis - Complete
+✅ Syntax Analysis - Complete  
+✅ Semantic Analysis - Complete
+✅ Code Generation - Complete
+✅ Register Allocation - Complete
+✅ Output Generation - Complete
+✅ Error Handling - Complete
+✅ Testing Framework - Complete
+✅ Documentation - Complete
+
+PERFORMANCE CHARACTERISTICS:
+===========================
+- Compilation Speed: Fast (linear time complexity)
+- Memory Usage: Efficient (minimal overhead)
+- Code Quality: Good (optimized assembly output)
+- Error Recovery: Robust (detailed error messages)
+
+FUTURE ENHANCEMENTS:
+===================
+- Advanced optimization passes
+- Support for additional target architectures
+- Integrated debugger support
+- IDE integration capabilities
+- Extended language features support
