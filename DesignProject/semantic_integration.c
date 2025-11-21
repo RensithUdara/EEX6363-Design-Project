@@ -262,12 +262,12 @@ int parse_program(ASTNode **ast)
 {
     ast_root = NULL;
     int result = yyparse();
-    
+
     if (ast)
     {
         *ast = ast_root;
     }
-    
+
     return result;
 }
 
@@ -294,15 +294,15 @@ void semantic_analysis(ASTNode *root)
     }
 
     printf("Performing semantic analysis...\n");
-    
+
     // Reset counters
     semantic_error_count = 0;
     semantic_warning_count = 0;
-    
+
     // Perform semantic analysis using TMA03 components
     // This is a wrapper that integrates with the TMA03 system
-    
-    printf("Semantic analysis completed: %d errors, %d warnings\n", 
+
+    printf("Semantic analysis completed: %d errors, %d warnings\n",
            semantic_error_count, semantic_warning_count);
 }
 
