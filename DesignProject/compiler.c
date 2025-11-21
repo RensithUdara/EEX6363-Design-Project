@@ -495,27 +495,29 @@ int run_semantic_analysis()
 
     // Enhanced semantic analysis with error handling
     printf("=== Semantic Analysis Phase ===\n");
-    
+
     // Initialize error handling from TMA3
     extern int error_count;
     extern int max_errors;
     error_count = 0;
     max_errors = 50;
-    
+
     // Perform basic semantic checks
     printf("Performing semantic analysis:\n");
     printf("  - Symbol table construction: OK\n");
-    printf("  - Type checking: OK\n"); 
+    printf("  - Type checking: OK\n");
     printf("  - Scope resolution: OK\n");
     printf("  - Declaration validation: OK\n");
-    
+
     // Report semantic analysis results
     compilation_stats.semantic_errors = error_count;
     printf("Semantic analysis completed: %d errors found\n\n", error_count);
-    
-    if (error_count > 0) {
+
+    if (error_count > 0)
+    {
         printf("Warning: Proceeding with code generation despite semantic errors\n");
-    }    return 0;
+    }
+    return 0;
 }
 
 // Run code generation
