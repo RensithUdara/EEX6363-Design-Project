@@ -27,6 +27,7 @@ CODEGEN_SRC = codegen.c
 REGISTER_SRC = register_allocator.c
 
 # TMA source files (from previous TMAs)
+TMA2_PARSER = $(TMA2_DIR)/parser.y
 TMA3_SCANNER = $(TMA3_DIR)/scanner.l
 TMA3_AST = $(TMA3_DIR)/ast.c
 TMA3_SEMANTIC = $(TMA3_DIR)/semantic.c
@@ -40,6 +41,7 @@ COMPILER_OBJ = $(BUILD_DIR)/compiler.o
 CODEGEN_OBJ = $(BUILD_DIR)/codegen.o
 REGISTER_OBJ = $(BUILD_DIR)/register_allocator.o
 LEX_OBJ = $(BUILD_DIR)/lex.yy.o
+PARSER_OBJ = $(BUILD_DIR)/parser.tab.o
 AST_OBJ = $(BUILD_DIR)/ast.o
 SEMANTIC_OBJ = $(BUILD_DIR)/semantic.o
 ERROR_OBJ = $(BUILD_DIR)/error_handler.o
@@ -50,8 +52,9 @@ OUTPUT_GEN_OBJ = $(BUILD_DIR)/output_generator.o
 ENHANCED_COMPILER_OBJ = $(BUILD_DIR)/enhanced_compiler.o
 ALL_OBJS = $(ENHANCED_COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
 
-# Target executable
+# Target executables
 TARGET = $(BUILD_DIR)/compiler
+ENHANCED_TARGET = enhanced_compiler
 
 # Test files
 TEST_DIR = tests
@@ -60,7 +63,7 @@ TEST_ASSEMBLIES = $(TEST_SOURCES:.src=.asm)
 TEST_LOGS = $(TEST_SOURCES:.src=.log)
 
 # Default target
-all: banner $(TARGET)
+all: banner $(TARGET) $(ENHANCED_TARGET)
 
 # Banner
 banner:
@@ -89,6 +92,17 @@ $(LEX_OBJ): $(LEX_OUTPUT)
 	@echo "Compiling lexical analyzer..."
 	$(CC) $(CFLAGS) $(INCLUDES) -c $(LEX_OUTPUT) -o $(LEX_OBJ)
 
+# Generate and compile parser
+$(BUILD_DIR)/parser.tab.c: $(TMA2_PARSER) | $(BUILD_DIR)
+	@echo "Generating parser..."
+	cd $(TMA2_DIR) && bison -d parser.y
+	@cp $(TMA2_DIR)/parser.tab.c $(BUILD_DIR)/
+	@cp $(TMA2_DIR)/parser.tab.h $(BUILD_DIR)/
+
+$(PARSER_OBJ): $(BUILD_DIR)/parser.tab.c
+	@echo "Compiling parser..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $(BUILD_DIR)/parser.tab.c -o $(PARSER_OBJ)
+
 # Compile AST module
 $(AST_OBJ): $(TMA3_AST) | $(BUILD_DIR)
 	@echo "Compiling AST module..."
@@ -96,7 +110,7 @@ $(AST_OBJ): $(TMA3_AST) | $(BUILD_DIR)
 
 # Compile semantic analyzer
 $(SEMANTIC_OBJ): $(TMA3_SEMANTIC) | $(BUILD_DIR)
-	@echo "Compiling semantic analyzer..."
+	@echo "Compiling TMA3 semantic analyzer..."
 	$(CC) $(CFLAGS) $(INCLUDES) -c $(TMA3_SEMANTIC) -o $(SEMANTIC_OBJ)
 
 # Compile error handler
@@ -136,6 +150,16 @@ $(TARGET): $(ALL_OBJS)
 	@echo ""
 	@echo "Build completed successfully!"
 	@echo "Executable: $(TARGET)"
+	@echo ""
+
+# Link enhanced compiler executable
+$(ENHANCED_TARGET): $(ALL_OBJS)
+	@echo "Linking enhanced compiler with automatic file generation..."
+	$(CC) $(ALL_OBJS) -o $(ENHANCED_TARGET) -lm
+	@chmod +x $(ENHANCED_TARGET)
+	@echo ""
+	@echo "Enhanced compiler build completed successfully!"
+	@echo "Executable: $(ENHANCED_TARGET)"
 	@echo ""
 
 # Create test directory and files
@@ -241,6 +265,7 @@ clean:
 	@echo "Cleaning build files..."
 	@rm -rf $(BUILD_DIR)
 	@rm -rf $(TEST_DIR)
+	@rm -f $(ENHANCED_TARGET)
 	@echo "Clean completed."
 
 # Clean and rebuild
