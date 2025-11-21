@@ -49,27 +49,7 @@ void initialize_semantic_analyzer(void)
     integration_initialized = 1;
 }
 
-// Cleanup semantic analyzer resources
-void cleanup_semantic_analyzer(void)
-{
-    if (!integration_initialized)
-        return;
-
-    if (ast_root)
-    {
-        destroy_ast_tree(ast_root);
-        ast_root = NULL;
-    }
-
-    if (current_input_filename)
-    {
-        free(current_input_filename);
-        current_input_filename = NULL;
-    }
-
-    integration_initialized = 0;
-    printf("Semantic analyzer cleaned up\n");
-}
+// Note: cleanup_semantic_analyzer is implemented in ast.c
 
 // Main semantic analysis function
 int perform_semantic_analysis(ASTNode *root)
@@ -266,11 +246,7 @@ void analyze_scopes_and_visibility(ASTNode *root)
     }
 }
 
-// Getter functions
-int get_semantic_error_count(void)
-{
-    return semantic_error_count;
-}
+// Note: get_semantic_error_count is implemented in error_handler.c
 
 int get_semantic_warning_count(void)
 {
@@ -350,19 +326,7 @@ void write_symbol_tables_to_file(const char *filename)
     printf("Symbol tables written to: %s\n", filename);
 }
 
-// Scope management functions
-void enter_scope(char *scope_name)
-{
-    if (!scope_name)
-        return;
-
-    printf("Entering scope: %s\n", scope_name);
-}
-
-void exit_scope(void)
-{
-    printf("Exiting current scope\n");
-}
+// Note: enter_scope and exit_scope are implemented in ast.c
 
 Symbol *lookup_symbol_in_scope(const char *name)
 {
