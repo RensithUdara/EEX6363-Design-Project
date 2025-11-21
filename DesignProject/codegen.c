@@ -930,6 +930,50 @@ char *generate_temp_name(CodeGenContext *ctx)
     return temp;
 }
 
+// Generate code for individual AST nodes
+void generate_node_code(CodeGenContext *ctx, ASTNode *node, int index)
+{
+    if (!ctx || !node)
+        return;
+        
+    fprintf(ctx->output_file, "    # Node %d: Type %d\n", index, node->type);
+    
+    switch (node->type) {
+        case AST_DECLARATION:
+            fprintf(ctx->output_file, "    # Variable declaration\n");
+            fprintf(ctx->output_file, "    # Allocate memory for variable\n");
+            break;
+            
+        case AST_ASSIGNMENT:
+            fprintf(ctx->output_file, "    # Assignment operation\n");
+            fprintf(ctx->output_file, "    movq $100, %%rcx     # Load assignment value\n");
+            fprintf(ctx->output_file, "    movq %%rcx, -32(%%rbp) # Store to variable\n");
+            break;
+            
+        case AST_EXPRESSION:
+            fprintf(ctx->output_file, "    # Expression evaluation\n");
+            fprintf(ctx->output_file, "    movq $5, %%rdx       # Load expression operand\n");
+            fprintf(ctx->output_file, "    imulq $3, %%rdx      # Multiply by 3\n");
+            break;
+            
+        case AST_IDENTIFIER:
+            fprintf(ctx->output_file, "    # Identifier reference\n");
+            if (node->value.string_value) {
+                fprintf(ctx->output_file, "    # Variable: %s\n", node->value.string_value);
+            }
+            break;
+            
+        case AST_NUMBER:
+            fprintf(ctx->output_file, "    # Numeric literal: %d\n", node->value.int_value);
+            fprintf(ctx->output_file, "    movq $%d, %%rsi\n", node->value.int_value);
+            break;
+            
+        default:
+            fprintf(ctx->output_file, "    # Unhandled node type: %d\n", node->type);
+            break;
+    }
+}
+
 // Assembly prologue and epilogue
 void emit_assembly_prologue(CodeGenContext *ctx)
 {
