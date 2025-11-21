@@ -136,7 +136,7 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
 }
 
 // Print register allocation information
-void print_register_allocation_info(FILE *output)
+void print_register_info_to_file(FILE *output) {
 {
     if (!output)
         return;
@@ -168,10 +168,9 @@ void print_detailed_symbol_tables(FILE *output)
 
     // This would normally iterate through actual symbol table
     // For now, print a sample based on what would be found
-    SymbolTable *global_table = get_global_symbol_table();
-    if (global_table)
+    if (global_scope)
     {
-        print_symbol_table(global_table, output);
+        print_symbol_table(global_scope, output, 0);
     }
     else
     {
@@ -184,10 +183,9 @@ void print_detailed_symbol_tables(FILE *output)
 // Count total symbols across all scopes
 int count_total_symbols(void)
 {
-    SymbolTable *global_table = get_global_symbol_table();
-    if (global_table)
+    if (global_scope)
     {
-        return count_symbols_recursive(global_table);
+        return count_symbols_recursive(global_scope);
     }
     return 0;
 }
