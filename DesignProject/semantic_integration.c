@@ -355,7 +355,7 @@ void enter_scope(char *scope_name)
 {
     if (!scope_name)
         return;
-        
+
     printf("Entering scope: %s\n", scope_name);
 }
 
@@ -368,7 +368,7 @@ Symbol *lookup_symbol_in_scope(const char *name)
 {
     if (!name)
         return NULL;
-        
+
     printf("Looking up symbol: %s\n", name);
     return NULL; // Simplified implementation
 }
