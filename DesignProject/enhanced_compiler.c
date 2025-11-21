@@ -677,7 +677,8 @@ DataType get_data_type_from_node(ASTNode *node)
 int in_same_class(char *class1, char *class2)
 {
     // Placeholder implementation
-    if (!class1 || !class2) return 0;
+    if (!class1 || !class2)
+        return 0;
     return strcmp(class1, class2) == 0;
 }
 
