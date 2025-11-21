@@ -42,7 +42,7 @@ typedef struct
 extern int yylex();
 extern void yyerror(const char *s);
 extern FILE *yyin;
-extern ASTNode *ast_root;
+
 extern void print_ast(ASTNode *node, int indent);
 
 // Function prototypes
