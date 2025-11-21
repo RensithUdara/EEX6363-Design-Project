@@ -9,10 +9,12 @@
 extern int yyparse(void);
 extern FILE *yyin;
 
-// Global variables - using extern declarations to reference TMA03 definitions
-extern ASTNode *ast_root;
-extern int error_count;
-extern int max_errors;
+// Global variables definitions (needed by lexer and other components)
+ASTNode *ast_root = NULL;
+int error_count = 0;
+int max_errors = 10;
+
+// Use extern for variables defined in TMA03 files
 extern int semantic_error_count;
 extern int semantic_warning_count;
 
