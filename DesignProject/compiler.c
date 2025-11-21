@@ -471,8 +471,6 @@ int run_syntax_analysis(const char *filename)
 
     // Call the parser (this would be yyparse() in a Bison-based system)
     // For our TMA03 system, we'd call the recursive descent parser
-    extern int parse_program();
-
     int parse_result = parse_program();
 
     fclose(yyin);
