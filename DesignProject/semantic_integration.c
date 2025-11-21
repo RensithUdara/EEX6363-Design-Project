@@ -23,10 +23,10 @@ void initialize_semantic_analyzer(void)
         return;
 
     printf("Initializing semantic analyzer integration...\n");
-    
+
     // Initialize warning counter (errors handled by TMA3)
     semantic_warning_count = 0;
-    
+
     integration_initialized = 1;
     printf("Semantic analyzer integration initialized\n");
 }
@@ -77,21 +77,21 @@ ASTNode *parse_input_file(const char *filename)
     }
 
     printf("Parsing input file: %s\n", filename);
-    
+
     // Create a simple AST for demonstration
     // In real implementation, this would call the parser
     ASTNode *program = create_ast_node(AST_PROGRAM, 1, 1);
-    
+
     // Create some sample nodes for testing
     ASTNode *declaration = create_ast_node(AST_VAR_DECL, 2, 1);
     ASTNode *assignment = create_ast_node(AST_ASSIGN_STMT, 3, 1);
     ASTNode *expression = create_ast_node(AST_BINARY_EXPR, 3, 5);
-    
+
     // Add children to program (simplified)
     add_child_node(program, declaration);
     add_child_node(program, assignment);
     add_child_node(program, expression);
-    
+
     return program;
 }
 
