@@ -43,9 +43,7 @@ extern int yylex();
 extern void yyerror(const char *s);
 extern FILE *yyin;
 extern ASTNode *ast_root;
-extern void semantic_analysis(ASTNode *root);
 extern void print_ast(ASTNode *node, int indent);
-extern void print_symbol_tables(FILE *file);
 
 // Function prototypes
 void print_usage(const char *program_name);
