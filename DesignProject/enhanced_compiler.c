@@ -237,10 +237,9 @@ void generate_semantic_output(const char *input_file)
     // Print actual symbol table
     fprintf(semantic_output_file, "SYMBOL TABLE:\n");
     fprintf(semantic_output_file, "-------------\n");
-    SymbolTable *global_table = get_semantic_symbol_table();
-    if (global_table)
+    if (global_scope)
     {
-        print_symbol_table(global_table, semantic_output_file, 0);
+        print_symbol_table(global_scope, semantic_output_file, 0);
     }
     else
     {
