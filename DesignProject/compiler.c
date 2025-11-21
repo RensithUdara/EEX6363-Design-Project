@@ -450,11 +450,11 @@ int run_semantic_analysis()
     // Stub implementation for semantic analysis
     // In a complete implementation, this would:
     // 1. Build symbol tables
-    // 2. Type checking 
+    // 2. Type checking
     // 3. Scope resolution
     // 4. Declaration/usage validation
     printf("Note: Semantic analysis phase is stubbed (TMA03 integration pending)\n");
-    
+
     compilation_stats.semantic_errors = 0;
 
     return 0;
