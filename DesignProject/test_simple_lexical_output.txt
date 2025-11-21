@@ -1,0 +1,55 @@
+========================================
+Lexical Analysis Output (TMA1)
+========================================
+Input: test_simple.txt
+Generated: Nov 22 2025 01:01:45
+
+Token Type      | Lexeme       | Line | Column | Attributes
+--------------- | ------------ | ---- | ------ | ----------
+IDENTIFIER      | func         | 1    | 1      | -
+IDENTIFIER      | simpleTest   | 1    | 6      | -
+IDENTIFIER      | =>           | 1    | 17     | -
+KEYWORD         | integer      | 1    | 20     | -
+IDENTIFIER      |             | 1    | 28     | -
+IDENTIFIER      | local        | 2    | 1      | -
+IDENTIFIER      | x            | 2    | 7      | -
+IDENTIFIER      | :            | 2    | 9      | -
+KEYWORD         | integer      | 2    | 11     | -
+IDENTIFIER      |             | 2    | 19     | -
+IDENTIFIER      | local        | 3    | 1      | -
+IDENTIFIER      | y            | 3    | 7      | -
+IDENTIFIER      | :            | 3    | 9      | -
+KEYWORD         | integer      | 3    | 11     | -
+IDENTIFIER      |             | 3    | 19     | -
+IDENTIFIER      | local        | 4    | 1      | -
+IDENTIFIER      | result       | 4    | 7      | -
+IDENTIFIER      | :            | 4    | 14     | -
+KEYWORD         | integer      | 4    | 16     | -
+IDENTIFIER      |             | 4    | 24     | -
+IDENTIFIER      |             | 5    | 1      | -
+IDENTIFIER      | x            | 6    | 1      | -
+IDENTIFIER      | :=           | 6    | 3      | -
+IDENTIFIER      | 1.2          | 6    | 6      | -
+IDENTIFIER      |             | 6    | 10     | -
+IDENTIFIER      | y            | 7    | 1      | -
+IDENTIFIER      | :=           | 7    | 3      | -
+NUMBER          | 20           | 7    | 6      | literal
+IDENTIFIER      |             | 7    | 9      | -
+IDENTIFIER      | result       | 8    | 1      | -
+IDENTIFIER      | :=           | 8    | 8      | -
+IDENTIFIER      | x            | 8    | 11     | -
+OPERATOR        | +            | 8    | 13     | arithmetic
+IDENTIFIER      | y            | 8    | 15     | -
+IDENTIFIER      |             | 8    | 17     | -
+IDENTIFIER      | write        | 9    | 1      | -
+IDENTIFIER      | result       | 9    | 7      | -
+IDENTIFIER      |             | 9    | 14     | -
+KEYWORD         | return       | 10   | 1      | -
+IDENTIFIER      | result       | 10   | 8      | -
+IDENTIFIER      |             | 10   | 15     | -
+
+STATISTICS:
+-----------
+Total Tokens: 41
+Total Lines: 11
+Lexical Errors: 0
