@@ -41,10 +41,10 @@ int syntax_errors = 0;
 int semantic_errors_found = 0;
 int codegen_errors = 0;
 
-// Missing variable definitions from TMA modules
-int max_errors = 100;
-int error_count = 0;
-ASTNode *ast_root = NULL;
+// TMA variables are now provided by the actual TMA files
+extern int max_errors;
+extern int error_count;
+extern ASTNode *ast_root;
 
 // Function declarations for automatic file generation
 void generate_architecture_design_file(const char *input_file);
@@ -579,30 +579,33 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
     // Phase 2: Syntax Analysis
     printf("Phase 2: Syntax Analysis...\n");
     clock_t phase_start2 = clock();
-    
+
     // Use TMA03's comprehensive parser
     ASTNode *ast = NULL;
     FILE *input = fopen(input_file, "r");
-    if (!input) {
+    if (!input)
+    {
         fprintf(stderr, "Error: Cannot open input file %s\n", input_file);
         close_output_files();
         return -1;
     }
-    
+
     extern FILE *yyin;
     yyin = input;
-    
+
     int parse_result = parse_program(&ast);
     fclose(input);
-    
-    if (parse_result != 0) {
+
+    if (parse_result != 0)
+    {
         printf("Syntax analysis failed\n");
         ast = NULL;
     }
-    
+
     generate_syntax_output(input_file, ast);
     syntax_time = clock() - phase_start2;
-    if (!ast) {
+    if (!ast)
+    {
         syntax_errors = 1;
         printf("Syntax analysis failed - AST not generated\n");
     }
@@ -618,20 +621,21 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
     // Phase 3: Semantic Analysis
     printf("Phase 3: Semantic Analysis...\n");
     clock_t phase_start3 = clock();
-    
+
     // Use TMA03's comprehensive semantic analysis
     semantic_analysis(ast);
     int semantic_errors = get_semantic_error_count();
     semantic_errors_found = semantic_errors;
     actual_errors = semantic_errors;
-    
+
     // Display semantic errors found
-    if (semantic_errors > 0) {
+    if (semantic_errors > 0)
+    {
         printf("Semantic analysis found %d error(s):\n", semantic_errors);
         printf("  - Type mismatch: assigning float (1.2) to integer variable (x)\n");
         printf("  - Line 6: x := 1.2; // Error: cannot assign float to integer\n");
     }
-    
+
     generate_semantic_output(input_file);
     generate_symbol_table_output(input_file);
     semantic_time = clock() - phase_start3;
@@ -671,11 +675,14 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     // Generate code using the correct function signature
     int code_gen_success = 0;
-    if (ast && actual_errors == 0) {
+    if (ast && actual_errors == 0)
+    {
         generate_code(ast, output);
         generate_intermediate_code_output(input_file, ast);
         code_gen_success = 1;
-    } else {
+    }
+    else
+    {
         fprintf(output, "; Code generation skipped due to previous errors\n");
         codegen_errors = 1;
     }
@@ -688,7 +695,7 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     // Generate test results
     generate_test_results_file(input_file, codegen_result == 0);
-    
+
     // Generate additional documentation files automatically
     clock_t total_time = clock() - compilation_start_time;
     generate_architecture_design_file(input_file);
@@ -732,10 +739,13 @@ int main(int argc, char *argv[])
     // Extract base filename for proper display
     char base_name[256];
     char *dot_pos = strrchr(input_file, '.');
-    if (dot_pos) {
+    if (dot_pos)
+    {
         strncpy(base_name, input_file, dot_pos - input_file);
         base_name[dot_pos - input_file] = '\0';
-    } else {
+    }
+    else
+    {
         strcpy(base_name, input_file);
     }
 
@@ -749,14 +759,14 @@ int main(int argc, char *argv[])
     printf("- Symbol Table: %s_symbol_table.txt\n", base_name);
     printf("- Intermediate Code: %s_intermediate_code.txt\n", base_name);
     printf("- Assembly Output: %s\n", output_file);
-    
+
     printf("\n📋 DETAILED REPORTS:\n");
     printf("- Architecture Design: %s_architecture_design.txt\n", base_name);
     printf("- Performance Report: %s_performance_report.txt\n", base_name);
     printf("- Integration Tests: %s_integration_test.txt\n", base_name);
     printf("- Error Log: %s_error_log.txt\n", base_name);
     printf("- Test Results: test_results.txt\n");
-    
+
     printf("\n🎉 Total: 10 comprehensive output files created!\n");
     printf("========================================\n");
 
@@ -764,30 +774,35 @@ int main(int argc, char *argv[])
 }
 
 // Generate architecture design file automatically
-void generate_architecture_design_file(const char *input_file) {
+void generate_architecture_design_file(const char *input_file)
+{
     char filename[512];
     char base_name[256];
     char *dot_pos = strrchr(input_file, '.');
-    
-    if (dot_pos) {
+
+    if (dot_pos)
+    {
         strncpy(base_name, input_file, dot_pos - input_file);
         base_name[dot_pos - input_file] = '\0';
-    } else {
+    }
+    else
+    {
         strcpy(base_name, input_file);
     }
-    
+
     snprintf(filename, sizeof(filename), "%s_architecture_design.txt", base_name);
     FILE *arch_file = fopen(filename, "w");
-    if (!arch_file) return;
-    
+    if (!arch_file)
+        return;
+
     fprintf(arch_file, "========================================\n");
     fprintf(arch_file, "Design Project - Architecture Design\n");
     fprintf(arch_file, "========================================\n");
     fprintf(arch_file, "Generated: November 22, 2025\n\n");
-    
+
     fprintf(arch_file, "COMPILER ARCHITECTURE OVERVIEW:\n");
     fprintf(arch_file, "===============================\n\n");
-    
+
     fprintf(arch_file, "1. FOUR-PHASE COMPILATION PIPELINE:\n");
     fprintf(arch_file, "   ├── Phase 1: Lexical Analysis (TMA1)\n");
     fprintf(arch_file, "   │   ├── Input: Source code (.txt files)\n");
@@ -808,7 +823,7 @@ void generate_architecture_design_file(const char *input_file) {
     fprintf(arch_file, "       ├── Input: Annotated AST + Symbol Tables\n");
     fprintf(arch_file, "       ├── Output: x86-64 Assembly Code\n");
     fprintf(arch_file, "       └── Files: codegen.c, register_allocator.c\n\n");
-    
+
     fprintf(arch_file, "IMPLEMENTATION STATUS:\n");
     fprintf(arch_file, "====================\n");
     fprintf(arch_file, "✅ Lexical Analysis - Complete\n");
@@ -820,33 +835,38 @@ void generate_architecture_design_file(const char *input_file) {
     fprintf(arch_file, "✅ Error Handling - Complete\n");
     fprintf(arch_file, "✅ Testing Framework - Complete\n");
     fprintf(arch_file, "✅ Documentation - Complete\n\n");
-    
+
     fclose(arch_file);
 }
 
 // Generate error log file automatically
-void generate_error_log_file(const char *input_file, int has_errors, ASTNode *ast) {
+void generate_error_log_file(const char *input_file, int has_errors, ASTNode *ast)
+{
     char filename[512];
     char base_name[256];
     char *dot_pos = strrchr(input_file, '.');
-    
-    if (dot_pos) {
+
+    if (dot_pos)
+    {
         strncpy(base_name, input_file, dot_pos - input_file);
         base_name[dot_pos - input_file] = '\0';
-    } else {
+    }
+    else
+    {
         strcpy(base_name, input_file);
     }
-    
+
     snprintf(filename, sizeof(filename), "%s_error_log.txt", base_name);
     FILE *error_file = fopen(filename, "w");
-    if (!error_file) return;
-    
+    if (!error_file)
+        return;
+
     fprintf(error_file, "========================================\n");
     fprintf(error_file, "Design Project - Error Log\n");
     fprintf(error_file, "========================================\n");
     fprintf(error_file, "Generated: November 22, 2025\n");
     fprintf(error_file, "Input File: %s\n\n", input_file);
-    
+
     fprintf(error_file, "COMPILATION SESSION LOG:\n");
     fprintf(error_file, "=======================\n\n");
     fprintf(error_file, "[INFO] Starting compilation of %s\n", input_file);
@@ -859,9 +879,9 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "[INFO] Phase 4: Code Generation - Started\n");
     fprintf(error_file, "[INFO] Phase 4: Code Generation - Completed (%d errors)\n", has_errors ? 1 : 0);
     fprintf(error_file, "[INFO] Compilation %s\n\n", (actual_errors == 0 && !has_errors && ast) ? "successful" : "failed");
-    
+
     int total_errors = lexical_errors + syntax_errors + semantic_errors_found + codegen_errors;
-    
+
     fprintf(error_file, "ERROR SUMMARY:\n");
     fprintf(error_file, "=============\n");
     fprintf(error_file, "Lexical Errors: %d\n", lexical_errors);
@@ -869,8 +889,9 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "Semantic Errors: %d\n", semantic_errors_found);
     fprintf(error_file, "Code Generation Errors: %d\n", codegen_errors);
     fprintf(error_file, "Total Errors: %d\n\n", total_errors);
-    
-    if (semantic_errors_found > 0) {
+
+    if (semantic_errors_found > 0)
+    {
         fprintf(error_file, "DETAILED ERROR INFORMATION:\n");
         fprintf(error_file, "==========================\n");
         fprintf(error_file, "Line 6: Type mismatch error\n");
@@ -878,13 +899,13 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
         fprintf(error_file, "  Expected: integer value\n");
         fprintf(error_file, "  Found: float literal\n\n");
     }
-    
+
     fprintf(error_file, "WARNING SUMMARY:\n");
     fprintf(error_file, "===============\n");
     fprintf(error_file, "Semantic Warnings: 0\n");
     fprintf(error_file, "Optimization Warnings: 0\n");
     fprintf(error_file, "Total Warnings: 0\n\n");
-    
+
     fprintf(error_file, "FILE GENERATION STATUS:\n");
     fprintf(error_file, "======================\n");
     fprintf(error_file, "✅ %s_lexical_output.txt - Generated successfully\n", base_name);
@@ -893,7 +914,7 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "✅ %s_symbol_table.txt - Generated successfully\n", base_name);
     fprintf(error_file, "✅ %s_intermediate_code.txt - Generated successfully\n", base_name);
     fprintf(error_file, "✅ output.s - Generated successfully\n\n");
-    
+
     fprintf(error_file, "PERFORMANCE METRICS:\n");
     fprintf(error_file, "==================\n");
     fprintf(error_file, "Compilation Time: < 1 second\n");
@@ -902,7 +923,7 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "AST Nodes: %d nodes created\n", total_ast_nodes);
     fprintf(error_file, "Symbol Table Entries: 0 symbols\n");
     fprintf(error_file, "Generated Instructions: 15 assembly instructions\n\n");
-    
+
     fprintf(error_file, "DEBUG INFORMATION:\n");
     fprintf(error_file, "=================\n");
     fprintf(error_file, "[DEBUG] Lexical phase processed %d tokens\n", total_tokens);
@@ -911,55 +932,61 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "[DEBUG] Code generator allocated 8 registers\n");
     fprintf(error_file, "[DEBUG] No spill operations required\n");
     fprintf(error_file, "[DEBUG] Output assembly written to output.s\n\n");
-    
-    fprintf(error_file, "%s: Compilation completed %s.\n", 
+
+    fprintf(error_file, "%s: Compilation completed %s.\n",
             has_errors ? "ERROR" : "SUCCESS", has_errors ? "with errors" : "without errors");
-    
+
     fclose(error_file);
 }
 
-// Generate performance report file automatically  
-void generate_performance_report_file(const char *input_file, clock_t compilation_time) {
+// Generate performance report file automatically
+void generate_performance_report_file(const char *input_file, clock_t compilation_time)
+{
     char filename[512];
     char base_name[256];
     char *dot_pos = strrchr(input_file, '.');
-    
-    if (dot_pos) {
+
+    if (dot_pos)
+    {
         strncpy(base_name, input_file, dot_pos - input_file);
         base_name[dot_pos - input_file] = '\0';
-    } else {
+    }
+    else
+    {
         strcpy(base_name, input_file);
     }
-    
+
     snprintf(filename, sizeof(filename), "%s_performance_report.txt", base_name);
     FILE *perf_file = fopen(filename, "w");
-    if (!perf_file) return;
-    
+    if (!perf_file)
+        return;
+
     double time_seconds = ((double)compilation_time) / CLOCKS_PER_SEC;
-    
+
     fprintf(perf_file, "========================================\n");
     fprintf(perf_file, "Design Project - Performance Report\n");
     fprintf(perf_file, "========================================\n");
     fprintf(perf_file, "Generated: November 22, 2025\n");
     fprintf(perf_file, "Test Input: %s\n\n", input_file);
-    
+
     // Calculate actual timing data
     double lexical_ms = ((double)lexical_time / CLOCKS_PER_SEC) * 1000.0;
     double syntax_ms = ((double)syntax_time / CLOCKS_PER_SEC) * 1000.0;
     double semantic_ms = ((double)semantic_time / CLOCKS_PER_SEC) * 1000.0;
     double codegen_ms = ((double)codegen_time / CLOCKS_PER_SEC) * 1000.0;
     double total_ms = lexical_ms + syntax_ms + semantic_ms + codegen_ms;
-    
+
     // Handle very fast compilation times
-    if (total_ms < 0.1) total_ms = 0.1; // Minimum display time
+    if (total_ms < 0.1)
+        total_ms = 0.1; // Minimum display time
     double lexical_pct = (lexical_ms / total_ms) * 100.0;
     double syntax_pct = (syntax_ms / total_ms) * 100.0;
     double semantic_pct = (semantic_ms / total_ms) * 100.0;
     double codegen_pct = (codegen_ms / total_ms) * 100.0;
-    
+
     fprintf(perf_file, "COMPILER PERFORMANCE ANALYSIS:\n");
     fprintf(perf_file, "=============================\n\n");
-    
+
     fprintf(perf_file, "1. COMPILATION PHASES TIMING:\n");
     fprintf(perf_file, "   ┌─────────────────────┬──────────────┬─────────────┐\n");
     fprintf(perf_file, "   │ Phase               │ Time (ms)    │ Percentage  │\n");
@@ -971,7 +998,7 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
     fprintf(perf_file, "   ├─────────────────────┼──────────────┼─────────────┤\n");
     fprintf(perf_file, "   │ TOTAL               │ %-12.1f │ 100.0%%      │\n", total_ms);
     fprintf(perf_file, "   └─────────────────────┴──────────────┴─────────────┘\n\n");
-    
+
     fprintf(perf_file, "2. MEMORY USAGE ANALYSIS:\n");
     double memory_usage = 10.0 + (total_tokens * 0.1);
     fprintf(perf_file, "   Token Storage:       %.2f KB\n", total_tokens * 0.05);
@@ -979,7 +1006,7 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
     fprintf(perf_file, "   Symbol Tables:       %.2f KB\n", 1.5);
     fprintf(perf_file, "   Code Generation:     %.2f KB\n", 2.0);
     fprintf(perf_file, "   TOTAL MEMORY:        %.2f KB\n\n", memory_usage);
-    
+
     fprintf(perf_file, "3. COMPILATION RESULTS:\n");
     fprintf(perf_file, "   Total Compilation Time: %.3f seconds\n", time_seconds);
     fprintf(perf_file, "   Tokens Processed:       %d\n", total_tokens);
@@ -989,77 +1016,89 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
     fprintf(perf_file, "   Warnings:               %d\n", actual_warnings);
     fprintf(perf_file, "   Success Rate:           %s\n", (actual_errors == 0) ? "100%% (Perfect)" : "Partial");
     fprintf(perf_file, "   Performance Rating:     %s\n\n", time_seconds < 0.1 ? "Excellent" : "Good");
-    
+
     fprintf(perf_file, "PERFORMANCE SUMMARY:\n");
     fprintf(perf_file, "==================\n");
-    
-    if (actual_errors == 0) {
+
+    if (actual_errors == 0)
+    {
         fprintf(perf_file, "✅ STATUS: COMPILATION SUCCESSFUL\n");
         fprintf(perf_file, "   - All phases completed without errors\n");
         fprintf(perf_file, "   - Code generation successful\n");
         fprintf(perf_file, "   - Performance: %s\n", time_seconds < 0.1 ? "Excellent" : "Good");
-    } else {
+    }
+    else
+    {
         fprintf(perf_file, "❌ STATUS: COMPILATION FAILED\n");
         fprintf(perf_file, "   - %d error(s) encountered\n", actual_errors);
         fprintf(perf_file, "   - Review error log for details\n");
         fprintf(perf_file, "   - Fix issues before deployment\n");
     }
-    
+
     fprintf(perf_file, "\nRECOMMENDATIONS:\n");
     fprintf(perf_file, "===============\n");
-    if (actual_errors == 0) {
+    if (actual_errors == 0)
+    {
         fprintf(perf_file, "✅ Code is ready for use\n");
-        if (time_seconds > 1.0) {
+        if (time_seconds > 1.0)
+        {
             fprintf(perf_file, "→ Consider optimizing for faster compilation\n");
         }
         fprintf(perf_file, "→ Consider adding more comprehensive tests\n");
-    } else {
+    }
+    else
+    {
         fprintf(perf_file, "🔧 Fix compilation errors first\n");
         fprintf(perf_file, "→ Check syntax and semantic issues\n");
         fprintf(perf_file, "→ Review error log for specific problems\n");
     }
-    
+
     fclose(perf_file);
 }
 
 // Generate integration test file automatically
-void generate_integration_test_file(const char *input_file, int success, ASTNode *ast) {
+void generate_integration_test_file(const char *input_file, int success, ASTNode *ast)
+{
     char filename[512];
     char base_name[256];
     char *dot_pos = strrchr(input_file, '.');
-    
-    if (dot_pos) {
+
+    if (dot_pos)
+    {
         strncpy(base_name, input_file, dot_pos - input_file);
         base_name[dot_pos - input_file] = '\0';
-    } else {
+    }
+    else
+    {
         strcpy(base_name, input_file);
     }
-    
+
     snprintf(filename, sizeof(filename), "%s_integration_test.txt", base_name);
     FILE *test_file = fopen(filename, "w");
-    if (!test_file) return;
-    
+    if (!test_file)
+        return;
+
     fprintf(test_file, "========================================\n");
     fprintf(test_file, "Design Project - Integration Test Report\n");
     fprintf(test_file, "========================================\n");
     fprintf(test_file, "Generated: November 22, 2025\n");
     fprintf(test_file, "Test Suite: Complete Integration Testing\n\n");
-    
+
     fprintf(test_file, "TEST EXECUTION SUMMARY:\n");
     fprintf(test_file, "======================\n\n");
-    
+
     // Calculate actual timing and results
     double lexical_ms = ((double)lexical_time / CLOCKS_PER_SEC) * 1000.0;
     double syntax_ms = ((double)syntax_time / CLOCKS_PER_SEC) * 1000.0;
     double semantic_ms = ((double)semantic_time / CLOCKS_PER_SEC) * 1000.0;
     double codegen_ms = ((double)codegen_time / CLOCKS_PER_SEC) * 1000.0;
     double total_ms = lexical_ms + syntax_ms + semantic_ms + codegen_ms;
-    
+
     const char *lexer_status = "✅ PASSED   ";
     const char *parser_status = ast ? "✅ PASSED   " : "❌ FAILED   ";
     const char *semantic_status = (actual_errors == 0) ? "✅ PASSED   " : "❌ FAILED   ";
     const char *overall_status = (success && ast && actual_errors == 0) ? "✅ PASSED   " : "❌ FAILED   ";
-    
+
     fprintf(test_file, "1. PHASE INTEGRATION TESTS:\n");
     fprintf(test_file, "   ┌─────────────────────┬──────────────┬─────────────┬─────────────┐\n");
     fprintf(test_file, "   │ Integration Test    │ Status       │ Time (ms)   │ Result      │\n");
@@ -1069,7 +1108,7 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
     fprintf(test_file, "   │ Semantic → CodeGen  │ %s│ %-11.1f │ %s     │\n", semantic_status, semantic_ms, (actual_errors == 0) ? "SUCCESS" : "FAILED");
     fprintf(test_file, "   │ End-to-End Pipeline │ %s│ %-11.1f │ %s     │\n", overall_status, total_ms, (success && ast && actual_errors == 0) ? "SUCCESS" : "FAILED");
     fprintf(test_file, "   └─────────────────────┴──────────────┴─────────────┴─────────────┘\n\n");
-    
+
     fprintf(test_file, "2. FILE I/O INTEGRATION TESTS:\n");
     fprintf(test_file, "   ┌─────────────────────┬──────────────┬─────────────┐\n");
     fprintf(test_file, "   │ File Operation      │ Status       │ Verification│\n");
@@ -1082,46 +1121,54 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
     fprintf(test_file, "   │ Intermediate Code   │ ✅ PASSED    │ Valid       │\n");
     fprintf(test_file, "   │ Assembly Output     │ ✅ PASSED    │ Valid       │\n");
     fprintf(test_file, "   └─────────────────────┴──────────────┴─────────────┘\n\n");
-    
+
     // Calculate actual quality score
     int tests_passed = (ast ? 1 : 0) + (actual_errors == 0 ? 1 : 0) + (success ? 1 : 0);
     int total_tests = 3;
     int quality_score = (total_tests > 0) ? (tests_passed * 100) / total_tests : 0;
-    const char *grade = (quality_score >= 90) ? "A+" : (quality_score >= 80) ? "A" : (quality_score >= 70) ? "B" : "C";
-    
+    const char *grade = (quality_score >= 90) ? "A+" : (quality_score >= 80) ? "A"
+                                                   : (quality_score >= 70)   ? "B"
+                                                                             : "C";
+
     fprintf(test_file, "INTEGRATION QUALITY SCORE: %s (%d%%)\n", grade, quality_score);
     fprintf(test_file, "===================================\n\n");
-    
-    if (quality_score >= 90) {
+
+    if (quality_score >= 90)
+    {
         fprintf(test_file, "STRENGTHS:\n");
         fprintf(test_file, "• Excellent phase integration\n");
         fprintf(test_file, "• Robust error handling\n");
         fprintf(test_file, "• Clean data flow\n");
         fprintf(test_file, "• Comprehensive output generation\n");
         fprintf(test_file, "• Strong memory management\n\n");
-        
+
         fprintf(test_file, "OVERALL ASSESSMENT:\n");
         fprintf(test_file, "==================\n");
         fprintf(test_file, "The integration testing demonstrates that all compiler phases\n");
         fprintf(test_file, "work together seamlessly. The system shows excellent reliability,\n");
         fprintf(test_file, "performance, and maintainability characteristics.\n\n");
-        
+
         fprintf(test_file, "RECOMMENDATION: ✅ APPROVED FOR PRODUCTION USE\n");
-    } else {
+    }
+    else
+    {
         fprintf(test_file, "ISSUES FOUND:\n");
-        if (!ast) fprintf(test_file, "• Syntax analysis failed - AST generation error\n");
-        if (actual_errors > 0) fprintf(test_file, "• Semantic analysis failed - %d error(s) found\n", actual_errors);
-        if (!success) fprintf(test_file, "• Code generation failed - compilation unsuccessful\n");
+        if (!ast)
+            fprintf(test_file, "• Syntax analysis failed - AST generation error\n");
+        if (actual_errors > 0)
+            fprintf(test_file, "• Semantic analysis failed - %d error(s) found\n", actual_errors);
+        if (!success)
+            fprintf(test_file, "• Code generation failed - compilation unsuccessful\n");
         fprintf(test_file, "\n");
-        
+
         fprintf(test_file, "OVERALL ASSESSMENT:\n");
         fprintf(test_file, "==================\n");
         fprintf(test_file, "The integration testing revealed %d issue(s) that need to be\n", total_tests - tests_passed);
         fprintf(test_file, "addressed before the system can be considered production-ready.\n\n");
-        
+
         fprintf(test_file, "RECOMMENDATION: ❌ REQUIRES FIXES BEFORE APPROVAL\n");
     }
-    
+
     fclose(test_file);
 }
 
