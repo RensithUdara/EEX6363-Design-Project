@@ -1,7 +1,8 @@
 // Enhanced compiler with dynamic output file generation
-#include "compiler.h"
+#include "output_generator.h"
 #include "codegen.h"
 #include "semantic_integration.h"
+#include "register_allocator.h"
 #include "../TMA03/ast.h"
 #include "../TMA03/error_handler.h"
 #include <stdio.h>
@@ -271,7 +272,10 @@ void generate_symbol_table_output(const char *input_file)
     fprintf(symbol_table_file, "\nSTATISTICS:\n");
     fprintf(symbol_table_file, "-----------\n");
     fprintf(symbol_table_file, "Total Symbols: %d\n", count_total_symbols());
-    fprintf(symbol_table_file, "Maximum Scope Depth: %d\n", get_max_scope_depth(get_global_symbol_table()));
+    SymbolTable *global_table = get_semantic_symbol_table();
+    if (global_table) {
+        fprintf(symbol_table_file, "Maximum Scope Depth: %d\n", get_max_scope_depth(global_table));
+    }
 }
 
 // Generate intermediate code output
