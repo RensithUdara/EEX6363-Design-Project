@@ -157,7 +157,7 @@ void print_register_info_to_file(FILE *output)
     }
 
     // Print detailed symbol tables
-    void print_detailed_symbol_tables(FILE * output)
+void print_detailed_symbol_tables(FILE *output)
     {
         if (!output)
             return;
@@ -181,8 +181,8 @@ void print_register_info_to_file(FILE *output)
         fprintf(output, "+---------------+----------+--------+----------+---------+--------+\n");
     }
 
-    // Count total symbols across all scopes
-    int count_total_symbols(void)
+// Count total symbols across all scopes
+int count_total_symbols(void)
     {
         if (global_scope)
         {
@@ -191,8 +191,8 @@ void print_register_info_to_file(FILE *output)
         return 0;
     }
 
-    // Get syntax error count (placeholder)
-    int get_syntax_error_count(void)
+// Get syntax error count (placeholder)
+int get_syntax_error_count(void)
     {
         // This would normally track syntax errors during parsing
         return 0; // Assume no syntax errors for successful compilation
