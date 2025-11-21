@@ -49,27 +49,7 @@ void initialize_semantic_analyzer(void)
     integration_initialized = 1;
 }
 
-// Cleanup semantic analyzer resources
-void cleanup_semantic_analyzer(void)
-{
-    if (!integration_initialized)
-        return;
-
-    if (ast_root)
-    {
-        destroy_ast_tree(ast_root);
-        ast_root = NULL;
-    }
-
-    if (current_input_filename)
-    {
-        free(current_input_filename);
-        current_input_filename = NULL;
-    }
-
-    integration_initialized = 0;
-    printf("Semantic analyzer cleaned up\n");
-}
+// Note: cleanup_semantic_analyzer is implemented in ast.c
 
 // Main semantic analysis function
 int perform_semantic_analysis(ASTNode *root)
@@ -266,11 +246,7 @@ void analyze_scopes_and_visibility(ASTNode *root)
     }
 }
 
-// Getter functions
-int get_semantic_error_count(void)
-{
-    return semantic_error_count;
-}
+// Note: get_semantic_error_count is implemented in error_handler.c
 
 int get_semantic_warning_count(void)
 {
