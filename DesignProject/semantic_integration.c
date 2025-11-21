@@ -326,19 +326,7 @@ void write_symbol_tables_to_file(const char *filename)
     printf("Symbol tables written to: %s\n", filename);
 }
 
-// Scope management functions
-void enter_scope(char *scope_name)
-{
-    if (!scope_name)
-        return;
-
-    printf("Entering scope: %s\n", scope_name);
-}
-
-void exit_scope(void)
-{
-    printf("Exiting current scope\n");
-}
+// Note: enter_scope and exit_scope are implemented in ast.c
 
 Symbol *lookup_symbol_in_scope(const char *name)
 {
