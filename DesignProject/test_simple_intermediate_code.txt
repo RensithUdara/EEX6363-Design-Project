@@ -4,7 +4,7 @@ Design Project - Code Generation Phase
 ========================================
 Input: test_simple.txt
 Target: x86-64 Assembly (AT&T Syntax)
-Generated: Nov 22 2025 01:01:45
+Generated: Nov 22 2025 01:55:01
 
 THREE-ADDRESS CODE:
 -------------------
