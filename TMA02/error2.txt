@@ -1,0 +1,14 @@
+class Greeter {  
+    public func sayHello.a () => void;  
+};  
+
+implement Greeter {  
+    func sayHello () => void {  
+        write (1);  
+    }  
+}  
+
+func main () => void {  
+    local g : Greeter;  
+    g.sayHello ();  
+}
