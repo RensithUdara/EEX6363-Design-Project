@@ -1,0 +1,19 @@
+fParams → ε
+returnType → void
+funcHead → func id ( fParams ) => returnType
+type → float
+arraySizeList → ε
+varDecl → id : type arraySizeList ;
+localVarDecl → local varDecl
+localVarDeclOrStmt → localVarDecl
+factor → floatLit
+termPrime → ε
+term → factor termPrime
+arithExprPrime → ε
+arithExpr → term arithExprPrime
+relExprPrime → ε
+relExpr → arithExpr relExprPrime
+expr → relExpr
+idStmtTail → := expr
+idStmt → id idStmtTail
+simpleStmt → idStmt
