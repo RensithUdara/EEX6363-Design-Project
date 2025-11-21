@@ -1,0 +1,110 @@
+// TMA03 Semantic Analyzer Test Program - Valid Semantics
+// This program demonstrates correct semantic usage with classes, inheritance, and functions
+
+class Vehicle {
+    attribute speed : integer;
+    attribute fuel : float;
+    
+    func start() => integer {
+        self.speed := 0;
+        return(1);
+    }
+    
+    func accelerate(amount : integer) => integer {
+        self.speed := self.speed + amount;
+        return(self.speed);
+    }
+}
+
+class Car inherits Vehicle {
+    attribute doors : integer;
+    attribute brand : integer;
+    
+    func start() => integer {
+        self.speed := 5;  // Cars start with initial speed
+        self.doors := 4;
+        return(1);
+    }
+    
+    func openDoors() => integer {
+        return(self.doors);
+    }
+}
+
+class SportsCar inherits Car {
+    attribute turboMode : integer;
+    
+    func activateTurbo() => integer {
+        self.turboMode := 1;
+        self.speed := self.speed * 2;
+        return(self.turboMode);
+    }
+}
+
+func calculateDistance(speed : integer, time : integer) => integer {
+    local distance : integer;
+    distance := speed * time;
+    return(distance);
+}
+
+func processVehicleData(vehicles : array[5] of Car) => integer {
+    local i : integer;
+    local totalSpeed : integer;
+    
+    totalSpeed := 0;
+    i := 0;
+    
+    while (i < 5) {
+        totalSpeed := totalSpeed + vehicles[i].speed;
+        i := i + 1;
+    };
+    
+    return(totalSpeed);
+}
+
+func main() => integer {
+    local myCar : Car;
+    local sportsCar : SportsCar;
+    local carArray : array[5] of Car;
+    local speed : integer;
+    local time : integer;
+    local distance : integer;
+    local i : integer;
+    
+    // Initialize variables
+    speed := 60;
+    time := 2;
+    i := 0;
+    
+    // Test object creation and method calls
+    myCar.start();
+    myCar.accelerate(20);
+    
+    sportsCar.start();
+    sportsCar.activateTurbo();
+    
+    // Test function calls with proper types
+    distance := calculateDistance(speed, time);
+    write(distance);
+    
+    // Test array operations
+    while (i < 5) {
+        carArray[i].speed := i * 10;
+        i := i + 1;
+    };
+    
+    // Test function with array parameter
+    distance := processVehicleData(carArray);
+    
+    // Test conditional statements
+    if (distance > 100) then {
+        write("High distance");
+    } else {
+        write("Low distance");
+    };
+    
+    // Test read operation
+    read(speed);
+    
+    return(0);
+}
