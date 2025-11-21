@@ -1,0 +1,7 @@
+func arrayTest () => void {  
+    local myArray : integer[3];  
+    myArray[0] := 10;  
+    myArray[1] := 20;  
+    myArray[2] := myArray[0] + myArray[1];  
+    write (myArray[2]);  
+}
