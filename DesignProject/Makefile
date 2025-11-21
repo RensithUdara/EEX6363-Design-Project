@@ -45,7 +45,8 @@ SEMANTIC_OBJ = $(BUILD_DIR)/semantic.o
 ERROR_OBJ = $(BUILD_DIR)/error_handler.o
 
 # All object files
-ALL_OBJS = $(COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(ERROR_OBJ)
+SEMANTIC_INT_OBJ = $(BUILD_DIR)/semantic_integration.o
+ALL_OBJS = $(COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
 
 # Target executable
 TARGET = $(BUILD_DIR)/compiler
@@ -100,6 +101,11 @@ $(SEMANTIC_OBJ): $(TMA3_SEMANTIC) | $(BUILD_DIR)
 $(ERROR_OBJ): $(TMA3_ERROR) | $(BUILD_DIR)
 	@echo "Compiling error handler..."
 	$(CC) $(CFLAGS) $(INCLUDES) -c $(TMA3_ERROR) -o $(ERROR_OBJ)
+
+# Compile semantic integration
+$(SEMANTIC_INT_OBJ): semantic_integration.c semantic_integration.h | $(BUILD_DIR)
+	@echo "Compiling TMA3 semantic integration..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c semantic_integration.c -o $(SEMANTIC_INT_OBJ)
 
 # Compile code generator
 $(CODEGEN_OBJ): $(CODEGEN_SRC) codegen.h | $(BUILD_DIR)
