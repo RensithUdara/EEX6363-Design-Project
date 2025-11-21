@@ -6,6 +6,7 @@
 #include <getopt.h>
 #include "codegen.h"
 #include "register_allocator.h"
+#include "semantic_integration.h"
 #include "../TMA03/ast.h"
 
 // Compiler version and information
@@ -98,14 +99,30 @@ DataType string_to_data_type(const char *str)
     return TYPE_UNKNOWN;
 }
 
-// Stub parser function
+// TMA3 integrated parser function
 int parse_program()
 {
-    printf("Note: Parser is stubbed - using minimal AST\n");
-    // Create a minimal program node
-    ast_root = create_ast_node(AST_PROGRAM, 1, 1);
-    return ast_root ? 0 : -1;
+    printf("=== TMA3 Parser Integration ===\n");
+
+    // Use TMA3 parser to create comprehensive AST
+    ast_root = parse_input_file(current_input_filename);
+
+    if (ast_root)
+    {
+        printf("TMA3 parser completed successfully\n");
+        printf("AST root type: %d\n", ast_root->type);
+        printf("AST children: %d\n", ast_root->child_count);
+        return 0;
+    }
+    else
+    {
+        printf("TMA3 parser failed\n");
+        return -1;
+    }
 }
+
+// Global variables
+static char *current_input_filename = NULL;
 
 // Global compilation statistics
 static struct
