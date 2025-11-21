@@ -26,6 +26,11 @@ static int total_ast_nodes = 0;
 static int total_symbols = 0;
 static clock_t compilation_start_time;
 
+// Missing variable definitions from TMA modules
+int max_errors = 100;
+int error_count = 0;
+ASTNode *ast_root = NULL;
+
 // Initialize output files for current compilation
 int initialize_output_files(const char *input_filename)
 {
