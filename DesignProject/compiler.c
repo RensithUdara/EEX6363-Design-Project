@@ -355,11 +355,12 @@ int parse_command_line(int argc, char *argv[], CompilerOptions *options)
 int compile_file(CompilerOptions *options)
 {
     // Store current filename for TMA3 integration
-    if (current_input_filename) {
+    if (current_input_filename)
+    {
         free(current_input_filename);
     }
     current_input_filename = strdup(options->input_file);
-    
+
     if (options->verbose)
     {
         printf("Compiling: %s -> %s\n", options->input_file, options->output_file);
