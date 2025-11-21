@@ -245,12 +245,13 @@ Symbol *lookup_symbol_in_scope(const char *name)
     return NULL; // Simplified implementation
 }
 
-void report_semantic_error(const char *message, int line, int column)
+void report_semantic_error(int line, int col, const char *message, const char *error_type)
 {
     if (!message)
         return;
 
-    printf("Semantic Error at line %d, column %d: %s\n", line, column, message);
+    printf("Semantic Error [%s] at line %d, column %d: %s\n", 
+           error_type ? error_type : "GENERAL", line, col, message);
     // Error count is managed by TMA3's error handler
 }
 
