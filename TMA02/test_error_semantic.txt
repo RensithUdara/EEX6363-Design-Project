@@ -1,0 +1,135 @@
+// TMA03 Semantic Analyzer Test Program - Semantic Errors
+// This program demonstrates various semantic errors for testing
+
+class Vehicle {
+    field speed : integer;
+    field fuel : float;
+    
+    func start() => integer {
+        self.speed := 0;
+        return(1);
+    }
+}
+
+class Car inherits Vehicle {
+    field doors : integer;
+    
+    func start() => integer {
+        self.speed := 5;
+        return(1);
+    }
+}
+
+// Error 1: Duplicate class declaration
+class Car {
+    field wheels : integer;
+}
+
+class Bicycle inherits NonExistentClass {  // Error 2: Inheriting from undefined class
+    field pedals : integer;
+}
+
+// Error 3: Function with same name as class
+func Vehicle() => integer {
+    return(0);
+}
+
+// Error 4: Duplicate function declaration
+func calculateSpeed(distance : integer, time : integer) => float {
+    local result : float;
+    result := distance / time;
+    return(result);
+}
+
+func calculateSpeed(d : integer, t : integer) => integer {  // Error 5: Duplicate function
+    return(d + t);
+}
+
+func testTypeErrors() => integer {
+    local x : integer;
+    local y : float;
+    local z : string;
+    local car : Car;
+    local arr : array[5] of integer;
+    
+    // Error 6: Type mismatch in assignment
+    x := 3.14;
+    y := "hello";
+    z := 42;
+    
+    // Error 7: Undefined variable
+    undefinedVar := 10;
+    
+    // Error 8: Using variable before declaration
+    earlyVar := laterVar;
+    local laterVar : integer;
+    
+    // Error 9: Array index with wrong type
+    arr[3.14] := 5;
+    arr["hello"] := 10;
+    
+    // Error 10: Field access on non-object
+    x.speed := 10;
+    
+    // Error 11: Accessing undefined field
+    car.undefinedField := 5;
+    
+    // Error 12: Method call on non-object
+    x.start();
+    
+    // Error 13: Calling undefined method
+    car.undefinedMethod();
+    
+    // Error 14: Wrong number of arguments
+    calculateSpeed(10);  // Missing argument
+    calculateSpeed(10, 5, 3);  // Too many arguments
+    
+    // Error 15: Wrong argument types
+    calculateSpeed(3.14, "hello");
+    
+    // Error 16: Return type mismatch
+    return(3.14);  // Function returns integer, but returning float
+}
+
+func testControlFlow() => integer {
+    local x : integer;
+    local car : Car;
+    
+    // Error 17: Non-boolean condition in if statement
+    if (x) then {
+        write(x);
+    };
+    
+    // Error 18: Non-boolean condition in while loop
+    while (car) {
+        x := x + 1;
+    };
+    
+    return(0);
+}
+
+func voidFunction() => void {
+    local x : integer;
+    x := 5;
+    
+    // Error 19: Return value in void function
+    return(x);
+}
+
+func main() => integer {
+    local result : integer;
+    local car : Car;
+    local wrongCar : UndefinedClass;  // Error 20: Undefined class type
+    
+    // Error 21: Function call with wrong return type expectation
+    result := voidFunction();
+    
+    // Error 22: Calling function that doesn't exist
+    result := nonExistentFunction();
+    
+    // Error 23: Multiple variable declarations with same name
+    local x : integer;
+    local x : float;
+    
+    return(0);
+}
