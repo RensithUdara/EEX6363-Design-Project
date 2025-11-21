@@ -1,0 +1,7 @@
+func compareValues (a : integer, b : integer) => void {  
+    if (a < b) then {  
+        write (a);  
+    } else {  
+        write (b);;  
+    };  
+}
