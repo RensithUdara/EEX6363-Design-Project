@@ -273,7 +273,8 @@ void generate_symbol_table_output(const char *input_file)
     fprintf(symbol_table_file, "-----------\n");
     fprintf(symbol_table_file, "Total Symbols: %d\n", count_total_symbols());
     SymbolTable *global_table = get_semantic_symbol_table();
-    if (global_table) {
+    if (global_table)
+    {
         fprintf(symbol_table_file, "Maximum Scope Depth: %d\n", get_max_scope_depth(global_table));
     }
 }
