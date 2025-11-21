@@ -43,8 +43,11 @@ typedef struct
 extern int yylex();
 extern void yyerror(const char *s);
 extern FILE *yyin;
-
+extern ASTNode *ast_root;
 extern void print_ast(ASTNode *node, int indent);
+
+// Global variables
+static char *current_input_filename = NULL;
 
 // Function prototypes
 void print_usage(const char *program_name);
