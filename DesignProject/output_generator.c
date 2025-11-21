@@ -197,4 +197,3 @@ void print_register_info_to_file(FILE *output)
         // This would normally track syntax errors during parsing
         return 0; // Assume no syntax errors for successful compilation
     }
-
