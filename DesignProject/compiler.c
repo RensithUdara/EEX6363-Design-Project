@@ -126,9 +126,6 @@ int parse_program()
     }
 }
 
-// Global variables
-static char *current_input_filename = NULL;
-
 // Global compilation statistics
 static struct
 {

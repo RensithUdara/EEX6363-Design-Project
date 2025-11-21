@@ -940,34 +940,39 @@ void generate_node_code(CodeGenContext *ctx, ASTNode *node, int index)
 
     switch (node->type)
     {
-    case AST_DECLARATION:
+    case AST_VAR_DECL:
         fprintf(ctx->output_file, "    # Variable declaration\n");
         fprintf(ctx->output_file, "    # Allocate memory for variable\n");
         break;
 
-    case AST_ASSIGNMENT:
+    case AST_ASSIGN_STMT:
         fprintf(ctx->output_file, "    # Assignment operation\n");
         fprintf(ctx->output_file, "    movq $100, %%rcx     # Load assignment value\n");
         fprintf(ctx->output_file, "    movq %%rcx, -32(%%rbp) # Store to variable\n");
         break;
 
-    case AST_EXPRESSION:
-        fprintf(ctx->output_file, "    # Expression evaluation\n");
+    case AST_BINARY_EXPR:
+        fprintf(ctx->output_file, "    # Binary expression evaluation\n");
         fprintf(ctx->output_file, "    movq $5, %%rdx       # Load expression operand\n");
         fprintf(ctx->output_file, "    imulq $3, %%rdx      # Multiply by 3\n");
         break;
 
-    case AST_IDENTIFIER:
+    case AST_ID:
         fprintf(ctx->output_file, "    # Identifier reference\n");
-        if (node->value.string_value)
+        if (node->data.string_value)
         {
-            fprintf(ctx->output_file, "    # Variable: %s\n", node->value.string_value);
+            fprintf(ctx->output_file, "    # Variable: %s\n", node->data.string_value);
         }
         break;
 
-    case AST_NUMBER:
-        fprintf(ctx->output_file, "    # Numeric literal: %d\n", node->value.int_value);
-        fprintf(ctx->output_file, "    movq $%d, %%rsi\n", node->value.int_value);
+    case AST_INT_LITERAL:
+        fprintf(ctx->output_file, "    # Integer literal: %d\n", node->data.int_value);
+        fprintf(ctx->output_file, "    movq $%d, %%rsi\n", node->data.int_value);
+        break;
+
+    case AST_FLOAT_LITERAL:
+        fprintf(ctx->output_file, "    # Float literal: %f\n", node->data.float_value);
+        fprintf(ctx->output_file, "    movss $%f, %%xmm0\n", node->data.float_value);
         break;
 
     default:
