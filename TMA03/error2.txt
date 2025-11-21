@@ -1,0 +1,13 @@
+class Student {
+    private int age;
+    public int age;
+}
+
+func main() -> int {
+    Student s;
+    int count;
+    int count;
+    s.age := "hello"; 
+    s.name := 25; 
+    return s.age;
+}
