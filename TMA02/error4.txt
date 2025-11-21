@@ -1,0 +1,5 @@
+func printMessage () => void {  
+    local message : float;  
+    message := 3.14.1;  
+    write (message);  
+}
