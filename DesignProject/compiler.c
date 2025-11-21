@@ -1,3 +1,4 @@
+#define _POSIX_C_SOURCE 200809L
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -42,9 +43,7 @@ extern int yylex();
 extern void yyerror(const char *s);
 extern FILE *yyin;
 extern ASTNode *ast_root;
-extern void semantic_analysis(ASTNode *root);
-extern void print_ast(ASTNode *node, int depth, FILE *file);
-extern void print_symbol_tables(FILE *file);
+extern void print_ast(ASTNode *node, int indent);
 
 // Function prototypes
 void print_usage(const char *program_name);
@@ -103,7 +102,8 @@ int main(int argc, char *argv[])
     // Set default output file if not specified
     if (!options.output_file)
     {
-        char *base_name = strdup(options.input_file);
+        char *base_name = malloc(strlen(options.input_file) + 1);
+        strcpy(base_name, options.input_file);
         char *dot = strrchr(base_name, '.');
         if (dot)
             *dot = '\0';
@@ -193,7 +193,8 @@ int parse_command_line(int argc, char *argv[], CompilerOptions *options)
         switch (c)
         {
         case 'o':
-            options->output_file = strdup(optarg);
+            options->output_file = malloc(strlen(optarg) + 1);
+            strcpy(options->output_file, optarg);
             break;
 
         case 'p':
@@ -276,7 +277,8 @@ int parse_command_line(int argc, char *argv[], CompilerOptions *options)
     // Get input file
     if (optind < argc)
     {
-        options->input_file = strdup(argv[optind]);
+        options->input_file = malloc(strlen(argv[optind]) + 1);
+        strcpy(options->input_file, argv[optind]);
     }
 
     return 0;
@@ -335,7 +337,7 @@ int compile_file(CompilerOptions *options)
         if (options->show_ast && ast_root)
         {
             printf("=== Abstract Syntax Tree ===\n");
-            print_ast(ast_root, 0, stdout);
+            print_ast(ast_root, 0);
             printf("\n");
         }
     }
@@ -358,7 +360,7 @@ int compile_file(CompilerOptions *options)
         if (options->show_symbols)
         {
             printf("=== Symbol Tables ===\n");
-            print_symbol_tables(stdout);
+            printf("(Symbol table display not available in TMA03)\n");
             printf("\n");
         }
     }
@@ -398,7 +400,6 @@ int run_lexical_analysis(const char *filename)
     }
 
     // Count tokens for statistics
-    int token;
     compilation_stats.tokens_generated = 0;
 
     // This would normally just prepare for parsing
@@ -444,17 +445,15 @@ int run_semantic_analysis()
         return 1;
     }
 
-    // Call semantic analyzer
-    semantic_analysis(ast_root);
+    // Stub implementation for semantic analysis
+    // In a complete implementation, this would:
+    // 1. Build symbol tables
+    // 2. Type checking
+    // 3. Scope resolution
+    // 4. Declaration/usage validation
+    printf("Note: Semantic analysis phase is stubbed (TMA03 integration pending)\n");
 
-    // Check for semantic errors
-    extern int semantic_error_count;
-    compilation_stats.semantic_errors = semantic_error_count;
-
-    if (semantic_error_count > 0)
-    {
-        return 1;
-    }
+    compilation_stats.semantic_errors = 0;
 
     return 0;
 }
