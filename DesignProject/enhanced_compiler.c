@@ -310,7 +310,7 @@ void generate_intermediate_code_output(const char *input_file, ASTNode *ast)
 
         fprintf(intermediate_code_file, "\nREGISTER ALLOCATION:\n");
         fprintf(intermediate_code_file, "--------------------\n");
-        print_register_allocation_info(intermediate_code_file);
+        print_register_info_to_file(intermediate_code_file);
 
         fprintf(intermediate_code_file, "\nOPTIMIZATIONS APPLIED:\n");
         fprintf(intermediate_code_file, "----------------------\n");
