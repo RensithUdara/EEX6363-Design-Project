@@ -933,15 +933,43 @@ char *generate_temp_name(CodeGenContext *ctx)
 // Assembly prologue and epilogue
 void emit_assembly_prologue(CodeGenContext *ctx)
 {
+    fprintf(ctx->output_file, "# ======================================\n");
     fprintf(ctx->output_file, "# Generated Assembly Code\n");
     fprintf(ctx->output_file, "# Compiler Design Project - Code Generation Phase\n");
-    fprintf(ctx->output_file, ".text\n");
-    fprintf(ctx->output_file, ".globl main\n\n");
+    fprintf(ctx->output_file, "# Target Architecture: x86-64\n");
+    fprintf(ctx->output_file, "# Assembly Syntax: AT&T\n");
+    fprintf(ctx->output_file, "# Register Allocation: %s\n",
+            ctx->register_allocator ? (ctx->register_allocator->strategy == ALLOCATION_NAIVE ? "Naive" : ctx->register_allocator->strategy == ALLOCATION_LRU          ? "LRU"
+                                                                                                     : ctx->register_allocator->strategy == ALLOCATION_OPTIMAL        ? "Optimal"
+                                                                                                     : ctx->register_allocator->strategy == ALLOCATION_GRAPH_COLORING ? "Graph Coloring"
+                                                                                                                                                                      : "Unknown")
+                                    : "Default");
+    fprintf(ctx->output_file, "# ======================================\n\n");
+
+    // Assembly sections
+    fprintf(ctx->output_file, ".section .data\n");
+    fprintf(ctx->output_file, "    # Global variables and constants\n");
+    fprintf(ctx->output_file, "    .align 8\n\n");
+
+    fprintf(ctx->output_file, ".section .text\n");
+    fprintf(ctx->output_file, ".globl main\n");
+    fprintf(ctx->output_file, ".type main, @function\n\n");
 }
 
 void emit_assembly_epilogue(CodeGenContext *ctx)
 {
-    fprintf(ctx->output_file, "\n# End of generated code\n");
+    fprintf(ctx->output_file, "\n# ======================================\n");
+    fprintf(ctx->output_file, "# Code Generation Statistics\n");
+    fprintf(ctx->output_file, "# Instructions generated: %d\n", instructions_generated);
+    fprintf(ctx->output_file, "# Registers spilled: %d\n", registers_spilled);
+    fprintf(ctx->output_file, "# Optimization passes: %d\n", optimization_passes);
+    if (ctx->memory_layout.total_size > 0)
+    {
+        fprintf(ctx->output_file, "# Memory layout size: %d bytes\n", ctx->memory_layout.total_size);
+    }
+    fprintf(ctx->output_file, "# ======================================\n");
+    fprintf(ctx->output_file, "\n.section .note.GNU-stack,\"\",@progbits\n");
+    fprintf(ctx->output_file, "# End of generated code\n");
 }
 
 void emit_function_prologue(CodeGenContext *ctx, Symbol *func)
