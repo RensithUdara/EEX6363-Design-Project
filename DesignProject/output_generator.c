@@ -136,63 +136,64 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
 }
 
 // Print register allocation information
-void print_register_info_to_file(FILE *output) {
+void print_register_info_to_file(FILE *output)
 {
-    if (!output)
-        return;
-
-    fprintf(output, "Register Allocation Strategy: Graph Coloring\n");
-    fprintf(output, "Available Registers: 16 (x86-64)\n");
-    fprintf(output, "Registers Used: 8\n");
-    fprintf(output, "Spill Operations: 2\n");
-    fprintf(output, "\nRegister Assignments:\n");
-    fprintf(output, "- %rax: Return values, arithmetic operations\n");
-    fprintf(output, "- %rbx: Base register, persistent variables\n");
-    fprintf(output, "- %rcx: Counter, loop variables\n");
-    fprintf(output, "- %rdx: Data operations, arithmetic\n");
-    fprintf(output, "- %rsi: Source index, function arguments\n");
-    fprintf(output, "- %rdi: Destination index, function arguments\n");
-    fprintf(output, "- %r8-%r15: Additional variable storage\n");
-}
-
-// Print detailed symbol tables
-void print_detailed_symbol_tables(FILE *output)
-{
-    if (!output)
-        return;
-
-    fprintf(output, "GLOBAL SCOPE:\n");
-    fprintf(output, "+---------------+----------+--------+----------+---------+--------+\n");
-    fprintf(output, "| Symbol Name   | Type     | Line   | Scope    | Address | Size   |\n");
-    fprintf(output, "+---------------+----------+--------+----------+---------+--------+\n");
-
-    // This would normally iterate through actual symbol table
-    // For now, print a sample based on what would be found
-    if (global_scope)
     {
-        print_symbol_table(global_scope, output, 0);
-    }
-    else
-    {
-        fprintf(output, "| (No symbols)  | -        | -      | Global   | -       | -      |\n");
+        if (!output)
+            return;
+
+        fprintf(output, "Register Allocation Strategy: Graph Coloring\n");
+        fprintf(output, "Available Registers: 16 (x86-64)\n");
+        fprintf(output, "Registers Used: 8\n");
+        fprintf(output, "Spill Operations: 2\n");
+        fprintf(output, "\nRegister Assignments:\n");
+        fprintf(output, "- %rax: Return values, arithmetic operations\n");
+        fprintf(output, "- %rbx: Base register, persistent variables\n");
+        fprintf(output, "- %rcx: Counter, loop variables\n");
+        fprintf(output, "- %rdx: Data operations, arithmetic\n");
+        fprintf(output, "- %rsi: Source index, function arguments\n");
+        fprintf(output, "- %rdi: Destination index, function arguments\n");
+        fprintf(output, "- %r8-%r15: Additional variable storage\n");
     }
 
-    fprintf(output, "+---------------+----------+--------+----------+---------+--------+\n");
-}
-
-// Count total symbols across all scopes
-int count_total_symbols(void)
-{
-    if (global_scope)
+    // Print detailed symbol tables
+    void print_detailed_symbol_tables(FILE * output)
     {
-        return count_symbols_recursive(global_scope);
-    }
-    return 0;
-}
+        if (!output)
+            return;
 
-// Get syntax error count (placeholder)
-int get_syntax_error_count(void)
-{
-    // This would normally track syntax errors during parsing
-    return 0; // Assume no syntax errors for successful compilation
-}
+        fprintf(output, "GLOBAL SCOPE:\n");
+        fprintf(output, "+---------------+----------+--------+----------+---------+--------+\n");
+        fprintf(output, "| Symbol Name   | Type     | Line   | Scope    | Address | Size   |\n");
+        fprintf(output, "+---------------+----------+--------+----------+---------+--------+\n");
+
+        // This would normally iterate through actual symbol table
+        // For now, print a sample based on what would be found
+        if (global_scope)
+        {
+            print_symbol_table(global_scope, output, 0);
+        }
+        else
+        {
+            fprintf(output, "| (No symbols)  | -        | -      | Global   | -       | -      |\n");
+        }
+
+        fprintf(output, "+---------------+----------+--------+----------+---------+--------+\n");
+    }
+
+    // Count total symbols across all scopes
+    int count_total_symbols(void)
+    {
+        if (global_scope)
+        {
+            return count_symbols_recursive(global_scope);
+        }
+        return 0;
+    }
+
+    // Get syntax error count (placeholder)
+    int get_syntax_error_count(void)
+    {
+        // This would normally track syntax errors during parsing
+        return 0; // Assume no syntax errors for successful compilation
+    }
