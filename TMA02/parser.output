@@ -1,0 +1,2969 @@
+Terminals unused in grammar
+
+    CONSTRUCT
+    ERROR
+
+
+Grammar
+
+    0 $accept: prog $end
+
+    1 prog: classOrImplOrFuncList
+
+    2 classOrImplOrFuncList: classOrImplOrFunc classOrImplOrFuncList
+    3                      | ε
+
+    4 classOrImplOrFunc: classDecl
+    5                  | implDef
+    6                  | funcDef
+
+    7 classDecl: CLASS ID inheritanceOpt LBRACE visibilityMemberList RBRACE SEMI
+
+    8 inheritanceOpt: ISA ID idList
+    9               | ε
+
+   10 idList: COMMA ID idList
+   11       | ε
+
+   12 implDef: IMPLEMENT ID LBRACE funcDefList RBRACE
+
+   13 funcDefList: funcDef funcDefList
+   14            | ε
+
+   15 funcDef: funcHead funcBody
+
+   16 funcHead: FUNC ID LPAREN fParams RPAREN ARROW returnType
+   17         | CONSTRUCTOR LPAREN fParams RPAREN
+
+   18 funcBody: LBRACE varDeclOrStmtList RBRACE
+
+   19 visibility: PUBLIC
+   20           | PRIVATE
+
+   21 visibilityMemberList: visibility memberDecl visibilityMemberList
+   22                     | ε
+
+   23 memberDecl: funcDecl
+   24           | attributeDecl
+
+   25 funcDecl: funcHead SEMI
+
+   26 attributeDecl: ATTRIBUTE varDecl
+
+   27 localVarDecl: LOCAL varDecl
+
+   28 varDecl: ID COLON type arraySizeList SEMI
+
+   29 arraySizeList: arraySize arraySizeList
+   30              | ε
+
+   31 arraySize: LBRACKET INTLIT RBRACKET
+   32          | LBRACKET RBRACKET
+
+   33 varDeclOrStmtList: localVarDeclOrStmt varDeclOrStmtList
+   34                  | ε
+
+   35 localVarDeclOrStmt: localVarDecl
+   36                   | statement
+
+   37 statement: simpleStmt SEMI
+   38          | ifStmt SEMI
+   39          | whileStmt SEMI
+
+   40 simpleStmt: idStmt
+   41           | selfStmt
+   42           | READ LPAREN variable RPAREN
+   43           | WRITE LPAREN expr RPAREN
+   44           | RETURN LPAREN expr RPAREN
+
+   45 idStmt: ID idStmtTail
+
+   46 idStmtTail: ASSIGN expr
+   47           | LBRACKET expr RBRACKET idArrayTail
+   48           | LPAREN aParams RPAREN
+   49           | DOT ID idMemberTail
+
+   50 idArrayTail: ASSIGN expr
+   51            | LBRACKET expr RBRACKET ASSIGN expr
+
+   52 idMemberTail: ASSIGN expr
+   53             | LBRACKET expr RBRACKET ASSIGN expr
+   54             | LPAREN aParams RPAREN
+
+   55 selfStmt: SELF DOT ID selfMemberTail
+
+   56 selfMemberTail: ASSIGN expr
+   57               | LBRACKET expr RBRACKET ASSIGN expr
+   58               | LPAREN aParams RPAREN
+
+   59 ifStmt: IF LPAREN expr RPAREN THEN statBlock elseOpt
+
+   60 elseOpt: ELSE statBlock
+   61        | ε
+
+   62 whileStmt: WHILE LPAREN expr RPAREN statBlock
+
+   63 statBlock: LBRACE statementList RBRACE
+   64          | statement
+   65          | ε
+
+   66 statementList: statement statementList
+   67              | ε
+
+   68 variable: ID variableTail
+   69         | SELF DOT ID variableTail
+
+   70 variableTail: LBRACKET expr RBRACKET variableTail
+   71             | DOT ID variableTail
+   72             | ε
+
+   73 expr: relExpr
+
+   74 relExpr: arithExpr relExprPrime
+
+   75 relExprPrime: relOp arithExpr
+   76             | ε
+
+   77 relOp: EQ
+   78      | NE
+   79      | LT
+   80      | GT
+   81      | LE
+   82      | GE
+
+   83 arithExpr: term arithExprPrime
+
+   84 arithExprPrime: addOp term arithExprPrime
+   85               | ε
+
+   86 addOp: PLUS
+   87      | MINUS
+   88      | OR
+
+   89 term: factor termPrime
+
+   90 termPrime: multOp factor termPrime
+   91          | ε
+
+   92 multOp: MULT
+   93       | DIV
+   94       | AND
+
+   95 factor: INTLIT
+   96       | FLOATLIT
+   97       | LPAREN expr RPAREN
+   98       | NOT factor
+   99       | sign factor
+  100       | ID factorTail
+  101       | SELF factorSelfTail
+
+  102 factorTail: LPAREN aParams RPAREN
+  103           | LBRACKET expr RBRACKET
+  104           | DOT ID factorMemberTail
+  105           | ε
+
+  106 factorMemberTail: LPAREN aParams RPAREN
+  107                 | LBRACKET expr RBRACKET
+  108                 | ε
+
+  109 factorSelfTail: DOT ID factorMemberTail
+
+  110 sign: PLUS
+  111     | MINUS
+
+  112 type: INTEGER_KW
+  113     | FLOAT_KW
+  114     | ID
+
+  115 returnType: type
+  116           | VOID
+
+  117 fParams: ID COLON type arraySizeList fParamsTail
+  118        | ε
+
+  119 fParamsTail: COMMA ID COLON type arraySizeList fParamsTail
+  120            | ε
+
+  121 aParams: expr aParamsTail
+  122        | ε
+
+  123 aParamsTail: COMMA expr aParamsTail
+  124            | ε
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    IF (258) 59
+    ELSE (259) 60
+    WHILE (260) 62
+    THEN (261) 59
+    READ (262) 42
+    WRITE (263) 43
+    RETURN (264) 44
+    INTEGER_KW <data_type> (265) 112
+    FLOAT_KW <data_type> (266) 113
+    VOID <data_type> (267) 116
+    SELF (268) 55 69 101
+    CONSTRUCT (269)
+    CONSTRUCTOR (270) 17
+    ASSIGN (271) 46 50 51 52 53 56 57
+    ARROW (272) 16
+    EQ (273) 77
+    NE (274) 78
+    LE (275) 81
+    GE (276) 82
+    LT (277) 79
+    GT (278) 80
+    PLUS (279) 86 110
+    MINUS (280) 87 111
+    MULT (281) 92
+    DIV (282) 93
+    AND (283) 94
+    OR (284) 88
+    NOT (285) 98
+    LPAREN (286) 16 17 42 43 44 48 54 58 59 62 97 102 106
+    RPAREN (287) 16 17 42 43 44 48 54 58 59 62 97 102 106
+    LBRACE (288) 7 12 18 63
+    RBRACE (289) 7 12 18 63
+    LBRACKET (290) 31 32 47 51 53 57 70 103 107
+    RBRACKET (291) 31 32 47 51 53 57 70 103 107
+    SEMI (292) 7 25 28 37 38 39
+    COMMA (293) 10 119 123
+    DOT (294) 49 55 69 71 104 109
+    COLON (295) 28 117 119
+    CLASS (296) 7
+    FUNC (297) 16
+    IMPLEMENT (298) 12
+    ISA (299) 8
+    PRIVATE (300) 20
+    PUBLIC (301) 19
+    LOCAL (302) 27
+    ATTRIBUTE (303) 26
+    ID <str_val> (304) 7 8 10 12 16 28 45 49 55 68 69 71 100 104 109 114 117 119
+    INTLIT <int_val> (305) 31 95
+    FLOATLIT <float_val> (306) 96
+    ERROR (307)
+
+
+Nonterminals, with rules where they appear
+
+    $accept (53)
+        on left: 0
+    prog <ast_node> (54)
+        on left: 1
+        on right: 0
+    classOrImplOrFuncList <ast_node> (55)
+        on left: 2 3
+        on right: 1 2
+    classOrImplOrFunc <ast_node> (56)
+        on left: 4 5 6
+        on right: 2
+    classDecl <ast_node> (57)
+        on left: 7
+        on right: 4
+    inheritanceOpt <ast_node> (58)
+        on left: 8 9
+        on right: 7
+    idList <ast_node> (59)
+        on left: 10 11
+        on right: 8 10
+    implDef <ast_node> (60)
+        on left: 12
+        on right: 5
+    funcDefList <ast_node> (61)
+        on left: 13 14
+        on right: 12 13
+    funcDef <ast_node> (62)
+        on left: 15
+        on right: 6 13
+    funcHead <ast_node> (63)
+        on left: 16 17
+        on right: 15 25
+    funcBody <ast_node> (64)
+        on left: 18
+        on right: 15
+    visibility <visibility_val> (65)
+        on left: 19 20
+        on right: 21
+    visibilityMemberList <ast_node> (66)
+        on left: 21 22
+        on right: 7 21
+    memberDecl <ast_node> (67)
+        on left: 23 24
+        on right: 21
+    funcDecl <ast_node> (68)
+        on left: 25
+        on right: 23
+    attributeDecl <ast_node> (69)
+        on left: 26
+        on right: 24
+    localVarDecl <ast_node> (70)
+        on left: 27
+        on right: 35
+    varDecl <ast_node> (71)
+        on left: 28
+        on right: 26 27
+    arraySizeList <ast_node> (72)
+        on left: 29 30
+        on right: 28 29 117 119
+    arraySize <ast_node> (73)
+        on left: 31 32
+        on right: 29
+    varDeclOrStmtList <ast_node> (74)
+        on left: 33 34
+        on right: 18 33
+    localVarDeclOrStmt <ast_node> (75)
+        on left: 35 36
+        on right: 33
+    statement <ast_node> (76)
+        on left: 37 38 39
+        on right: 36 64 66
+    simpleStmt <ast_node> (77)
+        on left: 40 41 42 43 44
+        on right: 37
+    idStmt <ast_node> (78)
+        on left: 45
+        on right: 40
+    idStmtTail <ast_node> (79)
+        on left: 46 47 48 49
+        on right: 45
+    idArrayTail <ast_node> (80)
+        on left: 50 51
+        on right: 47
+    idMemberTail <ast_node> (81)
+        on left: 52 53 54
+        on right: 49
+    selfStmt <ast_node> (82)
+        on left: 55
+        on right: 41
+    selfMemberTail <ast_node> (83)
+        on left: 56 57 58
+        on right: 55
+    ifStmt <ast_node> (84)
+        on left: 59
+        on right: 38
+    elseOpt <ast_node> (85)
+        on left: 60 61
+        on right: 59
+    whileStmt <ast_node> (86)
+        on left: 62
+        on right: 39
+    statBlock <ast_node> (87)
+        on left: 63 64 65
+        on right: 59 60 62
+    statementList <ast_node> (88)
+        on left: 66 67
+        on right: 63 66
+    variable <ast_node> (89)
+        on left: 68 69
+        on right: 42
+    variableTail <ast_node> (90)
+        on left: 70 71 72
+        on right: 68 69 70 71
+    expr <ast_node> (91)
+        on left: 73
+        on right: 43 44 46 47 50 51 52 53 56 57 59 62 70 97 103 107 121 123
+    relExpr <ast_node> (92)
+        on left: 74
+        on right: 73
+    relExprPrime <ast_node> (93)
+        on left: 75 76
+        on right: 74
+    relOp <ast_node> (94)
+        on left: 77 78 79 80 81 82
+        on right: 75
+    arithExpr <ast_node> (95)
+        on left: 83
+        on right: 74 75
+    arithExprPrime <ast_node> (96)
+        on left: 84 85
+        on right: 83 84
+    addOp <ast_node> (97)
+        on left: 86 87 88
+        on right: 84
+    term <ast_node> (98)
+        on left: 89
+        on right: 83 84
+    termPrime <ast_node> (99)
+        on left: 90 91
+        on right: 89 90
+    multOp <ast_node> (100)
+        on left: 92 93 94
+        on right: 90
+    factor <ast_node> (101)
+        on left: 95 96 97 98 99 100 101
+        on right: 89 90 98 99
+    factorTail <ast_node> (102)
+        on left: 102 103 104 105
+        on right: 100
+    factorMemberTail <ast_node> (103)
+        on left: 106 107 108
+        on right: 104 109
+    factorSelfTail <ast_node> (104)
+        on left: 109
+        on right: 101
+    sign <ast_node> (105)
+        on left: 110 111
+        on right: 99
+    type <ast_node> (106)
+        on left: 112 113 114
+        on right: 28 115 117 119
+    returnType <ast_node> (107)
+        on left: 115 116
+        on right: 16
+    fParams <ast_node> (108)
+        on left: 117 118
+        on right: 16 17
+    fParamsTail <ast_node> (109)
+        on left: 119 120
+        on right: 117 119
+    aParams <ast_node> (110)
+        on left: 121 122
+        on right: 48 54 58 102 106
+    aParamsTail <ast_node> (111)
+        on left: 123 124
+        on right: 121 123
+
+
+State 0
+
+    0 $accept: • prog $end
+
+    CONSTRUCTOR  shift, and go to state 1
+    CLASS        shift, and go to state 2
+    FUNC         shift, and go to state 3
+    IMPLEMENT    shift, and go to state 4
+
+    $default  reduce using rule 3 (classOrImplOrFuncList)
+
+    prog                   go to state 5
+    classOrImplOrFuncList  go to state 6
+    classOrImplOrFunc      go to state 7
+    classDecl              go to state 8
+    implDef                go to state 9
+    funcDef                go to state 10
+    funcHead               go to state 11
+
+
+State 1
+
+   17 funcHead: CONSTRUCTOR • LPAREN fParams RPAREN
+
+    LPAREN  shift, and go to state 12
+
+
+State 2
+
+    7 classDecl: CLASS • ID inheritanceOpt LBRACE visibilityMemberList RBRACE SEMI
+
+    ID  shift, and go to state 13
+
+
+State 3
+
+   16 funcHead: FUNC • ID LPAREN fParams RPAREN ARROW returnType
+
+    ID  shift, and go to state 14
+
+
+State 4
+
+   12 implDef: IMPLEMENT • ID LBRACE funcDefList RBRACE
+
+    ID  shift, and go to state 15
+
+
+State 5
+
+    0 $accept: prog • $end
+
+    $end  shift, and go to state 16
+
+
+State 6
+
+    1 prog: classOrImplOrFuncList •
+
+    $default  reduce using rule 1 (prog)
+
+
+State 7
+
+    2 classOrImplOrFuncList: classOrImplOrFunc • classOrImplOrFuncList
+
+    CONSTRUCTOR  shift, and go to state 1
+    CLASS        shift, and go to state 2
+    FUNC         shift, and go to state 3
+    IMPLEMENT    shift, and go to state 4
+
+    $default  reduce using rule 3 (classOrImplOrFuncList)
+
+    classOrImplOrFuncList  go to state 17
+    classOrImplOrFunc      go to state 7
+    classDecl              go to state 8
+    implDef                go to state 9
+    funcDef                go to state 10
+    funcHead               go to state 11
+
+
+State 8
+
+    4 classOrImplOrFunc: classDecl •
+
+    $default  reduce using rule 4 (classOrImplOrFunc)
+
+
+State 9
+
+    5 classOrImplOrFunc: implDef •
+
+    $default  reduce using rule 5 (classOrImplOrFunc)
+
+
+State 10
+
+    6 classOrImplOrFunc: funcDef •
+
+    $default  reduce using rule 6 (classOrImplOrFunc)
+
+
+State 11
+
+   15 funcDef: funcHead • funcBody
+
+    LBRACE  shift, and go to state 18
+
+    funcBody  go to state 19
+
+
+State 12
+
+   17 funcHead: CONSTRUCTOR LPAREN • fParams RPAREN
+
+    ID  shift, and go to state 20
+
+    $default  reduce using rule 118 (fParams)
+
+    fParams  go to state 21
+
+
+State 13
+
+    7 classDecl: CLASS ID • inheritanceOpt LBRACE visibilityMemberList RBRACE SEMI
+
+    ISA  shift, and go to state 22
+
+    $default  reduce using rule 9 (inheritanceOpt)
+
+    inheritanceOpt  go to state 23
+
+
+State 14
+
+   16 funcHead: FUNC ID • LPAREN fParams RPAREN ARROW returnType
+
+    LPAREN  shift, and go to state 24
+
+
+State 15
+
+   12 implDef: IMPLEMENT ID • LBRACE funcDefList RBRACE
+
+    LBRACE  shift, and go to state 25
+
+
+State 16
+
+    0 $accept: prog $end •
+
+    $default  accept
+
+
+State 17
+
+    2 classOrImplOrFuncList: classOrImplOrFunc classOrImplOrFuncList •
+
+    $default  reduce using rule 2 (classOrImplOrFuncList)
+
+
+State 18
+
+   18 funcBody: LBRACE • varDeclOrStmtList RBRACE
+
+    IF      shift, and go to state 26
+    WHILE   shift, and go to state 27
+    READ    shift, and go to state 28
+    WRITE   shift, and go to state 29
+    RETURN  shift, and go to state 30
+    SELF    shift, and go to state 31
+    LOCAL   shift, and go to state 32
+    ID      shift, and go to state 33
+
+    $default  reduce using rule 34 (varDeclOrStmtList)
+
+    localVarDecl        go to state 34
+    varDeclOrStmtList   go to state 35
+    localVarDeclOrStmt  go to state 36
+    statement           go to state 37
+    simpleStmt          go to state 38
+    idStmt              go to state 39
+    selfStmt            go to state 40
+    ifStmt              go to state 41
+    whileStmt           go to state 42
+
+
+State 19
+
+   15 funcDef: funcHead funcBody •
+
+    $default  reduce using rule 15 (funcDef)
+
+
+State 20
+
+  117 fParams: ID • COLON type arraySizeList fParamsTail
+
+    COLON  shift, and go to state 43
+
+
+State 21
+
+   17 funcHead: CONSTRUCTOR LPAREN fParams • RPAREN
+
+    RPAREN  shift, and go to state 44
+
+
+State 22
+
+    8 inheritanceOpt: ISA • ID idList
+
+    ID  shift, and go to state 45
+
+
+State 23
+
+    7 classDecl: CLASS ID inheritanceOpt • LBRACE visibilityMemberList RBRACE SEMI
+
+    LBRACE  shift, and go to state 46
+
+
+State 24
+
+   16 funcHead: FUNC ID LPAREN • fParams RPAREN ARROW returnType
+
+    ID  shift, and go to state 20
+
+    $default  reduce using rule 118 (fParams)
+
+    fParams  go to state 47
+
+
+State 25
+
+   12 implDef: IMPLEMENT ID LBRACE • funcDefList RBRACE
+
+    CONSTRUCTOR  shift, and go to state 1
+    FUNC         shift, and go to state 3
+
+    $default  reduce using rule 14 (funcDefList)
+
+    funcDefList  go to state 48
+    funcDef      go to state 49
+    funcHead     go to state 11
+
+
+State 26
+
+   59 ifStmt: IF • LPAREN expr RPAREN THEN statBlock elseOpt
+
+    LPAREN  shift, and go to state 50
+
+
+State 27
+
+   62 whileStmt: WHILE • LPAREN expr RPAREN statBlock
+
+    LPAREN  shift, and go to state 51
+
+
+State 28
+
+   42 simpleStmt: READ • LPAREN variable RPAREN
+
+    LPAREN  shift, and go to state 52
+
+
+State 29
+
+   43 simpleStmt: WRITE • LPAREN expr RPAREN
+
+    LPAREN  shift, and go to state 53
+
+
+State 30
+
+   44 simpleStmt: RETURN • LPAREN expr RPAREN
+
+    LPAREN  shift, and go to state 54
+
+
+State 31
+
+   55 selfStmt: SELF • DOT ID selfMemberTail
+
+    DOT  shift, and go to state 55
+
+
+State 32
+
+   27 localVarDecl: LOCAL • varDecl
+
+    ID  shift, and go to state 56
+
+    varDecl  go to state 57
+
+
+State 33
+
+   45 idStmt: ID • idStmtTail
+
+    ASSIGN    shift, and go to state 58
+    LPAREN    shift, and go to state 59
+    LBRACKET  shift, and go to state 60
+    DOT       shift, and go to state 61
+
+    idStmtTail  go to state 62
+
+
+State 34
+
+   35 localVarDeclOrStmt: localVarDecl •
+
+    $default  reduce using rule 35 (localVarDeclOrStmt)
+
+
+State 35
+
+   18 funcBody: LBRACE varDeclOrStmtList • RBRACE
+
+    RBRACE  shift, and go to state 63
+
+
+State 36
+
+   33 varDeclOrStmtList: localVarDeclOrStmt • varDeclOrStmtList
+
+    IF      shift, and go to state 26
+    WHILE   shift, and go to state 27
+    READ    shift, and go to state 28
+    WRITE   shift, and go to state 29
+    RETURN  shift, and go to state 30
+    SELF    shift, and go to state 31
+    LOCAL   shift, and go to state 32
+    ID      shift, and go to state 33
+
+    $default  reduce using rule 34 (varDeclOrStmtList)
+
+    localVarDecl        go to state 34
+    varDeclOrStmtList   go to state 64
+    localVarDeclOrStmt  go to state 36
+    statement           go to state 37
+    simpleStmt          go to state 38
+    idStmt              go to state 39
+    selfStmt            go to state 40
+    ifStmt              go to state 41
+    whileStmt           go to state 42
+
+
+State 37
+
+   36 localVarDeclOrStmt: statement •
+
+    $default  reduce using rule 36 (localVarDeclOrStmt)
+
+
+State 38
+
+   37 statement: simpleStmt • SEMI
+
+    SEMI  shift, and go to state 65
+
+
+State 39
+
+   40 simpleStmt: idStmt •
+
+    $default  reduce using rule 40 (simpleStmt)
+
+
+State 40
+
+   41 simpleStmt: selfStmt •
+
+    $default  reduce using rule 41 (simpleStmt)
+
+
+State 41
+
+   38 statement: ifStmt • SEMI
+
+    SEMI  shift, and go to state 66
+
+
+State 42
+
+   39 statement: whileStmt • SEMI
+
+    SEMI  shift, and go to state 67
+
+
+State 43
+
+  117 fParams: ID COLON • type arraySizeList fParamsTail
+
+    INTEGER_KW  shift, and go to state 68
+    FLOAT_KW    shift, and go to state 69
+    ID          shift, and go to state 70
+
+    type  go to state 71
+
+
+State 44
+
+   17 funcHead: CONSTRUCTOR LPAREN fParams RPAREN •
+
+    $default  reduce using rule 17 (funcHead)
+
+
+State 45
+
+    8 inheritanceOpt: ISA ID • idList
+
+    COMMA  shift, and go to state 72
+
+    $default  reduce using rule 11 (idList)
+
+    idList  go to state 73
+
+
+State 46
+
+    7 classDecl: CLASS ID inheritanceOpt LBRACE • visibilityMemberList RBRACE SEMI
+
+    PRIVATE  shift, and go to state 74
+    PUBLIC   shift, and go to state 75
+
+    $default  reduce using rule 22 (visibilityMemberList)
+
+    visibility            go to state 76
+    visibilityMemberList  go to state 77
+
+
+State 47
+
+   16 funcHead: FUNC ID LPAREN fParams • RPAREN ARROW returnType
+
+    RPAREN  shift, and go to state 78
+
+
+State 48
+
+   12 implDef: IMPLEMENT ID LBRACE funcDefList • RBRACE
+
+    RBRACE  shift, and go to state 79
+
+
+State 49
+
+   13 funcDefList: funcDef • funcDefList
+
+    CONSTRUCTOR  shift, and go to state 1
+    FUNC         shift, and go to state 3
+
+    $default  reduce using rule 14 (funcDefList)
+
+    funcDefList  go to state 80
+    funcDef      go to state 49
+    funcHead     go to state 11
+
+
+State 50
+
+   59 ifStmt: IF LPAREN • expr RPAREN THEN statBlock elseOpt
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 89
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 51
+
+   62 whileStmt: WHILE LPAREN • expr RPAREN statBlock
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 95
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 52
+
+   42 simpleStmt: READ LPAREN • variable RPAREN
+
+    SELF  shift, and go to state 96
+    ID    shift, and go to state 97
+
+    variable  go to state 98
+
+
+State 53
+
+   43 simpleStmt: WRITE LPAREN • expr RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 99
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 54
+
+   44 simpleStmt: RETURN LPAREN • expr RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 100
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 55
+
+   55 selfStmt: SELF DOT • ID selfMemberTail
+
+    ID  shift, and go to state 101
+
+
+State 56
+
+   28 varDecl: ID • COLON type arraySizeList SEMI
+
+    COLON  shift, and go to state 102
+
+
+State 57
+
+   27 localVarDecl: LOCAL varDecl •
+
+    $default  reduce using rule 27 (localVarDecl)
+
+
+State 58
+
+   46 idStmtTail: ASSIGN • expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 103
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 59
+
+   48 idStmtTail: LPAREN • aParams RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    $default  reduce using rule 122 (aParams)
+
+    expr       go to state 104
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+    aParams    go to state 105
+
+
+State 60
+
+   47 idStmtTail: LBRACKET • expr RBRACKET idArrayTail
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 106
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 61
+
+   49 idStmtTail: DOT • ID idMemberTail
+
+    ID  shift, and go to state 107
+
+
+State 62
+
+   45 idStmt: ID idStmtTail •
+
+    $default  reduce using rule 45 (idStmt)
+
+
+State 63
+
+   18 funcBody: LBRACE varDeclOrStmtList RBRACE •
+
+    $default  reduce using rule 18 (funcBody)
+
+
+State 64
+
+   33 varDeclOrStmtList: localVarDeclOrStmt varDeclOrStmtList •
+
+    $default  reduce using rule 33 (varDeclOrStmtList)
+
+
+State 65
+
+   37 statement: simpleStmt SEMI •
+
+    $default  reduce using rule 37 (statement)
+
+
+State 66
+
+   38 statement: ifStmt SEMI •
+
+    $default  reduce using rule 38 (statement)
+
+
+State 67
+
+   39 statement: whileStmt SEMI •
+
+    $default  reduce using rule 39 (statement)
+
+
+State 68
+
+  112 type: INTEGER_KW •
+
+    $default  reduce using rule 112 (type)
+
+
+State 69
+
+  113 type: FLOAT_KW •
+
+    $default  reduce using rule 113 (type)
+
+
+State 70
+
+  114 type: ID •
+
+    $default  reduce using rule 114 (type)
+
+
+State 71
+
+  117 fParams: ID COLON type • arraySizeList fParamsTail
+
+    LBRACKET  shift, and go to state 108
+
+    $default  reduce using rule 30 (arraySizeList)
+
+    arraySizeList  go to state 109
+    arraySize      go to state 110
+
+
+State 72
+
+   10 idList: COMMA • ID idList
+
+    ID  shift, and go to state 111
+
+
+State 73
+
+    8 inheritanceOpt: ISA ID idList •
+
+    $default  reduce using rule 8 (inheritanceOpt)
+
+
+State 74
+
+   20 visibility: PRIVATE •
+
+    $default  reduce using rule 20 (visibility)
+
+
+State 75
+
+   19 visibility: PUBLIC •
+
+    $default  reduce using rule 19 (visibility)
+
+
+State 76
+
+   21 visibilityMemberList: visibility • memberDecl visibilityMemberList
+
+    CONSTRUCTOR  shift, and go to state 1
+    FUNC         shift, and go to state 3
+    ATTRIBUTE    shift, and go to state 112
+
+    funcHead       go to state 113
+    memberDecl     go to state 114
+    funcDecl       go to state 115
+    attributeDecl  go to state 116
+
+
+State 77
+
+    7 classDecl: CLASS ID inheritanceOpt LBRACE visibilityMemberList • RBRACE SEMI
+
+    RBRACE  shift, and go to state 117
+
+
+State 78
+
+   16 funcHead: FUNC ID LPAREN fParams RPAREN • ARROW returnType
+
+    ARROW  shift, and go to state 118
+
+
+State 79
+
+   12 implDef: IMPLEMENT ID LBRACE funcDefList RBRACE •
+
+    $default  reduce using rule 12 (implDef)
+
+
+State 80
+
+   13 funcDefList: funcDef funcDefList •
+
+    $default  reduce using rule 13 (funcDefList)
+
+
+State 81
+
+  101 factor: SELF • factorSelfTail
+
+    DOT  shift, and go to state 119
+
+    factorSelfTail  go to state 120
+
+
+State 82
+
+  110 sign: PLUS •
+
+    $default  reduce using rule 110 (sign)
+
+
+State 83
+
+  111 sign: MINUS •
+
+    $default  reduce using rule 111 (sign)
+
+
+State 84
+
+   98 factor: NOT • factor
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    factor  go to state 121
+    sign    go to state 94
+
+
+State 85
+
+   97 factor: LPAREN • expr RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 122
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 86
+
+  100 factor: ID • factorTail
+
+    LPAREN    shift, and go to state 123
+    LBRACKET  shift, and go to state 124
+    DOT       shift, and go to state 125
+
+    $default  reduce using rule 105 (factorTail)
+
+    factorTail  go to state 126
+
+
+State 87
+
+   95 factor: INTLIT •
+
+    $default  reduce using rule 95 (factor)
+
+
+State 88
+
+   96 factor: FLOATLIT •
+
+    $default  reduce using rule 96 (factor)
+
+
+State 89
+
+   59 ifStmt: IF LPAREN expr • RPAREN THEN statBlock elseOpt
+
+    RPAREN  shift, and go to state 127
+
+
+State 90
+
+   73 expr: relExpr •
+
+    $default  reduce using rule 73 (expr)
+
+
+State 91
+
+   74 relExpr: arithExpr • relExprPrime
+
+    EQ  shift, and go to state 128
+    NE  shift, and go to state 129
+    LE  shift, and go to state 130
+    GE  shift, and go to state 131
+    LT  shift, and go to state 132
+    GT  shift, and go to state 133
+
+    $default  reduce using rule 76 (relExprPrime)
+
+    relExprPrime  go to state 134
+    relOp         go to state 135
+
+
+State 92
+
+   83 arithExpr: term • arithExprPrime
+
+    PLUS   shift, and go to state 136
+    MINUS  shift, and go to state 137
+    OR     shift, and go to state 138
+
+    $default  reduce using rule 85 (arithExprPrime)
+
+    arithExprPrime  go to state 139
+    addOp           go to state 140
+
+
+State 93
+
+   89 term: factor • termPrime
+
+    MULT  shift, and go to state 141
+    DIV   shift, and go to state 142
+    AND   shift, and go to state 143
+
+    $default  reduce using rule 91 (termPrime)
+
+    termPrime  go to state 144
+    multOp     go to state 145
+
+
+State 94
+
+   99 factor: sign • factor
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    factor  go to state 146
+    sign    go to state 94
+
+
+State 95
+
+   62 whileStmt: WHILE LPAREN expr • RPAREN statBlock
+
+    RPAREN  shift, and go to state 147
+
+
+State 96
+
+   69 variable: SELF • DOT ID variableTail
+
+    DOT  shift, and go to state 148
+
+
+State 97
+
+   68 variable: ID • variableTail
+
+    LBRACKET  shift, and go to state 149
+    DOT       shift, and go to state 150
+
+    $default  reduce using rule 72 (variableTail)
+
+    variableTail  go to state 151
+
+
+State 98
+
+   42 simpleStmt: READ LPAREN variable • RPAREN
+
+    RPAREN  shift, and go to state 152
+
+
+State 99
+
+   43 simpleStmt: WRITE LPAREN expr • RPAREN
+
+    RPAREN  shift, and go to state 153
+
+
+State 100
+
+   44 simpleStmt: RETURN LPAREN expr • RPAREN
+
+    RPAREN  shift, and go to state 154
+
+
+State 101
+
+   55 selfStmt: SELF DOT ID • selfMemberTail
+
+    ASSIGN    shift, and go to state 155
+    LPAREN    shift, and go to state 156
+    LBRACKET  shift, and go to state 157
+
+    selfMemberTail  go to state 158
+
+
+State 102
+
+   28 varDecl: ID COLON • type arraySizeList SEMI
+
+    INTEGER_KW  shift, and go to state 68
+    FLOAT_KW    shift, and go to state 69
+    ID          shift, and go to state 70
+
+    type  go to state 159
+
+
+State 103
+
+   46 idStmtTail: ASSIGN expr •
+
+    $default  reduce using rule 46 (idStmtTail)
+
+
+State 104
+
+  121 aParams: expr • aParamsTail
+
+    COMMA  shift, and go to state 160
+
+    $default  reduce using rule 124 (aParamsTail)
+
+    aParamsTail  go to state 161
+
+
+State 105
+
+   48 idStmtTail: LPAREN aParams • RPAREN
+
+    RPAREN  shift, and go to state 162
+
+
+State 106
+
+   47 idStmtTail: LBRACKET expr • RBRACKET idArrayTail
+
+    RBRACKET  shift, and go to state 163
+
+
+State 107
+
+   49 idStmtTail: DOT ID • idMemberTail
+
+    ASSIGN    shift, and go to state 164
+    LPAREN    shift, and go to state 165
+    LBRACKET  shift, and go to state 166
+
+    idMemberTail  go to state 167
+
+
+State 108
+
+   31 arraySize: LBRACKET • INTLIT RBRACKET
+   32          | LBRACKET • RBRACKET
+
+    RBRACKET  shift, and go to state 168
+    INTLIT    shift, and go to state 169
+
+
+State 109
+
+  117 fParams: ID COLON type arraySizeList • fParamsTail
+
+    COMMA  shift, and go to state 170
+
+    $default  reduce using rule 120 (fParamsTail)
+
+    fParamsTail  go to state 171
+
+
+State 110
+
+   29 arraySizeList: arraySize • arraySizeList
+
+    LBRACKET  shift, and go to state 108
+
+    $default  reduce using rule 30 (arraySizeList)
+
+    arraySizeList  go to state 172
+    arraySize      go to state 110
+
+
+State 111
+
+   10 idList: COMMA ID • idList
+
+    COMMA  shift, and go to state 72
+
+    $default  reduce using rule 11 (idList)
+
+    idList  go to state 173
+
+
+State 112
+
+   26 attributeDecl: ATTRIBUTE • varDecl
+
+    ID  shift, and go to state 56
+
+    varDecl  go to state 174
+
+
+State 113
+
+   25 funcDecl: funcHead • SEMI
+
+    SEMI  shift, and go to state 175
+
+
+State 114
+
+   21 visibilityMemberList: visibility memberDecl • visibilityMemberList
+
+    PRIVATE  shift, and go to state 74
+    PUBLIC   shift, and go to state 75
+
+    $default  reduce using rule 22 (visibilityMemberList)
+
+    visibility            go to state 76
+    visibilityMemberList  go to state 176
+
+
+State 115
+
+   23 memberDecl: funcDecl •
+
+    $default  reduce using rule 23 (memberDecl)
+
+
+State 116
+
+   24 memberDecl: attributeDecl •
+
+    $default  reduce using rule 24 (memberDecl)
+
+
+State 117
+
+    7 classDecl: CLASS ID inheritanceOpt LBRACE visibilityMemberList RBRACE • SEMI
+
+    SEMI  shift, and go to state 177
+
+
+State 118
+
+   16 funcHead: FUNC ID LPAREN fParams RPAREN ARROW • returnType
+
+    INTEGER_KW  shift, and go to state 68
+    FLOAT_KW    shift, and go to state 69
+    VOID        shift, and go to state 178
+    ID          shift, and go to state 70
+
+    type        go to state 179
+    returnType  go to state 180
+
+
+State 119
+
+  109 factorSelfTail: DOT • ID factorMemberTail
+
+    ID  shift, and go to state 181
+
+
+State 120
+
+  101 factor: SELF factorSelfTail •
+
+    $default  reduce using rule 101 (factor)
+
+
+State 121
+
+   98 factor: NOT factor •
+
+    $default  reduce using rule 98 (factor)
+
+
+State 122
+
+   97 factor: LPAREN expr • RPAREN
+
+    RPAREN  shift, and go to state 182
+
+
+State 123
+
+  102 factorTail: LPAREN • aParams RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    $default  reduce using rule 122 (aParams)
+
+    expr       go to state 104
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+    aParams    go to state 183
+
+
+State 124
+
+  103 factorTail: LBRACKET • expr RBRACKET
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 184
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 125
+
+  104 factorTail: DOT • ID factorMemberTail
+
+    ID  shift, and go to state 185
+
+
+State 126
+
+  100 factor: ID factorTail •
+
+    $default  reduce using rule 100 (factor)
+
+
+State 127
+
+   59 ifStmt: IF LPAREN expr RPAREN • THEN statBlock elseOpt
+
+    THEN  shift, and go to state 186
+
+
+State 128
+
+   77 relOp: EQ •
+
+    $default  reduce using rule 77 (relOp)
+
+
+State 129
+
+   78 relOp: NE •
+
+    $default  reduce using rule 78 (relOp)
+
+
+State 130
+
+   81 relOp: LE •
+
+    $default  reduce using rule 81 (relOp)
+
+
+State 131
+
+   82 relOp: GE •
+
+    $default  reduce using rule 82 (relOp)
+
+
+State 132
+
+   79 relOp: LT •
+
+    $default  reduce using rule 79 (relOp)
+
+
+State 133
+
+   80 relOp: GT •
+
+    $default  reduce using rule 80 (relOp)
+
+
+State 134
+
+   74 relExpr: arithExpr relExprPrime •
+
+    $default  reduce using rule 74 (relExpr)
+
+
+State 135
+
+   75 relExprPrime: relOp • arithExpr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    arithExpr  go to state 187
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 136
+
+   86 addOp: PLUS •
+
+    $default  reduce using rule 86 (addOp)
+
+
+State 137
+
+   87 addOp: MINUS •
+
+    $default  reduce using rule 87 (addOp)
+
+
+State 138
+
+   88 addOp: OR •
+
+    $default  reduce using rule 88 (addOp)
+
+
+State 139
+
+   83 arithExpr: term arithExprPrime •
+
+    $default  reduce using rule 83 (arithExpr)
+
+
+State 140
+
+   84 arithExprPrime: addOp • term arithExprPrime
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    term    go to state 188
+    factor  go to state 93
+    sign    go to state 94
+
+
+State 141
+
+   92 multOp: MULT •
+
+    $default  reduce using rule 92 (multOp)
+
+
+State 142
+
+   93 multOp: DIV •
+
+    $default  reduce using rule 93 (multOp)
+
+
+State 143
+
+   94 multOp: AND •
+
+    $default  reduce using rule 94 (multOp)
+
+
+State 144
+
+   89 term: factor termPrime •
+
+    $default  reduce using rule 89 (term)
+
+
+State 145
+
+   90 termPrime: multOp • factor termPrime
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    factor  go to state 189
+    sign    go to state 94
+
+
+State 146
+
+   99 factor: sign factor •
+
+    $default  reduce using rule 99 (factor)
+
+
+State 147
+
+   62 whileStmt: WHILE LPAREN expr RPAREN • statBlock
+
+    IF      shift, and go to state 26
+    WHILE   shift, and go to state 27
+    READ    shift, and go to state 28
+    WRITE   shift, and go to state 29
+    RETURN  shift, and go to state 30
+    SELF    shift, and go to state 31
+    LBRACE  shift, and go to state 190
+    ID      shift, and go to state 33
+
+    $default  reduce using rule 65 (statBlock)
+
+    statement   go to state 191
+    simpleStmt  go to state 38
+    idStmt      go to state 39
+    selfStmt    go to state 40
+    ifStmt      go to state 41
+    whileStmt   go to state 42
+    statBlock   go to state 192
+
+
+State 148
+
+   69 variable: SELF DOT • ID variableTail
+
+    ID  shift, and go to state 193
+
+
+State 149
+
+   70 variableTail: LBRACKET • expr RBRACKET variableTail
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 194
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 150
+
+   71 variableTail: DOT • ID variableTail
+
+    ID  shift, and go to state 195
+
+
+State 151
+
+   68 variable: ID variableTail •
+
+    $default  reduce using rule 68 (variable)
+
+
+State 152
+
+   42 simpleStmt: READ LPAREN variable RPAREN •
+
+    $default  reduce using rule 42 (simpleStmt)
+
+
+State 153
+
+   43 simpleStmt: WRITE LPAREN expr RPAREN •
+
+    $default  reduce using rule 43 (simpleStmt)
+
+
+State 154
+
+   44 simpleStmt: RETURN LPAREN expr RPAREN •
+
+    $default  reduce using rule 44 (simpleStmt)
+
+
+State 155
+
+   56 selfMemberTail: ASSIGN • expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 196
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 156
+
+   58 selfMemberTail: LPAREN • aParams RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    $default  reduce using rule 122 (aParams)
+
+    expr       go to state 104
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+    aParams    go to state 197
+
+
+State 157
+
+   57 selfMemberTail: LBRACKET • expr RBRACKET ASSIGN expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 198
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 158
+
+   55 selfStmt: SELF DOT ID selfMemberTail •
+
+    $default  reduce using rule 55 (selfStmt)
+
+
+State 159
+
+   28 varDecl: ID COLON type • arraySizeList SEMI
+
+    LBRACKET  shift, and go to state 108
+
+    $default  reduce using rule 30 (arraySizeList)
+
+    arraySizeList  go to state 199
+    arraySize      go to state 110
+
+
+State 160
+
+  123 aParamsTail: COMMA • expr aParamsTail
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 200
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 161
+
+  121 aParams: expr aParamsTail •
+
+    $default  reduce using rule 121 (aParams)
+
+
+State 162
+
+   48 idStmtTail: LPAREN aParams RPAREN •
+
+    $default  reduce using rule 48 (idStmtTail)
+
+
+State 163
+
+   47 idStmtTail: LBRACKET expr RBRACKET • idArrayTail
+
+    ASSIGN    shift, and go to state 201
+    LBRACKET  shift, and go to state 202
+
+    idArrayTail  go to state 203
+
+
+State 164
+
+   52 idMemberTail: ASSIGN • expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 204
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 165
+
+   54 idMemberTail: LPAREN • aParams RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    $default  reduce using rule 122 (aParams)
+
+    expr       go to state 104
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+    aParams    go to state 205
+
+
+State 166
+
+   53 idMemberTail: LBRACKET • expr RBRACKET ASSIGN expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 206
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 167
+
+   49 idStmtTail: DOT ID idMemberTail •
+
+    $default  reduce using rule 49 (idStmtTail)
+
+
+State 168
+
+   32 arraySize: LBRACKET RBRACKET •
+
+    $default  reduce using rule 32 (arraySize)
+
+
+State 169
+
+   31 arraySize: LBRACKET INTLIT • RBRACKET
+
+    RBRACKET  shift, and go to state 207
+
+
+State 170
+
+  119 fParamsTail: COMMA • ID COLON type arraySizeList fParamsTail
+
+    ID  shift, and go to state 208
+
+
+State 171
+
+  117 fParams: ID COLON type arraySizeList fParamsTail •
+
+    $default  reduce using rule 117 (fParams)
+
+
+State 172
+
+   29 arraySizeList: arraySize arraySizeList •
+
+    $default  reduce using rule 29 (arraySizeList)
+
+
+State 173
+
+   10 idList: COMMA ID idList •
+
+    $default  reduce using rule 10 (idList)
+
+
+State 174
+
+   26 attributeDecl: ATTRIBUTE varDecl •
+
+    $default  reduce using rule 26 (attributeDecl)
+
+
+State 175
+
+   25 funcDecl: funcHead SEMI •
+
+    $default  reduce using rule 25 (funcDecl)
+
+
+State 176
+
+   21 visibilityMemberList: visibility memberDecl visibilityMemberList •
+
+    $default  reduce using rule 21 (visibilityMemberList)
+
+
+State 177
+
+    7 classDecl: CLASS ID inheritanceOpt LBRACE visibilityMemberList RBRACE SEMI •
+
+    $default  reduce using rule 7 (classDecl)
+
+
+State 178
+
+  116 returnType: VOID •
+
+    $default  reduce using rule 116 (returnType)
+
+
+State 179
+
+  115 returnType: type •
+
+    $default  reduce using rule 115 (returnType)
+
+
+State 180
+
+   16 funcHead: FUNC ID LPAREN fParams RPAREN ARROW returnType •
+
+    $default  reduce using rule 16 (funcHead)
+
+
+State 181
+
+  109 factorSelfTail: DOT ID • factorMemberTail
+
+    LPAREN    shift, and go to state 209
+    LBRACKET  shift, and go to state 210
+
+    $default  reduce using rule 108 (factorMemberTail)
+
+    factorMemberTail  go to state 211
+
+
+State 182
+
+   97 factor: LPAREN expr RPAREN •
+
+    $default  reduce using rule 97 (factor)
+
+
+State 183
+
+  102 factorTail: LPAREN aParams • RPAREN
+
+    RPAREN  shift, and go to state 212
+
+
+State 184
+
+  103 factorTail: LBRACKET expr • RBRACKET
+
+    RBRACKET  shift, and go to state 213
+
+
+State 185
+
+  104 factorTail: DOT ID • factorMemberTail
+
+    LPAREN    shift, and go to state 209
+    LBRACKET  shift, and go to state 210
+
+    $default  reduce using rule 108 (factorMemberTail)
+
+    factorMemberTail  go to state 214
+
+
+State 186
+
+   59 ifStmt: IF LPAREN expr RPAREN THEN • statBlock elseOpt
+
+    IF      shift, and go to state 26
+    WHILE   shift, and go to state 27
+    READ    shift, and go to state 28
+    WRITE   shift, and go to state 29
+    RETURN  shift, and go to state 30
+    SELF    shift, and go to state 31
+    LBRACE  shift, and go to state 190
+    ID      shift, and go to state 33
+
+    $default  reduce using rule 65 (statBlock)
+
+    statement   go to state 191
+    simpleStmt  go to state 38
+    idStmt      go to state 39
+    selfStmt    go to state 40
+    ifStmt      go to state 41
+    whileStmt   go to state 42
+    statBlock   go to state 215
+
+
+State 187
+
+   75 relExprPrime: relOp arithExpr •
+
+    $default  reduce using rule 75 (relExprPrime)
+
+
+State 188
+
+   84 arithExprPrime: addOp term • arithExprPrime
+
+    PLUS   shift, and go to state 136
+    MINUS  shift, and go to state 137
+    OR     shift, and go to state 138
+
+    $default  reduce using rule 85 (arithExprPrime)
+
+    arithExprPrime  go to state 216
+    addOp           go to state 140
+
+
+State 189
+
+   90 termPrime: multOp factor • termPrime
+
+    MULT  shift, and go to state 141
+    DIV   shift, and go to state 142
+    AND   shift, and go to state 143
+
+    $default  reduce using rule 91 (termPrime)
+
+    termPrime  go to state 217
+    multOp     go to state 145
+
+
+State 190
+
+   63 statBlock: LBRACE • statementList RBRACE
+
+    IF      shift, and go to state 26
+    WHILE   shift, and go to state 27
+    READ    shift, and go to state 28
+    WRITE   shift, and go to state 29
+    RETURN  shift, and go to state 30
+    SELF    shift, and go to state 31
+    ID      shift, and go to state 33
+
+    $default  reduce using rule 67 (statementList)
+
+    statement      go to state 218
+    simpleStmt     go to state 38
+    idStmt         go to state 39
+    selfStmt       go to state 40
+    ifStmt         go to state 41
+    whileStmt      go to state 42
+    statementList  go to state 219
+
+
+State 191
+
+   64 statBlock: statement •
+
+    $default  reduce using rule 64 (statBlock)
+
+
+State 192
+
+   62 whileStmt: WHILE LPAREN expr RPAREN statBlock •
+
+    $default  reduce using rule 62 (whileStmt)
+
+
+State 193
+
+   69 variable: SELF DOT ID • variableTail
+
+    LBRACKET  shift, and go to state 149
+    DOT       shift, and go to state 150
+
+    $default  reduce using rule 72 (variableTail)
+
+    variableTail  go to state 220
+
+
+State 194
+
+   70 variableTail: LBRACKET expr • RBRACKET variableTail
+
+    RBRACKET  shift, and go to state 221
+
+
+State 195
+
+   71 variableTail: DOT ID • variableTail
+
+    LBRACKET  shift, and go to state 149
+    DOT       shift, and go to state 150
+
+    $default  reduce using rule 72 (variableTail)
+
+    variableTail  go to state 222
+
+
+State 196
+
+   56 selfMemberTail: ASSIGN expr •
+
+    $default  reduce using rule 56 (selfMemberTail)
+
+
+State 197
+
+   58 selfMemberTail: LPAREN aParams • RPAREN
+
+    RPAREN  shift, and go to state 223
+
+
+State 198
+
+   57 selfMemberTail: LBRACKET expr • RBRACKET ASSIGN expr
+
+    RBRACKET  shift, and go to state 224
+
+
+State 199
+
+   28 varDecl: ID COLON type arraySizeList • SEMI
+
+    SEMI  shift, and go to state 225
+
+
+State 200
+
+  123 aParamsTail: COMMA expr • aParamsTail
+
+    COMMA  shift, and go to state 160
+
+    $default  reduce using rule 124 (aParamsTail)
+
+    aParamsTail  go to state 226
+
+
+State 201
+
+   50 idArrayTail: ASSIGN • expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 227
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 202
+
+   51 idArrayTail: LBRACKET • expr RBRACKET ASSIGN expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 228
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 203
+
+   47 idStmtTail: LBRACKET expr RBRACKET idArrayTail •
+
+    $default  reduce using rule 47 (idStmtTail)
+
+
+State 204
+
+   52 idMemberTail: ASSIGN expr •
+
+    $default  reduce using rule 52 (idMemberTail)
+
+
+State 205
+
+   54 idMemberTail: LPAREN aParams • RPAREN
+
+    RPAREN  shift, and go to state 229
+
+
+State 206
+
+   53 idMemberTail: LBRACKET expr • RBRACKET ASSIGN expr
+
+    RBRACKET  shift, and go to state 230
+
+
+State 207
+
+   31 arraySize: LBRACKET INTLIT RBRACKET •
+
+    $default  reduce using rule 31 (arraySize)
+
+
+State 208
+
+  119 fParamsTail: COMMA ID • COLON type arraySizeList fParamsTail
+
+    COLON  shift, and go to state 231
+
+
+State 209
+
+  106 factorMemberTail: LPAREN • aParams RPAREN
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    $default  reduce using rule 122 (aParams)
+
+    expr       go to state 104
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+    aParams    go to state 232
+
+
+State 210
+
+  107 factorMemberTail: LBRACKET • expr RBRACKET
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 233
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 211
+
+  109 factorSelfTail: DOT ID factorMemberTail •
+
+    $default  reduce using rule 109 (factorSelfTail)
+
+
+State 212
+
+  102 factorTail: LPAREN aParams RPAREN •
+
+    $default  reduce using rule 102 (factorTail)
+
+
+State 213
+
+  103 factorTail: LBRACKET expr RBRACKET •
+
+    $default  reduce using rule 103 (factorTail)
+
+
+State 214
+
+  104 factorTail: DOT ID factorMemberTail •
+
+    $default  reduce using rule 104 (factorTail)
+
+
+State 215
+
+   59 ifStmt: IF LPAREN expr RPAREN THEN statBlock • elseOpt
+
+    ELSE  shift, and go to state 234
+
+    $default  reduce using rule 61 (elseOpt)
+
+    elseOpt  go to state 235
+
+
+State 216
+
+   84 arithExprPrime: addOp term arithExprPrime •
+
+    $default  reduce using rule 84 (arithExprPrime)
+
+
+State 217
+
+   90 termPrime: multOp factor termPrime •
+
+    $default  reduce using rule 90 (termPrime)
+
+
+State 218
+
+   66 statementList: statement • statementList
+
+    IF      shift, and go to state 26
+    WHILE   shift, and go to state 27
+    READ    shift, and go to state 28
+    WRITE   shift, and go to state 29
+    RETURN  shift, and go to state 30
+    SELF    shift, and go to state 31
+    ID      shift, and go to state 33
+
+    $default  reduce using rule 67 (statementList)
+
+    statement      go to state 218
+    simpleStmt     go to state 38
+    idStmt         go to state 39
+    selfStmt       go to state 40
+    ifStmt         go to state 41
+    whileStmt      go to state 42
+    statementList  go to state 236
+
+
+State 219
+
+   63 statBlock: LBRACE statementList • RBRACE
+
+    RBRACE  shift, and go to state 237
+
+
+State 220
+
+   69 variable: SELF DOT ID variableTail •
+
+    $default  reduce using rule 69 (variable)
+
+
+State 221
+
+   70 variableTail: LBRACKET expr RBRACKET • variableTail
+
+    LBRACKET  shift, and go to state 149
+    DOT       shift, and go to state 150
+
+    $default  reduce using rule 72 (variableTail)
+
+    variableTail  go to state 238
+
+
+State 222
+
+   71 variableTail: DOT ID variableTail •
+
+    $default  reduce using rule 71 (variableTail)
+
+
+State 223
+
+   58 selfMemberTail: LPAREN aParams RPAREN •
+
+    $default  reduce using rule 58 (selfMemberTail)
+
+
+State 224
+
+   57 selfMemberTail: LBRACKET expr RBRACKET • ASSIGN expr
+
+    ASSIGN  shift, and go to state 239
+
+
+State 225
+
+   28 varDecl: ID COLON type arraySizeList SEMI •
+
+    $default  reduce using rule 28 (varDecl)
+
+
+State 226
+
+  123 aParamsTail: COMMA expr aParamsTail •
+
+    $default  reduce using rule 123 (aParamsTail)
+
+
+State 227
+
+   50 idArrayTail: ASSIGN expr •
+
+    $default  reduce using rule 50 (idArrayTail)
+
+
+State 228
+
+   51 idArrayTail: LBRACKET expr • RBRACKET ASSIGN expr
+
+    RBRACKET  shift, and go to state 240
+
+
+State 229
+
+   54 idMemberTail: LPAREN aParams RPAREN •
+
+    $default  reduce using rule 54 (idMemberTail)
+
+
+State 230
+
+   53 idMemberTail: LBRACKET expr RBRACKET • ASSIGN expr
+
+    ASSIGN  shift, and go to state 241
+
+
+State 231
+
+  119 fParamsTail: COMMA ID COLON • type arraySizeList fParamsTail
+
+    INTEGER_KW  shift, and go to state 68
+    FLOAT_KW    shift, and go to state 69
+    ID          shift, and go to state 70
+
+    type  go to state 242
+
+
+State 232
+
+  106 factorMemberTail: LPAREN aParams • RPAREN
+
+    RPAREN  shift, and go to state 243
+
+
+State 233
+
+  107 factorMemberTail: LBRACKET expr • RBRACKET
+
+    RBRACKET  shift, and go to state 244
+
+
+State 234
+
+   60 elseOpt: ELSE • statBlock
+
+    IF      shift, and go to state 26
+    WHILE   shift, and go to state 27
+    READ    shift, and go to state 28
+    WRITE   shift, and go to state 29
+    RETURN  shift, and go to state 30
+    SELF    shift, and go to state 31
+    LBRACE  shift, and go to state 190
+    ID      shift, and go to state 33
+
+    $default  reduce using rule 65 (statBlock)
+
+    statement   go to state 191
+    simpleStmt  go to state 38
+    idStmt      go to state 39
+    selfStmt    go to state 40
+    ifStmt      go to state 41
+    whileStmt   go to state 42
+    statBlock   go to state 245
+
+
+State 235
+
+   59 ifStmt: IF LPAREN expr RPAREN THEN statBlock elseOpt •
+
+    $default  reduce using rule 59 (ifStmt)
+
+
+State 236
+
+   66 statementList: statement statementList •
+
+    $default  reduce using rule 66 (statementList)
+
+
+State 237
+
+   63 statBlock: LBRACE statementList RBRACE •
+
+    $default  reduce using rule 63 (statBlock)
+
+
+State 238
+
+   70 variableTail: LBRACKET expr RBRACKET variableTail •
+
+    $default  reduce using rule 70 (variableTail)
+
+
+State 239
+
+   57 selfMemberTail: LBRACKET expr RBRACKET ASSIGN • expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 246
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 240
+
+   51 idArrayTail: LBRACKET expr RBRACKET • ASSIGN expr
+
+    ASSIGN  shift, and go to state 247
+
+
+State 241
+
+   53 idMemberTail: LBRACKET expr RBRACKET ASSIGN • expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 248
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 242
+
+  119 fParamsTail: COMMA ID COLON type • arraySizeList fParamsTail
+
+    LBRACKET  shift, and go to state 108
+
+    $default  reduce using rule 30 (arraySizeList)
+
+    arraySizeList  go to state 249
+    arraySize      go to state 110
+
+
+State 243
+
+  106 factorMemberTail: LPAREN aParams RPAREN •
+
+    $default  reduce using rule 106 (factorMemberTail)
+
+
+State 244
+
+  107 factorMemberTail: LBRACKET expr RBRACKET •
+
+    $default  reduce using rule 107 (factorMemberTail)
+
+
+State 245
+
+   60 elseOpt: ELSE statBlock •
+
+    $default  reduce using rule 60 (elseOpt)
+
+
+State 246
+
+   57 selfMemberTail: LBRACKET expr RBRACKET ASSIGN expr •
+
+    $default  reduce using rule 57 (selfMemberTail)
+
+
+State 247
+
+   51 idArrayTail: LBRACKET expr RBRACKET ASSIGN • expr
+
+    SELF      shift, and go to state 81
+    PLUS      shift, and go to state 82
+    MINUS     shift, and go to state 83
+    NOT       shift, and go to state 84
+    LPAREN    shift, and go to state 85
+    ID        shift, and go to state 86
+    INTLIT    shift, and go to state 87
+    FLOATLIT  shift, and go to state 88
+
+    expr       go to state 250
+    relExpr    go to state 90
+    arithExpr  go to state 91
+    term       go to state 92
+    factor     go to state 93
+    sign       go to state 94
+
+
+State 248
+
+   53 idMemberTail: LBRACKET expr RBRACKET ASSIGN expr •
+
+    $default  reduce using rule 53 (idMemberTail)
+
+
+State 249
+
+  119 fParamsTail: COMMA ID COLON type arraySizeList • fParamsTail
+
+    COMMA  shift, and go to state 170
+
+    $default  reduce using rule 120 (fParamsTail)
+
+    fParamsTail  go to state 251
+
+
+State 250
+
+   51 idArrayTail: LBRACKET expr RBRACKET ASSIGN expr •
+
+    $default  reduce using rule 51 (idArrayTail)
+
+
+State 251
+
+  119 fParamsTail: COMMA ID COLON type arraySizeList fParamsTail •
+
+    $default  reduce using rule 119 (fParamsTail)
