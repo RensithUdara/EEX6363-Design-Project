@@ -963,9 +963,9 @@ void emit_assembly_epilogue(CodeGenContext *ctx)
     fprintf(ctx->output_file, "# Instructions generated: %d\n", instructions_generated);
     fprintf(ctx->output_file, "# Registers spilled: %d\n", registers_spilled);
     fprintf(ctx->output_file, "# Optimization passes: %d\n", optimization_passes);
-    if (ctx->memory_layout.total_size > 0)
+    if (ctx->memory_layout.total_stack_size > 0)
     {
-        fprintf(ctx->output_file, "# Memory layout size: %d bytes\n", ctx->memory_layout.total_size);
+        fprintf(ctx->output_file, "# Memory layout size: %d bytes\n", ctx->memory_layout.total_stack_size);
     }
     fprintf(ctx->output_file, "# ======================================\n");
     fprintf(ctx->output_file, "\n.section .note.GNU-stack,\"\",@progbits\n");
