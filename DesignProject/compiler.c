@@ -103,10 +103,10 @@ DataType string_to_data_type(const char *str)
 int parse_program()
 {
     printf("=== TMA3 Parser Integration ===\n");
-    
+
     // Use TMA3 parser to create comprehensive AST
     ast_root = parse_input_file(current_input_filename);
-    
+
     if (ast_root)
     {
         printf("TMA3 parser completed successfully\n");
