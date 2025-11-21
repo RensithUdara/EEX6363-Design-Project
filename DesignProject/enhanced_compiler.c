@@ -14,9 +14,11 @@
 FILE *lexical_output_file = NULL;
 FILE *syntax_output_file = NULL;
 FILE *semantic_output_file = NULL;
-FILE *symbol_table_file = NULL;
 FILE *intermediate_code_file = NULL;
 FILE *test_results_file = NULL;
+
+// Use external symbol_table_file from TMA03
+extern FILE *symbol_table_file;
 
 // Statistics tracking
 static int total_tokens = 0;
