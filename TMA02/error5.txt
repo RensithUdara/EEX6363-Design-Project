@@ -1,0 +1,12 @@
+class Parent {  
+    public attribute value : integer;  
+};  
+
+class Child isa Parent {  
+};  
+
+func testInheritance () <=> void {  
+    local c : Child;  
+    c.value := 42;  
+    write (c.value);  
+}
