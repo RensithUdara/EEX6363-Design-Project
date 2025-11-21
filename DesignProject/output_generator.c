@@ -147,13 +147,13 @@ void print_register_info_to_file(FILE *output)
         fprintf(output, "Registers Used: 8\n");
         fprintf(output, "Spill Operations: 2\n");
         fprintf(output, "\nRegister Assignments:\n");
-        fprintf(output, "- %rax: Return values, arithmetic operations\n");
-        fprintf(output, "- %rbx: Base register, persistent variables\n");
-        fprintf(output, "- %rcx: Counter, loop variables\n");
-        fprintf(output, "- %rdx: Data operations, arithmetic\n");
-        fprintf(output, "- %rsi: Source index, function arguments\n");
-        fprintf(output, "- %rdi: Destination index, function arguments\n");
-        fprintf(output, "- %r8-%r15: Additional variable storage\n");
+        fprintf(output, "- %%rax: Return values, arithmetic operations\n");
+        fprintf(output, "- %%rbx: Base register, persistent variables\n");
+        fprintf(output, "- %%rcx: Counter, loop variables\n");
+        fprintf(output, "- %%rdx: Data operations, arithmetic\n");
+        fprintf(output, "- %%rsi: Source index, function arguments\n");
+        fprintf(output, "- %%rdi: Destination index, function arguments\n");
+        fprintf(output, "- %%r8-%%r15: Additional variable storage\n");
     }
 
     // Print detailed symbol tables
