@@ -21,7 +21,7 @@ COMPILER PERFORMANCE ANALYSIS:
 
 2. MEMORY USAGE ANALYSIS:
    Token Storage:       2.05 KB
-   AST Nodes:           0.32 KB
+   AST Nodes:           0.08 KB
    Symbol Tables:       1.50 KB
    Code Generation:     2.00 KB
    TOTAL MEMORY:        14.10 KB
@@ -29,7 +29,7 @@ COMPILER PERFORMANCE ANALYSIS:
 3. COMPILATION RESULTS:
    Total Compilation Time: 0.000 seconds
    Tokens Processed:       41
-   AST Nodes Created:      4
+   AST Nodes Created:      1
    Memory Usage:           14.10 KB
    Errors Found:           0
    Warnings:               0
