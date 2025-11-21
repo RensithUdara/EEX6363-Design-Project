@@ -1,0 +1,17 @@
+inheritanceOpt → ε
+visibility → public
+type → integer
+arraySizeList → ε
+varDecl → id : type arraySizeList ;
+attributeDecl → attribute varDecl
+memberDecl → attributeDecl
+visibilityMemberList → ε
+visibilityMemberList → visibility memberDecl visibilityMemberList
+classDecl → class id inheritanceOpt { visibilityMemberList } ;
+classOrImplOrFunc → classDecl
+idList → ε
+inheritanceOpt → isa id idList
+visibilityMemberList → ε
+classDecl → class id inheritanceOpt { visibilityMemberList } ;
+classOrImplOrFunc → classDecl
+fParams → ε
