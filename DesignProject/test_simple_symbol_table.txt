@@ -1,0 +1,17 @@
+========================================
+Comprehensive Symbol Table
+Design Project - Complete Compiler
+========================================
+Input: test_simple.txt
+Generated: Nov 22 2025 01:55:01
+
+GLOBAL SCOPE:
++---------------+----------+--------+----------+---------+--------+
+| Symbol Name   | Type     | Line   | Scope    | Address | Size   |
++---------------+----------+--------+----------+---------+--------+
+| (No symbols)  | -        | -      | Global   | -       | -      |
++---------------+----------+--------+----------+---------+--------+
+
+STATISTICS:
+-----------
+Total Symbols: 0

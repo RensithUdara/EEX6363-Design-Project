@@ -1,0 +1,15 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: test_simple.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+PROGRAM
+
+STATISTICS:
+-----------
+AST Nodes: 1
+Tree Depth: 1
+Syntax Errors: 0

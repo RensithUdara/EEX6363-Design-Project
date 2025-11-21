@@ -1,0 +1,18 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: output.s
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+PROGRAM
+  VAR_DECL
+  ASSIGN_STMT
+  BINARY_EXPR
+
+STATISTICS:
+-----------
+AST Nodes: 4
+Tree Depth: 2
+Syntax Errors: 0

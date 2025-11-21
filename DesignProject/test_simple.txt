@@ -1,6 +1,11 @@
-program test;
-var x: integer;
-begin
-    x := 42;
-    write(x);
-end.
+func simpleTest() => integer {
+    local x : integer;
+    local y : integer;
+    local result : integer;
+    
+    x := 1.2;
+    y := 20;
+    result := x + y;
+    write(result);
+    return(result);
+}

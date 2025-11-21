@@ -1,0 +1,17 @@
+========================================
+Semantic Analysis Output (TMA3)
+========================================
+Input: test_simple.txt
+Generated: Nov 22 2025 01:55:01
+
+SYMBOL TABLE:
+-------------
+No symbol table available
+
+TYPE CHECKING RESULTS:
+----------------------
+Semantic Errors: 0
+Semantic Warnings: 0
+✓ All type checks passed
+✓ All variables properly declared
+✓ All function calls validated
