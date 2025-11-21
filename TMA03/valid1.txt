@@ -1,0 +1,12 @@
+// TMA03 Test Case 1: Simple Function with Local Variables and Basic Operations
+func simpleTest() => integer {
+    local x : integer;
+    local y : integer;
+    local result : integer;
+    
+    x := 1;
+    y := 20;
+    result := x + y;
+    write(result);
+    return(result);
+}
