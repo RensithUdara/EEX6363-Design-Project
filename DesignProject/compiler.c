@@ -43,8 +43,11 @@ typedef struct
 extern int yylex();
 extern void yyerror(const char *s);
 extern FILE *yyin;
-
+extern ASTNode *ast_root;
 extern void print_ast(ASTNode *node, int indent);
+
+// Global variables
+static char *current_input_filename = NULL;
 
 // Function prototypes
 void print_usage(const char *program_name);
@@ -105,7 +108,9 @@ int parse_program()
     printf("=== TMA3 Parser Integration ===\n");
 
     // Use TMA3 parser to create comprehensive AST
-    ast_root = parse_input_file(current_input_filename);
+    // If no filename available, use default
+    const char *filename = current_input_filename ? current_input_filename : "input.txt";
+    ast_root = parse_input_file(filename);
 
     if (ast_root)
     {

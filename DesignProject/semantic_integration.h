@@ -32,7 +32,7 @@ int check_type_compatibility(DataType type1, DataType type2);
 int validate_assignment(ASTNode *lhs, ASTNode *rhs);
 
 // Scope management
-void enter_scope(const char *scope_name);
+void enter_scope(char *scope_name);
 void exit_scope(void);
 Symbol *lookup_symbol_in_scope(const char *name);
 
