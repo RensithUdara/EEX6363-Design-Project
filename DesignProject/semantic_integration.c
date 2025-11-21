@@ -250,7 +250,7 @@ void report_semantic_error(int line, int col, const char *message, const char *e
     if (!message)
         return;
 
-    printf("Semantic Error [%s] at line %d, column %d: %s\n", 
+    printf("Semantic Error [%s] at line %d, column %d: %s\n",
            error_type ? error_type : "GENERAL", line, col, message);
     // Error count is managed by TMA3's error handler
 }
