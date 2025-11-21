@@ -938,12 +938,7 @@ void emit_assembly_prologue(CodeGenContext *ctx)
     fprintf(ctx->output_file, "# Compiler Design Project - Code Generation Phase\n");
     fprintf(ctx->output_file, "# Target Architecture: x86-64\n");
     fprintf(ctx->output_file, "# Assembly Syntax: AT&T\n");
-    fprintf(ctx->output_file, "# Register Allocation: %s\n",
-            ctx->register_allocator ? (ctx->register_allocator->strategy == ALLOCATION_NAIVE ? "Naive" : ctx->register_allocator->strategy == ALLOCATION_LRU          ? "LRU"
-                                                                                                     : ctx->register_allocator->strategy == ALLOCATION_OPTIMAL        ? "Optimal"
-                                                                                                     : ctx->register_allocator->strategy == ALLOCATION_GRAPH_COLORING ? "Graph Coloring"
-                                                                                                                                                                      : "Unknown")
-                                    : "Default");
+    fprintf(ctx->output_file, "# Register Allocation: Default\n");
     fprintf(ctx->output_file, "# ======================================\n\n");
 
     // Assembly sections
@@ -974,6 +969,7 @@ void emit_assembly_epilogue(CodeGenContext *ctx)
 
 void emit_function_prologue(CodeGenContext *ctx, Symbol *func)
 {
+    (void)func; // Suppress unused parameter warning
     emit_comment(ctx, "Function prologue");
 
     // Save old base pointer
@@ -997,6 +993,7 @@ void emit_function_prologue(CodeGenContext *ctx, Symbol *func)
 
 void emit_function_epilogue(CodeGenContext *ctx, Symbol *func)
 {
+    (void)func; // Suppress unused parameter warning
     emit_comment(ctx, "Function epilogue");
 
     // Restore stack pointer
