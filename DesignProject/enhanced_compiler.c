@@ -237,7 +237,15 @@ void generate_semantic_output(const char *input_file)
     // Print actual symbol table
     fprintf(semantic_output_file, "SYMBOL TABLE:\n");
     fprintf(semantic_output_file, "-------------\n");
-    print_symbol_table(get_global_symbol_table(), semantic_output_file);
+    SymbolTable *global_table = get_semantic_symbol_table();
+    if (global_table)
+    {
+        print_symbol_table(global_table, semantic_output_file, 0);
+    }
+    else
+    {
+        fprintf(semantic_output_file, "No symbol table available\n");
+    }
 
     fprintf(semantic_output_file, "\nTYPE CHECKING RESULTS:\n");
     fprintf(semantic_output_file, "----------------------\n");
