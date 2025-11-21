@@ -1,5 +1,9 @@
+#define _POSIX_C_SOURCE 200809L
 #include "codegen.h"
 #include "register_allocator.h"
+
+// Forward declarations
+static void emit_operand(CodeGenContext *ctx, Operand *op);
 
 // Global code generation statistics
 static int instructions_generated = 0;
