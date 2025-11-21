@@ -196,7 +196,7 @@ int parse_command_line(int argc, char *argv[], CompilerOptions *options)
         {
         case 'o':
             options->output_file = malloc(strlen(optarg) + 1);
-                strcpy(options->output_file, optarg);
+            strcpy(options->output_file, optarg);
             break;
 
         case 'p':
@@ -362,7 +362,7 @@ int compile_file(CompilerOptions *options)
         if (options->show_symbols)
         {
             printf("=== Symbol Tables ===\n");
-            print_symbol_tables(stdout);
+            printf("(Symbol table display not available in TMA03)\n");
             printf("\n");
         }
     }
@@ -403,10 +403,10 @@ int run_lexical_analysis(const char *filename)
 
     // Count tokens for statistics
     compilation_stats.tokens_generated = 0;
-    
+
     // This would normally just prepare for parsing
     // For demonstration, we'll just verify the file can be tokenized
-    
+
     fclose(yyin);
     return 0;
 }
