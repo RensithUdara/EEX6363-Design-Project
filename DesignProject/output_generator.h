@@ -16,7 +16,7 @@ void generate_test_results_file(const char *input_file, int success);
 
 // Helper functions for code generation
 void generate_three_address_code(ASTNode *ast, FILE *output);
-void print_register_allocation_info(FILE *output);
+void print_register_info_to_file(FILE *output);
 void print_detailed_symbol_tables(FILE *output);
 int count_total_symbols(void);
 int get_syntax_error_count(void);
