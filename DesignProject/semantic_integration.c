@@ -36,63 +36,76 @@ extern SymbolTable *current_scope;
 // ================================
 
 // Enhanced yyparse that calls TMA03's parse_program
-int yyparse(void) {
+int yyparse(void)
+{
     printf("Starting TMA03 semantic analysis integration...\n");
-    
+
     // Call TMA03's parse_program function
     int result = parse_program(&ast_root);
-    
-    if (result == 0 && ast_root) {
+
+    if (result == 0 && ast_root)
+    {
         printf("✓ TMA03 parsing successful\n");
-        
+
         // Call TMA03's comprehensive semantic analysis
         printf("Starting comprehensive semantic analysis...\n");
         perform_comprehensive_semantic_analysis(ast_root);
         printf("✓ Semantic analysis completed\n");
-    } else {
+    }
+    else
+    {
         printf("✗ TMA03 parsing failed with result: %d\n", result);
     }
-    
+
     return result;
 }
 
 // Wrapper for semantic analysis (calls TMA03 function)
-void perform_semantic_analysis(ASTNode *root) {
-    if (root) {
+void perform_semantic_analysis(ASTNode *root)
+{
+    if (root)
+    {
         perform_comprehensive_semantic_analysis(root);
     }
 }
 
 // Report generation wrapper
-void generate_comprehensive_report(const char *input_filename) {
+void generate_comprehensive_report(const char *input_filename)
+{
     printf("\n=== COMPREHENSIVE ANALYSIS REPORT ===\n");
     printf("Input file: %s\n", input_filename ? input_filename : "unknown");
     printf("Total errors: %d\n", error_count);
     printf("Semantic errors: %d\n", semantic_error_count);
     printf("Semantic warnings: %d\n", semantic_warning_count);
-    
-    if (symbol_table_file) {
+
+    if (symbol_table_file)
+    {
         printf("Symbol table output: Available\n");
     }
-    if (semantic_error_file) {
+    if (semantic_error_file)
+    {
         printf("Semantic error output: Available\n");
     }
     printf("=====================================\n\n");
 }
 
 // Get error counts for reporting
-int get_total_errors(void) {
+int get_total_errors(void)
+{
     return error_count;
 }
 
-int get_semantic_errors(void) {
+int get_semantic_errors(void)
+{
     return semantic_error_count;
 }
 
-int get_semantic_warnings(void) {
+int get_semantic_warnings(void)
+{
     return semantic_warning_count;
 }
 
-int get_semantic_warning_count(void) {
+int get_semantic_warning_count(void)
+{
     return semantic_warning_count;
 }
