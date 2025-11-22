@@ -1194,15 +1194,15 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
             syntax_ms = 1.0; // Parsing happened
         if (get_semantic_error_count() >= 0)
             semantic_ms = 1.5; // Semantic analysis happened
-        if (total_tokens > 0) // If we processed tokens, assume code gen attempted
-            codegen_ms = 2.0; // Code generation happened
+        if (total_tokens > 0)  // If we processed tokens, assume code gen attempted
+            codegen_ms = 2.0;  // Code generation happened
         total_ms = lexical_ms + syntax_ms + semantic_ms + codegen_ms;
     }
 
     // Handle very fast compilation times - ensure minimum display time
     if (total_ms < 0.1)
         total_ms = 0.1; // Minimum display time
-    
+
     double lexical_pct = (lexical_ms / total_ms) * 100.0;
     double syntax_pct = (syntax_ms / total_ms) * 100.0;
     double semantic_pct = (semantic_ms / total_ms) * 100.0;
