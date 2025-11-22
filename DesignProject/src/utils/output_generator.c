@@ -143,19 +143,20 @@ void print_register_info_to_file(FILE *output)
     // Get actual register allocation data from register allocator
     extern int get_registers_used(void);
     extern int get_spill_operations(void);
-    extern const char* get_allocation_strategy(void);
-    
+    extern const char *get_allocation_strategy(void);
+
     int registers_used = get_registers_used();
     int spill_ops = get_spill_operations();
-    const char* strategy = get_allocation_strategy();
-    
+    const char *strategy = get_allocation_strategy();
+
     fprintf(output, "Register Allocation Strategy: %s\n", strategy ? strategy : "Linear Scan");
     fprintf(output, "Available Registers: %d (x86-64)\n", MAX_REGISTERS);
     fprintf(output, "Registers Used: %d\n", registers_used);
     fprintf(output, "Spill Operations: %d\n", spill_ops);
     fprintf(output, "\nRegister Assignments:\n");
-    
-    if (registers_used > 0) {
+
+    if (registers_used > 0)
+    {
         fprintf(output, "- %%rax: Return values, arithmetic operations\n");
         if (registers_used > 1)
             fprintf(output, "- %%rbx: Base register, persistent variables\n");
@@ -169,11 +170,14 @@ void print_register_info_to_file(FILE *output)
             fprintf(output, "- %%rdi: Destination index, function arguments\n");
         if (registers_used > 6)
             fprintf(output, "- %%r8-%%r%d: Additional variable storage\n", 7 + (registers_used - 7));
-    } else {
+    }
+    else
+    {
         fprintf(output, "- No registers allocated\n");
     }
 
-    if (spill_ops > 0) {
+    if (spill_ops > 0)
+    {
         fprintf(output, "\nSpill Operations:\n");
         fprintf(output, "- %d variable(s) spilled to memory\n", spill_ops);
     }
