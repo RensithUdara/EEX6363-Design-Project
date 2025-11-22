@@ -69,7 +69,7 @@ extern int line, column;
 extern FILE *yyin;
 extern char *yytext;
 
-// Token management 
+// Token management
 typedef struct
 {
     char *str_val;
@@ -130,9 +130,9 @@ void enhanced_semantic_analysis(ASTNode *root);
 void perform_warning_analysis(ASTNode *root);
 void report_semantic_warnings(void);
 
-// Helper functions for warning system  
+// Helper functions for warning system
 DataType string_to_data_type(const char *type_str);
-char *type_to_string(DataType type);  // Use existing function name
+char *type_to_string(DataType type); // Use existing function name
 DataType get_expression_type(ASTNode *node);
 
 // Warning helper functions (need to be declared before use in error_handler.c)
@@ -579,7 +579,7 @@ void write_comprehensive_semantic_errors(FILE *file)
     fprintf(file, "================================================================================\n\n");
 }
 
-// Forward declarations 
+// Forward declarations
 ASTNode *parse_literal(void);
 ASTNode *parse_funcall(char *id);
 int parse_program(ASTNode **result_ast);
@@ -6316,14 +6316,21 @@ void enhanced_semantic_analysis(ASTNode *root)
 // ============================================================================
 
 // Convert string to DataType
-DataType string_to_data_type(const char *type_str) {
-    if (!type_str) return TYPE_UNKNOWN;
-    
-    if (strcmp(type_str, "int") == 0) return TYPE_INTEGER;
-    if (strcmp(type_str, "float") == 0) return TYPE_FLOAT;
-    if (strcmp(type_str, "void") == 0) return TYPE_VOID;
-    if (strcmp(type_str, "class") == 0) return TYPE_CLASS;
-    if (strcmp(type_str, "array") == 0) return TYPE_ARRAY;
-    
+DataType string_to_data_type(const char *type_str)
+{
+    if (!type_str)
+        return TYPE_UNKNOWN;
+
+    if (strcmp(type_str, "int") == 0)
+        return TYPE_INTEGER;
+    if (strcmp(type_str, "float") == 0)
+        return TYPE_FLOAT;
+    if (strcmp(type_str, "void") == 0)
+        return TYPE_VOID;
+    if (strcmp(type_str, "class") == 0)
+        return TYPE_CLASS;
+    if (strcmp(type_str, "array") == 0)
+        return TYPE_ARRAY;
+
     return TYPE_UNKNOWN;
 }
