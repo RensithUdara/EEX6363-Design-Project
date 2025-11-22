@@ -92,6 +92,6 @@ int is_register_dirty(CodeGenContext *ctx, Register reg);
 // Statistics functions for output generation
 int get_registers_used(void);
 int get_spill_operations(void);
-const char* get_allocation_strategy(void);
+const char *get_allocation_strategy(void);
 
 #endif // REGISTER_ALLOCATOR_H
