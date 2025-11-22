@@ -20,7 +20,7 @@ BUILD_DIR = build
 INCLUDES = -I.
 
 # Source files
-COMPILER_SRC = compiler.c
+ENHANCED_COMPILER_SRC = enhanced_compiler.c
 CODEGEN_SRC = codegen.c
 REGISTER_SRC = register_allocator.c
 
