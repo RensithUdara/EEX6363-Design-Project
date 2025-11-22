@@ -1,0 +1,41 @@
+========================================
+Design Project - Architecture Design
+========================================
+Generated: November 22, 2025
+
+COMPILER ARCHITECTURE OVERVIEW:
+===============================
+
+1. FOUR-PHASE COMPILATION PIPELINE:
+   ├── Phase 1: Lexical Analysis (TMA1)
+   │   ├── Input: Source code (.txt files)
+   │   ├── Output: Token stream
+   │   └── Files: scanner.l, lex.yy.c
+   │
+   ├── Phase 2: Syntax Analysis (TMA2)
+   │   ├── Input: Token stream
+   │   ├── Output: Abstract Syntax Tree (AST)
+   │   └── Files: parser.y, parser.tab.c
+   │
+   ├── Phase 3: Semantic Analysis (TMA3)
+   │   ├── Input: AST
+   │   ├── Output: Annotated AST + Symbol Tables
+   │   └── Files: semantic.c, ast.c, error_handler.c
+   │
+   └── Phase 4: Code Generation (NEW)
+       ├── Input: Annotated AST + Symbol Tables
+       ├── Output: x86-64 Assembly Code
+       └── Files: codegen.c, register_allocator.c
+
+IMPLEMENTATION STATUS:
+====================
+✅ Lexical Analysis - Complete
+✅ Syntax Analysis - Complete
+✅ Semantic Analysis - Complete
+✅ Code Generation - Complete
+✅ Register Allocation - Complete
+✅ Output Generation - Complete
+✅ Error Handling - Complete
+✅ Testing Framework - Complete
+✅ Documentation - Complete
+
