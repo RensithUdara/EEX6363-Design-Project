@@ -53,20 +53,18 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
 void generate_integration_test_file(const char *input_file, int success, ASTNode *ast);
 
 // Helper function to verify file existence and validity
-int verify_output_file(const char *filename, int min_size) {
+int verify_output_file(const char *filename, int min_size)
+{
     FILE *file = fopen(filename, "r");
-    if (!file) return 0;
-    
+    if (!file)
+        return 0;
+
     fseek(file, 0, SEEK_END);
     long size = ftell(file);
     fclose(file);
-    
+
     return size >= min_size;
 }
-
-
-
-
 
 // Print detailed symbol tables
 void print_detailed_symbol_tables(FILE *output)
@@ -432,7 +430,7 @@ void generate_test_results_file(const char *input_file, int success)
 int compile_with_output_generation(const char *input_file, const char *output_file)
 {
     compilation_start_time = clock();
-    
+
     // Initialize error manager system
     init_error_manager();
 
@@ -505,7 +503,7 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
     // Use actual error counts from error manager
     semantic_errors_found = semantic_errors;
     actual_errors = get_total_error_count(); // Use total errors from error manager
-    actual_warnings = get_warning_count(); // Use actual warnings from error manager
+    actual_warnings = get_warning_count();   // Use actual warnings from error manager
 
     if (tma03_result != 0 || semantic_errors > 0)
     {
@@ -778,7 +776,7 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     int actual_syntax_errors = get_syntax_error_count();
     int actual_semantic_errors = get_semantic_error_count();
     int actual_total_errors = get_total_error_count();
-    
+
     fprintf(error_file, "ERROR SUMMARY:\n");
     fprintf(error_file, "=============\n");
     fprintf(error_file, "Lexical Errors: %d\n", actual_lexical_errors);
@@ -792,7 +790,7 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
         fprintf(error_file, "DETAILED ERROR INFORMATION:\n");
         fprintf(error_file, "==========================\n");
         fprintf(error_file, "Semantic analysis detected %d error(s):\n\n", actual_semantic_errors);
-        
+
         // Print actual errors from error manager if available
         if (global_error_manager)
         {
@@ -806,7 +804,7 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
 
     // Get actual warning count from error manager
     int warning_count = get_warning_count();
-    
+
     fprintf(error_file, "WARNING SUMMARY:\n");
     fprintf(error_file, "===============\n");
     fprintf(error_file, "Total Warnings: %d\n\n", warning_count);
@@ -1032,25 +1030,25 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
     fprintf(test_file, "   └─────────────────────┴──────────────┴─────────────┴─────────────┘\n\n");
 
     // Verify actual file generation (reuse existing base_name and filename variables)
-    
+
     // Check each output file
     snprintf(filename, sizeof(filename), "%s_lexical_output.txt", base_name);
     int lexical_ok = verify_output_file(filename, 100);
-    
+
     snprintf(filename, sizeof(filename), "%s_syntax_output.txt", base_name);
     int syntax_ok = verify_output_file(filename, 50);
-    
+
     snprintf(filename, sizeof(filename), "%s_semantic_output.txt", base_name);
     int semantic_ok = verify_output_file(filename, 50);
-    
+
     snprintf(filename, sizeof(filename), "%s_symbol_table.txt", base_name);
     int symbol_ok = verify_output_file(filename, 50);
-    
+
     snprintf(filename, sizeof(filename), "%s_intermediate_code.txt", base_name);
     int intermediate_ok = verify_output_file(filename, 50);
-    
+
     int assembly_ok = verify_output_file("output.s", 20);
-    
+
     fprintf(test_file, "2. FILE I/O INTEGRATION TESTS:\n");
     fprintf(test_file, "   ┌─────────────────────┬──────────────┬─────────────┐\n");
     fprintf(test_file, "   │ File Operation      │ Status       │ Verification│\n");
