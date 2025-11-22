@@ -1,0 +1,25 @@
+========================================
+Lexical Analysis Output (TMA1)
+========================================
+Input: minimal_test.txt
+Generated: Nov 22 2025 12:55:53
+
+Token Type      | Lexeme       | Line | Column | Attributes
+--------------- | ------------ | ---- | ------ | ----------
+IDENTIFIER      | //           | 1    | 1      | -
+IDENTIFIER      | Minimal      | 1    | 4      | -
+IDENTIFIER      | test        | 1    | 12     | -
+IDENTIFIER      | func         | 2    | 1      | -
+IDENTIFIER      | test         | 2    | 6      | -
+IDENTIFIER      | =>           | 2    | 11     | -
+IDENTIFIER      | integera     | 2    | 14     | -
+IDENTIFIER      |             | 2    | 23     | -
+KEYWORD         | return       | 3    | 1      | -
+NUMBER          | 1            | 3    | 8      | literal
+IDENTIFIER      |             | 3    | 10     | -
+
+STATISTICS:
+-----------
+Total Tokens: 11
+Total Lines: 4
+Lexical Errors: 0
