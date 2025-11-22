@@ -1,7 +1,7 @@
 ========================================
 Design Project - Performance Report
 ========================================
-Generated: November 22, 2025
+Generated: November 23, 2025 at 01:12:02
 Test Input: tests/examples/test_simple.txt
 
 COMPILER PERFORMANCE ANALYSIS:
