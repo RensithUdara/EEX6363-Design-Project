@@ -13,7 +13,7 @@ extern int semantic_warning_count;
 
 // Core semantic analysis functions
 void semantic_analysis(ASTNode *root);
-int call_tma03_analysis(const char *filename);  // Direct TMA03 main call
+int call_tma03_analysis(const char *filename); // Direct TMA03 main call
 int parse_program_comprehensive(void);
 int parse_prog(void);
 ASTNode *parse_class_list(void);
