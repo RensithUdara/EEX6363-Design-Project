@@ -1,0 +1,4 @@
+// Minimal test
+func test() => integera {
+    return(1);
+}
