@@ -16,10 +16,9 @@ PROGRAM
         VAR_DECL
           ID("x")
           TYPE
-            ID("integear")
 
 STATISTICS:
 -----------
-AST Nodes: 41
+AST Nodes: 40
 Tree Depth: 13
 Syntax Errors: 0
