@@ -1,7 +1,7 @@
 ========================================
 Design Project - Integration Test Report
 ========================================
-Generated: November 23, 2025 at 01:12:02
+Generated: November 23, 2025 at 01:23:09
 Test Suite: Complete Integration Testing
 
 TEST EXECUTION SUMMARY:
@@ -11,10 +11,10 @@ TEST EXECUTION SUMMARY:
    ┌─────────────────────┬──────────────┬─────────────┬─────────────┐
    │ Integration Test    │ Status       │ Time (ms)   │ Result      │
    ├─────────────────────┼──────────────┼─────────────┼─────────────┤
-   │ Lexer → Parser      │ ✅ PASSED   │ 0.5         │ SUCCESS     │
-   │ Parser → Semantic   │ ✅ PASSED   │ 1.0         │ SUCCESS     │
-   │ Semantic → CodeGen  │ ✅ PASSED   │ 1.5         │ SUCCESS     │
-   │ End-to-End Pipeline │ ✅ PASSED   │ 5.0         │ SUCCESS     │
+   │ Lexer → Parser      │ ✅ PASSED   │ 0.0         │ SUCCESS     │
+   │ Parser → Semantic   │ ✅ PASSED   │ 0.0         │ SUCCESS     │
+   │ Semantic → CodeGen  │ ✅ PASSED   │ 15.0        │ SUCCESS     │
+   │ End-to-End Pipeline │ ✅ PASSED   │ 15.0        │ SUCCESS     │
    └─────────────────────┴──────────────┴─────────────┴─────────────┘
 
 2. FILE I/O INTEGRATION TESTS:
