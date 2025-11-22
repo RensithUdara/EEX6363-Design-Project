@@ -1,0 +1,11 @@
+func simpleTest() => integer {
+    local x : integer;
+    local y : integer;
+    local result : integer;
+    
+    x := 1;
+    y := 20;
+    result := x + y;
+    write(result);
+    return(result);
+}
