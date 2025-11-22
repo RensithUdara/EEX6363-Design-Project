@@ -547,7 +547,7 @@ int get_spill_operations(void)
     return global_stats.spills_performed;
 }
 
-const char* get_allocation_strategy(void)
+const char *get_allocation_strategy(void)
 {
     return "Linear Scan"; // Default strategy name
 }
