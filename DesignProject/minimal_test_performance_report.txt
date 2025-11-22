@@ -13,10 +13,10 @@ COMPILER PERFORMANCE ANALYSIS:
    ├─────────────────────┼──────────────┼─────────────┤
    │ Lexical Analysis    │ 0.0          │ 0.0         │
    │ Syntax Analysis     │ 0.0          │ 0.0         │
-   │ Semantic Analysis   │ 15.0         │ 100.0       │
+   │ Semantic Analysis   │ 0.0          │ 0.0         │
    │ Code Generation     │ 0.0          │ 0.0         │
    ├─────────────────────┼──────────────┼─────────────┤
-   │ TOTAL               │ 15.0         │ 100.0%      │
+   │ TOTAL               │ 0.1          │ 100.0%      │
    └─────────────────────┴──────────────┴─────────────┘
 
 2. MEMORY USAGE ANALYSIS:
@@ -27,7 +27,7 @@ COMPILER PERFORMANCE ANALYSIS:
    TOTAL MEMORY:        11.10 KB
 
 3. COMPILATION RESULTS:
-   Total Compilation Time: 0.015 seconds
+   Total Compilation Time: 0.000 seconds
    Tokens Processed:       11
    AST Nodes Created:      9
    Memory Usage:           11.10 KB
