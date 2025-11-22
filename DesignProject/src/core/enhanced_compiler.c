@@ -230,13 +230,40 @@ void generate_lexical_output(const char *input_file)
 
     while (fgets(line, sizeof(line), input))
     {
+        // Keep original line for position tracking
+        char original_line[1024];
+        strcpy(original_line, line);
+        
         // Simple tokenization for demonstration
         char *token = strtok(line, " \t\n{}();,");
-        int column = 1;
+        char *token_positions[100]; // Track original positions
+        int token_count_line = 0;
+        
+        // Find all token positions in original line first
+        char *search_pos = original_line;
+        while (token && token_count_line < 100)
+        {
+            char *found = strstr(search_pos, token);
+            if (found)
+            {
+                token_positions[token_count_line] = found;
+                token_count_line++;
+                search_pos = found + strlen(token);
+            }
+            token = strtok(NULL, " \t\n{}();,");
+        }
+        
+        // Reset tokenization
+        strcpy(line, original_line);
+        token = strtok(line, " \t\n{}();,");
+        int current_token_idx = 0;
 
-        while (token)
+        while (token && current_token_idx < token_count_line)
         {
             total_tokens++;
+            
+            // Calculate actual column position
+            int column = (token_positions[current_token_idx] - original_line) + 1;
 
             // Enhanced token classification without emojis
             const char *token_type = "IDENTIFIER";
@@ -284,8 +311,8 @@ void generate_lexical_output(const char *input_file)
             fprintf(lexical_output_file, "│ %-15s │ %-16s │ %-4d │ %-6d │ %-19s │\n",
                     token_type, token, line_num, column, attributes);
 
-            column += strlen(token) + 1;
             token = strtok(NULL, " \t\n{}();,");
+            current_token_idx++;
         }
         line_num++;
     }
