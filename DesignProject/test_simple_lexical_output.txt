@@ -2,7 +2,7 @@
 Lexical Analysis Output (TMA1)
 ========================================
 Input: test_simple.txt
-Generated: Nov 22 2025 12:55:53
+Generated: Nov 22 2025 15:33:57
 
 Token Type      | Lexeme       | Line | Column | Attributes
 --------------- | ------------ | ---- | ------ | ----------
