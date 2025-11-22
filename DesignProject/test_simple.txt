@@ -1,9 +1,9 @@
 func simpleTest() => integer {
-    local x : integear;
+    local x : integer;
     local y : integer;
     local result : integer;
     
-    x := 1.2;
+    x := 1;
     y := 20;
     result := x + y;
     write(result);

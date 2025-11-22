@@ -2,83 +2,13 @@
 Complete Compiler Test Results
 Design Project - All Phases Testing
 ========================================
-Generated: Nov 22 2025 13:59:38
-
-Test: test_simple.txt
-Result: FAILED
-Compilation Time: 0.000 seconds
-Tokens Generated: 41
-AST Nodes: 41
-Semantic Errors: 3
-----------------------------------------
-
-========================================
-Complete Compiler Test Results
-Design Project - All Phases Testing
-========================================
-Generated: Nov 22 2025 13:59:38
+Generated: Nov 22 2025 15:33:57
 
 Test: test_simple.txt
 Result: PASSED
-Compilation Time: 0.015 seconds
+Compilation Time: 0.000 seconds
 Tokens Generated: 41
 AST Nodes: 40
 Semantic Errors: 0
-----------------------------------------
-
-========================================
-Complete Compiler Test Results
-Design Project - All Phases Testing
-========================================
-Generated: Nov 22 2025 14:13:56
-
-Test: test_simple.txt
-Result: FAILED
-Compilation Time: 0.000 seconds
-Tokens Generated: 41
-AST Nodes: 41
-Semantic Errors: 3
-----------------------------------------
-
-========================================
-Complete Compiler Test Results
-Design Project - All Phases Testing
-========================================
-Generated: Nov 22 2025 14:50:40
-
-Test: test_simple.txt
-Result: FAILED
-Compilation Time: 0.000 seconds
-Tokens Generated: 41
-AST Nodes: 41
-Semantic Errors: 3
-----------------------------------------
-
-========================================
-Complete Compiler Test Results
-Design Project - All Phases Testing
-========================================
-Generated: Nov 22 2025 15:33:57
-
-Test: test_simple.txt
-Result: FAILED
-Compilation Time: 0.000 seconds
-Tokens Generated: 41
-AST Nodes: 41
-Semantic Errors: 3
-----------------------------------------
-
-========================================
-Complete Compiler Test Results
-Design Project - All Phases Testing
-========================================
-Generated: Nov 22 2025 15:33:57
-
-Test: test_simple.txt
-Result: FAILED
-Compilation Time: 0.000 seconds
-Tokens Generated: 41
-AST Nodes: 41
-Semantic Errors: 3
 ----------------------------------------
 
