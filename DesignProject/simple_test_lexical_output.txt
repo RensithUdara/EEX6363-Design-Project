@@ -1,0 +1,42 @@
+========================================
+Lexical Analysis Output (TMA1)
+========================================
+Input: simple_test.txt
+Generated: Nov 22 2025 12:51:11
+
+Token Type      | Lexeme       | Line | Column | Attributes
+--------------- | ------------ | ---- | ------ | ----------
+IDENTIFIER      | //           | 1    | 1      | -
+IDENTIFIER      | Simple       | 1    | 4      | -
+IDENTIFIER      | test         | 1    | 11     | -
+IDENTIFIER      | file         | 1    | 16     | -
+IDENTIFIER      | for          | 1    | 21     | -
+IDENTIFIER      | TMA03        | 1    | 25     | -
+IDENTIFIER      | integration | 1    | 31     | -
+KEYWORD         | class        | 2    | 1      | -
+IDENTIFIER      | SimpleClass  | 2    | 7      | -
+IDENTIFIER      |             | 2    | 19     | -
+IDENTIFIER      | public:     | 3    | 1      | -
+IDENTIFIER      | func         | 4    | 1      | -
+IDENTIFIER      | test         | 4    | 6      | -
+IDENTIFIER      | :            | 4    | 11     | -
+KEYWORD         | integer      | 4    | 13     | -
+IDENTIFIER      |             | 4    | 21     | -
+IDENTIFIER      | local        | 5    | 1      | -
+KEYWORD         | integer      | 5    | 7      | -
+IDENTIFIER      | x            | 5    | 15     | -
+IDENTIFIER      |             | 5    | 17     | -
+IDENTIFIER      | x            | 6    | 1      | -
+IDENTIFIER      | :=           | 6    | 3      | -
+NUMBER          | 42           | 6    | 6      | literal
+IDENTIFIER      |             | 6    | 9      | -
+KEYWORD         | return       | 7    | 1      | -
+IDENTIFIER      | x            | 7    | 8      | -
+IDENTIFIER      |             | 7    | 10     | -
+IDENTIFIER      |             | 8    | 1      | -
+
+STATISTICS:
+-----------
+Total Tokens: 28
+Total Lines: 9
+Lexical Errors: 0
