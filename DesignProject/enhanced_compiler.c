@@ -626,16 +626,19 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
     int tma03_result = call_tma03_analysis(input_file);
     int semantic_errors = get_semantic_error_count();
     int total_errors_from_tma03 = get_semantic_error_count() + get_semantic_warning_count();
-    
+
     // Use ACTUAL TMA03 error counts
     semantic_errors_found = semantic_errors;
-    actual_errors = semantic_errors;  // Use semantic errors from TMA03
-    
-    if (tma03_result != 0 || semantic_errors > 0) {
+    actual_errors = semantic_errors; // Use semantic errors from TMA03
+
+    if (tma03_result != 0 || semantic_errors > 0)
+    {
         printf("✗ TMA03 semantic analysis detected %d error(s)!\n", semantic_errors);
         printf("  - Semantic errors: %d\n", semantic_errors);
-        ast = NULL;  // Mark compilation as failed
-    } else {
+        ast = NULL; // Mark compilation as failed
+    }
+    else
+    {
         printf("✓ TMA03 semantic analysis: No errors detected\n");
     }
 
@@ -900,41 +903,41 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     // Use ACTUAL error counts from TMA03
     int actual_semantic_errors = get_semantic_error_count();
     int actual_total_errors = lexical_errors + syntax_errors + actual_semantic_errors + codegen_errors;
-    
+
     fprintf(error_file, "ERROR SUMMARY:\n");
     fprintf(error_file, "=============\n");
     fprintf(error_file, "Lexical Errors: %d\n", lexical_errors);
-    fprintf(error_file, "Syntax Errors: %d\n", syntax_errors);  
-    fprintf(error_file, "Semantic Errors: %d\n", actual_semantic_errors);  // Use actual count
+    fprintf(error_file, "Syntax Errors: %d\n", syntax_errors);
+    fprintf(error_file, "Semantic Errors: %d\n", actual_semantic_errors); // Use actual count
     fprintf(error_file, "Code Generation Errors: %d\n", codegen_errors);
-    fprintf(error_file, "Total Errors: %d\n\n", actual_total_errors);  // Use actual total
+    fprintf(error_file, "Total Errors: %d\n\n", actual_total_errors); // Use actual total
 
     if (actual_semantic_errors > 0)
     {
         fprintf(error_file, "DETAILED ERROR INFORMATION:\n");
         fprintf(error_file, "==========================\n");
         fprintf(error_file, "TMA03 detected %d semantic error(s):\n\n", actual_semantic_errors);
-        
+
         // Write the actual detailed errors from TMA03
         fprintf(error_file, "❌ SEMANTIC ERROR #1\n");
         fprintf(error_file, "   ├─ Code: E999\n");
         fprintf(error_file, "   ├─ Location: Line 12, Column 23\n");
         fprintf(error_file, "   ├─ Description: Unknown type 'integear'\n");
         fprintf(error_file, "   └─ 💡 Suggestion: Use 'integer' instead of 'integear'\n\n");
-        
+
         fprintf(error_file, "❌ SEMANTIC ERROR #2\n");
         fprintf(error_file, "   ├─ Code: E008\n");
         fprintf(error_file, "   ├─ Location: Line 16, Column 13\n");
         fprintf(error_file, "   ├─ Description: Incompatible assignment: cannot assign float to integer\n");
         fprintf(error_file, "   └─ 💡 Suggestion: Cast the float value to integer or change variable type\n\n");
-        
+
         fprintf(error_file, "❌ SEMANTIC ERROR #3\n");
         fprintf(error_file, "   ├─ Code: E007\n");
         fprintf(error_file, "   ├─ Location: Line 16, Column 13\n");
         fprintf(error_file, "   ├─ Description: Type mismatch: expected integer, but got float\n");
         fprintf(error_file, "   ├─ Context: assignment operation (x := 1.2)\n");
         fprintf(error_file, "   └─ 💡 Suggestion: Change to x := 1 or declare x as float\n\n");
-        
+
         fprintf(error_file, "RESOLUTION STEPS:\n");
         fprintf(error_file, "================\n");
         fprintf(error_file, "1. Fix line 2: Change 'integear' to 'integer'\n");
@@ -976,14 +979,17 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "[DEBUG] Output assembly written to output.s\n\n");
 
     // Final status based on actual TMA03 results
-    if (actual_semantic_errors > 0 || actual_total_errors > 0) {
+    if (actual_semantic_errors > 0 || actual_total_errors > 0)
+    {
         fprintf(error_file, "❌ FAILED: Compilation completed with %d error(s).\n", actual_total_errors);
         fprintf(error_file, "\nREQUIRED ACTIONS:\n");
         fprintf(error_file, "================\n");
         fprintf(error_file, "⚠️  Fix all %d semantic error(s) before proceeding\n", actual_semantic_errors);
         fprintf(error_file, "📝 Review detailed error information above\n");
         fprintf(error_file, "🔧 Apply suggested fixes and recompile\n");
-    } else {
+    }
+    else
+    {
         fprintf(error_file, "✅ SUCCESS: Compilation completed without errors.\n");
     }
 
