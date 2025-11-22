@@ -14,24 +14,21 @@ LEX = flex
 # Directories
 SRC_DIR = .
 BUILD_DIR = build
-TMA1_DIR = ../TMA01/question1b
-TMA2_DIR = ../TMA02
-TMA3_DIR = ../TMA03
+# All TMA03 files are now local
 
-# Include paths
-INCLUDES = -I$(TMA3_DIR) -I$(TMA2_DIR) -I$(TMA1_DIR)
+# Include paths (using local directory)
+INCLUDES = -I.
 
 # Source files
 COMPILER_SRC = compiler.c
 CODEGEN_SRC = codegen.c
 REGISTER_SRC = register_allocator.c
 
-# TMA source files (from previous TMAs)
-TMA2_PARSER = $(TMA2_DIR)/parser.y
-TMA3_SCANNER = $(TMA3_DIR)/scanner.l
-TMA3_AST = $(TMA3_DIR)/ast.c
-TMA3_SEMANTIC = $(TMA3_DIR)/semantic.c
-TMA3_ERROR = $(TMA3_DIR)/error_handler.c
+# TMA source files (now local)
+TMA3_SCANNER = scanner.l
+TMA3_AST = ast.c
+TMA3_SEMANTIC = semantic.c
+TMA3_ERROR = error_handler.c
 
 # Generated files
 LEX_OUTPUT = $(BUILD_DIR)/lex.yy.c
@@ -50,7 +47,7 @@ ERROR_OBJ = $(BUILD_DIR)/error_handler.o
 SEMANTIC_INT_OBJ = $(BUILD_DIR)/semantic_integration.o
 OUTPUT_GEN_OBJ = $(BUILD_DIR)/output_generator.o
 ENHANCED_COMPILER_OBJ = $(BUILD_DIR)/enhanced_compiler.o
-ALL_OBJS = $(ENHANCED_COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
+ALL_OBJS = $(ENHANCED_COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(SEMANTIC_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
 
 # Target executables
 TARGET = $(BUILD_DIR)/compiler

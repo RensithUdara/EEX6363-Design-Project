@@ -15,12 +15,28 @@
 .type main, @function
 
     # Program: Code generation from semantic analyzer
+    # Function definition
+
+# Function: test
+test:
+    # Function prologue
+    push %rbp
+    mov
+    sub %rsp, $128
+    mov %rax, $0    # Return value
+    ret
+    # Function epilogue
+    mov
+    pop %rbp
+    ret
+
 
 # ======================================
 # Code Generation Statistics
-# Instructions generated: 0
+# Instructions generated: 8
 # Registers spilled: 0
 # Optimization passes: 0
+# Memory layout size: 128 bytes
 # ======================================
 
 .section .note.GNU-stack,"",@progbits

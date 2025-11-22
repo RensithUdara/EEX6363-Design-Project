@@ -1,5 +1,5 @@
 func simpleTest() => integer {
-    local x : integer;
+    local x : integear;
     local y : integer;
     local result : integer;
     
