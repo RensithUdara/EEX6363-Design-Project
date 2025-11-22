@@ -1172,51 +1172,8 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
     fclose(test_file);
 }
 
-// Missing function stubs for TMA03 compatibility
-DataType get_data_type_from_node(ASTNode *node)
-{
-    if (!node)
-        return TYPE_VOID;
-
-    switch (node->type)
-    {
-    case AST_INT_LITERAL:
-        return TYPE_INTEGER;
-    case AST_FLOAT_LITERAL:
-        return TYPE_FLOAT;
-    case AST_ID:
-        return TYPE_UNKNOWN; // Would need symbol table lookup
-    default:
-        return TYPE_VOID;
-    }
-}
-
-int in_same_class(char *class1, char *class2)
-{
-    // Placeholder implementation
-    if (!class1 || !class2)
-        return 0;
-    return strcmp(class1, class2) == 0;
-}
-
-DataType get_expression_type(ASTNode *expr)
-{
-    if (!expr)
-        return TYPE_VOID;
-    return get_data_type_from_node(expr);
-}
-
-DataType string_to_data_type(const char *type_str)
-{
-    if (!type_str)
-        return TYPE_VOID;
-
-    if (strcmp(type_str, "integer") == 0)
-        return TYPE_INTEGER;
-    if (strcmp(type_str, "float") == 0)
-        return TYPE_FLOAT;
-    if (strcmp(type_str, "void") == 0)
-        return TYPE_VOID;
-
-    return TYPE_UNKNOWN;
-}
+// TMA03 function declarations (implemented in semantic.c)
+extern DataType get_data_type_from_node(ASTNode *node);
+extern int in_same_class(char *class1, char *class2);
+extern DataType get_expression_type(ASTNode *expr);
+extern DataType string_to_data_type(const char *type_str);
