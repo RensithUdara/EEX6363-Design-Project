@@ -41,52 +41,59 @@ int call_tma03_analysis(const char *filename)
 {
     printf("=== CALLING TMA03 SEMANTIC ANALYZER ===\n");
     printf("Input file: %s\n", filename);
-    
+
     // Set up input file for TMA03
     extern FILE *yyin;
     yyin = fopen(filename, "r");
-    if (!yyin) {
+    if (!yyin)
+    {
         printf("Error: Cannot open input file %s\n", filename);
         return 1;
     }
-    
+
     // Initialize error counts
     error_count = 0;
     semantic_error_count = 0;
     semantic_warning_count = 0;
-    
+
     // Call TMA03's parsing and semantic analysis workflow
     printf("Starting TMA03 parse_program...\n");
     int parse_result = parse_program(&ast_root);
-    
-    if (parse_result == 0 && ast_root) {
+
+    if (parse_result == 0 && ast_root)
+    {
         printf("✓ TMA03 parsing completed\n");
-        
+
         // Call TMA03's complete semantic analysis
         printf("Starting TMA03 semantic_analysis...\n");
         semantic_analysis(ast_root);
         printf("✓ TMA03 semantic analysis completed\n");
-        
+
         // Report the ACTUAL error counts from TMA03
         printf("\n=== TMA03 ACTUAL ERROR RESULTS ===\n");
         printf("Parse errors: %d\n", error_count);
-        printf("Semantic errors: %d\n", semantic_error_count);  
+        printf("Semantic errors: %d\n", semantic_error_count);
         printf("Semantic warnings: %d\n", semantic_warning_count);
         printf("Total errors: %d\n", error_count + semantic_error_count);
-        
-        if (semantic_error_count > 0 || error_count > 0) {
+
+        if (semantic_error_count > 0 || error_count > 0)
+        {
             printf("✗ TMA03 DETECTED %d ERROR(S)!\n", error_count + semantic_error_count);
             fclose(yyin);
-            return 1;  // Return error status
-        } else {
+            return 1; // Return error status
+        }
+        else
+        {
             printf("✓ TMA03: No errors detected\n");
         }
-    } else {
+    }
+    else
+    {
         printf("✗ TMA03 parsing failed with result: %d\n", parse_result);
         fclose(yyin);
         return parse_result;
     }
-    
+
     fclose(yyin);
     return 0;
 }
