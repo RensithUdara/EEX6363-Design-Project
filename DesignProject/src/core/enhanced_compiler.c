@@ -233,12 +233,12 @@ void generate_lexical_output(const char *input_file)
         // Keep original line for position tracking
         char original_line[1024];
         strcpy(original_line, line);
-        
+
         // Simple tokenization for demonstration
         char *token = strtok(line, " \t\n{}();,");
         char *token_positions[100]; // Track original positions
         int token_count_line = 0;
-        
+
         // Find all token positions in original line first
         char *search_pos = original_line;
         while (token && token_count_line < 100)
@@ -252,7 +252,7 @@ void generate_lexical_output(const char *input_file)
             }
             token = strtok(NULL, " \t\n{}();,");
         }
-        
+
         // Reset tokenization
         strcpy(line, original_line);
         token = strtok(line, " \t\n{}();,");
@@ -261,7 +261,7 @@ void generate_lexical_output(const char *input_file)
         while (token && current_token_idx < token_count_line)
         {
             total_tokens++;
-            
+
             // Calculate actual column position
             int column = (token_positions[current_token_idx] - original_line) + 1;
 
