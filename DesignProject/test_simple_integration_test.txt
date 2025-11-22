@@ -13,8 +13,8 @@ TEST EXECUTION SUMMARY:
    ├─────────────────────┼──────────────┼─────────────┼─────────────┤
    │ Lexer → Parser      │ ✅ PASSED   │ 0.0         │ SUCCESS     │
    │ Parser → Semantic   │ ✅ PASSED   │ 0.0         │ SUCCESS     │
-   │ Semantic → CodeGen  │ ✅ PASSED   │ 0.0         │ SUCCESS     │
-   │ End-to-End Pipeline │ ✅ PASSED   │ 0.0         │ SUCCESS     │
+   │ Semantic → CodeGen  │ ✅ PASSED   │ 15.0        │ SUCCESS     │
+   │ End-to-End Pipeline │ ✅ PASSED   │ 15.0        │ SUCCESS     │
    └─────────────────────┴──────────────┴─────────────┴─────────────┘
 
 2. FILE I/O INTEGRATION TESTS:

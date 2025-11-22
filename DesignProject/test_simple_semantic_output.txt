@@ -2,7 +2,7 @@
 Semantic Analysis Output (TMA3)
 ========================================
 Input: test_simple.txt
-Generated: Nov 22 2025 12:55:53
+Generated: Nov 22 2025 15:33:57
 
 SYMBOL TABLE:
 -------------
@@ -17,16 +17,16 @@ Features: Types, visibility, parameters, inheritance, array dimensions
 │
 │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
 │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
-│   simpleTest         │ FUNCTION     │ integer      │ public     │ Line 1   │ Returns: integer, No parameters
+│   simpleTest         │ FUNCTION     │ integer      │ public     │ Line 11  │ Returns: integer, No parameters
 └────────────────────────────────────────────────────────────────────────────────┘
 
   ┌─── SCOPE: func_simpleTest (Level 1) ─── [3 symbols] ─────────────────────────┐
   │
   │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
   │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
-  │   result             │ VARIABLE     │ integer      │ public     │ Line 4   │ Simple integer
-  │   y                  │ VARIABLE     │ integer      │ public     │ Line 3   │ Simple integer
-  │   x                  │ VARIABLE     │ integer      │ public     │ Line 2   │ Simple integer
+  │   result             │ VARIABLE     │ integer      │ public     │ Line 14  │ Simple integer
+  │   y                  │ VARIABLE     │ integer      │ public     │ Line 13  │ Simple integer
+  │   x                  │ VARIABLE     │ integer      │ public     │ Line 12  │ Simple integer
   └────────────────────────────────────────────────────────────────────────────────┘
 
 ================================================================================

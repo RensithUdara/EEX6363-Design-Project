@@ -1,7 +1,0 @@
-========================================
-Syntax Analysis Output (TMA2)
-========================================
-Input: simple_test.txt
-Grammar: Complete language grammar from TMA2
-
-ERROR: No AST generated
