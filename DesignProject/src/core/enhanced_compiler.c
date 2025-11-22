@@ -348,7 +348,7 @@ void generate_lexical_output(const char *input_file)
     fprintf(lexical_output_file, "║ ✅ Analysis Status           : %-49s ║\n",
             (get_lexical_error_count() == 0) ? "COMPLETED SUCCESSFULLY" : "COMPLETED WITH WARNINGS");
     fprintf(lexical_output_file, "╚═══════════════════════════════════════════════════════════════════════════════════╝\n");
-    
+
     fflush(lexical_output_file);
 }
 
@@ -366,115 +366,136 @@ void generate_complete_parse_tree_from_input(const char *input_file, FILE *outpu
     char line[1024];
     int depth = 1;
     int in_function = 0;
-    
+
     while (fgets(line, sizeof(line), input))
     {
         // Remove trailing newline
         line[strcspn(line, "\n")] = 0;
-        
+
         // Skip empty lines
         if (strlen(line) == 0 || strspn(line, " \t") == strlen(line))
             continue;
-            
+
         // Parse different statement types
         if (strstr(line, "func "))
         {
-            for (int i = 0; i < depth; i++) fprintf(output, "  ");
+            for (int i = 0; i < depth; i++)
+                fprintf(output, "  ");
             fprintf(output, "FUNC_DEF\n");
-            
-            for (int i = 0; i < depth + 1; i++) fprintf(output, "  ");
+
+            for (int i = 0; i < depth + 1; i++)
+                fprintf(output, "  ");
             fprintf(output, "FUNC_HEAD\n");
-            
+
             // Extract function name
             char *func_name = strstr(line, "func ") + 5;
             char *arrow = strstr(func_name, " =>");
             if (arrow)
             {
                 *arrow = '\0';
-                for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+                for (int i = 0; i < depth + 2; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "ID(\"%s\")\n", func_name);
-                
-                for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+
+                for (int i = 0; i < depth + 2; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "PARAM_LIST\n");
-                
-                for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+
+                for (int i = 0; i < depth + 2; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "RETURN_TYPE\n");
-                
+
                 char *return_type = arrow + 3;
-                for (int i = 0; i < depth + 3; i++) fprintf(output, "  ");
+                for (int i = 0; i < depth + 3; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "TYPE(\"%s\")\n", return_type);
             }
-            
-            for (int i = 0; i < depth + 1; i++) fprintf(output, "  ");
+
+            for (int i = 0; i < depth + 1; i++)
+                fprintf(output, "  ");
             fprintf(output, "FUNC_BODY\n");
             in_function = 1;
             depth = 2;
         }
         else if (strstr(line, "local "))
         {
-            for (int i = 0; i < depth + 1; i++) fprintf(output, "  ");
+            for (int i = 0; i < depth + 1; i++)
+                fprintf(output, "  ");
             fprintf(output, "LOCAL_VAR_DECL\n");
-            
-            for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+
+            for (int i = 0; i < depth + 2; i++)
+                fprintf(output, "  ");
             fprintf(output, "VAR_DECL\n");
-            
+
             // Extract variable name and type
             char *var_start = strstr(line, "local ") + 6;
             char *colon = strstr(var_start, " :");
             if (colon)
             {
                 *colon = '\0';
-                for (int i = 0; i < depth + 3; i++) fprintf(output, "  ");
+                for (int i = 0; i < depth + 3; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "ID(\"%s\")\n", var_start);
-                
+
                 char *type = colon + 3;
-                for (int i = 0; i < depth + 3; i++) fprintf(output, "  ");
+                for (int i = 0; i < depth + 3; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "TYPE(\"%s\")\n", type);
             }
         }
         else if (strstr(line, ":="))
         {
-            for (int i = 0; i < depth + 1; i++) fprintf(output, "  ");
+            for (int i = 0; i < depth + 1; i++)
+                fprintf(output, "  ");
             fprintf(output, "ASSIGNMENT\n");
-            
+
             char *assign = strstr(line, ":=");
             *assign = '\0';
             char *var_name = line;
             // Remove leading whitespace
-            while (*var_name == ' ' || *var_name == '\t') var_name++;
-            
-            for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+            while (*var_name == ' ' || *var_name == '\t')
+                var_name++;
+
+            for (int i = 0; i < depth + 2; i++)
+                fprintf(output, "  ");
             fprintf(output, "ID(\"%s\")\n", var_name);
-            
-            for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+
+            for (int i = 0; i < depth + 2; i++)
+                fprintf(output, "  ");
             fprintf(output, "ASSIGN_OP(\":=\")\n");
-            
+
             char *expr = assign + 3;
-            while (*expr == ' ') expr++;
-            
-            for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+            while (*expr == ' ')
+                expr++;
+
+            for (int i = 0; i < depth + 2; i++)
+                fprintf(output, "  ");
             fprintf(output, "EXPRESSION\n");
-            
+
             // Parse expression (simple cases)
             if (strstr(expr, " + "))
             {
-                for (int i = 0; i < depth + 3; i++) fprintf(output, "  ");
+                for (int i = 0; i < depth + 3; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "BINARY_OP\n");
-                
+
                 char *plus = strstr(expr, " + ");
                 *plus = '\0';
-                
-                for (int i = 0; i < depth + 4; i++) fprintf(output, "  ");
+
+                for (int i = 0; i < depth + 4; i++)
+                    fprintf(output, "  ");
                 if (isdigit(*expr))
                     fprintf(output, "INT_LITERAL(\"%s\")\n", expr);
                 else
                     fprintf(output, "ID(\"%s\")\n", expr);
-                
-                for (int i = 0; i < depth + 4; i++) fprintf(output, "  ");
+
+                for (int i = 0; i < depth + 4; i++)
+                    fprintf(output, "  ");
                 fprintf(output, "OPERATOR(\"+\")\n");
-                
+
                 char *right = plus + 3;
-                for (int i = 0; i < depth + 4; i++) fprintf(output, "  ");
+                for (int i = 0; i < depth + 4; i++)
+                    fprintf(output, "  ");
                 if (isdigit(*right))
                     fprintf(output, "INT_LITERAL(\"%s\")\n", right);
                 else
@@ -482,7 +503,8 @@ void generate_complete_parse_tree_from_input(const char *input_file, FILE *outpu
             }
             else
             {
-                for (int i = 0; i < depth + 3; i++) fprintf(output, "  ");
+                for (int i = 0; i < depth + 3; i++)
+                    fprintf(output, "  ");
                 if (isdigit(*expr))
                     fprintf(output, "INT_LITERAL(\"%s\")\n", expr);
                 else
@@ -491,24 +513,28 @@ void generate_complete_parse_tree_from_input(const char *input_file, FILE *outpu
         }
         else if (strstr(line, "write "))
         {
-            for (int i = 0; i < depth + 1; i++) fprintf(output, "  ");
+            for (int i = 0; i < depth + 1; i++)
+                fprintf(output, "  ");
             fprintf(output, "WRITE_STMT\n");
-            
+
             char *var = strstr(line, "write ") + 6;
-            for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+            for (int i = 0; i < depth + 2; i++)
+                fprintf(output, "  ");
             fprintf(output, "ID(\"%s\")\n", var);
         }
         else if (strstr(line, "return "))
         {
-            for (int i = 0; i < depth + 1; i++) fprintf(output, "  ");
+            for (int i = 0; i < depth + 1; i++)
+                fprintf(output, "  ");
             fprintf(output, "RETURN_STMT\n");
-            
+
             char *var = strstr(line, "return ") + 7;
-            for (int i = 0; i < depth + 2; i++) fprintf(output, "  ");
+            for (int i = 0; i < depth + 2; i++)
+                fprintf(output, "  ");
             fprintf(output, "ID(\"%s\")\n", var);
         }
     }
-    
+
     fclose(input);
 }
 
@@ -543,14 +569,14 @@ void generate_syntax_output(const char *input_file, ASTNode *ast)
         fprintf(syntax_output_file, "PARSE TREE (Generated from Input Analysis):\n");
         fprintf(syntax_output_file, "-------------------------------------------\n");
         generate_complete_parse_tree_from_input(input_file, syntax_output_file);
-        
+
         fprintf(syntax_output_file, "\nSTATISTICS:\n");
         fprintf(syntax_output_file, "-----------\n");
         fprintf(syntax_output_file, "AST Nodes: %d (estimated)\n", total_ast_nodes > 0 ? total_ast_nodes : 45);
         fprintf(syntax_output_file, "Tree Depth: %d (estimated)\n", 8);
         fprintf(syntax_output_file, "Syntax Errors: %d\n", get_syntax_error_count());
     }
-    
+
     fflush(syntax_output_file);
 }
 
