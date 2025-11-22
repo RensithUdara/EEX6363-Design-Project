@@ -208,3 +208,45 @@ AST Nodes: 40
 Semantic Errors: 0
 ----------------------------------------
 
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 01:34:00
+
+Test: tests/examples/test_simple.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 41
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 01:34:00
+
+Test: tests/examples/simple_test.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 28
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 01:34:00
+
+Test: tests/examples/minimal_test.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 9
+Semantic Errors: 0
+----------------------------------------
+
