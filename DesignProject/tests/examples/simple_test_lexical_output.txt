@@ -1,0 +1,54 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: tests/examples/simple_test.txt
+🕒 GENERATED: November 23, 2025 at 01:36:40
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ //               │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ Simple           │ 1    │ 4      │ variable            │
+│ IDENTIFIER      │ test             │ 1    │ 11     │ variable            │
+│ IDENTIFIER      │ file             │ 1    │ 16     │ variable            │
+│ IDENTIFIER      │ for              │ 1    │ 21     │ variable            │
+│ IDENTIFIER      │ TMA03            │ 1    │ 25     │ variable            │
+│ IDENTIFIER      │ integration     │ 1    │ 31     │ variable            │
+│ KEYWORD         │ class            │ 2    │ 1      │ reserved            │
+│ IDENTIFIER      │ SimpleClass      │ 2    │ 7      │ variable            │
+│ IDENTIFIER      │                 │ 2    │ 20     │ variable            │
+│ IDENTIFIER      │ public:         │ 3    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 4    │ 9      │ reserved            │
+│ IDENTIFIER      │ test             │ 4    │ 14     │ variable            │
+│ PUNCTUATION     │ :                │ 4    │ 21     │ delimiter           │
+│ IDENTIFIER      │ integeraa        │ 4    │ 23     │ variable            │
+│ IDENTIFIER      │                 │ 4    │ 34     │ variable            │
+│ KEYWORD         │ local            │ 5    │ 13     │ reserved            │
+│ KEYWORD         │ integer          │ 5    │ 19     │ reserved            │
+│ IDENTIFIER      │ x                │ 5    │ 27     │ variable            │
+│ IDENTIFIER      │                 │ 5    │ 29     │ variable            │
+│ IDENTIFIER      │ x                │ 6    │ 13     │ variable            │
+│ OPERATOR        │ :=               │ 6    │ 15     │ assignment          │
+│ NUMBER          │ 42               │ 6    │ 18     │ literal             │
+│ IDENTIFIER      │                 │ 6    │ 21     │ variable            │
+│ KEYWORD         │ return           │ 7    │ 13     │ reserved            │
+│ IDENTIFIER      │ x                │ 7    │ 20     │ variable            │
+│ IDENTIFIER      │                 │ 7    │ 22     │ variable            │
+│ IDENTIFIER      │                 │ 8    │ 10     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 28                                                ║
+║ 📄 Total Lines Analyzed      : 9                                                 ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-23 01:36:40                               ║
+║ 📂 Input Source File         : tests/examples/simple_test.txt                    ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
