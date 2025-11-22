@@ -1,9 +1,0 @@
-// Simple test file for TMA03 integration
-class SimpleClass {
-    public:
-        func test() : integeraa {
-            local integer x;
-            x := 42;
-            return x;
-        }
-};
