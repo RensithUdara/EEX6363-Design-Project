@@ -1,10 +1,6 @@
 # Makefile for Design Project - Complete Compiler Implementation
 # =============================================================
-# This Makefile builds the complete compiler including all phases:
-# - Lexical Analysis (from TMA1)
-# - Syntax Analysis (from TMA2)  
-# - Semantic Analysis (from TMA3)
-# - Code Generation (NEW - Design Project)
+# Updated for new directory structure with organized source files
 
 # Compiler and tools
 CC = gcc
@@ -12,349 +8,166 @@ CFLAGS = -Wall -Wextra -g -std=c99 -DDESIGN_PROJECT
 LEX = flex
 
 # Directories
-SRC_DIR = .
+SRC_DIR = src
 BUILD_DIR = build
-# All TMA03 files are now local
+INCLUDE_DIR = include
+TESTS_DIR = tests
+SCRIPTS_DIR = scripts
+DOCS_DIR = docs
+OUTPUT_DIR = output
 
-# Include paths (using local directory)
-INCLUDES = -I.
+# Include paths
+INCLUDES = -I$(INCLUDE_DIR) -I$(INCLUDE_DIR)/core -I$(INCLUDE_DIR)/lexical -I$(INCLUDE_DIR)/syntax -I$(INCLUDE_DIR)/semantic -I$(INCLUDE_DIR)/codegen -I$(INCLUDE_DIR)/utils
 
-# Source files
-ENHANCED_COMPILER_SRC = enhanced_compiler.c
-CODEGEN_SRC = codegen.c
-REGISTER_SRC = register_allocator.c
-
-# TMA source files (now local)
-TMA3_SCANNER = scanner.l
-TMA3_AST = ast.c
-TMA3_SEMANTIC = semantic.c
-TMA3_ERROR = error_handler.c
+# Source files organized by component
+CORE_SRCS = $(SRC_DIR)/core/enhanced_compiler.c $(SRC_DIR)/core/ast.c
+LEXICAL_SRCS = $(SRC_DIR)/lexical/scanner.l
+SEMANTIC_SRCS = $(SRC_DIR)/semantic/semantic.c $(SRC_DIR)/semantic/semantic_integration.c
+CODEGEN_SRCS = $(SRC_DIR)/codegen/codegen.c $(SRC_DIR)/codegen/register_allocator.c
+UTILS_SRCS = $(SRC_DIR)/utils/error_handler.c $(SRC_DIR)/utils/output_generator.c
 
 # Generated files
 LEX_OUTPUT = $(BUILD_DIR)/lex.yy.c
 
 # Object files
-COMPILER_OBJ = $(BUILD_DIR)/compiler.o
-CODEGEN_OBJ = $(BUILD_DIR)/codegen.o
-REGISTER_OBJ = $(BUILD_DIR)/register_allocator.o
-LEX_OBJ = $(BUILD_DIR)/lex.yy.o
-PARSER_OBJ = $(BUILD_DIR)/parser.tab.o
-AST_OBJ = $(BUILD_DIR)/ast.o
-SEMANTIC_OBJ = $(BUILD_DIR)/semantic.o
-ERROR_OBJ = $(BUILD_DIR)/error_handler.o
+CORE_OBJS = $(BUILD_DIR)/enhanced_compiler.o $(BUILD_DIR)/ast.o
+LEXICAL_OBJS = $(BUILD_DIR)/lex.yy.o
+SEMANTIC_OBJS = $(BUILD_DIR)/semantic.o $(BUILD_DIR)/semantic_integration.o
+CODEGEN_OBJS = $(BUILD_DIR)/codegen.o $(BUILD_DIR)/register_allocator.o
+UTILS_OBJS = $(BUILD_DIR)/error_handler.o $(BUILD_DIR)/output_generator.o
 
 # All object files
-SEMANTIC_INT_OBJ = $(BUILD_DIR)/semantic_integration.o
-OUTPUT_GEN_OBJ = $(BUILD_DIR)/output_generator.o
-ENHANCED_COMPILER_OBJ = $(BUILD_DIR)/enhanced_compiler.o
-ALL_OBJS = $(ENHANCED_COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(SEMANTIC_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
+ALL_OBJS = $(CORE_OBJS) $(LEXICAL_OBJS) $(SEMANTIC_OBJS) $(CODEGEN_OBJS) $(UTILS_OBJS)
 
-# Target executables
-TARGET = $(BUILD_DIR)/compiler
-ENHANCED_TARGET = enhanced_compiler
+# Executable
+TARGET = $(BUILD_DIR)/enhanced_compiler
 
-# Test files
-TEST_DIR = tests
-TEST_SOURCES = $(wildcard $(TEST_DIR)/*.src)
-TEST_ASSEMBLIES = $(TEST_SOURCES:.src=.asm)
-TEST_LOGS = $(TEST_SOURCES:.src=.log)
+# Main targets
+.PHONY: all clean test help structure info
 
-# Default target
-all: banner $(TARGET) $(ENHANCED_TARGET)
+all: $(TARGET)
 
-# Banner
-banner:
-	@echo "========================================"
-	@echo "Design Project - Complete Compiler Build"
-	@echo "========================================"
-	@echo "Building complete compiler with:"
-	@echo "  - Lexical Analysis (TMA1)"
-	@echo "  - Syntax Analysis (TMA2)"  
-	@echo "  - Semantic Analysis (TMA3)"
-	@echo "  - Code Generation (NEW)"
-	@echo "========================================"
-	@echo ""
+# Build the main executable
+$(TARGET): $(ALL_OBJS) | $(BUILD_DIR)
+	@echo "Linking enhanced compiler..."
+	$(CC) $(CFLAGS) -o $@ $(ALL_OBJS)
+	@echo "✓ Build successful! Executable: $(TARGET)"
+
+# Core components
+$(BUILD_DIR)/enhanced_compiler.o: $(SRC_DIR)/core/enhanced_compiler.c | $(BUILD_DIR)
+	@echo "Compiling main compiler..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/ast.o: $(SRC_DIR)/core/ast.c | $(BUILD_DIR)
+	@echo "Compiling AST module..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+# Lexical analysis
+$(BUILD_DIR)/lex.yy.o: $(LEX_OUTPUT) | $(BUILD_DIR)
+	@echo "Compiling lexical analyzer..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(LEX_OUTPUT): $(SRC_DIR)/lexical/scanner.l | $(BUILD_DIR)
+	@echo "Generating lexical analyzer..."
+	$(LEX) -o $@ $<
+
+# Semantic analysis
+$(BUILD_DIR)/semantic.o: $(SRC_DIR)/semantic/semantic.c | $(BUILD_DIR)
+	@echo "Compiling semantic analyzer..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/semantic_integration.o: $(SRC_DIR)/semantic/semantic_integration.c | $(BUILD_DIR)
+	@echo "Compiling semantic integration..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+# Code generation
+$(BUILD_DIR)/codegen.o: $(SRC_DIR)/codegen/codegen.c | $(BUILD_DIR)
+	@echo "Compiling code generator..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/register_allocator.o: $(SRC_DIR)/codegen/register_allocator.c | $(BUILD_DIR)
+	@echo "Compiling register allocator..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+# Utilities
+$(BUILD_DIR)/error_handler.o: $(SRC_DIR)/utils/error_handler.c | $(BUILD_DIR)
+	@echo "Compiling error handler..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/output_generator.o: $(SRC_DIR)/utils/output_generator.c | $(BUILD_DIR)
+	@echo "Compiling output generator..."
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 # Create build directory
 $(BUILD_DIR):
 	@mkdir -p $(BUILD_DIR)
 
-# Generate lexical analyzer
-$(LEX_OUTPUT): $(TMA3_SCANNER) | $(BUILD_DIR)
-	@echo "Generating lexical analyzer..."
-	$(LEX) -o $(LEX_OUTPUT) $(TMA3_SCANNER)
-
-# Compile lexical analyzer
-$(LEX_OBJ): $(LEX_OUTPUT)
-	@echo "Compiling lexical analyzer..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(LEX_OUTPUT) -o $(LEX_OBJ)
-
-# Generate and compile parser
-$(BUILD_DIR)/parser.tab.c: $(TMA2_PARSER) | $(BUILD_DIR)
-	@echo "Generating parser..."
-	cd $(TMA2_DIR) && bison -d parser.y
-	@cp $(TMA2_DIR)/parser.tab.c $(BUILD_DIR)/
-	@cp $(TMA2_DIR)/parser.tab.h $(BUILD_DIR)/
-
-$(PARSER_OBJ): $(BUILD_DIR)/parser.tab.c
-	@echo "Compiling parser..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(BUILD_DIR)/parser.tab.c -o $(PARSER_OBJ)
-
-# Compile AST module
-$(AST_OBJ): $(TMA3_AST) | $(BUILD_DIR)
-	@echo "Compiling AST module..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(TMA3_AST) -o $(AST_OBJ)
-
-# Compile semantic analyzer
-$(SEMANTIC_OBJ): $(TMA3_SEMANTIC) | $(BUILD_DIR)
-	@echo "Compiling TMA3 semantic analyzer..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(TMA3_SEMANTIC) -o $(SEMANTIC_OBJ)
-
-# Compile error handler
-$(ERROR_OBJ): $(TMA3_ERROR) | $(BUILD_DIR)
-	@echo "Compiling error handler..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(TMA3_ERROR) -o $(ERROR_OBJ)
-
-# Compile semantic integration
-$(SEMANTIC_INT_OBJ): semantic_integration.c semantic_integration.h | $(BUILD_DIR)
-	@echo "Compiling TMA3 semantic integration..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c semantic_integration.c -o $(SEMANTIC_INT_OBJ)
-
-# Compile code generator
-$(CODEGEN_OBJ): $(CODEGEN_SRC) codegen.h | $(BUILD_DIR)
-	@echo "Compiling code generator..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(CODEGEN_SRC) -o $(CODEGEN_OBJ)
-
-# Compile register allocator
-$(REGISTER_OBJ): $(REGISTER_SRC) register_allocator.h | $(BUILD_DIR)
-	@echo "Compiling register allocator..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c $(REGISTER_SRC) -o $(REGISTER_OBJ)
-
-# Compile output generator
-$(OUTPUT_GEN_OBJ): output_generator.c output_generator.h | $(BUILD_DIR)
-	@echo "Compiling output generator..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c output_generator.c -o $(OUTPUT_GEN_OBJ)
-
-# Compile enhanced compiler
-$(ENHANCED_COMPILER_OBJ): enhanced_compiler.c output_generator.h codegen.h register_allocator.h semantic_integration.h | $(BUILD_DIR)
-	@echo "Compiling enhanced compiler..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c enhanced_compiler.c -o $(ENHANCED_COMPILER_OBJ)
-
-# Link final executable
-$(TARGET): $(ALL_OBJS)
-	@echo "Linking complete compiler..."
-	$(CC) $(ALL_OBJS) -o $(TARGET) -lm
-	@echo ""
-	@echo "Build completed successfully!"
-	@echo "Executable: $(TARGET)"
-	@echo ""
-
-# Link enhanced compiler executable
-$(ENHANCED_TARGET): $(ALL_OBJS)
-	@echo "Linking enhanced compiler with automatic file generation..."
-	$(CC) $(ALL_OBJS) -o $(ENHANCED_TARGET) -lm
-	@chmod +x $(ENHANCED_TARGET)
-	@echo ""
-	@echo "Enhanced compiler build completed successfully!"
-	@echo "Executable: $(ENHANCED_TARGET)"
-	@echo ""
-
-# Create test directory and files
-setup-tests: | $(BUILD_DIR)
-	@mkdir -p $(TEST_DIR)
-	@echo "Creating test program files..."
-	@echo "// Test 1: Simple arithmetic" > $(TEST_DIR)/test1.src
-	@echo "function main() -> integer {" >> $(TEST_DIR)/test1.src
-	@echo "    local x: integer;" >> $(TEST_DIR)/test1.src
-	@echo "    x = 5 + 3 * 2;" >> $(TEST_DIR)/test1.src
-	@echo "    return x;" >> $(TEST_DIR)/test1.src
-	@echo "}" >> $(TEST_DIR)/test1.src
-	@echo ""
-	@echo "// Test 2: Control flow" > $(TEST_DIR)/test2.src
-	@echo "function factorial(n: integer) -> integer {" >> $(TEST_DIR)/test2.src
-	@echo "    if (n <= 1) then {" >> $(TEST_DIR)/test2.src
-	@echo "        return 1;" >> $(TEST_DIR)/test2.src
-	@echo "    } else {" >> $(TEST_DIR)/test2.src
-	@echo "        return n * factorial(n - 1);" >> $(TEST_DIR)/test2.src
-	@echo "    }" >> $(TEST_DIR)/test2.src
-	@echo "}" >> $(TEST_DIR)/test2.src
-	@echo ""
-	@echo "// Test 3: Class and inheritance" > $(TEST_DIR)/test3.src
-	@echo "class Animal {" >> $(TEST_DIR)/test3.src
-	@echo "    public name: integer;" >> $(TEST_DIR)/test3.src
-	@echo "    public func speak() -> void;" >> $(TEST_DIR)/test3.src
-	@echo "};" >> $(TEST_DIR)/test3.src
-	@echo ""
-	@echo "Test files created in $(TEST_DIR)/"
-
-# Run tests
-test: $(TARGET) setup-tests
-	@echo "========================================"
-	@echo "Running Compiler Tests"
-	@echo "========================================"
-	@for test in $(TEST_DIR)/*.src; do \
-		echo "Testing: $$test"; \
-		$(TARGET) -v "$$test" -o "$${test%.src}.asm" > "$${test%.src}.log" 2>&1; \
-		if [ $$? -eq 0 ]; then \
-			echo "  ✓ PASSED"; \
-		else \
-			echo "  ✗ FAILED (see $${test%.src}.log)"; \
-		fi; \
-	done
-	@echo "========================================"
-	@echo "Test Results Summary:"
-	@echo "  Passed: $$(grep -l '✓ PASSED' $(TEST_DIR)/*.log 2>/dev/null | wc -l)"
-	@echo "  Failed: $$(grep -l '✗ FAILED' $(TEST_DIR)/*.log 2>/dev/null | wc -l)"
-	@echo "========================================"
-
-# Demonstration targets
-demo: $(TARGET) setup-tests
-	@echo "========================================"
-	@echo "Design Project Compiler Demonstration"
-	@echo "========================================"
-	@echo ""
-	@echo "1. Compiling with all phases (default):"
-	$(TARGET) -v $(TEST_DIR)/test1.src -o $(BUILD_DIR)/demo1.asm
-	@echo ""
-	@echo "2. Showing AST and symbol tables:"
-	$(TARGET) -v -a -s $(TEST_DIR)/test2.src -o $(BUILD_DIR)/demo2.asm
-	@echo ""
-	@echo "3. Showing register allocation and memory layout:"
-	$(TARGET) -v -r -m $(TEST_DIR)/test1.src -o $(BUILD_DIR)/demo3.asm
-	@echo ""
-	@echo "4. Running individual phases:"
-	@echo "   Lexical + Syntax only (phases 1+2=3):"
-	$(TARGET) -p 3 $(TEST_DIR)/test1.src
-	@echo ""
-	@echo "   Up to semantic analysis (phases 1+2+4=7):"
-	$(TARGET) -p 7 -s $(TEST_DIR)/test2.src
-	@echo ""
-	@echo "========================================"
-	@echo "Generated assembly files:"
-	@ls -la $(BUILD_DIR)/*.asm 2>/dev/null || echo "  No assembly files generated"
-	@echo "========================================"
-
-# Performance test
-perf-test: $(TARGET) setup-tests
-	@echo "Running performance tests..."
-	@time $(TARGET) -v $(TEST_DIR)/test1.src -o $(BUILD_DIR)/perf1.asm
-	@time $(TARGET) -v $(TEST_DIR)/test2.src -o $(BUILD_DIR)/perf2.asm
-	@time $(TARGET) -v $(TEST_DIR)/test3.src -o $(BUILD_DIR)/perf3.asm
-
-# Show register allocation strategies
-show-strategies: $(TARGET) setup-tests
-	@echo "========================================"
-	@echo "Register Allocation Strategy Comparison"
-	@echo "========================================"
-	@echo ""
-	@echo "1. Naive allocation:"
-	$(TARGET) -v -r -R naive $(TEST_DIR)/test1.src -o $(BUILD_DIR)/naive.asm
-	@echo ""
-	@echo "2. LRU allocation:"
-	$(TARGET) -v -r -R lru $(TEST_DIR)/test1.src -o $(BUILD_DIR)/lru.asm
-	@echo ""
-	@echo "3. Optimal allocation:"
-	$(TARGET) -v -r -R optimal $(TEST_DIR)/test1.src -o $(BUILD_DIR)/optimal.asm
-	@echo ""
-
-# Clean build files
+# Clean build artifacts
 clean:
-	@echo "Cleaning build files..."
+	@echo "Cleaning build artifacts..."
 	@rm -rf $(BUILD_DIR)
-	@rm -rf $(TEST_DIR)
-	@rm -f $(ENHANCED_TARGET)
-	@echo "Clean completed."
+	@echo "✓ Clean complete"
 
-# Clean and rebuild
-rebuild: clean all
+# Run tests using the organized test structure
+test: $(TARGET)
+	@echo "Running comprehensive test suite..."
+	@cd $(SCRIPTS_DIR)/test && ./run_tests.sh
 
-# Install (copy to system location)
-install: $(TARGET)
-	@echo "Installing compiler..."
-	@mkdir -p /usr/local/bin
-	@cp $(TARGET) /usr/local/bin/design-compiler
-	@chmod +x /usr/local/bin/design-compiler
-	@echo "Compiler installed as 'design-compiler'"
+# Show project structure
+structure:
+	@echo "=== Project Structure ==="
+	@echo "Source Code:"
+	@find $(SRC_DIR) -type f -name "*.c" -o -name "*.l" -o -name "*.y" | sort
+	@echo ""
+	@echo "Headers:"
+	@find $(INCLUDE_DIR) -type f -name "*.h" | sort
+	@echo ""
+	@echo "Tests:"
+	@find $(TESTS_DIR) -type f | sort
+	@echo ""
+	@echo "Scripts:"
+	@find $(SCRIPTS_DIR) -type f | sort
 
-# Uninstall
-uninstall:
-	@echo "Uninstalling compiler..."
-	@rm -f /usr/local/bin/design-compiler
-	@echo "Compiler uninstalled."
+# Show build information
+info:
+	@echo "=== Build Information ==="
+	@echo "Compiler: $(CC)"
+	@echo "Flags: $(CFLAGS)"
+	@echo "Target: $(TARGET)"
+	@echo "Include paths: $(INCLUDES)"
+	@echo ""
+	@echo "=== Components ==="
+	@echo "Core: $(CORE_SRCS)"
+	@echo "Lexical: $(LEXICAL_SRCS)"
+	@echo "Semantic: $(SEMANTIC_SRCS)"
+	@echo "Codegen: $(CODEGEN_SRCS)"
+	@echo "Utils: $(UTILS_SRCS)"
 
 # Help target
 help:
-	@echo "Design Project Compiler - Available Targets:"
+	@echo "=== Available Targets ==="
+	@echo "all        - Build the complete compiler"
+	@echo "clean      - Remove build artifacts"
+	@echo "test       - Run comprehensive test suite"
+	@echo "structure  - Show project directory structure"
+	@echo "info       - Show build configuration"
+	@echo "help       - Show this help message"
 	@echo ""
-	@echo "Build targets:"
-	@echo "  all           - Build complete compiler (default)"
-	@echo "  rebuild       - Clean and rebuild"
-	@echo "  clean         - Remove build files"
-	@echo ""
-	@echo "Test targets:"
-	@echo "  setup-tests   - Create test source files"
-	@echo "  test          - Run comprehensive test suite"
-	@echo "  demo          - Run demonstration of all features"
-	@echo "  perf-test     - Run performance tests"
-	@echo "  show-strategies - Compare register allocation strategies"
-	@echo ""
-	@echo "Install targets:"
-	@echo "  install       - Install compiler system-wide"
-	@echo "  uninstall     - Remove system installation"
-	@echo ""
-	@echo "Usage examples:"
-	@echo "  make all                    # Build compiler"
-	@echo "  make test                   # Run all tests"
-	@echo "  make demo                   # Show compiler features"
-	@echo "  ./build/compiler input.src  # Compile a program"
+	@echo "=== Directory Structure ==="
+	@echo "src/       - Source code organized by component"
+	@echo "include/   - Header files organized by component"
+	@echo "build/     - Build artifacts and executables"
+	@echo "tests/     - Test files and test outputs"
+	@echo "scripts/   - Build and test scripts"
+	@echo "docs/      - Documentation and requirements"
+	@echo "output/    - Generated assembly and reports"
 
-# Documentation generation
-docs: 
-	@echo "Generating documentation..."
-	@mkdir -p docs
-	@echo "# Design Project Documentation" > docs/README.md
-	@echo "" >> docs/README.md
-	@echo "## Architecture Overview" >> docs/README.md
-	@echo "This compiler implements a complete four-phase compilation process:" >> docs/README.md
-	@echo "" >> docs/README.md
-	@echo "1. **Lexical Analysis**: Tokenization using Flex" >> docs/README.md
-	@echo "2. **Syntax Analysis**: Recursive descent parsing with AST generation" >> docs/README.md
-	@echo "3. **Semantic Analysis**: Two-phase semantic checking with symbol tables" >> docs/README.md
-	@echo "4. **Code Generation**: x86-64 assembly generation with register allocation" >> docs/README.md
-	@echo "" >> docs/README.md
-	@echo "Generated documentation in docs/"
-
-# Display project statistics
-stats:
-	@echo "========================================"
-	@echo "Design Project Statistics"
-	@echo "========================================"
-	@echo "Source files:"
-	@find . -name "*.c" -o -name "*.h" -o -name "*.l" -o -name "*.y" | wc -l
-	@echo "Lines of code:"
-	@find . -name "*.c" -o -name "*.h" | xargs wc -l | tail -1
-	@echo "Test files:"
-	@find $(TEST_DIR) -name "*.src" 2>/dev/null | wc -l || echo "0"
-	@echo "Build artifacts:"
-	@find $(BUILD_DIR) -type f 2>/dev/null | wc -l || echo "0"
-	@echo "========================================"
-
-# Show build configuration
-config:
-	@echo "========================================"
-	@echo "Build Configuration"
-	@echo "========================================"
-	@echo "Compiler: $(CC)"
-	@echo "CFLAGS: $(CFLAGS)"
-	@echo "Lexer: $(LEX)"
-	@echo "Include paths: $(INCLUDES)"
-	@echo "Source directory: $(SRC_DIR)"
-	@echo "Build directory: $(BUILD_DIR)"
-	@echo "Target: $(TARGET)"
-	@echo "========================================"
-
-# Declare phony targets
-.PHONY: all banner clean rebuild test demo perf-test show-strategies help docs stats config setup-tests install uninstall
-
-# Default target when no target is specified
-.DEFAULT_GOAL := all
+# Dependencies (auto-generated would be better, but this works for now)
+$(BUILD_DIR)/enhanced_compiler.o: $(INCLUDE_DIR)/utils/output_generator.h $(INCLUDE_DIR)/codegen/codegen.h $(INCLUDE_DIR)/semantic/semantic_integration.h $(INCLUDE_DIR)/codegen/register_allocator.h $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h
+$(BUILD_DIR)/ast.o: $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h
+$(BUILD_DIR)/semantic.o: $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h
+$(BUILD_DIR)/semantic_integration.o: $(INCLUDE_DIR)/semantic/semantic_integration.h
+$(BUILD_DIR)/codegen.o: $(INCLUDE_DIR)/codegen/codegen.h $(INCLUDE_DIR)/codegen/register_allocator.h
+$(BUILD_DIR)/register_allocator.o: $(INCLUDE_DIR)/codegen/register_allocator.h
+$(BUILD_DIR)/error_handler.o: $(INCLUDE_DIR)/utils/error_handler.h $(INCLUDE_DIR)/core/ast.h
+$(BUILD_DIR)/output_generator.o: $(INCLUDE_DIR)/utils/output_generator.h $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h $(INCLUDE_DIR)/codegen/codegen.h

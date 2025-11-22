@@ -1,0 +1,60 @@
+========================================
+Design Project - Error Log
+========================================
+Generated: November 22, 2025
+Input File: tests/examples/test_simple.txt
+
+COMPILATION SESSION LOG:
+=======================
+
+[INFO] Starting compilation of tests/examples/test_simple.txt
+[INFO] Phase 1: Lexical Analysis - Started
+[INFO] Phase 1: Lexical Analysis - Completed (0 errors)
+[INFO] Phase 2: Syntax Analysis - Started
+[INFO] Phase 2: Syntax Analysis - Completed (0 errors)
+[INFO] Phase 3: Semantic Analysis - Started
+[INFO] Phase 3: Semantic Analysis - Completed (0 errors, 3 warnings)
+[INFO] Phase 4: Code Generation - Started
+[INFO] Phase 4: Code Generation - Completed (0 errors)
+[INFO] Compilation successful
+
+ERROR SUMMARY:
+=============
+Lexical Errors: 0
+Syntax Errors: 0
+Semantic Errors: 0
+Code Generation Errors: 0
+Total Errors: 0
+
+WARNING SUMMARY:
+===============
+Total Warnings: 3
+
+FILE GENERATION STATUS:
+======================
+✅ tests/examples/test_simple_lexical_output.txt - Generated successfully
+✅ tests/examples/test_simple_syntax_output.txt - Generated successfully
+✅ tests/examples/test_simple_semantic_output.txt - Generated successfully
+✅ tests/examples/test_simple_symbol_table.txt - Generated successfully
+✅ tests/examples/test_simple_intermediate_code.txt - Generated successfully
+✅ output.s - Generated successfully
+
+PERFORMANCE METRICS:
+==================
+Compilation Time: < 1 second
+Memory Usage: Minimal
+Token Count: 41 tokens processed
+AST Nodes: 40 nodes created
+Symbol Table Entries: 0 symbols
+Generated Instructions: 15 assembly instructions
+
+DEBUG INFORMATION:
+=================
+[DEBUG] Lexical phase processed 41 tokens
+[DEBUG] Parser generated AST with 40 nodes
+[DEBUG] Semantic analyzer found 0 scopes
+[DEBUG] Code generator allocated 8 registers
+[DEBUG] No spill operations required
+[DEBUG] Output assembly written to output.s
+
+✅ SUCCESS: Compilation completed without errors.

@@ -553,8 +553,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "scanner.l"
-#line 2 "scanner.l"
+#line 1 "src/lexical/scanner.l"
+#line 2 "src/lexical/scanner.l"
 #define _POSIX_C_SOURCE 200809L
 #define _DEFAULT_SOURCE
 #define _BSD_SOURCE
@@ -976,7 +976,7 @@ YY_DECL
 		}
 
 	{
-#line 229 "scanner.l"
+#line 229 "src/lexical/scanner.l"
 
 
 #line 982 "build/lex.yy.c"
@@ -1038,27 +1038,27 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 231 "scanner.l"
+#line 231 "src/lexical/scanner.l"
 { /* Inline comment - skip */ column += yyleng; }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 233 "scanner.l"
+#line 233 "src/lexical/scanner.l"
 { BEGIN(BLOCK_COMMENT); column += 2; }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 234 "scanner.l"
+#line 234 "src/lexical/scanner.l"
 { BEGIN(INITIAL); column += 2; }
 	YY_BREAK
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 235 "scanner.l"
+#line 235 "src/lexical/scanner.l"
 { line++; column = 1; }
 	YY_BREAK
 case YY_STATE_EOF(BLOCK_COMMENT):
-#line 236 "scanner.l"
+#line 236 "src/lexical/scanner.l"
 { 
     handle_lexical_error("Unterminated block comment starting at this location"); 
     return 0; 
@@ -1066,263 +1066,263 @@ case YY_STATE_EOF(BLOCK_COMMENT):
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 240 "scanner.l"
+#line 240 "src/lexical/scanner.l"
 { column++; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 242 "scanner.l"
+#line 242 "src/lexical/scanner.l"
 { column += yyleng; }
 	YY_BREAK
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
-#line 243 "scanner.l"
+#line 243 "src/lexical/scanner.l"
 { line++; column = 1; }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 245 "scanner.l"
+#line 245 "src/lexical/scanner.l"
 { add_token(yytext, "ATTRIBUTE"); return ATTRIBUTE; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 246 "scanner.l"
+#line 246 "src/lexical/scanner.l"
 { add_token(yytext, "CLASS"); return CLASS; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 247 "scanner.l"
+#line 247 "src/lexical/scanner.l"
 { add_token(yytext, "CONSTRUCT"); return CONSTRUCT; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 248 "scanner.l"
+#line 248 "src/lexical/scanner.l"
 { add_token(yytext, "CONSTRUCTOR"); return CONSTRUCTOR; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 249 "scanner.l"
+#line 249 "src/lexical/scanner.l"
 { add_token(yytext, "ELSE"); return ELSE; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 250 "scanner.l"
+#line 250 "src/lexical/scanner.l"
 { add_token(yytext, "FLOAT_KW"); return FLOAT_KW; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 251 "scanner.l"
+#line 251 "src/lexical/scanner.l"
 { add_token(yytext, "FUNC"); return FUNC; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 252 "scanner.l"
+#line 252 "src/lexical/scanner.l"
 { add_token(yytext, "IF"); return IF; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 253 "scanner.l"
+#line 253 "src/lexical/scanner.l"
 { add_token(yytext, "IMPLEMENT"); return IMPLEMENT; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 254 "scanner.l"
+#line 254 "src/lexical/scanner.l"
 { add_token(yytext, "INTEGER_KW"); return INTEGER_KW; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 255 "scanner.l"
+#line 255 "src/lexical/scanner.l"
 { add_token(yytext, "ISA"); return ISA; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 256 "scanner.l"
+#line 256 "src/lexical/scanner.l"
 { add_token(yytext, "LOCAL"); return LOCAL; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 257 "scanner.l"
+#line 257 "src/lexical/scanner.l"
 { add_token(yytext, "PRIVATE"); return PRIVATE; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 258 "scanner.l"
+#line 258 "src/lexical/scanner.l"
 { add_token(yytext, "PUBLIC"); return PUBLIC; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 259 "scanner.l"
+#line 259 "src/lexical/scanner.l"
 { add_token(yytext, "READ"); return READ; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 260 "scanner.l"
+#line 260 "src/lexical/scanner.l"
 { add_token(yytext, "RETURN"); return RETURN; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 261 "scanner.l"
+#line 261 "src/lexical/scanner.l"
 { add_token(yytext, "SELF"); return SELF; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 262 "scanner.l"
+#line 262 "src/lexical/scanner.l"
 { add_token(yytext, "THEN"); return THEN; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 263 "scanner.l"
+#line 263 "src/lexical/scanner.l"
 { add_token(yytext, "VOID"); return VOID; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 264 "scanner.l"
+#line 264 "src/lexical/scanner.l"
 { add_token(yytext, "WHILE"); return WHILE; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 265 "scanner.l"
+#line 265 "src/lexical/scanner.l"
 { add_token(yytext, "WRITE"); return WRITE; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 266 "scanner.l"
+#line 266 "src/lexical/scanner.l"
 { add_token(yytext, "AND"); return AND; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 267 "scanner.l"
+#line 267 "src/lexical/scanner.l"
 { add_token(yytext, "OR"); return OR; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 268 "scanner.l"
+#line 268 "src/lexical/scanner.l"
 { add_token(yytext, "NOT"); return NOT; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 270 "scanner.l"
+#line 270 "src/lexical/scanner.l"
 { add_token(yytext, "ASSIGN"); return ASSIGN; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 271 "scanner.l"
+#line 271 "src/lexical/scanner.l"
 { add_token(yytext, "ARROW"); return ARROW; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 272 "scanner.l"
+#line 272 "src/lexical/scanner.l"
 { add_token(yytext, "EQ"); return EQ; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 273 "scanner.l"
+#line 273 "src/lexical/scanner.l"
 { add_token(yytext, "NE"); return NE; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 274 "scanner.l"
+#line 274 "src/lexical/scanner.l"
 { add_token(yytext, "LE"); return LE; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 275 "scanner.l"
+#line 275 "src/lexical/scanner.l"
 { add_token(yytext, "GE"); return GE; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 277 "scanner.l"
+#line 277 "src/lexical/scanner.l"
 { add_token(yytext, "LT"); return LT; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 278 "scanner.l"
+#line 278 "src/lexical/scanner.l"
 { add_token(yytext, "GT"); return GT; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 279 "scanner.l"
+#line 279 "src/lexical/scanner.l"
 { add_token(yytext, "PLUS"); return PLUS; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 280 "scanner.l"
+#line 280 "src/lexical/scanner.l"
 { add_token(yytext, "MINUS"); return MINUS; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 281 "scanner.l"
+#line 281 "src/lexical/scanner.l"
 { add_token(yytext, "MULT"); return MULT; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 282 "scanner.l"
+#line 282 "src/lexical/scanner.l"
 { add_token(yytext, "DIV"); return DIV; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 283 "scanner.l"
+#line 283 "src/lexical/scanner.l"
 { add_token(yytext, "LPAREN"); return LPAREN; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 284 "scanner.l"
+#line 284 "src/lexical/scanner.l"
 { add_token(yytext, "RPAREN"); return RPAREN; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 285 "scanner.l"
+#line 285 "src/lexical/scanner.l"
 { add_token(yytext, "LBRACE"); return LBRACE; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 286 "scanner.l"
+#line 286 "src/lexical/scanner.l"
 { add_token(yytext, "RBRACE"); return RBRACE; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 287 "scanner.l"
+#line 287 "src/lexical/scanner.l"
 { add_token(yytext, "LBRACKET"); return LBRACKET; }
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 288 "scanner.l"
+#line 288 "src/lexical/scanner.l"
 { add_token(yytext, "RBRACKET"); return RBRACKET; }
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 289 "scanner.l"
+#line 289 "src/lexical/scanner.l"
 { add_token(yytext, "SEMI"); return SEMI; }
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 290 "scanner.l"
+#line 290 "src/lexical/scanner.l"
 { add_token(yytext, "COMMA"); return COMMA; }
 	YY_BREAK
 case 52:
 YY_RULE_SETUP
-#line 291 "scanner.l"
+#line 291 "src/lexical/scanner.l"
 { add_token(yytext, "DOT"); return DOT; }
 	YY_BREAK
 case 53:
 YY_RULE_SETUP
-#line 292 "scanner.l"
+#line 292 "src/lexical/scanner.l"
 { add_token(yytext, "COLON"); return COLON; }
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 294 "scanner.l"
+#line 294 "src/lexical/scanner.l"
 { add_token(yytext, "FLOATLIT"); return FLOATLIT; }
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 295 "scanner.l"
+#line 295 "src/lexical/scanner.l"
 { add_token(yytext, "INTLIT"); return INTLIT; }
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 297 "scanner.l"
+#line 297 "src/lexical/scanner.l"
 { 
     handle_invalid_number(yytext); 
     column += yyleng; 
@@ -1333,7 +1333,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 305 "scanner.l"
+#line 305 "src/lexical/scanner.l"
 { 
     handle_invalid_float(yytext); 
     column += yyleng; 
@@ -1343,12 +1343,12 @@ YY_RULE_SETUP
 	YY_BREAK
 case 58:
 YY_RULE_SETUP
-#line 312 "scanner.l"
+#line 312 "src/lexical/scanner.l"
 { add_token(yytext, "ID"); return ID; }
 	YY_BREAK
 case 59:
 YY_RULE_SETUP
-#line 314 "scanner.l"
+#line 314 "src/lexical/scanner.l"
 { 
     handle_invalid_identifier(yytext);
     column += yyleng;
@@ -1358,7 +1358,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 321 "scanner.l"
+#line 321 "src/lexical/scanner.l"
 { 
     handle_double_semicolon(yytext);
     column += yyleng; 
@@ -1372,7 +1372,7 @@ YY_LINENO_REWIND_TO(yy_cp - 1);
 (yy_c_buf_p) = yy_cp -= 1;
 YY_DO_BEFORE_ACTION; /* set up yytext again */
 YY_RULE_SETUP
-#line 327 "scanner.l"
+#line 327 "src/lexical/scanner.l"
 {
     handle_lexical_error("Unterminated string literal");
     column += yyleng;
@@ -1381,7 +1381,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 62:
 YY_RULE_SETUP
-#line 333 "scanner.l"
+#line 333 "src/lexical/scanner.l"
 {
     handle_invalid_arrow(yytext);
     column += yyleng;
@@ -1390,7 +1390,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 339 "scanner.l"
+#line 339 "src/lexical/scanner.l"
 { 
     char error_msg[100];
     if (yytext[0] >= 32 && yytext[0] <= 126) {
@@ -1405,7 +1405,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 351 "scanner.l"
+#line 351 "src/lexical/scanner.l"
 ECHO;
 	YY_BREAK
 #line 1411 "build/lex.yy.c"
@@ -2376,7 +2376,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 351 "scanner.l"
+#line 351 "src/lexical/scanner.l"
 
 
 int yywrap() {
