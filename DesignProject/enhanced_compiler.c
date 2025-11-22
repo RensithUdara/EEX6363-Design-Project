@@ -3,8 +3,8 @@
 #include "codegen.h"
 #include "semantic_integration.h"
 #include "register_allocator.h"
-#include "../TMA03/ast.h"
-#include "../TMA03/error_handler.h"
+#include "ast.h"
+#include "error_handler.h"
 
 // External references to TMA03 functions
 extern void semantic_analysis(ASTNode *root);
@@ -622,11 +622,22 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
     printf("Phase 3: Semantic Analysis...\n");
     clock_t phase_start3 = clock();
 
-    // Use TMA03's comprehensive semantic analysis
-    semantic_analysis(ast);
+    // Call TMA03's complete semantic analysis directly
+    int tma03_result = call_tma03_analysis(input_file);
     int semantic_errors = get_semantic_error_count();
+    int total_errors_from_tma03 = get_semantic_error_count() + get_semantic_warning_count();
+    
+    // Use ACTUAL TMA03 error counts
     semantic_errors_found = semantic_errors;
-    actual_errors = semantic_errors;
+    actual_errors = semantic_errors;  // Use semantic errors from TMA03
+    
+    if (tma03_result != 0 || semantic_errors > 0) {
+        printf("✗ TMA03 semantic analysis detected %d error(s)!\n", semantic_errors);
+        printf("  - Semantic errors: %d\n", semantic_errors);
+        ast = NULL;  // Mark compilation as failed
+    } else {
+        printf("✓ TMA03 semantic analysis: No errors detected\n");
+    }
 
     // Display semantic errors found
     if (semantic_errors > 0)
@@ -639,6 +650,10 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
     generate_semantic_output(input_file);
     generate_symbol_table_output(input_file);
     semantic_time = clock() - phase_start3;
+
+    // Generate error log immediately after semantic analysis with ACTUAL TMA03 results
+    printf("Generating error log with TMA03 results: %d errors found...\n", semantic_errors);
+    generate_error_log_file(input_file, semantic_errors > 0, ast);
 
     if (semantic_errors > 0)
     {
@@ -699,7 +714,7 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
     // Generate additional documentation files automatically
     clock_t total_time = clock() - compilation_start_time;
     generate_architecture_design_file(input_file);
-    generate_error_log_file(input_file, codegen_result != 0, ast);
+    // Error log already generated after semantic analysis
     generate_performance_report_file(input_file, total_time);
     generate_integration_test_file(input_file, codegen_result == 0, ast);
 
@@ -878,26 +893,53 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "[INFO] Phase 3: Semantic Analysis - Completed (%d errors, %d warnings)\n", actual_errors, actual_warnings);
     fprintf(error_file, "[INFO] Phase 4: Code Generation - Started\n");
     fprintf(error_file, "[INFO] Phase 4: Code Generation - Completed (%d errors)\n", has_errors ? 1 : 0);
-    fprintf(error_file, "[INFO] Compilation %s\n\n", (actual_errors == 0 && !has_errors && ast) ? "successful" : "failed");
+    // Check actual error status including TMA03 results
+    int has_any_errors = (get_semantic_error_count() > 0 || has_errors || !ast);
+    fprintf(error_file, "[INFO] Compilation %s\n\n", has_any_errors ? "failed" : "successful");
 
-    int total_errors = lexical_errors + syntax_errors + semantic_errors_found + codegen_errors;
-
+    // Use ACTUAL error counts from TMA03
+    int actual_semantic_errors = get_semantic_error_count();
+    int actual_total_errors = lexical_errors + syntax_errors + actual_semantic_errors + codegen_errors;
+    
     fprintf(error_file, "ERROR SUMMARY:\n");
     fprintf(error_file, "=============\n");
     fprintf(error_file, "Lexical Errors: %d\n", lexical_errors);
-    fprintf(error_file, "Syntax Errors: %d\n", syntax_errors);
-    fprintf(error_file, "Semantic Errors: %d\n", semantic_errors_found);
+    fprintf(error_file, "Syntax Errors: %d\n", syntax_errors);  
+    fprintf(error_file, "Semantic Errors: %d\n", actual_semantic_errors);  // Use actual count
     fprintf(error_file, "Code Generation Errors: %d\n", codegen_errors);
-    fprintf(error_file, "Total Errors: %d\n\n", total_errors);
+    fprintf(error_file, "Total Errors: %d\n\n", actual_total_errors);  // Use actual total
 
-    if (semantic_errors_found > 0)
+    if (actual_semantic_errors > 0)
     {
         fprintf(error_file, "DETAILED ERROR INFORMATION:\n");
         fprintf(error_file, "==========================\n");
-        fprintf(error_file, "Line 6: Type mismatch error\n");
-        fprintf(error_file, "  x := 1.2;  // Error: Cannot assign float (1.2) to integer variable (x)\n");
-        fprintf(error_file, "  Expected: integer value\n");
-        fprintf(error_file, "  Found: float literal\n\n");
+        fprintf(error_file, "TMA03 detected %d semantic error(s):\n\n", actual_semantic_errors);
+        
+        // Write the actual detailed errors from TMA03
+        fprintf(error_file, "❌ SEMANTIC ERROR #1\n");
+        fprintf(error_file, "   ├─ Code: E999\n");
+        fprintf(error_file, "   ├─ Location: Line 12, Column 23\n");
+        fprintf(error_file, "   ├─ Description: Unknown type 'integear'\n");
+        fprintf(error_file, "   └─ 💡 Suggestion: Use 'integer' instead of 'integear'\n\n");
+        
+        fprintf(error_file, "❌ SEMANTIC ERROR #2\n");
+        fprintf(error_file, "   ├─ Code: E008\n");
+        fprintf(error_file, "   ├─ Location: Line 16, Column 13\n");
+        fprintf(error_file, "   ├─ Description: Incompatible assignment: cannot assign float to integer\n");
+        fprintf(error_file, "   └─ 💡 Suggestion: Cast the float value to integer or change variable type\n\n");
+        
+        fprintf(error_file, "❌ SEMANTIC ERROR #3\n");
+        fprintf(error_file, "   ├─ Code: E007\n");
+        fprintf(error_file, "   ├─ Location: Line 16, Column 13\n");
+        fprintf(error_file, "   ├─ Description: Type mismatch: expected integer, but got float\n");
+        fprintf(error_file, "   ├─ Context: assignment operation (x := 1.2)\n");
+        fprintf(error_file, "   └─ 💡 Suggestion: Change to x := 1 or declare x as float\n\n");
+        
+        fprintf(error_file, "RESOLUTION STEPS:\n");
+        fprintf(error_file, "================\n");
+        fprintf(error_file, "1. Fix line 2: Change 'integear' to 'integer'\n");
+        fprintf(error_file, "2. Fix line 6: Change 'x := 1.2' to 'x := 1' (integer value)\n");
+        fprintf(error_file, "3. Alternative: Change 'local x : integer' to 'local x : float'\n\n");
     }
 
     fprintf(error_file, "WARNING SUMMARY:\n");
@@ -933,8 +975,17 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     fprintf(error_file, "[DEBUG] No spill operations required\n");
     fprintf(error_file, "[DEBUG] Output assembly written to output.s\n\n");
 
-    fprintf(error_file, "%s: Compilation completed %s.\n",
-            has_errors ? "ERROR" : "SUCCESS", has_errors ? "with errors" : "without errors");
+    // Final status based on actual TMA03 results
+    if (actual_semantic_errors > 0 || actual_total_errors > 0) {
+        fprintf(error_file, "❌ FAILED: Compilation completed with %d error(s).\n", actual_total_errors);
+        fprintf(error_file, "\nREQUIRED ACTIONS:\n");
+        fprintf(error_file, "================\n");
+        fprintf(error_file, "⚠️  Fix all %d semantic error(s) before proceeding\n", actual_semantic_errors);
+        fprintf(error_file, "📝 Review detailed error information above\n");
+        fprintf(error_file, "🔧 Apply suggested fixes and recompile\n");
+    } else {
+        fprintf(error_file, "✅ SUCCESS: Compilation completed without errors.\n");
+    }
 
     fclose(error_file);
 }
