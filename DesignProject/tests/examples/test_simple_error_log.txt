@@ -1,7 +1,7 @@
 ========================================
 Design Project - Error Log
 ========================================
-Generated: November 23, 2025 at 01:34:07
+Generated: November 23, 2025 at 10:32:26
 Input File: tests/examples/test_simple.txt
 
 COMPILATION SESSION LOG:
@@ -43,14 +43,14 @@ PERFORMANCE METRICS:
 ==================
 Compilation Time: < 1 second
 Memory Usage: Minimal
-Token Count: 41 tokens processed
+Token Count: 31 tokens processed
 AST Nodes: 40 nodes created
 Symbol Table Entries: 0 symbols
 Generated Instructions: 15 assembly instructions
 
 DEBUG INFORMATION:
 =================
-[DEBUG] Lexical phase processed 41 tokens
+[DEBUG] Lexical phase processed 31 tokens
 [DEBUG] Parser generated AST with 40 nodes
 [DEBUG] Semantic analyzer found 0 scopes
 [DEBUG] Code generator allocated 8 registers
