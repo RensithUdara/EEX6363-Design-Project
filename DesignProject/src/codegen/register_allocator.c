@@ -145,7 +145,7 @@ Register find_free_register(CodeGenContext *ctx)
         REG_RBX, REG_R12, REG_R13, REG_R14, REG_R15  // Callee-saved
     };
 
-    for (int i = 0; i < sizeof(preferred_order) / sizeof(int); i++)
+    for (size_t i = 0; i < sizeof(preferred_order) / sizeof(int); i++)
     {
         Register reg = preferred_order[i];
         if (ctx->registers[reg].status == REG_FREE)
@@ -301,7 +301,7 @@ void save_caller_saved_registers(CodeGenContext *ctx)
     Register caller_saved[] = {REG_RAX, REG_RCX, REG_RDX, REG_RSI, REG_RDI,
                                REG_R8, REG_R9, REG_R10, REG_R11};
 
-    for (int i = 0; i < sizeof(caller_saved) / sizeof(Register); i++)
+    for (size_t i = 0; i < sizeof(caller_saved) / sizeof(Register); i++)
     {
         Register reg = caller_saved[i];
 
@@ -329,7 +329,7 @@ void restore_caller_saved_registers(CodeGenContext *ctx)
                                REG_RDI, REG_RSI, REG_RDX, REG_RCX, REG_RAX};
 
     // Restore in reverse order (stack is LIFO)
-    for (int i = 0; i < sizeof(caller_saved) / sizeof(Register); i++)
+    for (size_t i = 0; i < sizeof(caller_saved) / sizeof(Register); i++)
     {
         Register reg = caller_saved[i];
 
@@ -435,12 +435,10 @@ void add_interference_edge(InterferenceGraph *graph, Symbol *var1, Symbol *var2)
     if (!graph || !var1 || !var2 || var1 == var2)
         return;
 
-    // Find or create nodes for both variables
-    InterferenceNode *node1 = NULL;
-    InterferenceNode *node2 = NULL;
-
     // This would involve finding/creating nodes and adding bidirectional edges
-    // Simplified for demonstration
+    // Simplified for demonstration - actual implementation would create and link nodes
+    (void)var1; // Suppress unused parameter warning
+    (void)var2; // Suppress unused parameter warning
 }
 
 // Calculate register pressure at a given point
