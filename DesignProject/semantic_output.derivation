@@ -7,6 +7,9 @@ funcHead → func id ( fParams ) => returnType
 type → returnType
 integer → type
 funcBody → { varDeclOrStmtList }
-localVarDeclOrStmt → statement
-return ( expr ) ; → statement
+localVarDeclOrStmt → localVarDecl
+localVarDecl → local varDecl
+varDecl → id : type arraySizeList ;
+integer → type
+ε → arraySizeList
 classOrImplOrFuncList → ε
