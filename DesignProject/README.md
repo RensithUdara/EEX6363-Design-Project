@@ -81,6 +81,8 @@ Design Project/
   - Graph coloring foundation
 - **Optimization**: Dead code elimination, constant folding
 - **Memory Management**: Stack-based activation records
+- **🆕 Execution Simulation**: AST interpretation with computed values
+- **🆕 Dynamic Output**: Generates execution traces with actual program results
 
 ### 🎯 Advanced Features
 - **Professional Reports**: Comprehensive analysis reports with timing
@@ -88,6 +90,9 @@ Design Project/
 - **Performance Analysis**: Detailed performance metrics
 - **Modular Design**: Clean separation of concerns
 - **Cross-Platform**: Windows and Unix/Linux compatibility
+- **🆕 Execution Simulation**: Real-time program execution with computed values
+- **🆕 Dynamic Analysis**: Variable tracking and expression evaluation
+- **🆕 Interactive Output**: Detailed execution traces with step-by-step analysis
 
 ## 🛠️ Prerequisites
 
@@ -133,6 +138,8 @@ make all
 # - *_semantic_output.txt     # Symbol tables
 # - *_intermediate_code.txt   # Three-address code
 # - *_symbol_table.txt        # Complete symbol tables
+# - *_assembly_code.txt       # Generated assembly code
+# - *_execution_output.txt    # 🆕 Execution simulation results
 # - *_performance_report.txt  # Performance metrics
 ```
 
@@ -389,10 +396,17 @@ For questions, issues, or contributions:
 
 This compiler successfully implements all required phases with comprehensive testing, documentation, and performance analysis. The project demonstrates mastery of compiler design principles from lexical analysis through code generation with register allocation.
 
-**Last Updated**: November 23, 2025  
+**Recent Updates**:
+- ✅ **Execution Output Generation**: Added AST interpretation simulation
+- ✅ **Bug Fixes**: Fixed integer literal parsing in semantic analyzer  
+- ✅ **Dynamic Computation**: Programs now compute actual values (not hardcoded)
+- ✅ **Enhanced Testing**: All execution scenarios validated
+
+**Last Updated**: November 24, 2025  
 **Build Status**: ✅ All tests passing  
 **Documentation**: ✅ Complete  
 **Code Coverage**: ✅ Comprehensive  
+**Execution Simulation**: ✅ Fully functional  
 
 ---
 
