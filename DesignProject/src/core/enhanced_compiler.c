@@ -10,6 +10,8 @@
 extern void semantic_analysis(ASTNode *root);
 extern int parse_program(ASTNode **result_ast);
 extern void init_error_manager(void);
+extern void init_error_log_file(const char *input_file);
+extern void close_error_log_file(void);
 extern ErrorManager *global_error_manager;
 #include <stdio.h>
 #include <stdlib.h>
@@ -54,6 +56,9 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast);
 void generate_error_log_file(const char *input_file, int has_errors, ASTNode *ast);
 void generate_performance_report_file(const char *input_file, clock_t compilation_time);
 void generate_integration_test_file(const char *input_file, int success, ASTNode *ast);
+void generate_assembly_output_file(const char *input_file, const char *assembly_file);
+void generate_detailed_output_explanation(const char *input_file, const char *assembly_file, ASTNode *ast);
+void analyze_program_structure(ASTNode *node, int *func_count, int *var_count, char *func_names, char *var_names);
 
 // Helper function to get current timestamp
 void get_current_timestamp(char *buffer, size_t size)
@@ -554,7 +559,7 @@ void generate_syntax_output(const char *input_file, ASTNode *ast)
     {
         fprintf(syntax_output_file, "PARSE TREE:\n");
         fprintf(syntax_output_file, "-----------\n");
-        print_ast_tree(ast, syntax_output_file, 0);
+        print_ast_to_file(ast, syntax_output_file, 0);
 
         total_ast_nodes = count_ast_nodes(ast);
         fprintf(syntax_output_file, "\nSTATISTICS:\n");
@@ -717,6 +722,9 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     // Initialize error manager system
     init_error_manager();
+    
+    // Initialize real-time error log file
+    init_error_log_file(input_file);
 
     printf("Compiling: %s\n", input_file);
 
@@ -865,6 +873,19 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     destroy_codegen_context(ctx);
     fclose(output);
+    
+    // Generate detailed output explanation if no errors
+    if (codegen_result == 0 && actual_errors == 0)
+    {
+        generate_detailed_output_explanation(input_file, output_file, ast);
+        
+        // Create additional assembly output file with proper naming
+        generate_assembly_output_file(input_file, output_file);
+        
+        // Generate execution output with computed values
+        generate_execution_output_file(input_file, ast);
+    }
+    
     close_output_files();
 
     // Generate test results
@@ -933,6 +954,10 @@ int main(int argc, char *argv[])
     printf("- Symbol Table: %s_symbol_table.txt\n", base_name);
     printf("- Intermediate Code: %s_intermediate_code.txt\n", base_name);
     printf("- Assembly Output: %s\n", output_file);
+    
+    if (result == 0) {
+        printf("- 🎯 OUTPUT EXPLANATION: %s_output.txt\n", base_name);
+    }
 
     printf("\n📋 DETAILED REPORTS:\n");
     printf("- Architecture Design: %s_architecture_design.txt\n", base_name);
@@ -941,8 +966,12 @@ int main(int argc, char *argv[])
     printf("- Error Log: %s_error_log.txt\n", base_name);
     printf("- Test Results: test_results.txt\n");
 
-    printf("\n🎉 Total: 10 comprehensive output files created!\n");
+    int total_files = result == 0 ? 11 : 10;
+    printf("\n🎉 Total: %d comprehensive output files created!\n", total_files);
     printf("========================================\n");
+
+    // Close real-time error log file
+    close_error_log_file();
 
     return result;
 }
@@ -1229,20 +1258,16 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     }
 
     snprintf(filename, sizeof(filename), "%s_error_log.txt", base_name);
-    FILE *error_file = fopen(filename, "w");
+    FILE *error_file = fopen(filename, "a");  // Append mode instead of write mode
     if (!error_file)
         return;
 
+    fprintf(error_file, "\n\n========================================\n");
+    fprintf(error_file, "COMPILATION SUMMARY\n");
     fprintf(error_file, "========================================\n");
-    fprintf(error_file, "Design Project - Error Log\n");
-    fprintf(error_file, "========================================\n");
-    char timestamp[100];
-    get_current_timestamp(timestamp, sizeof(timestamp));
-    fprintf(error_file, "Generated: %s\n", timestamp);
-    fprintf(error_file, "Input File: %s\n\n", input_file);
 
-    fprintf(error_file, "COMPILATION SESSION LOG:\n");
-    fprintf(error_file, "=======================\n\n");
+    fprintf(error_file, "COMPILATION SESSION SUMMARY:\n");
+    fprintf(error_file, "===========================\n\n");
     fprintf(error_file, "[INFO] Starting compilation of %s\n", input_file);
     fprintf(error_file, "[INFO] Phase 1: Lexical Analysis - Started\n");
     fprintf(error_file, "[INFO] Phase 1: Lexical Analysis - Completed (0 errors)\n");
@@ -1488,6 +1513,225 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
     fclose(perf_file);
 }
 
+// Generate detailed output explanation for error-free programs
+void generate_detailed_output_explanation(const char *input_file, const char *assembly_file, ASTNode *ast)
+{
+    char filename[512];
+    char base_name[256];
+    char *dot_pos = strrchr(input_file, '.');
+
+    if (dot_pos)
+    {
+        strncpy(base_name, input_file, dot_pos - input_file);
+        base_name[dot_pos - input_file] = '\0';
+    }
+    else
+    {
+        strcpy(base_name, input_file);
+    }
+
+    snprintf(filename, sizeof(filename), "%s_output.txt", base_name);
+    FILE *output_file = fopen(filename, "w");
+    if (!output_file)
+        return;
+
+    fprintf(output_file, "===============================================================================\n");
+    fprintf(output_file, "                        COMPILATION OUTPUT EXPLANATION                        \n");
+    fprintf(output_file, "===============================================================================\n");
+    char timestamp[100];
+    get_current_timestamp(timestamp, sizeof(timestamp));
+    fprintf(output_file, "Generated: %s\n", timestamp);
+    fprintf(output_file, "Input File: %s\n", input_file);
+    fprintf(output_file, "Assembly File: %s\n", assembly_file);
+    fprintf(output_file, "Status: Compilation Successful (No Errors)\n\n");
+
+    fprintf(output_file, "📋 PROGRAM STRUCTURE ANALYSIS:\n");
+    fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
+
+    if (ast && ast->type == AST_PROGRAM)
+    {
+        // Analyze the program structure
+        int func_count = 0;
+        int var_count = 0;
+        char function_names[1024] = "";
+        char variable_names[1024] = "";
+        
+        analyze_program_structure(ast, &func_count, &var_count, function_names, variable_names);
+        
+        fprintf(output_file, "🏗️  INPUT PROGRAM COMPONENTS:\n");
+        fprintf(output_file, "   ├─ Functions Defined: %d\n", func_count);
+        if (func_count > 0)
+        {
+            fprintf(output_file, "   │  └─ Names: %s\n", function_names);
+        }
+        fprintf(output_file, "   ├─ Local Variables: %d\n", var_count);
+        if (var_count > 0)
+        {
+            fprintf(output_file, "   │  └─ Names: %s\n", variable_names);
+        }
+        fprintf(output_file, "   └─ Program Type: Procedural with function definitions\n\n");
+    }
+
+    // Assembly code explanation
+    fprintf(output_file, "⚙️  GENERATED ASSEMBLY CODE EXPLANATION:\n");
+    fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
+    
+    FILE *assembly = fopen(assembly_file, "r");
+    if (assembly)
+    {
+        char line[256];
+        int line_num = 1;
+        
+        fprintf(output_file, "The compiler generated x86-64 assembly code with the following structure:\n\n");
+        
+        while (fgets(line, sizeof(line), assembly))
+        {
+            // Skip empty lines and pure comments
+            if (strlen(line) <= 1 || (line[0] == '#' && strstr(line, "Function:") == NULL))
+                continue;
+                
+            if (strstr(line, "Function:"))
+            {
+                fprintf(output_file, "🔧 %s", line);
+                fprintf(output_file, "   This defines the entry point for a function\n\n");
+            }
+            else if (strstr(line, ":") && !strstr(line, "#"))
+            {
+                fprintf(output_file, "🏷️  %s", line);
+                fprintf(output_file, "   Function label - marks the beginning of executable code\n\n");
+            }
+            else if (strstr(line, "push %rbp"))
+            {
+                fprintf(output_file, "📥 %s", line);
+                fprintf(output_file, "   Save caller's base pointer on stack\n\n");
+            }
+            else if (strstr(line, "mov %rsp, %rbp"))
+            {
+                fprintf(output_file, "🎯 %s", line);
+                fprintf(output_file, "   Set up new stack frame for this function\n\n");
+            }
+            else if (strstr(line, "sub $"))
+            {
+                fprintf(output_file, "🏗️  %s", line);
+                fprintf(output_file, "   Allocate stack space for local variables\n\n");
+            }
+            else if (strstr(line, "movq $") && strstr(line, "(%rbp)"))
+            {
+                fprintf(output_file, "📝 %s", line);
+                fprintf(output_file, "   Store constant value in local variable\n\n");
+            }
+            else if (strstr(line, "movq") && strstr(line, "(%rbp)") && strstr(line, "%rax"))
+            {
+                fprintf(output_file, "📤 %s", line);
+                fprintf(output_file, "   Load variable value into accumulator register\n\n");
+            }
+            else if (strstr(line, "addq"))
+            {
+                fprintf(output_file, "➕ %s", line);
+                fprintf(output_file, "   Perform addition operation\n\n");
+            }
+            else if (strstr(line, "call write_int"))
+            {
+                fprintf(output_file, "📺 %s", line);
+                fprintf(output_file, "   Call system function to display integer value\n\n");
+            }
+            else if (strstr(line, "mov %rbp, %rsp"))
+            {
+                fprintf(output_file, "🔄 %s", line);
+                fprintf(output_file, "   Restore stack pointer (cleanup local variables)\n\n");
+            }
+            else if (strstr(line, "pop %rbp"))
+            {
+                fprintf(output_file, "📤 %s", line);
+                fprintf(output_file, "   Restore caller's base pointer\n\n");
+            }
+            else if (strstr(line, "ret"))
+            {
+                fprintf(output_file, "🚪 %s", line);
+                fprintf(output_file, "   Return control to calling function\n\n");
+            }
+        }
+        
+        fclose(assembly);
+    }
+
+    fprintf(output_file, "📊 COMPILATION STATISTICS:\n");
+    fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
+    fprintf(output_file, "✅ Lexical Analysis:    PASSED (No lexical errors)\n");
+    fprintf(output_file, "✅ Syntax Analysis:     PASSED (Valid program structure)\n");
+    fprintf(output_file, "✅ Semantic Analysis:   PASSED (All types and scopes valid)\n");
+    fprintf(output_file, "✅ Code Generation:     PASSED (Assembly code generated)\n\n");
+    fprintf(output_file, "🎯 EXECUTION GUIDANCE:\n");
+    fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
+    fprintf(output_file, "To execute the generated assembly code:\n");
+    fprintf(output_file, "1. Assemble: as -64 %s -o program.o\n", assembly_file);
+    fprintf(output_file, "2. Link: ld program.o -o program\n");
+    fprintf(output_file, "3. Run: ./program\n\n");
+    fprintf(output_file, "Note: You may need to provide runtime library functions (like write_int)\n\n");
+    fprintf(output_file, "===============================================================================\n");
+
+    fclose(output_file);
+}
+
+// Analyze program structure for output explanation
+void analyze_program_structure(ASTNode *node, int *func_count, int *var_count, 
+                              char *func_names, char *var_names)
+{
+    if (!node)
+        return;
+        
+    if (node->type == AST_FUNC_DEF)
+    {
+        (*func_count)++;
+        // Get function name
+        for (int i = 0; i < node->child_count; i++)
+        {
+            if (node->children[i] && node->children[i]->type == AST_FUNC_HEAD)
+            {
+                ASTNode *func_head = node->children[i];
+                for (int j = 0; j < func_head->child_count; j++)
+                {
+                    if (func_head->children[j] && func_head->children[j]->type == AST_ID)
+                    {
+                        if (strlen(func_names) > 0)
+                            strcat(func_names, ", ");
+                        strcat(func_names, func_head->children[j]->data.string_value);
+                        break;
+                    }
+                }
+                break;
+            }
+        }
+    }
+    else if (node->type == AST_LOCAL_VAR_DECL)
+    {
+        (*var_count)++;
+        // Get variable name
+        if (node->child_count > 0 && node->children[0]->type == AST_VAR_DECL)
+        {
+            ASTNode *var_decl = node->children[0];
+            if (var_decl->child_count > 0 && var_decl->children[0]->type == AST_ID)
+            {
+                if (strlen(var_names) > 0)
+                    strcat(var_names, ", ");
+                strcat(var_names, var_decl->children[0]->data.string_value);
+            }
+        }
+    }
+    
+    // Recursively analyze children
+    for (int i = 0; i < node->child_count; i++)
+    {
+        analyze_program_structure(node->children[i], func_count, var_count, func_names, var_names);
+    }
+    
+    // Analyze siblings
+    if (node->next)
+    {
+        analyze_program_structure(node->next, func_count, var_count, func_names, var_names);
+    }
+}
+
 // Generate integration test file automatically
 void generate_integration_test_file(const char *input_file, int success, ASTNode *ast)
 {
@@ -1714,6 +1958,69 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
     }
 
     fclose(test_file);
+}
+
+// Generate assembly output file with proper naming
+void generate_assembly_output_file(const char *input_file, const char *assembly_file)
+{
+    // Extract base filename from input file
+    const char *basename = strrchr(input_file, '/');
+    if (!basename) basename = strrchr(input_file, '\\');
+    if (!basename) basename = input_file;
+    else basename++; // Skip the slash
+    
+    // Remove extension from basename
+    char base_name[256];
+    strncpy(base_name, basename, sizeof(base_name) - 1);
+    base_name[sizeof(base_name) - 1] = '\0';
+    char *dot = strrchr(base_name, '.');
+    if (dot) *dot = '\0';
+    
+    // Create output filename: basename_assembly_code.txt
+    char output_filename[512];
+    snprintf(output_filename, sizeof(output_filename), "%s_assembly_code.txt", base_name);
+    
+    // Copy the assembly file to the new name
+    FILE *source = fopen(assembly_file, "r");
+    FILE *dest = fopen(output_filename, "w");
+    
+    if (!source || !dest)
+    {
+        if (source) fclose(source);
+        if (dest) fclose(dest);
+        return;
+    }
+    
+    // Add header to the assembly code file
+    fprintf(dest, "================================================================================\n");
+    fprintf(dest, "                    GENERATED ASSEMBLY CODE OUTPUT                              \n");
+    fprintf(dest, "================================================================================\n");
+    fprintf(dest, "Source File:     %s\n", input_file);
+    fprintf(dest, "Generated:       %s %s\n", __DATE__, __TIME__);
+    fprintf(dest, "Target Arch:     x86-64 (Intel/AMD 64-bit)\n");
+    fprintf(dest, "Assembly Syntax: AT&T Syntax\n");
+    fprintf(dest, "Compiler:        EEX6363 Design Project Compiler\n");
+    fprintf(dest, "================================================================================\n\n");
+    
+    // Copy the assembly content
+    int c;
+    while ((c = fgetc(source)) != EOF)
+    {
+        fputc(c, dest);
+    }
+    
+    // Add footer
+    fprintf(dest, "\n\n================================================================================\n");
+    fprintf(dest, "                           END OF ASSEMBLY OUTPUT                               \n");
+    fprintf(dest, "================================================================================\n");
+    fprintf(dest, "Assembly code generation completed successfully.\n");
+    fprintf(dest, "This file contains the generated x86-64 assembly code for: %s\n", input_file);
+    fprintf(dest, "================================================================================\n");
+    
+    fclose(source);
+    fclose(dest);
+    
+    printf("✅ Assembly code generated: %s\n", output_filename);
 }
 
 // TMA03 function declarations (implemented in semantic.c)
