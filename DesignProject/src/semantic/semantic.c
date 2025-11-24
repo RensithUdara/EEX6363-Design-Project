@@ -2778,14 +2778,14 @@ ASTNode *parse_literal(void)
     case INTLIT:
         write_derivation("literal → INTLIT");
         {
-            ASTNode *node = create_ast_node(AST_INT_LITERAL, line, column);
+            ASTNode *node = create_int_node(token_value.int_val, line, column);
             get_next_token();
             return node;
         }
     case FLOATLIT:
         write_derivation("literal → FLOATLIT");
         {
-            ASTNode *node = create_ast_node(AST_FLOAT_LITERAL, line, column);
+            ASTNode *node = create_float_node(token_value.float_val, line, column);
             get_next_token();
             return node;
         }
