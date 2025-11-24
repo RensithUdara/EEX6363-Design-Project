@@ -1,0 +1,66 @@
+===============================================================================
+                        COMPILATION OUTPUT EXPLANATION                        
+===============================================================================
+Generated: November 23, 2025 at 19:46:46
+Input File: tests/examples/simple_function.txt
+Assembly File: simple_function.s
+Status: Compilation Successful (No Errors)
+
+📋 PROGRAM STRUCTURE ANALYSIS:
+═══════════════════════════════════════════════════════════════════════════════
+
+🏗️  INPUT PROGRAM COMPONENTS:
+   ├─ Functions Defined: 1
+   │  └─ Names: simpleTest
+   ├─ Local Variables: 3
+   │  └─ Names: x, y, result
+   └─ Program Type: Procedural with function definitions
+
+⚙️  GENERATED ASSEMBLY CODE EXPLANATION:
+═══════════════════════════════════════════════════════════════════════════════
+
+The compiler generated x86-64 assembly code with the following structure:
+
+🔧 # Function: simpleTest
+   This defines the entry point for a function
+
+🏷️  simpleTest:
+   Function label - marks the beginning of executable code
+
+📥     push %rbp
+   Save caller's base pointer on stack
+
+🎯     mov %rsp, %rbp
+   Set up new stack frame for this function
+
+🏗️      sub $64, %rsp              # Allocate space for 3 local variables
+   Allocate stack space for local variables
+
+🔄     mov %rbp, %rsp
+   Restore stack pointer (cleanup local variables)
+
+📤     pop %rbp
+   Restore caller's base pointer
+
+🚪     ret
+   Return control to calling function
+
+📊 COMPILATION STATISTICS:
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ Lexical Analysis:    PASSED (No lexical errors)
+✅ Syntax Analysis:     PASSED (Valid program structure)
+✅ Semantic Analysis:   PASSED (All types and scopes valid)
+✅ Code Generation:     PASSED (Assembly code generated)
+
+🎯 EXECUTION GUIDANCE:
+═══════════════════════════════════════════════════════════════════════════════
+
+To execute the generated assembly code:
+1. Assemble: as -64 simple_function.s -o program.o
+2. Link: ld program.o -o program
+3. Run: ./program
+
+Note: You may need to provide runtime library functions (like write_int)
+
+===============================================================================
