@@ -244,6 +244,15 @@ void print_register_allocation_info(CodeGenContext *ctx);
 void print_memory_layout_info(CodeGenContext *ctx);
 void optimize_basic_blocks(CodeGenContext *ctx);
 
+// New AST-based code generation functions
+void calculate_memory_layout_from_ast(CodeGenContext *ctx, ASTNode *func_body);
+int count_local_variables(ASTNode *node);
+char *get_variable_location(CodeGenContext *ctx, const char *var_name);
+void generate_binary_expression_code(CodeGenContext *ctx, ASTNode *expr, const char *target_var);
+void generate_node_code(CodeGenContext *ctx, ASTNode *node, int index);
+void generate_all_statements_in_function(CodeGenContext *ctx, ASTNode *node);
+void generate_sample_calculate_function(CodeGenContext *ctx);
+
 // Utility functions
 const char *register_name(Register reg);
 const char *instruction_name(InstructionType type);
