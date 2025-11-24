@@ -1,0 +1,9 @@
+func calculate () => void {  
+    local a : integer;
+    local b : integer;
+    local result : integer;
+    a := 10;  
+    b := 25;  
+    result := a * b;  
+    write (result);  
+}
