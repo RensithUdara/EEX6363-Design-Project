@@ -24,4 +24,17 @@ int get_syntax_error_count(void);
 // AST utility functions that may be missing
 void print_ast_tree(ASTNode *node, FILE *output, int depth);
 
+// Execution output generation
+void generate_execution_output_file(const char *input_file, ASTNode *ast);
+typedef struct {
+    char name[64];
+    int value;
+    int initialized;
+} Variable;
+int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *output);
+int evaluate_expression(ASTNode *expr, Variable *variables, int var_count);
+int find_variable(Variable *variables, int var_count, const char *name);
+void print_variable_state(Variable *variables, int var_count, FILE *output);
+void print_expression_trace(ASTNode *expr, Variable *variables, int var_count, FILE *output);
+
 #endif // OUTPUT_GENERATOR_H
