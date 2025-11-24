@@ -1,0 +1,49 @@
+========================================
+Design Project - Performance Report
+========================================
+Generated: November 23, 2025 at 19:46:46
+Test Input: tests/examples/simple_function.txt
+
+COMPILER PERFORMANCE ANALYSIS:
+=============================
+
+1. COMPILATION PHASES TIMING:
+   ┌─────────────────────┬──────────────┬─────────────┐
+   │ Phase               │ Time (ms)    │ Percentage  │
+   ├─────────────────────┼──────────────┼─────────────┤
+   │ Lexical Analysis    │ 0.9          │ 56.5        │
+   │ Syntax Analysis     │ 0.2          │ 14.1        │
+   │ Semantic Analysis   │ 0.4          │ 24.9        │
+   │ Code Generation     │ 0.1          │ 4.5         │
+   ├─────────────────────┼──────────────┼─────────────┤
+   │ TOTAL               │ 1.6          │ 100.0%      │
+   └─────────────────────┴──────────────┴─────────────┘
+
+2. MEMORY USAGE ANALYSIS:
+   Token Storage:       1.55 KB
+   AST Nodes:           3.20 KB
+   Symbol Tables:       1.50 KB
+   Code Generation:     2.00 KB
+   TOTAL MEMORY:        13.10 KB
+
+3. COMPILATION RESULTS:
+   Total Compilation Time: 0.003 seconds
+   Tokens Processed:       31
+   AST Nodes Created:      40
+   Memory Usage:           13.10 KB
+   Errors Found:           0
+   Warnings:               3
+   Success Rate:           100%% (Perfect)
+   Performance Rating:     Excellent
+
+PERFORMANCE SUMMARY:
+==================
+✅ STATUS: COMPILATION SUCCESSFUL
+   - All phases completed without errors
+   - Code generation successful
+   - Performance: Excellent
+
+RECOMMENDATIONS:
+===============
+✅ Code is ready for use
+→ Consider adding more comprehensive tests
