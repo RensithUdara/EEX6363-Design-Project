@@ -1,0 +1,57 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: tests/examples/simple_function.txt
+🕒 GENERATED: November 23, 2025 at 19:46:46
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ func             │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ simpleTest       │ 1    │ 6      │ variable            │
+│ OPERATOR        │ =>               │ 1    │ 19     │ arrow               │
+│ KEYWORD         │ integer          │ 1    │ 22     │ reserved            │
+│ KEYWORD         │ local            │ 2    │ 5      │ reserved            │
+│ IDENTIFIER      │ x                │ 2    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 2    │ 13     │ delimiter           │
+│ KEYWORD         │ integer          │ 2    │ 15     │ reserved            │
+│ KEYWORD         │ local            │ 3    │ 5      │ reserved            │
+│ IDENTIFIER      │ y                │ 3    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 3    │ 13     │ delimiter           │
+│ KEYWORD         │ integer          │ 3    │ 15     │ reserved            │
+│ KEYWORD         │ local            │ 4    │ 5      │ reserved            │
+│ IDENTIFIER      │ result           │ 4    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 4    │ 18     │ delimiter           │
+│ KEYWORD         │ integer          │ 4    │ 20     │ reserved            │
+│ IDENTIFIER      │ x                │ 6    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 6    │ 7      │ assignment          │
+│ NUMBER          │ 1                │ 6    │ 10     │ literal             │
+│ IDENTIFIER      │ y                │ 7    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 7    │ 7      │ assignment          │
+│ NUMBER          │ 20               │ 7    │ 10     │ literal             │
+│ IDENTIFIER      │ result           │ 8    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 8    │ 12     │ assignment          │
+│ IDENTIFIER      │ x                │ 8    │ 15     │ variable            │
+│ OPERATOR        │ +                │ 8    │ 17     │ arithmetic          │
+│ IDENTIFIER      │ y                │ 8    │ 19     │ variable            │
+│ IDENTIFIER      │ write            │ 9    │ 5      │ variable            │
+│ IDENTIFIER      │ result           │ 9    │ 11     │ variable            │
+│ KEYWORD         │ return           │ 10   │ 5      │ reserved            │
+│ IDENTIFIER      │ result           │ 10   │ 12     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 31                                                ║
+║ 📄 Total Lines Analyzed      : 11                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-23 19:46:46                               ║
+║ 📂 Input Source File         : tests/examples/simple_function.txt                ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
