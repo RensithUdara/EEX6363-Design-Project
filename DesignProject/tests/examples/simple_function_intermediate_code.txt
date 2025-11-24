@@ -1,0 +1,29 @@
+========================================
+Intermediate Code Generation
+Design Project - Code Generation Phase
+========================================
+Input: tests/examples/simple_function.txt
+Target: x86-64 Assembly (AT&T Syntax)
+Generated: Nov 23 2025 19:45:09
+
+THREE-ADDRESS CODE:
+-------------------
+// Program start
+simpleTestALLOC x, 4
+// Program end
+
+REGISTER ALLOCATION:
+--------------------
+Register Allocation Strategy: Linear Scan
+Available Registers: 16 (x86-64)
+Registers Used: 0
+Spill Operations: 0
+
+Register Assignments:
+- No registers allocated
+
+OPTIMIZATIONS APPLIED:
+----------------------
+✓ Dead code elimination
+✓ Constant folding
+✓ Register optimization
