@@ -159,6 +159,8 @@ void destroy_error_manager(ErrorManager *manager);
 void reset_error_manager(ErrorManager *manager);
 void set_current_filename(const char *filename);
 void init_error_manager(void);
+void init_error_log_file(const char *input_file);
+void close_error_log_file(void);
 
 // Error Reporting Functions
 void report_lexical_error(ErrorType type, int line, int col, const char *message,
