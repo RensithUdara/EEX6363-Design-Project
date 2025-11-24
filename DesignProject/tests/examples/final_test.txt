@@ -1,0 +1,11 @@
+func calculate() => integer {
+    local a : integer;
+    local b : integer;
+    local sum : integer;
+
+    a := 10;
+    b := 25;
+    sum := a + b;
+    write(sum);
+    return(sum);
+}
