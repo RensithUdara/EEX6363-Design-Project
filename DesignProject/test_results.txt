@@ -264,3 +264,381 @@ AST Nodes: 40
 Semantic Errors: 0
 ----------------------------------------
 
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 19:35:32
+
+Test: tests/examples/test_simple.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 19:45:09
+
+Test: tests/examples/simple_function.txt
+Result: PASSED
+Compilation Time: 0.004 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 19:45:09
+
+Test: tests/examples/simple_function.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 19:45:09
+
+Test: tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 19:45:09
+
+Test: tests/examples/final_test.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 19:45:09
+
+Test: tests/examples/comprehensive_error_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 419
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 23 2025 19:45:09
+
+Test: tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:11:21
+
+Test: tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.003 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:12:17
+
+Test: tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.003 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:12:17
+
+Test: tests/examples/final_test.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:16:47
+
+Test: tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.003 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:21:08
+
+Test: tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.003 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:21:08
+
+Test: tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.003 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:21:08
+
+Test: tests/examples/final_test.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:31:05
+
+Test: tests/examples/final_test.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:32:53
+
+Test: tests/examples/final_test.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:32:53
+
+Test: test_simple_program.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 24
+AST Nodes: 30
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:39:15
+
+Test: tests/examples/final_test.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:49:36
+
+Test: tests/examples/final_test.txt
+Result: PASSED
+Compilation Time: 0.004 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:49:36
+
+Test: test_simple_program.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 24
+AST Nodes: 30
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:57:21
+
+Test: final_test.s
+Result: FAILED
+Compilation Time: 0.003 seconds
+Tokens Generated: 130
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 00:57:21
+
+Test: test_execution.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 29
+AST Nodes: 37
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 01:06:04
+
+Test: test_execution.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 29
+AST Nodes: 37
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 01:09:26
+
+Test: test_execution.txt
+Result: PASSED
+Compilation Time: 0.004 seconds
+Tokens Generated: 29
+AST Nodes: 37
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 01:09:26
+
+Test: test_execution.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 29
+AST Nodes: 37
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 01:09:26
+
+Test: test_execution.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 29
+AST Nodes: 37
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 24 2025 01:09:26
+
+Test: test_execution.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 29
+AST Nodes: 37
+Semantic Errors: 0
+----------------------------------------
+
