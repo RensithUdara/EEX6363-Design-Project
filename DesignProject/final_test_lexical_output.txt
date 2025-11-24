@@ -1,0 +1,156 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: final_test.s
+🕒 GENERATED: November 24, 2025 at 00:59:47
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ #                │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ ====================================== │ 1    │ 3      │ variable            │
+│ IDENTIFIER      │ #                │ 2    │ 1      │ variable            │
+│ IDENTIFIER      │ Generated        │ 2    │ 3      │ variable            │
+│ IDENTIFIER      │ Assembly         │ 2    │ 13     │ variable            │
+│ IDENTIFIER      │ Code             │ 2    │ 22     │ variable            │
+│ IDENTIFIER      │ #                │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ Compiler         │ 3    │ 3      │ variable            │
+│ IDENTIFIER      │ Design           │ 3    │ 12     │ variable            │
+│ IDENTIFIER      │ Project          │ 3    │ 19     │ variable            │
+│ OPERATOR        │ -                │ 3    │ 27     │ arithmetic          │
+│ IDENTIFIER      │ Code             │ 3    │ 29     │ variable            │
+│ IDENTIFIER      │ Generation       │ 3    │ 34     │ variable            │
+│ IDENTIFIER      │ Phase            │ 3    │ 45     │ variable            │
+│ IDENTIFIER      │ #                │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ Target           │ 4    │ 3      │ variable            │
+│ IDENTIFIER      │ Architecture:    │ 4    │ 10     │ variable            │
+│ IDENTIFIER      │ x86-64           │ 4    │ 24     │ variable            │
+│ IDENTIFIER      │ #                │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ Assembly         │ 5    │ 3      │ variable            │
+│ IDENTIFIER      │ Syntax:          │ 5    │ 12     │ variable            │
+│ IDENTIFIER      │ AT&T             │ 5    │ 20     │ variable            │
+│ IDENTIFIER      │ #                │ 6    │ 1      │ variable            │
+│ IDENTIFIER      │ Register         │ 6    │ 3      │ variable            │
+│ IDENTIFIER      │ Allocation:      │ 6    │ 12     │ variable            │
+│ IDENTIFIER      │ Default          │ 6    │ 24     │ variable            │
+│ IDENTIFIER      │ #                │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ ====================================== │ 7    │ 3      │ variable            │
+│ IDENTIFIER      │ .section         │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ .data            │ 9    │ 10     │ variable            │
+│ IDENTIFIER      │ #                │ 10   │ 5      │ variable            │
+│ IDENTIFIER      │ Global           │ 10   │ 7      │ variable            │
+│ IDENTIFIER      │ variables        │ 10   │ 14     │ variable            │
+│ IDENTIFIER      │ and              │ 10   │ 24     │ variable            │
+│ IDENTIFIER      │ constants        │ 10   │ 28     │ variable            │
+│ IDENTIFIER      │ .align           │ 11   │ 5      │ variable            │
+│ NUMBER          │ 8                │ 11   │ 12     │ literal             │
+│ IDENTIFIER      │ .section         │ 13   │ 1      │ variable            │
+│ IDENTIFIER      │ .text            │ 13   │ 10     │ variable            │
+│ IDENTIFIER      │ .globl           │ 14   │ 1      │ variable            │
+│ IDENTIFIER      │ main             │ 14   │ 8      │ variable            │
+│ IDENTIFIER      │ .type            │ 15   │ 1      │ variable            │
+│ IDENTIFIER      │ main             │ 15   │ 7      │ variable            │
+│ IDENTIFIER      │ @function        │ 15   │ 13     │ variable            │
+│ IDENTIFIER      │ #                │ 17   │ 5      │ variable            │
+│ IDENTIFIER      │ Program:         │ 17   │ 7      │ variable            │
+│ IDENTIFIER      │ Code             │ 17   │ 16     │ variable            │
+│ IDENTIFIER      │ generation       │ 17   │ 21     │ variable            │
+│ IDENTIFIER      │ from             │ 17   │ 32     │ variable            │
+│ IDENTIFIER      │ semantic         │ 17   │ 37     │ variable            │
+│ IDENTIFIER      │ analyzer         │ 17   │ 46     │ variable            │
+│ IDENTIFIER      │ #                │ 18   │ 5      │ variable            │
+│ IDENTIFIER      │ Function         │ 18   │ 7      │ variable            │
+│ IDENTIFIER      │ definition       │ 18   │ 16     │ variable            │
+│ IDENTIFIER      │ #                │ 20   │ 1      │ variable            │
+│ IDENTIFIER      │ Function:        │ 20   │ 3      │ variable            │
+│ IDENTIFIER      │ calculate        │ 20   │ 13     │ variable            │
+│ IDENTIFIER      │ calculate:       │ 21   │ 1      │ variable            │
+│ IDENTIFIER      │ #                │ 22   │ 5      │ variable            │
+│ IDENTIFIER      │ Function         │ 22   │ 7      │ variable            │
+│ IDENTIFIER      │ prologue         │ 22   │ 16     │ variable            │
+│ IDENTIFIER      │ push             │ 23   │ 5      │ variable            │
+│ IDENTIFIER      │ %rbp             │ 23   │ 10     │ variable            │
+│ IDENTIFIER      │ mov              │ 24   │ 5      │ variable            │
+│ IDENTIFIER      │ %rsp             │ 24   │ 9      │ variable            │
+│ IDENTIFIER      │ %rbp             │ 24   │ 15     │ variable            │
+│ IDENTIFIER      │ sub              │ 25   │ 5      │ variable            │
+│ IDENTIFIER      │ $64              │ 25   │ 9      │ variable            │
+│ IDENTIFIER      │ %rsp             │ 25   │ 14     │ variable            │
+│ IDENTIFIER      │ #                │ 25   │ 32     │ variable            │
+│ IDENTIFIER      │ Allocate         │ 25   │ 34     │ variable            │
+│ IDENTIFIER      │ space            │ 25   │ 43     │ variable            │
+│ IDENTIFIER      │ for              │ 25   │ 49     │ variable            │
+│ NUMBER          │ 3                │ 25   │ 53     │ literal             │
+│ KEYWORD         │ local            │ 25   │ 55     │ reserved            │
+│ IDENTIFIER      │ variables        │ 25   │ 61     │ variable            │
+│ IDENTIFIER      │ #                │ 26   │ 5      │ variable            │
+│ IDENTIFIER      │ Local            │ 26   │ 7      │ variable            │
+│ IDENTIFIER      │ variable         │ 26   │ 13     │ variable            │
+│ IDENTIFIER      │ declaration      │ 26   │ 22     │ variable            │
+│ IDENTIFIER      │ #                │ 27   │ 5      │ variable            │
+│ IDENTIFIER      │ Variable:        │ 27   │ 7      │ variable            │
+│ IDENTIFIER      │ a                │ 27   │ 17     │ variable            │
+│ IDENTIFIER      │ allocated        │ 27   │ 19     │ variable            │
+│ IDENTIFIER      │ on               │ 27   │ 29     │ variable            │
+│ IDENTIFIER      │ stack            │ 27   │ 32     │ variable            │
+│ IDENTIFIER      │ #                │ 28   │ 5      │ variable            │
+│ IDENTIFIER      │ Function         │ 28   │ 7      │ variable            │
+│ IDENTIFIER      │ epilogue         │ 28   │ 16     │ variable            │
+│ IDENTIFIER      │ mov              │ 29   │ 5      │ variable            │
+│ IDENTIFIER      │ %rbp             │ 29   │ 9      │ variable            │
+│ IDENTIFIER      │ %rsp             │ 29   │ 15     │ variable            │
+│ IDENTIFIER      │ pop              │ 30   │ 5      │ variable            │
+│ IDENTIFIER      │ %rbp             │ 30   │ 9      │ variable            │
+│ IDENTIFIER      │ ret              │ 31   │ 5      │ variable            │
+│ IDENTIFIER      │ #                │ 34   │ 1      │ variable            │
+│ IDENTIFIER      │ ====================================== │ 34   │ 3      │ variable            │
+│ IDENTIFIER      │ #                │ 35   │ 1      │ variable            │
+│ IDENTIFIER      │ Code             │ 35   │ 3      │ variable            │
+│ IDENTIFIER      │ Generation       │ 35   │ 8      │ variable            │
+│ IDENTIFIER      │ Statistics       │ 35   │ 19     │ variable            │
+│ IDENTIFIER      │ #                │ 36   │ 1      │ variable            │
+│ IDENTIFIER      │ Instructions     │ 36   │ 3      │ variable            │
+│ IDENTIFIER      │ generated:       │ 36   │ 16     │ variable            │
+│ NUMBER          │ 0                │ 36   │ 27     │ literal             │
+│ IDENTIFIER      │ #                │ 37   │ 1      │ variable            │
+│ IDENTIFIER      │ Registers        │ 37   │ 3      │ variable            │
+│ IDENTIFIER      │ spilled:         │ 37   │ 13     │ variable            │
+│ NUMBER          │ 0                │ 37   │ 22     │ literal             │
+│ IDENTIFIER      │ #                │ 38   │ 1      │ variable            │
+│ IDENTIFIER      │ Optimization     │ 38   │ 3      │ variable            │
+│ IDENTIFIER      │ passes:          │ 38   │ 16     │ variable            │
+│ NUMBER          │ 0                │ 38   │ 24     │ literal             │
+│ IDENTIFIER      │ #                │ 39   │ 1      │ variable            │
+│ IDENTIFIER      │ Memory           │ 39   │ 3      │ variable            │
+│ IDENTIFIER      │ layout           │ 39   │ 10     │ variable            │
+│ IDENTIFIER      │ size:            │ 39   │ 17     │ variable            │
+│ NUMBER          │ 64               │ 39   │ 23     │ literal             │
+│ IDENTIFIER      │ bytes            │ 39   │ 26     │ variable            │
+│ IDENTIFIER      │ #                │ 40   │ 1      │ variable            │
+│ IDENTIFIER      │ ====================================== │ 40   │ 3      │ variable            │
+│ IDENTIFIER      │ .section         │ 42   │ 1      │ variable            │
+│ IDENTIFIER      │ .note.GNU-stack  │ 42   │ 10     │ variable            │
+│ IDENTIFIER      │ ""               │ 42   │ 26     │ variable            │
+│ IDENTIFIER      │ @progbits        │ 42   │ 29     │ variable            │
+│ IDENTIFIER      │ #                │ 43   │ 1      │ variable            │
+│ IDENTIFIER      │ End              │ 43   │ 3      │ variable            │
+│ IDENTIFIER      │ of               │ 43   │ 7      │ variable            │
+│ IDENTIFIER      │ generated        │ 43   │ 10     │ variable            │
+│ IDENTIFIER      │ code             │ 43   │ 20     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 130                                               ║
+║ 📄 Total Lines Analyzed      : 43                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-24 00:59:47                               ║
+║ 📂 Input Source File         : final_test.s                                      ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
