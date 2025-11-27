@@ -73,6 +73,12 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
 
     static int temp_counter = 0;
 
+    // Debug output to track AST traversal
+    static int debug_level = 0;
+    debug_level++;
+    
+
+    
     switch (ast->type)
     {
     case AST_PROGRAM:
@@ -87,12 +93,89 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
         fprintf(output, "// Program end\n");
         break;
 
+    case AST_FUNC_DEF:
+        // Process function definition - get function name first
+        char *func_name = NULL;
+        
+        // Find function name from AST_FUNC_HEAD
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i] && ast->children[i]->type == AST_FUNC_HEAD)
+            {
+                ASTNode *func_head = ast->children[i];
+                for (int j = 0; j < func_head->child_count; j++)
+                {
+                    if (func_head->children[j] && func_head->children[j]->type == AST_ID)
+                    {
+                        func_name = func_head->children[j]->data.string_value;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        if (func_name)
+        {
+            fprintf(output, "// Function: %s\n", func_name);
+        }
+        
+        // Process function body only (skip function head to avoid duplicate name output)
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i] && ast->children[i]->type == AST_FUNC_BODY)
+            {
+                generate_three_address_code(ast->children[i], output);
+            }
+        }
+        break;
+
+    case AST_FUNC_BODY:
+        // Process function body statements
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_three_address_code(ast->children[i], output);
+                
+                // Also process siblings linked via next pointer
+                ASTNode *sibling = ast->children[i]->next;
+                while (sibling)
+                {
+                    generate_three_address_code(sibling, output);
+                    sibling = sibling->next;
+                }
+            }
+        }
+        break;
+
+    case AST_STMT_LIST:
+        // Process statement list
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_three_address_code(ast->children[i], output);
+            }
+        }
+        break;
+
+    case AST_LOCAL_VAR_DECL:
+        // Process local variable declaration
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_three_address_code(ast->children[i], output);
+            }
+        }
+        break;
+
     case AST_VAR_DECL:
         if (ast->children && ast->children[0] && ast->children[0]->data.string_value)
         {
-            fprintf(output, "ALLOC %s, %d\n",
-                    ast->children[0]->data.string_value,
-                    4); // Assume 4 bytes for integer
+            fprintf(output, "ALLOC %s, 4\n",
+                    ast->children[0]->data.string_value);
+            fflush(output);
         }
         break;
 
@@ -102,28 +185,34 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
             fprintf(output, "t%d = ", temp_counter++);
             generate_three_address_code(ast->children[1], output);
             fprintf(output, "\n");
-            if (ast->children[0]->data.string_value)
+            if (ast->children[0])
             {
-                fprintf(output, "%s = t%d\n",
-                        ast->children[0]->data.string_value,
-                        temp_counter - 1);
+                generate_three_address_code(ast->children[0], output);
+                fprintf(output, " = t%d\n", temp_counter - 1);
             }
+            fflush(output);
         }
         break;
 
     case AST_BINARY_EXPR:
         if (ast->child_count >= 2)
         {
-            fprintf(output, "t%d = ", temp_counter);
             generate_three_address_code(ast->children[0], output);
             fprintf(output, " %s ", ast->data.operator ? ast->data.operator : "+");
             generate_three_address_code(ast->children[1], output);
-            temp_counter++;
         }
         break;
 
     case AST_INT_LITERAL:
         fprintf(output, "%d", ast->data.int_value);
+        break;
+
+    case AST_VARIABLE:
+        // Handle variable reference
+        if (ast->children && ast->children[0])
+        {
+            generate_three_address_code(ast->children[0], output);
+        }
         break;
 
     case AST_ID:
@@ -133,10 +222,44 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
         }
         break;
 
+
+
     case AST_FUNC_CALL_EXPR:
         if (ast->data.string_value)
         {
             fprintf(output, "CALL %s\n", ast->data.string_value);
+        }
+        break;
+
+    case AST_WRITE_STMT:
+        if (ast->child_count > 0)
+        {
+            fprintf(output, "t%d = ", temp_counter++);
+            generate_three_address_code(ast->children[0], output);
+            fprintf(output, "\n");
+            fprintf(output, "param t%d\n", temp_counter - 1);
+            fprintf(output, "call write\n");
+        }
+        break;
+
+    case AST_RETURN_STMT:
+        if (ast->child_count > 0)
+        {
+            fprintf(output, "t%d = ", temp_counter++);
+            generate_three_address_code(ast->children[0], output);
+            fprintf(output, "\n");
+            fprintf(output, "return t%d\n", temp_counter - 1);
+        }
+        else
+        {
+            fprintf(output, "return\n");
+        }
+        break;
+
+    case AST_FUNC_CALL_STMT:
+        if (ast->data.string_value)
+        {
+            fprintf(output, "call %s\n", ast->data.string_value);
         }
         break;
 
@@ -151,6 +274,8 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
         }
         break;
     }
+    
+    debug_level--;
 }
 
 // Print register allocation information
