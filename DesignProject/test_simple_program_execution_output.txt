@@ -1,134 +1,55 @@
 ================================================================================
-                    PROGRAM EXECUTION OUTPUT EXPLANATION                        
+                        PROGRAM EXECUTION OUTPUT                                
 ================================================================================
-Source File:     test_simple_program.txt
-Generated:       November 24, 2025 at 00:50:18
+Source File:     ./test_simple_program.txt
+Generated:       Nov 28 2025 02:01:36
+Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
-Target:          x86-64 Assembly Code Generation
 ================================================================================
 
-🚀 PROGRAM EXECUTION SIMULATION:
+🚀 PROGRAM EXECUTION TRACE:
+════════════════════════════════════════════════════════════════════════════
 
-📁 INPUT PROGRAM:
-─────────────────────────────────────────────────────────────────────────────
-func main() => integer {
-    local x : integer;
-    local y : integer;
-    
-    x := 42;
-    y := x + 5;
-    write(y);
-    return(0);
-}
-🔢 STEP-BY-STEP EXECUTION:
+📋 Starting program execution...
 
-Step 1: Function Entry
-──────────────────────
-• Function 'calculate' is called
-• Stack frame is allocated for local variables
-• Memory layout: 64 bytes allocated on stack
+🔧 Entering function: main()
+   ├─ Setting up local scope...
 
-Step 2: Variable Declarations
-─────────────────────────────
-• Variable 'a': allocated at stack offset -8(%rbp)  → [UNINITIALIZED]
-• Variable 'b': allocated at stack offset -16(%rbp) → [UNINITIALIZED]
-• Variable 'sum': allocated at stack offset -24(%rbp) → [UNINITIALIZED]
+📝 Variable Declaration: x
+   ├─ Type: integer
+   └─ Initial value: uninitialized
 
-Step 3: Assignment Operations
-─────────────────────────────
-• Execute: a := 10
-  └─ Store value 10 at memory location -8(%rbp)
-  └─ Variable 'a' now contains: 10
+📝 Variable Declaration: y
+   ├─ Type: integer
+   └─ Initial value: uninitialized
 
-• Execute: b := 25
-  └─ Store value 25 at memory location -16(%rbp)
-  └─ Variable 'b' now contains: 25
+🔄 Assignment: x := 42
+   └─ x now contains: 42
 
-• Execute: sum := a + b
-  └─ Load value from 'a': 10
-  └─ Load value from 'b': 25
-  └─ Perform addition: 10 + 25 = 35
-  └─ Store result in 'sum' at -24(%rbp)
-  └─ Variable 'sum' now contains: 35
+🔄 Assignment: y := expression result
+   ├─ Expression: x(42) + 5
+   └─ Computed value: 47
+   └─ y now contains: 47
 
-Step 4: Output Operation
-────────────────────────
-• Execute: write(sum)
-  └─ Load value from 'sum': 35
-  └─ Call write_int function
-  └─ OUTPUT DISPLAYED: 35
+📤 Output: write(47)
+   └─ Program outputs: 47
 
-Step 5: Return Operation
-────────────────────────
-• Execute: return(sum)
-  └─ Load value from 'sum': 35
-  └─ Store return value in %rax register
-  └─ Function returns with value: 35
+🏁 Return: return(0)
+   └─ Function returns: 0
 
-📊 EXECUTION RESULTS:
 
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ Variable    │ Initial Value │ Final Value │ Memory Location │ Data Type     │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ a           │ uninitialized │     10      │ -8(%rbp)        │ integer       │
-│ b           │ uninitialized │     25      │ -16(%rbp)       │ integer       │
-│ sum         │ uninitialized │     35      │ -24(%rbp)       │ integer       │
-└─────────────────────────────────────────────────────────────────────────────┘
+════════════════════════════════════════════════════════════════════════════
+📊 EXECUTION SUMMARY:
+════════════════════════════════════════════════════════════════════════════
 
-🖥️  PROGRAM OUTPUT:
-═══════════════════════════════════════════════════════════════════════════════
-35
-═══════════════════════════════════════════════════════════════════════════════
+💾 FINAL VARIABLE STATES:
+   ├─ x = 42
+   ├─ y = 47
 
-📋 EXECUTION SUMMARY:
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ Metric              │ Value         │ Description                           │
-├─────────────────────────────────────────────────────────────────────────────┤
-│ Function Called     │ calculate     │ Main computation function             │
-│ Variables Used      │ 3             │ a, b, sum (all integers)             │
-│ Arithmetic Ops      │ 1             │ Addition operation (a + b)           │
-│ I/O Operations      │ 1             │ write(sum) - outputs 35              │
-│ Return Value        │ 35            │ Function returns calculated sum      │
-│ Execution Status    │ SUCCESS       │ No errors, clean execution          │
-└─────────────────────────────────────────────────────────────────────────────┘
-
-🏗️  ASSEMBLY CODE CORRESPONDENCE:
-
-The generated assembly code performs these exact operations:
-• movq $10, -8(%rbp)     ← Stores a := 10
-• movq $25, -16(%rbp)    ← Stores b := 25
-• movq -8(%rbp), %rax    ← Loads a (10) into register
-• addq -16(%rbp), %rax   ← Adds b (25) to get 35
-• movq %rax, -24(%rbp)   ← Stores sum := 35
-• movq -24(%rbp), %rdi   ← Loads sum for output
-• call write_int         ← Outputs "35"
-• movq -24(%rbp), %rax   ← Loads return value (35)
-
-💡 EDUCATIONAL NOTES:
-
-1. VARIABLE STORAGE:
-   • All variables are stored on the stack relative to base pointer (%rbp)
-   • Each integer variable occupies 8 bytes (64-bit architecture)
-   • Stack grows downward, so offsets are negative
-
-2. ARITHMETIC EVALUATION:
-   • Binary expressions are evaluated left-to-right
-   • Intermediate results are stored in CPU registers
-   • Final result is stored back to memory
-
-3. FUNCTION CALLING CONVENTION:
-   • Parameters passed in registers (if any)
-   • Return value placed in %rax register
-   • Stack frame properly maintained for local variables
-
-4. I/O OPERATIONS:
-   • write() function expects value in %rdi register
-   • Assembly code follows System V AMD64 ABI calling convention
-
+🎯 PROGRAM RESULT:
+   └─ Return Value: 0
+   └─ Execution Status: ✅ SUCCESS
 
 ================================================================================
-                               END OF EXECUTION                                
-================================================================================
-This file demonstrates the complete execution flow of your compiled program,
-showing how the source code translates to actual computational steps and results.
+                           END OF EXECUTION                                     
 ================================================================================
