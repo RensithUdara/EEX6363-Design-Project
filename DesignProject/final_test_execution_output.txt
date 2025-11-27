@@ -1,8 +1,8 @@
 ================================================================================
                         PROGRAM EXECUTION OUTPUT                                
 ================================================================================
-Source File:     tests/examples/final_test.txt
-Generated:       Nov 27 2025 01:09:47
+Source File:     final_test.txt
+Generated:       Nov 28 2025 01:42:32
 Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
 ================================================================================
@@ -23,7 +23,7 @@ Compiler:        EEX6363 Design Project Compiler
    ├─ Type: integer
    └─ Initial value: uninitialized
 
-📝 Variable Declaration: sum
+📝 Variable Declaration: result
    ├─ Type: integer
    └─ Initial value: uninitialized
 
@@ -33,16 +33,16 @@ Compiler:        EEX6363 Design Project Compiler
 🔄 Assignment: b := 25
    └─ b now contains: 25
 
-🔄 Assignment: sum := expression result
-   ├─ Expression: a(10) + b(25)
-   └─ Computed value: 35
-   └─ sum now contains: 35
+🔄 Assignment: result := expression result
+   ├─ Expression: a(10) * b(25)
+   └─ Computed value: 250
+   └─ result now contains: 250
 
-📤 Output: write(35)
-   └─ Program outputs: 35
+📤 Output: write(250)
+   └─ Program outputs: 250
 
-🏁 Return: return(35)
-   └─ Function returns: 35
+🏁 Return: return(250)
+   └─ Function returns: 250
 
 
 ════════════════════════════════════════════════════════════════════════════
@@ -52,10 +52,10 @@ Compiler:        EEX6363 Design Project Compiler
 💾 FINAL VARIABLE STATES:
    ├─ a = 10
    ├─ b = 25
-   ├─ sum = 35
+   ├─ result = 250
 
 🎯 PROGRAM RESULT:
-   └─ Return Value: 35
+   └─ Return Value: 250
    └─ Execution Status: ✅ SUCCESS
 
 ================================================================================
