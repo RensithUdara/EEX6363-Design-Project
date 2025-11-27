@@ -1,11 +1,76 @@
-func calculate() => integer {
-    local a : integer;
-    local b : integer;
-    local sum : integer;
+class Calculator {
 
-    a := 10;
-    b := 25;
-    sum := a + b;
-    write(sum);
-    return(sum);
+    public constructor();
+
+    public func add(x: integer, y: integer) => integer;
+
+    public func subtract(a: float, b: float) => float;
+
+    public func multiply(x: integer, y: integer) => integer;
+
+};
+ 
+implement Calculator {
+
+    constructor() {
+
+        local initialized : integer;
+
+        initialized := 1;
+
+    }
+ 
+    func add(x: integer, y: integer) => integer {
+
+        local result : integer;
+
+        result := x + y;
+
+        return result;
+
+    }
+ 
+    func subtract(a: float, b: float) => float {
+
+        local difference : float;
+
+        difference := a - b;
+
+        if (difference < 0.0) then {
+
+            write difference;
+
+        } else {
+
+            write 0.0;
+
+        }
+
+        return difference;
+
+    }
+ 
+    func multiply(x: integer, y: integer) => integer {
+
+        local product : integer;
+
+        local counter : integer;
+
+        product := 0;
+
+        counter := 0;
+
+        while (counter < y) {
+
+            product := product + x;
+
+            counter := counter + 1;
+
+        }
+
+        return product;
+
+    }
+
 }
+ 
