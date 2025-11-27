@@ -3,7 +3,7 @@ Comprehensive Symbol Table
 Design Project - Complete Compiler
 ========================================
 Input: final_test.txt
-Generated: Nov 28 2025 01:42:31
+Generated: Nov 28 2025 01:50:23
 
 GLOBAL SCOPE:
 +---------------+----------+--------+----------+---------+--------+
@@ -20,16 +20,16 @@ Features: Types, visibility, parameters, inheritance, array dimensions
 │
 │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
 │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
-│   calculate          │ FUNCTION     │ integer      │ public     │ Line 12  │ Returns: integer, No parameters
+│   calculate          │ FUNCTION     │ integer      │ public     │ Line 11  │ Returns: integer, No parameters
 └────────────────────────────────────────────────────────────────────────────────┘
 
   ┌─── SCOPE: func_calculate (Level 1) ─── [3 symbols] ──────────────────────────┐
   │
   │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
   │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
-  │   result             │ VARIABLE     │ integer      │ public     │ Line 15  │ Simple integer
-  │   b                  │ VARIABLE     │ integer      │ public     │ Line 14  │ Simple integer
-  │   a                  │ VARIABLE     │ integer      │ public     │ Line 13  │ Simple integer
+  │   result             │ VARIABLE     │ integer      │ public     │ Line 14  │ Simple integer
+  │   b                  │ VARIABLE     │ integer      │ public     │ Line 13  │ Simple integer
+  │   a                  │ VARIABLE     │ integer      │ public     │ Line 12  │ Simple integer
   └────────────────────────────────────────────────────────────────────────────────┘
 
 ================================================================================
