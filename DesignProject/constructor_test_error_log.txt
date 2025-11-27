@@ -1,17 +1,18 @@
 ================================================================================
                      🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              
 ================================================================================
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_error_log.txt
 📅 Generated: November 27, 2025 at 23:18:08
 📁 Input File: tests/examples/final_test.txt
+=======
+📅 Generated: November 27, 2025 at 22:52:00
+📁 Input File: constructor_test.txt
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_error_log.txt
 
 🔍 REAL-TIME COMPILATION LOG:
 ────────────────────────────────────────────────────────────────────────────────
 
-⚠️ [UNK] Warning at line 14:14: Variable 'sum' declared but never used
-   └─ 💡 Suggestion: Remove unused variable or add usage
-⚠️ [UNK] Warning at line 13:12: Variable 'b' declared but never used
-   └─ 💡 Suggestion: Remove unused variable or add usage
-⚠️ [UNK] Warning at line 12:12: Variable 'a' declared but never used
+⚠️ [UNK] Warning at line 17:19: Variable 'temp' declared but never used
    └─ 💡 Suggestion: Remove unused variable or add usage
 
 
@@ -22,7 +23,7 @@
 │ Lexical Errors            │     0 │ Invalid tokens, numbers, identifiers     │
 │ Syntax Errors             │     0 │ Grammar violations, missing tokens       │
 │ Semantic Errors           │     0 │ Type mismatches, undefined symbols       │
-│ Warnings                  │     3 │ Non-critical issues                      │
+│ Warnings                  │     1 │ Non-critical issues                      │
 └────────────────────────────────────────────────────────────────────────────┘
 
 ✅ SUCCESS: No errors found! Code analysis completed successfully.
@@ -39,7 +40,7 @@ COMPILATION SUMMARY:
 ├─────────────────────────────────────────────────────────────────────────────┤
 │ Syntax Errors        │     0 │   HIGH   │ ✓ PASSED                      │
 │ Semantic Errors      │     0 │   HIGH   │ ✓ PASSED                      │
-│ Semantic Warnings    │     3 │   LOW    │ ⚠ WARNINGS                   │
+│ Semantic Warnings    │     1 │   LOW    │ ⚠ WARNINGS                   │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ================================================================================

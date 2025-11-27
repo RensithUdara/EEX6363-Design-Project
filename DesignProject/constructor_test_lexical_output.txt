@@ -3,14 +3,20 @@
 ║                              Complete Token Stream                           ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_lexical_output.txt
 📄 INPUT FILE: tests/examples/final_test.txt
 🕒 GENERATED: November 27, 2025 at 23:18:08
+=======
+📄 INPUT FILE: constructor_test.txt
+🕒 GENERATED: November 27, 2025 at 22:52:00
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_lexical_output.txt
 ⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
 🎯 PHASE: Phase 1 - Lexical Analysis
 
 ┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
 │   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
 ├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_lexical_output.txt
 │ KEYWORD         │ func             │ 1    │ 1      │ reserved            │
 │ IDENTIFIER      │ calculate        │ 1    │ 6      │ variable            │
 │ OPERATOR        │ =>               │ 1    │ 18     │ arrow               │
@@ -52,16 +58,42 @@
 │ KEYWORD         │ return           │ 10   │ 5      │ reserved            │
 │ IDENTIFIER      │ sum              │ 10   │ 12     │ variable            │
 │ IDENTIFIER      │                 │ 10   │ 17     │ variable            │
+=======
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ SimpleClass      │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │ public           │ 2    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 2    │ 12     │ variable            │
+│ IDENTIFIER      │ implement        │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ SimpleClass      │ 5    │ 11     │ variable            │
+│ IDENTIFIER      │ constructor      │ 6    │ 5      │ variable            │
+│ KEYWORD         │ local            │ 7    │ 9      │ reserved            │
+│ IDENTIFIER      │ temp             │ 7    │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 7    │ 20     │ delimiter           │
+│ KEYWORD         │ integer          │ 7    │ 22     │ reserved            │
+│ IDENTIFIER      │ temp             │ 8    │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 8    │ 14     │ assignment          │
+│ NUMBER          │ 1                │ 8    │ 17     │ literal             │
+│ IDENTIFIER      │ write            │ 9    │ 9      │ variable            │
+│ IDENTIFIER      │ temp             │ 9    │ 15     │ variable            │
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_lexical_output.txt
 └─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
 
 ╔═══════════════════════════════════════════════════════════════════════════════════╗
 ║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
 ╠═══════════════════════════════════════════════════════════════════════════════════╣
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_lexical_output.txt
 ║ 📊 Total Tokens Processed    : 41                                                ║
 ║ 📄 Total Lines Analyzed      : 11                                                ║
 ║ ⚠️  Lexical Errors Found      : 0                                                 ║
 ║ 🕐 Generation Timestamp      : 2025-11-27 23:18:08                               ║
 ║ 📂 Input Source File         : tests/examples/final_test.txt                     ║
+=======
+║ 📊 Total Tokens Processed    : 16                                                ║
+║ 📄 Total Lines Analyzed      : 11                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-27 22:52:00                               ║
+║ 📂 Input Source File         : constructor_test.txt                              ║
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_lexical_output.txt
 ║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
 ║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
 ╚═══════════════════════════════════════════════════════════════════════════════════╝

@@ -15,6 +15,7 @@
 .type main, @function
 
     # Program: Code generation from semantic analyzer
+<<<<<<< HEAD
     # Function definition
 
 # Function: calculate
@@ -61,13 +62,16 @@ calculate:
     popq %rbp
     ret
 
+=======
+    # Class declaration (data layout only)
+# Class: SimpleClass
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82
 
 # ======================================
 # Code Generation Statistics
 # Instructions generated: 0
 # Registers spilled: 0
 # Optimization passes: 0
-# Memory layout size: 64 bytes
 # ======================================
 
 .section .note.GNU-stack,"",@progbits

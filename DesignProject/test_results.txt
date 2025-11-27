@@ -646,6 +646,7 @@ Semantic Errors: 0
 Complete Compiler Test Results
 Design Project - All Phases Testing
 ========================================
+<<<<<<< HEAD
 Generated: Nov 27 2025 01:07:08
 
 Test: tests/temp/simple_valid.txt
@@ -680,6 +681,14 @@ Test: tests/temp/syntax_error.txt
 Result: FAILED
 Compilation Time: 0.000 seconds
 Tokens Generated: 13
+=======
+Generated: Nov 27 2025 21:13:19
+
+Test: final_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 127
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82
 AST Nodes: 0
 Semantic Errors: 0
 ----------------------------------------
@@ -688,6 +697,7 @@ Semantic Errors: 0
 Complete Compiler Test Results
 Design Project - All Phases Testing
 ========================================
+<<<<<<< HEAD
 Generated: Nov 27 2025 01:07:08
 
 Test: tests/examples/final_test.txt
@@ -708,6 +718,14 @@ Test: tests/examples/simple_test.txt
 Result: FAILED
 Compilation Time: 0.000 seconds
 Tokens Generated: 28
+=======
+Generated: Nov 27 2025 21:47:04
+
+Test: final_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 127
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82
 AST Nodes: 0
 Semantic Errors: 0
 ----------------------------------------
@@ -716,6 +734,7 @@ Semantic Errors: 0
 Complete Compiler Test Results
 Design Project - All Phases Testing
 ========================================
+<<<<<<< HEAD
 Generated: Nov 27 2025 01:07:08
 
 Test: tests/examples/final_test.txt
@@ -791,6 +810,13 @@ Generated: Nov 27 2025 01:09:43
 Test: tests/temp/class_test.txt
 Result: FAILED
 Compilation Time: 0.000 seconds
+=======
+Generated: Nov 27 2025 21:47:04
+
+Test: constructor_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82
 Tokens Generated: 16
 AST Nodes: 0
 Semantic Errors: 0
@@ -800,6 +826,7 @@ Semantic Errors: 0
 Complete Compiler Test Results
 Design Project - All Phases Testing
 ========================================
+<<<<<<< HEAD
 Generated: Nov 27 2025 01:09:43
 
 Test: tests/temp/syntax_error.txt
@@ -919,6 +946,15 @@ Result: FAILED
 Compilation Time: 0.000 seconds
 Tokens Generated: 16
 AST Nodes: 0
+=======
+Generated: Nov 27 2025 21:47:04
+
+Test: constructor_test.txt
+Result: PASSED
+Compilation Time: 0.005 seconds
+Tokens Generated: 16
+AST Nodes: 26
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82
 Semantic Errors: 0
 ----------------------------------------
 
@@ -926,6 +962,7 @@ Semantic Errors: 0
 Complete Compiler Test Results
 Design Project - All Phases Testing
 ========================================
+<<<<<<< HEAD
 Generated: Nov 27 2025 01:09:43
 
 Test: tests/temp/syntax_error.txt
@@ -1394,6 +1431,14 @@ Test: tests/examples/invalid3.txt
 Result: FAILED
 Compilation Time: 0.000 seconds
 Tokens Generated: 50
+=======
+Generated: Nov 27 2025 21:47:04
+
+Test: final_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 127
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82
 AST Nodes: 0
 Semantic Errors: 0
 ----------------------------------------

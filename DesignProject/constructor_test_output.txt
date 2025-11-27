@@ -1,8 +1,13 @@
 ===============================================================================
                         COMPILATION OUTPUT EXPLANATION                        
 ===============================================================================
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_output.txt
 Generated: November 27, 2025 at 23:18:08
 Input File: tests/examples/final_test.txt
+=======
+Generated: November 27, 2025 at 22:52:00
+Input File: constructor_test.txt
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_output.txt
 Assembly File: output.s
 Status: Compilation Successful (No Errors)
 
@@ -11,9 +16,9 @@ Status: Compilation Successful (No Errors)
 
 🏗️  INPUT PROGRAM COMPONENTS:
    ├─ Functions Defined: 1
-   │  └─ Names: calculate
-   ├─ Local Variables: 3
-   │  └─ Names: a, b, sum
+   │  └─ Names: constructor
+   ├─ Local Variables: 1
+   │  └─ Names: temp
    └─ Program Type: Procedural with function definitions
 
 ⚙️  GENERATED ASSEMBLY CODE EXPLANATION:
@@ -21,6 +26,7 @@ Status: Compilation Successful (No Errors)
 
 The compiler generated x86-64 assembly code with the following structure:
 
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_output.txt
 🔧 # Function: calculate
    This defines the entry point for a function
 
@@ -66,6 +72,8 @@ The compiler generated x86-64 assembly code with the following structure:
 🚪     ret
    Return control to calling function
 
+=======
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_output.txt
 📊 COMPILATION STATISTICS:
 ═══════════════════════════════════════════════════════════════════════════════
 

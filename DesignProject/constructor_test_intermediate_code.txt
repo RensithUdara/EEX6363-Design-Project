@@ -2,15 +2,18 @@
 Intermediate Code Generation
 Design Project - Code Generation Phase
 ========================================
-Input: tests/examples/final_test.txt
+Input: constructor_test.txt
 Target: x86-64 Assembly (AT&T Syntax)
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_intermediate_code.txt
 Generated: Nov 27 2025 01:09:43
+=======
+Generated: Nov 27 2025 21:47:04
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_intermediate_code.txt
 
 THREE-ADDRESS CODE:
 -------------------
 // Program start
-calculateALLOC a, 4
-// Program end
+SimpleClassconstructor// Program end
 
 REGISTER ALLOCATION:
 --------------------

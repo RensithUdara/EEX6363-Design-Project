@@ -1,7 +1,11 @@
 ========================================
 Design Project - Architecture Design
 ========================================
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 Generated: November 27, 2025 at 23:18:08
+=======
+Generated: November 27, 2025 at 22:52:00
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 
 🏗️  COMPILER ARCHITECTURE ANALYSIS
 ═══════════════════════════════════════════════════════════════════════════════
@@ -20,10 +24,17 @@ Generated: November 27, 2025 at 23:18:08
 ┌─────────────────────┬─────────────┬─────────────┬─────────────────┐
 │ Phase               │ Status      │ Time (ms)   │ Efficiency      │
 ├─────────────────────┼─────────────┼─────────────┼─────────────────┤
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 │ 🔤 Lexical Analysis │ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
 │ 🌳 Syntax Analysis  │ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
 │ 🧠 Semantic Analysis│ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
 │ ⚙️  Code Generation  │ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
+=======
+│ 🔤 Lexical Analysis │ ✅ ACTIVE  │     0.35    │ 🚀 Excellent          │
+│ 🌳 Syntax Analysis  │ ✅ ACTIVE  │     0.35    │ 🚀 Excellent          │
+│ 🧠 Semantic Analysis│ ✅ ACTIVE  │     0.75    │ 🚀 Excellent          │
+│ ⚙️  Code Generation  │ ✅ ACTIVE  │     0.16    │ 🚀 Excellent          │
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 └─────────────────────┴─────────────┴─────────────┴─────────────────┘
 
 🔄 COMPILATION FLOW:
@@ -33,12 +44,16 @@ Generated: November 27, 2025 at 23:18:08
             ▼
      🔤 LEXICAL ANALYZER
        ┌─ scanner.l
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
        └─ Tokens: 41
+=======
+       └─ Tokens: 16
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
             │
             ▼
      🌳 SYNTAX ANALYZER
        ┌─ parser.y
-       └─ AST Nodes: 40
+       └─ AST Nodes: 26
             │
             ▼
      🧠 SEMANTIC ANALYZER
@@ -61,9 +76,15 @@ Generated: November 27, 2025 at 23:18:08
 🔤 PHASE 1: LEXICAL ANALYSIS
 ────────────────────────────
 Status:       ✅ OPERATIONAL
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 Input:        Source code from tests/examples/final_test.txt
 Output:       41 tokens generated
 Processing:   0.00ms execution time
+=======
+Input:        Source code from constructor_test.txt
+Output:       16 tokens generated
+Processing:   0.35ms execution time
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 Tool Used:    Flex (scanner.l)
 Errors:       0 lexical errors detected
 Performance:  🚀 Excellent
@@ -71,10 +92,17 @@ Performance:  🚀 Excellent
 🌳 PHASE 2: SYNTAX ANALYSIS
 ───────────────────────────
 Status:       ✅ OPERATIONAL
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 Input:        Token stream (41 tokens)
 Output:       Abstract Syntax Tree generated
 AST Nodes:    40 nodes created
 Processing:   0.00ms execution time
+=======
+Input:        Token stream (16 tokens)
+Output:       Abstract Syntax Tree generated
+AST Nodes:    26 nodes created
+Processing:   0.35ms execution time
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 Tool Used:    Bison (parser.y)
 Errors:       0 syntax errors detected
 Performance:  🚀 Excellent
@@ -82,13 +110,18 @@ Performance:  🚀 Excellent
 🧠 PHASE 3: SEMANTIC ANALYSIS
 ─────────────────────────────
 Status:       ✅ OPERATIONAL
-Input:        Abstract Syntax Tree (40 nodes)
+Input:        Abstract Syntax Tree (26 nodes)
 Output:       Annotated AST + Symbol Tables
 Errors:       0 semantic errors found
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 Warnings:     3 warnings issued
 Processing:   0.00ms execution time
+=======
+Warnings:     1 warnings issued
+Processing:   0.75ms execution time
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 Components:   semantic.c, ast.c, error_handler.c
-Symbols:      4 symbols in table
+Symbols:      3 symbols in table
 Performance:  🚀 Excellent
 
 ⚙️  PHASE 4: CODE GENERATION
@@ -98,7 +131,11 @@ Input:        Annotated AST + Symbol Tables
 Output:       x86-64 Assembly Code (output.s)
 Target Arch:  x86-64 (64-bit Intel/AMD)
 Syntax:       AT&T Assembly Syntax
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 Processing:   0.00ms execution time
+=======
+Processing:   0.16ms execution time
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 Components:   codegen.c, register_allocator.c
 Registers:    16 general-purpose registers available
 Optimization: Basic register allocation
@@ -109,24 +146,37 @@ Performance:  🚀 Excellent
 
 ⏱️  TIMING ANALYSIS:
 ──────────────────
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 Total Compilation Time:  0.00ms
 Average Phase Time:      0.00ms
 Fastest Phase:          Lexical (0.00ms)
 Slowest Phase:          Lexical (0.00ms)
+=======
+Total Compilation Time:  1.61ms
+Average Phase Time:      0.40ms
+Fastest Phase:          CodeGen (0.16ms)
+Slowest Phase:          Semantic (0.75ms)
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 Compilation Speed:       🚀 Very Fast
 
 💾 MEMORY & RESOURCES:
 ─────────────────────
 Memory Model:           Dynamic allocation
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_architecture_design.txt
 Token Buffer:           41 tokens stored
 AST Memory:             40 nodes allocated
 Symbol Tables:          4 entries
+=======
+Token Buffer:           16 tokens stored
+AST Memory:             26 nodes allocated
+Symbol Tables:          3 entries
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_architecture_design.txt
 File Handles:           6 output files
 Memory Efficiency:      ✅ Optimal
 
 🔍 CODE QUALITY METRICS:
 ───────────────────────
-Error Status:           ✅ Clean (0 errors, 3 warnings)
+Error Status:           ✅ Clean (0 errors, 1 warnings)
 Parser Success:         ✅ AST Generated
 Symbol Resolution:      ✅ Complete
 Code Generation:        ✅ Assembly Generated

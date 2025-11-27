@@ -1,14 +1,16 @@
 ========================================
-Comprehensive Symbol Table
-Design Project - Complete Compiler
+Semantic Analysis Output (TMA3)
 ========================================
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_semantic_output.txt
 Input: tests/examples/final_test.txt
 Generated: Nov 27 2025 01:09:43
+=======
+Input: constructor_test.txt
+Generated: Nov 27 2025 21:47:04
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_semantic_output.txt
 
-GLOBAL SCOPE:
-+---------------+----------+--------+----------+---------+--------+
-| Symbol Name   | Type     | Line   | Scope    | Address | Size   |
-+---------------+----------+--------+----------+---------+--------+
+SYMBOL TABLE:
+-------------
 ================================================================================
                     TMA03 COMPREHENSIVE SYMBOL TABLE                           
 ================================================================================
@@ -20,34 +22,42 @@ Features: Types, visibility, parameters, inheritance, array dimensions
 │
 │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
 │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
-│   calculate          │ FUNCTION     │ integer      │ public     │ Line 11  │ Returns: integer, No parameters
+│   SimpleClass        │ CLASS        │ class        │ public     │ Line 11  │ Class definition, Inherits from 1 parent(s)
+│   ⮕ Inheritance: (null)
 └────────────────────────────────────────────────────────────────────────────────┘
 
-  ┌─── SCOPE: func_calculate (Level 1) ─── [3 symbols] ──────────────────────────┐
+  ┌─── SCOPE: class_SimpleClass (Level 1) ─── [1 symbols] ───────────────────────┐
   │
   │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
   │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
-  │   sum                │ VARIABLE     │ integer      │ public     │ Line 14  │ Simple integer
-  │   b                  │ VARIABLE     │ integer      │ public     │ Line 13  │ Simple integer
-  │   a                  │ VARIABLE     │ integer      │ public     │ Line 12  │ Simple integer
+  │   constructor        │ FUNCTION     │ void         │ public     │ Line 16  │ Returns: void, No parameters
   └────────────────────────────────────────────────────────────────────────────────┘
+
+    ┌─── SCOPE: func_constructor (Level 2) ─── [1 symbols] ────────────────────────┐
+    │
+    │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
+    │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
+    │   temp               │ VARIABLE     │ integer      │ public     │ Line 17  │ Simple integer
+    └────────────────────────────────────────────────────────────────────────────────┘
 
 ================================================================================
                               SYMBOL TABLE SUMMARY                             
 ================================================================================
-Total Scopes:       2
-Total Symbols:      4
+Total Scopes:       3
+Total Symbols:      3
   ├─ Functions:     1
-  ├─ Classes:       0
-  └─ Variables:     3 (includes parameters and attributes)
+  ├─ Classes:       1
+  └─ Variables:     1 (includes parameters and attributes)
 
-Scope Hierarchy:    1 levels deep
+Scope Hierarchy:    2 levels deep
 Analysis Status:    Two-phase semantic analysis completed
 Parser Type:        Recursive descent parser with syntax-directed translation
 ================================================================================
-+---------------+----------+--------+----------+---------+--------+
 
-STATISTICS:
------------
-Total Symbols: 4
-Maximum Scope Depth: 1
+TYPE CHECKING RESULTS:
+----------------------
+Semantic Errors: 0
+Semantic Warnings: 1
+✓ All type checks passed
+✓ All variables properly declared
+✓ All function calls validated
