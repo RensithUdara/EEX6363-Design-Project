@@ -4,7 +4,7 @@
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
 📄 INPUT FILE: tests/examples/simple_test.txt
-🕒 GENERATED: November 23, 2025 at 01:36:40
+🕒 GENERATED: November 27, 2025 at 23:18:08
 ⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
 🎯 PHASE: Phase 1 - Lexical Analysis
 
@@ -25,8 +25,8 @@
 │ KEYWORD         │ func             │ 4    │ 9      │ reserved            │
 │ IDENTIFIER      │ test             │ 4    │ 14     │ variable            │
 │ PUNCTUATION     │ :                │ 4    │ 21     │ delimiter           │
-│ IDENTIFIER      │ integeraa        │ 4    │ 23     │ variable            │
-│ IDENTIFIER      │                 │ 4    │ 34     │ variable            │
+│ KEYWORD         │ integer          │ 4    │ 23     │ reserved            │
+│ IDENTIFIER      │                 │ 4    │ 32     │ variable            │
 │ KEYWORD         │ local            │ 5    │ 13     │ reserved            │
 │ KEYWORD         │ integer          │ 5    │ 19     │ reserved            │
 │ IDENTIFIER      │ x                │ 5    │ 27     │ variable            │
@@ -47,7 +47,7 @@
 ║ 📊 Total Tokens Processed    : 28                                                ║
 ║ 📄 Total Lines Analyzed      : 9                                                 ║
 ║ ⚠️  Lexical Errors Found      : 0                                                 ║
-║ 🕐 Generation Timestamp      : 2025-11-23 01:36:40                               ║
+║ 🕐 Generation Timestamp      : 2025-11-27 23:18:08                               ║
 ║ 📂 Input Source File         : tests/examples/simple_test.txt                    ║
 ║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
 ║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║

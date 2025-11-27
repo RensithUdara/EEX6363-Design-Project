@@ -3,7 +3,8 @@
 # Design Project - All Phases Integration Testing
 
 # Change to project root directory
-cd "$(dirname "$0")/../.."
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR/../.."
 
 echo "========================================"
 echo "  Complete Compiler Test Suite"

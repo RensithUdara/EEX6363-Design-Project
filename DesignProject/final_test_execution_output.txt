@@ -1,0 +1,63 @@
+================================================================================
+                        PROGRAM EXECUTION OUTPUT                                
+================================================================================
+Source File:     tests/examples/final_test.txt
+Generated:       Nov 27 2025 01:09:47
+Execution Mode:  AST Interpretation Simulation
+Compiler:        EEX6363 Design Project Compiler
+================================================================================
+
+🚀 PROGRAM EXECUTION TRACE:
+════════════════════════════════════════════════════════════════════════════
+
+📋 Starting program execution...
+
+🔧 Entering function: calculate()
+   ├─ Setting up local scope...
+
+📝 Variable Declaration: a
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+📝 Variable Declaration: b
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+📝 Variable Declaration: sum
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+🔄 Assignment: a := 10
+   └─ a now contains: 10
+
+🔄 Assignment: b := 25
+   └─ b now contains: 25
+
+🔄 Assignment: sum := expression result
+   ├─ Expression: a(10) + b(25)
+   └─ Computed value: 35
+   └─ sum now contains: 35
+
+📤 Output: write(35)
+   └─ Program outputs: 35
+
+🏁 Return: return(35)
+   └─ Function returns: 35
+
+
+════════════════════════════════════════════════════════════════════════════
+📊 EXECUTION SUMMARY:
+════════════════════════════════════════════════════════════════════════════
+
+💾 FINAL VARIABLE STATES:
+   ├─ a = 10
+   ├─ b = 25
+   ├─ sum = 35
+
+🎯 PROGRAM RESULT:
+   └─ Return Value: 35
+   └─ Execution Status: ✅ SUCCESS
+
+================================================================================
+                           END OF EXECUTION                                     
+================================================================================

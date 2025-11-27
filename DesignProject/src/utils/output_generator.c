@@ -57,7 +57,7 @@ void print_ast_tree(ASTNode *node, FILE *output, int depth)
             print_ast_tree(node->children[i], output, depth + 1);
         }
     }
-    
+
     // Print siblings (linked list traversal)
     if (node->next)
     {
@@ -210,24 +210,28 @@ void generate_execution_output_file(const char *input_file, ASTNode *ast)
 
     // Extract base filename for output file
     const char *basename = strrchr(input_file, '/');
-    if (!basename) basename = strrchr(input_file, '\\');
-    if (!basename) basename = input_file;
-    else basename++;
-    
+    if (!basename)
+        basename = strrchr(input_file, '\\');
+    if (!basename)
+        basename = input_file;
+    else
+        basename++;
+
     char base_name[256];
     strncpy(base_name, basename, sizeof(base_name) - 1);
     base_name[sizeof(base_name) - 1] = '\0';
     char *dot = strrchr(base_name, '.');
-    if (dot) *dot = '\0';
-    
+    if (dot)
+        *dot = '\0';
+
     // Create execution output filename
     char output_filename[512];
     snprintf(output_filename, sizeof(output_filename), "%s_execution_output.txt", base_name);
-    
+
     FILE *output = fopen(output_filename, "w");
     if (!output)
         return;
-    
+
     // Header
     fprintf(output, "================================================================================\n");
     fprintf(output, "                        PROGRAM EXECUTION OUTPUT                                \n");
@@ -237,31 +241,31 @@ void generate_execution_output_file(const char *input_file, ASTNode *ast)
     fprintf(output, "Execution Mode:  AST Interpretation Simulation\n");
     fprintf(output, "Compiler:        EEX6363 Design Project Compiler\n");
     fprintf(output, "================================================================================\n\n");
-    
+
     // Execute the program
     Variable variables[10];
     int var_count = 0;
-    
+
     fprintf(output, "🚀 PROGRAM EXECUTION TRACE:\n");
     fprintf(output, "════════════════════════════════════════════════════════════════════════════\n\n");
-    
+
     int return_value = execute_program(ast, variables, &var_count, output);
-    
+
     fprintf(output, "\n════════════════════════════════════════════════════════════════════════════\n");
     fprintf(output, "📊 EXECUTION SUMMARY:\n");
     fprintf(output, "════════════════════════════════════════════════════════════════════════════\n\n");
-    
+
     fprintf(output, "💾 FINAL VARIABLE STATES:\n");
     print_variable_state(variables, var_count, output);
-    
+
     fprintf(output, "\n🎯 PROGRAM RESULT:\n");
     fprintf(output, "   └─ Return Value: %d\n", return_value);
     fprintf(output, "   └─ Execution Status: ✅ SUCCESS\n");
-    
+
     fprintf(output, "\n================================================================================\n");
     fprintf(output, "                           END OF EXECUTION                                     \n");
     fprintf(output, "================================================================================\n");
-    
+
     fclose(output);
     printf("✅ Execution output generated: %s\n", output_filename);
 }
@@ -271,9 +275,9 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
 {
     if (!node)
         return 0;
-    
+
     int return_value = 0;
-    
+
     switch (node->type)
     {
     case AST_PROGRAM:
@@ -283,7 +287,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
             return_value = execute_program(node->children[i], variables, var_count, output);
         }
         break;
-        
+
     case AST_FUNC_DEF:
         // Find function name
         char *func_name = "unknown";
@@ -299,10 +303,10 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
                 }
             }
         }
-        
+
         fprintf(output, "🔧 Entering function: %s()\n", func_name);
         fprintf(output, "   ├─ Setting up local scope...\n\n");
-        
+
         // Execute function body
         for (int i = 0; i < node->child_count; i++)
         {
@@ -312,14 +316,14 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
             }
         }
         break;
-        
+
     case AST_FUNC_BODY:
         for (int i = 0; i < node->child_count; i++)
         {
             return_value = execute_program(node->children[i], variables, var_count, output);
         }
         break;
-        
+
     case AST_LOCAL_VAR_DECL:
         // Variable declaration
         if (node->child_count > 0 && node->children[0]->type == AST_VAR_DECL)
@@ -337,7 +341,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
                         variables[*var_count].value = 0;
                         variables[*var_count].initialized = 0;
                         (*var_count)++;
-                        
+
                         fprintf(output, "📝 Variable Declaration: %s\n", var_name);
                         fprintf(output, "   ├─ Type: integer\n");
                         fprintf(output, "   └─ Initial value: uninitialized\n\n");
@@ -347,22 +351,22 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
             }
         }
         break;
-        
+
     case AST_ASSIGN_STMT:
         // Assignment statement
         if (node->child_count >= 2)
         {
             ASTNode *lvalue = node->children[0];
             ASTNode *rvalue = node->children[1];
-            
+
             // Get variable name
             char *var_name = NULL;
-            if (lvalue->type == AST_VARIABLE && lvalue->child_count > 0 && 
+            if (lvalue->type == AST_VARIABLE && lvalue->child_count > 0 &&
                 lvalue->children[0]->type == AST_ID)
             {
                 var_name = lvalue->children[0]->data.string_value;
             }
-            
+
             if (var_name)
             {
                 int var_index = find_variable(variables, *var_count, var_name);
@@ -371,7 +375,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
                     int new_value = evaluate_expression(rvalue, variables, *var_count);
                     variables[var_index].value = new_value;
                     variables[var_index].initialized = 1;
-                    
+
                     fprintf(output, "🔄 Assignment: %s := ", var_name);
                     if (rvalue->type == AST_INT_LITERAL)
                     {
@@ -389,13 +393,13 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
                     {
                         fprintf(output, "%d\n", new_value);
                     }
-                    
+
                     fprintf(output, "   └─ %s now contains: %d\n\n", var_name, new_value);
                 }
             }
         }
         break;
-        
+
     case AST_WRITE_STMT:
         // Write statement
         if (node->child_count > 0)
@@ -405,7 +409,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
             fprintf(output, "   └─ Program outputs: %d\n\n", value);
         }
         break;
-        
+
     case AST_RETURN_STMT:
         // Return statement
         if (node->child_count > 0)
@@ -415,14 +419,22 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
             fprintf(output, "   └─ Function returns: %d\n\n", return_value);
         }
         break;
+
+    default:
+        // Handle all other AST node types silently
+        for (int i = 0; i < node->child_count; i++)
+        {
+            return_value = execute_program(node->children[i], variables, var_count, output);
+        }
+        break;
     }
-    
+
     // Process siblings
     if (node->next)
     {
         return_value = execute_program(node->next, variables, var_count, output);
     }
-    
+
     return return_value;
 }
 
@@ -431,12 +443,12 @@ int evaluate_expression(ASTNode *expr, Variable *variables, int var_count)
 {
     if (!expr)
         return 0;
-    
+
     switch (expr->type)
     {
     case AST_INT_LITERAL:
         return expr->data.int_value;
-        
+
     case AST_VARIABLE:
         if (expr->child_count > 0 && expr->children[0]->type == AST_ID)
         {
@@ -448,31 +460,36 @@ int evaluate_expression(ASTNode *expr, Variable *variables, int var_count)
             }
         }
         return 0;
-        
+
     case AST_BINARY_EXPR:
         if (expr->child_count >= 2)
         {
             int left_val = evaluate_expression(expr->children[0], variables, var_count);
             int right_val = evaluate_expression(expr->children[1], variables, var_count);
-            
+
             // Get operator from the node itself
-            char op = '+';  // Default
+            char op = '+'; // Default
             if (expr->data.operator && expr->data.operator[0])
             {
                 op = expr->data.operator[0];
             }
-            
+
             switch (op)
             {
-            case '+': return left_val + right_val;
-            case '-': return left_val - right_val;
-            case '*': return left_val * right_val;
-            case '/': return (right_val != 0) ? left_val / right_val : 0;
-            default: return left_val + right_val;  // Default to addition
+            case '+':
+                return left_val + right_val;
+            case '-':
+                return left_val - right_val;
+            case '*':
+                return left_val * right_val;
+            case '/':
+                return (right_val != 0) ? left_val / right_val : 0;
+            default:
+                return left_val + right_val; // Default to addition
             }
         }
         return 0;
-        
+
     default:
         return 0;
     }
@@ -499,7 +516,7 @@ void print_variable_state(Variable *variables, int var_count, FILE *output)
         fprintf(output, "   └─ No variables declared\n");
         return;
     }
-    
+
     for (int i = 0; i < var_count; i++)
     {
         fprintf(output, "   ├─ %s = %d", variables[i].name, variables[i].value);
@@ -516,14 +533,14 @@ void print_expression_trace(ASTNode *expr, Variable *variables, int var_count, F
 {
     if (!expr)
         return;
-        
+
     switch (expr->type)
     {
     case AST_BINARY_EXPR:
         if (expr->child_count >= 2)
         {
             print_expression_trace(expr->children[0], variables, var_count, output);
-            
+
             // Print operator
             if (expr->data.operator)
             {
@@ -531,13 +548,13 @@ void print_expression_trace(ASTNode *expr, Variable *variables, int var_count, F
             }
             else
             {
-                fprintf(output, " + ");  // Default
+                fprintf(output, " + "); // Default
             }
-            
+
             print_expression_trace(expr->children[1], variables, var_count, output);
         }
         break;
-        
+
     case AST_VARIABLE:
         if (expr->child_count > 0 && expr->children[0]->type == AST_ID)
         {
@@ -553,11 +570,11 @@ void print_expression_trace(ASTNode *expr, Variable *variables, int var_count, F
             }
         }
         break;
-        
+
     case AST_INT_LITERAL:
         fprintf(output, "%d", expr->data.int_value);
         break;
-        
+
     default:
         fprintf(output, "?");
         break;

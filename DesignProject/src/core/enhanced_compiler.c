@@ -371,6 +371,7 @@ void generate_complete_parse_tree_from_input(const char *input_file, FILE *outpu
     char line[1024];
     int depth = 1;
     int in_function = 0;
+    (void)in_function; // Suppress unused variable warning
 
     while (fgets(line, sizeof(line), input))
     {
@@ -489,7 +490,7 @@ void generate_complete_parse_tree_from_input(const char *input_file, FILE *outpu
 
                 for (int i = 0; i < depth + 4; i++)
                     fprintf(output, "  ");
-                if (isdigit(*expr))
+                if (isdigit((unsigned char)*expr))
                     fprintf(output, "INT_LITERAL(\"%s\")\n", expr);
                 else
                     fprintf(output, "ID(\"%s\")\n", expr);
@@ -501,7 +502,7 @@ void generate_complete_parse_tree_from_input(const char *input_file, FILE *outpu
                 char *right = plus + 3;
                 for (int i = 0; i < depth + 4; i++)
                     fprintf(output, "  ");
-                if (isdigit(*right))
+                if (isdigit((unsigned char)*right))
                     fprintf(output, "INT_LITERAL(\"%s\")\n", right);
                 else
                     fprintf(output, "ID(\"%s\")\n", right);
@@ -510,7 +511,7 @@ void generate_complete_parse_tree_from_input(const char *input_file, FILE *outpu
             {
                 for (int i = 0; i < depth + 3; i++)
                     fprintf(output, "  ");
-                if (isdigit(*expr))
+                if (isdigit((unsigned char)*expr))
                     fprintf(output, "INT_LITERAL(\"%s\")\n", expr);
                 else
                     fprintf(output, "ID(\"%s\")\n", expr);
@@ -722,7 +723,7 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     // Initialize error manager system
     init_error_manager();
-    
+
     // Initialize real-time error log file
     init_error_log_file(input_file);
 
@@ -873,19 +874,19 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     destroy_codegen_context(ctx);
     fclose(output);
-    
+
     // Generate detailed output explanation if no errors
     if (codegen_result == 0 && actual_errors == 0)
     {
         generate_detailed_output_explanation(input_file, output_file, ast);
-        
+
         // Create additional assembly output file with proper naming
         generate_assembly_output_file(input_file, output_file);
-        
+
         // Generate execution output with computed values
         generate_execution_output_file(input_file, ast);
     }
-    
+
     close_output_files();
 
     // Generate test results
@@ -954,8 +955,9 @@ int main(int argc, char *argv[])
     printf("- Symbol Table: %s_symbol_table.txt\n", base_name);
     printf("- Intermediate Code: %s_intermediate_code.txt\n", base_name);
     printf("- Assembly Output: %s\n", output_file);
-    
-    if (result == 0) {
+
+    if (result == 0)
+    {
         printf("- 🎯 OUTPUT EXPLANATION: %s_output.txt\n", base_name);
     }
 
@@ -1258,7 +1260,7 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     }
 
     snprintf(filename, sizeof(filename), "%s_error_log.txt", base_name);
-    FILE *error_file = fopen(filename, "a");  // Append mode instead of write mode
+    FILE *error_file = fopen(filename, "a"); // Append mode instead of write mode
     if (!error_file)
         return;
 
@@ -1555,9 +1557,9 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
         int var_count = 0;
         char function_names[1024] = "";
         char variable_names[1024] = "";
-        
+
         analyze_program_structure(ast, &func_count, &var_count, function_names, variable_names);
-        
+
         fprintf(output_file, "🏗️  INPUT PROGRAM COMPONENTS:\n");
         fprintf(output_file, "   ├─ Functions Defined: %d\n", func_count);
         if (func_count > 0)
@@ -1575,21 +1577,22 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
     // Assembly code explanation
     fprintf(output_file, "⚙️  GENERATED ASSEMBLY CODE EXPLANATION:\n");
     fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
-    
+
     FILE *assembly = fopen(assembly_file, "r");
     if (assembly)
     {
         char line[256];
         int line_num = 1;
-        
+        (void)line_num; // Suppress unused variable warning
+
         fprintf(output_file, "The compiler generated x86-64 assembly code with the following structure:\n\n");
-        
+
         while (fgets(line, sizeof(line), assembly))
         {
             // Skip empty lines and pure comments
             if (strlen(line) <= 1 || (line[0] == '#' && strstr(line, "Function:") == NULL))
                 continue;
-                
+
             if (strstr(line, "Function:"))
             {
                 fprintf(output_file, "🔧 %s", line);
@@ -1651,7 +1654,7 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
                 fprintf(output_file, "   Return control to calling function\n\n");
             }
         }
-        
+
         fclose(assembly);
     }
 
@@ -1674,12 +1677,12 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
 }
 
 // Analyze program structure for output explanation
-void analyze_program_structure(ASTNode *node, int *func_count, int *var_count, 
-                              char *func_names, char *var_names)
+void analyze_program_structure(ASTNode *node, int *func_count, int *var_count,
+                               char *func_names, char *var_names)
 {
     if (!node)
         return;
-        
+
     if (node->type == AST_FUNC_DEF)
     {
         (*func_count)++;
@@ -1718,13 +1721,13 @@ void analyze_program_structure(ASTNode *node, int *func_count, int *var_count,
             }
         }
     }
-    
+
     // Recursively analyze children
     for (int i = 0; i < node->child_count; i++)
     {
         analyze_program_structure(node->children[i], func_count, var_count, func_names, var_names);
     }
-    
+
     // Analyze siblings
     if (node->next)
     {
@@ -1965,32 +1968,38 @@ void generate_assembly_output_file(const char *input_file, const char *assembly_
 {
     // Extract base filename from input file
     const char *basename = strrchr(input_file, '/');
-    if (!basename) basename = strrchr(input_file, '\\');
-    if (!basename) basename = input_file;
-    else basename++; // Skip the slash
-    
+    if (!basename)
+        basename = strrchr(input_file, '\\');
+    if (!basename)
+        basename = input_file;
+    else
+        basename++; // Skip the slash
+
     // Remove extension from basename
     char base_name[256];
     strncpy(base_name, basename, sizeof(base_name) - 1);
     base_name[sizeof(base_name) - 1] = '\0';
     char *dot = strrchr(base_name, '.');
-    if (dot) *dot = '\0';
-    
+    if (dot)
+        *dot = '\0';
+
     // Create output filename: basename_assembly_code.txt
     char output_filename[512];
     snprintf(output_filename, sizeof(output_filename), "%s_assembly_code.txt", base_name);
-    
+
     // Copy the assembly file to the new name
     FILE *source = fopen(assembly_file, "r");
     FILE *dest = fopen(output_filename, "w");
-    
+
     if (!source || !dest)
     {
-        if (source) fclose(source);
-        if (dest) fclose(dest);
+        if (source)
+            fclose(source);
+        if (dest)
+            fclose(dest);
         return;
     }
-    
+
     // Add header to the assembly code file
     fprintf(dest, "================================================================================\n");
     fprintf(dest, "                    GENERATED ASSEMBLY CODE OUTPUT                              \n");
@@ -2001,14 +2010,14 @@ void generate_assembly_output_file(const char *input_file, const char *assembly_
     fprintf(dest, "Assembly Syntax: AT&T Syntax\n");
     fprintf(dest, "Compiler:        EEX6363 Design Project Compiler\n");
     fprintf(dest, "================================================================================\n\n");
-    
+
     // Copy the assembly content
     int c;
     while ((c = fgetc(source)) != EOF)
     {
         fputc(c, dest);
     }
-    
+
     // Add footer
     fprintf(dest, "\n\n================================================================================\n");
     fprintf(dest, "                           END OF ASSEMBLY OUTPUT                               \n");
@@ -2016,10 +2025,10 @@ void generate_assembly_output_file(const char *input_file, const char *assembly_
     fprintf(dest, "Assembly code generation completed successfully.\n");
     fprintf(dest, "This file contains the generated x86-64 assembly code for: %s\n", input_file);
     fprintf(dest, "================================================================================\n");
-    
+
     fclose(source);
     fclose(dest);
-    
+
     printf("✅ Assembly code generated: %s\n", output_filename);
 }
 

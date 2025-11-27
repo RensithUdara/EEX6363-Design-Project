@@ -1,8 +1,13 @@
 ===============================================================================
                         COMPILATION OUTPUT EXPLANATION                        
 ===============================================================================
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_output.txt
+Generated: November 27, 2025 at 23:18:08
+Input File: tests/examples/final_test.txt
+=======
 Generated: November 27, 2025 at 22:52:00
 Input File: constructor_test.txt
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_output.txt
 Assembly File: output.s
 Status: Compilation Successful (No Errors)
 
@@ -21,6 +26,54 @@ Status: Compilation Successful (No Errors)
 
 The compiler generated x86-64 assembly code with the following structure:
 
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_output.txt
+🔧 # Function: calculate
+   This defines the entry point for a function
+
+🏷️  calculate:
+   Function label - marks the beginning of executable code
+
+📝     movq $10, -8(%rbp)
+   Store constant value in local variable
+
+📝     movq $25, -16(%rbp)
+   Store constant value in local variable
+
+📺     call write_int             # Call write function
+   Call system function to display integer value
+
+📤     movq -24(%rbp), %rax       # Load return value
+   Load variable value into accumulator register
+
+📝     movq $10, -8(%rbp)          # Store 10 in variable a
+   Store constant value in local variable
+
+📝     movq $25, -16(%rbp)         # Store 25 in variable b
+   Store constant value in local variable
+
+📤     movq -8(%rbp), %rax        # Load a into rax
+   Load variable value into accumulator register
+
+➕     addq -16(%rbp), %rax       # Add b to rax
+   Perform addition operation
+
+📤     movq %rax, -24(%rbp)       # Store result in sum
+   Load variable value into accumulator register
+
+📺     call write_int               # Call write function
+   Call system function to display integer value
+
+🚪     # Return statement: return sum
+   Return control to calling function
+
+📤     movq -24(%rbp), %rax       # Load return value
+   Load variable value into accumulator register
+
+🚪     ret
+   Return control to calling function
+
+=======
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_output.txt
 📊 COMPILATION STATISTICS:
 ═══════════════════════════════════════════════════════════════════════════════
 
