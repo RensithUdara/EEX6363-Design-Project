@@ -2,14 +2,25 @@
 Intermediate Code Generation
 Design Project - Code Generation Phase
 ========================================
-Input: test_simple_program.txt
+Input: ./test_simple_program.txt
 Target: x86-64 Assembly (AT&T Syntax)
-Generated: Nov 24 2025 00:49:36
+Generated: Nov 28 2025 02:01:08
 
 THREE-ADDRESS CODE:
 -------------------
 // Program start
-mainALLOC x, 4
+// Function: main
+ALLOC x, 4
+ALLOC y, 4
+t0 = 42
+x = t0
+t1 = x + 5
+y = t1
+t2 = y
+param t2
+call write
+t3 = 0
+return t3
 // Program end
 
 REGISTER ALLOCATION:
@@ -21,6 +32,25 @@ Spill Operations: 0
 
 Register Assignments:
 - No registers allocated
+
+QUADRUPLE (4-TUPLE) REPRESENTATION:
+-----------------------------------
+op         arg1       arg2       result    
+---        ----       ----       ------    
+alloc      4          -          x         
+alloc      4          -          y         
+assign     42         -          x         
+mul        x                     y         
+write      y          -          -         
+
+TRIPLE REPRESENTATION:
+----------------------
+#     op         arg1       arg2      
+-     --         ----       ----      
+1     assign     42         -         
+2     mul        (1)        (2)       
+3     write      (3)        -         
+4     return     (3)        -         
 
 OPTIMIZATIONS APPLIED:
 ----------------------

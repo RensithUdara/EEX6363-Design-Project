@@ -1,8 +1,8 @@
 ========================================
 Semantic Analysis Output (TMA3)
 ========================================
-Input: test_simple_program.txt
-Generated: Nov 24 2025 00:49:36
+Input: ./test_simple_program.txt
+Generated: Nov 28 2025 02:01:08
 
 SYMBOL TABLE:
 -------------

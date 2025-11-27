@@ -4,7 +4,7 @@
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
 📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test.txt
-🕒 GENERATED: November 28, 2025 at 01:26:09
+🕒 GENERATED: November 28, 2025 at 02:56:36
 ⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
 🎯 PHASE: Phase 1 - Lexical Analysis
 
@@ -24,7 +24,7 @@
 │ KEYWORD         │ func             │ 4    │ 9      │ reserved            │
 │ IDENTIFIER      │ test             │ 4    │ 14     │ variable            │
 │ PUNCTUATION     │ :                │ 4    │ 21     │ delimiter           │
-│ IDENTIFIER      │ integeraa        │ 4    │ 23     │ variable            │
+│ KEYWORD         │ integer          │ 4    │ 23     │ reserved            │
 │ KEYWORD         │ local            │ 5    │ 13     │ reserved            │
 │ KEYWORD         │ integer          │ 5    │ 19     │ reserved            │
 │ IDENTIFIER      │ x                │ 5    │ 27     │ variable            │
@@ -41,7 +41,7 @@
 ║ 📊 Total Tokens Processed    : 22                                                ║
 ║ 📄 Total Lines Analyzed      : 9                                                 ║
 ║ ⚠️  Lexical Errors Found      : 0                                                 ║
-║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:56:36                               ║
 ║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test.txt ║
 ║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
 ║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║

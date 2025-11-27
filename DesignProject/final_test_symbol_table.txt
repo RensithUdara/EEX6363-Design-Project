@@ -3,7 +3,7 @@ Comprehensive Symbol Table
 Design Project - Complete Compiler
 ========================================
 Input: final_test.txt
-Generated: Nov 28 2025 01:50:23
+Generated: Nov 28 2025 02:04:04
 
 GLOBAL SCOPE:
 +---------------+----------+--------+----------+---------+--------+

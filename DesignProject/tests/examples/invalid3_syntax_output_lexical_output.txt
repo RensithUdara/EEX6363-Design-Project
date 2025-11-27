@@ -1,0 +1,119 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/invalid3_syntax_output.txt
+🕒 GENERATED: November 28, 2025 at 02:56:33
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ ======================================== │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ Syntax           │ 2    │ 1      │ variable            │
+│ IDENTIFIER      │ Analysis         │ 2    │ 8      │ variable            │
+│ IDENTIFIER      │ Output           │ 2    │ 17     │ variable            │
+│ IDENTIFIER      │ TMA2             │ 2    │ 25     │ variable            │
+│ IDENTIFIER      │ ======================================== │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ Input:           │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ tests/examples/invalid3.txt │ 4    │ 8      │ variable            │
+│ IDENTIFIER      │ Grammar:         │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ Complete         │ 5    │ 10     │ variable            │
+│ IDENTIFIER      │ language         │ 5    │ 19     │ variable            │
+│ IDENTIFIER      │ grammar          │ 5    │ 28     │ variable            │
+│ IDENTIFIER      │ from             │ 5    │ 36     │ variable            │
+│ IDENTIFIER      │ TMA2             │ 5    │ 41     │ variable            │
+│ IDENTIFIER      │ PARSE            │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ TREE             │ 7    │ 7      │ variable            │
+│ IDENTIFIER      │ Generated        │ 7    │ 13     │ variable            │
+│ IDENTIFIER      │ from             │ 7    │ 23     │ variable            │
+│ IDENTIFIER      │ Input            │ 7    │ 28     │ variable            │
+│ IDENTIFIER      │ Analysis         │ 7    │ 34     │ variable            │
+│ PUNCTUATION     │ :                │ 7    │ 43     │ delimiter           │
+│ IDENTIFIER      │ ------------------------------------------- │ 8    │ 1      │ variable            │
+│ IDENTIFIER      │ PROGRAM          │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ LOCAL_VAR_DECL   │ 10   │ 5      │ variable            │
+│ IDENTIFIER      │ VAR_DECL         │ 11   │ 7      │ variable            │
+│ IDENTIFIER      │ ID               │ 12   │ 9      │ variable            │
+│ IDENTIFIER      │ "z"              │ 12   │ 12     │ variable            │
+│ IDENTIFIER      │ TYPE             │ 13   │ 9      │ variable            │
+│ IDENTIFIER      │ "float           │ 13   │ 14     │ variable            │
+│ IDENTIFIER      │ "               │ 13   │ 21     │ variable            │
+│ IDENTIFIER      │ FUNC_DEF         │ 14   │ 3      │ variable            │
+│ IDENTIFIER      │ FUNC_HEAD        │ 15   │ 5      │ variable            │
+│ IDENTIFIER      │ ID               │ 16   │ 7      │ variable            │
+│ IDENTIFIER      │ "TestFunc        │ 16   │ 10     │ variable            │
+│ IDENTIFIER      │ x0:              │ 16   │ 20     │ variable            │
+│ KEYWORD         │ integer          │ 16   │ 24     │ reserved            │
+│ IDENTIFIER      │ y0:              │ 16   │ 33     │ variable            │
+│ KEYWORD         │ integer          │ 16   │ 37     │ reserved            │
+│ IDENTIFIER      │ "                │ 16   │ 45     │ variable            │
+│ IDENTIFIER      │ PARAM_LIST       │ 17   │ 7      │ variable            │
+│ IDENTIFIER      │ RETURN_TYPE      │ 18   │ 7      │ variable            │
+│ IDENTIFIER      │ TYPE             │ 19   │ 9      │ variable            │
+│ IDENTIFIER      │ "                │ 19   │ 14     │ variable            │
+│ IDENTIFIER      │ void             │ 19   │ 16     │ variable            │
+│ IDENTIFIER      │ "               │ 19   │ 22     │ variable            │
+│ IDENTIFIER      │ FUNC_BODY        │ 20   │ 5      │ variable            │
+│ IDENTIFIER      │ LOCAL_VAR_DECL   │ 21   │ 7      │ variable            │
+│ IDENTIFIER      │ VAR_DECL         │ 22   │ 9      │ variable            │
+│ IDENTIFIER      │ ID               │ 23   │ 11     │ variable            │
+│ IDENTIFIER      │ "x"              │ 23   │ 14     │ variable            │
+│ IDENTIFIER      │ TYPE             │ 24   │ 11     │ variable            │
+│ IDENTIFIER      │ "integer         │ 24   │ 16     │ variable            │
+│ IDENTIFIER      │ "               │ 24   │ 25     │ variable            │
+│ IDENTIFIER      │ LOCAL_VAR_DECL   │ 25   │ 7      │ variable            │
+│ IDENTIFIER      │ VAR_DECL         │ 26   │ 9      │ variable            │
+│ IDENTIFIER      │ ID               │ 27   │ 11     │ variable            │
+│ IDENTIFIER      │ "y"              │ 27   │ 14     │ variable            │
+│ IDENTIFIER      │ TYPE             │ 28   │ 11     │ variable            │
+│ IDENTIFIER      │ "integer         │ 28   │ 16     │ variable            │
+│ IDENTIFIER      │ "               │ 28   │ 25     │ variable            │
+│ IDENTIFIER      │ ASSIGNMENT       │ 29   │ 7      │ variable            │
+│ IDENTIFIER      │ ID               │ 30   │ 9      │ variable            │
+│ IDENTIFIER      │ "x               │ 30   │ 12     │ variable            │
+│ IDENTIFIER      │ "                │ 30   │ 15     │ variable            │
+│ IDENTIFIER      │ ASSIGN_OP        │ 31   │ 9      │ variable            │
+│ IDENTIFIER      │ ":="             │ 31   │ 19     │ variable            │
+│ IDENTIFIER      │ EXPRESSION       │ 32   │ 9      │ variable            │
+│ IDENTIFIER      │ ID               │ 33   │ 11     │ variable            │
+│ IDENTIFIER      │ "x0              │ 33   │ 14     │ variable            │
+│ IDENTIFIER      │ "               │ 33   │ 18     │ variable            │
+│ IDENTIFIER      │ ASSIGNMENT       │ 34   │ 7      │ variable            │
+│ IDENTIFIER      │ ID               │ 35   │ 9      │ variable            │
+│ IDENTIFIER      │ "y               │ 35   │ 12     │ variable            │
+│ IDENTIFIER      │ "                │ 35   │ 15     │ variable            │
+│ IDENTIFIER      │ ASSIGN_OP        │ 36   │ 9      │ variable            │
+│ IDENTIFIER      │ ":="             │ 36   │ 19     │ variable            │
+│ IDENTIFIER      │ EXPRESSION       │ 37   │ 9      │ variable            │
+│ IDENTIFIER      │ ID               │ 38   │ 11     │ variable            │
+│ IDENTIFIER      │ "y0              │ 38   │ 14     │ variable            │
+│ IDENTIFIER      │ "               │ 38   │ 18     │ variable            │
+│ IDENTIFIER      │ STATISTICS:      │ 40   │ 1      │ variable            │
+│ IDENTIFIER      │ -----------      │ 41   │ 1      │ variable            │
+│ IDENTIFIER      │ AST              │ 42   │ 1      │ variable            │
+│ IDENTIFIER      │ Nodes:           │ 42   │ 5      │ variable            │
+│ NUMBER          │ 45               │ 42   │ 12     │ literal             │
+│ IDENTIFIER      │ estimated        │ 42   │ 16     │ variable            │
+│ IDENTIFIER      │ Tree             │ 43   │ 1      │ variable            │
+│ IDENTIFIER      │ Depth:           │ 43   │ 6      │ variable            │
+│ NUMBER          │ 8                │ 43   │ 13     │ literal             │
+│ IDENTIFIER      │ estimated        │ 43   │ 16     │ variable            │
+│ IDENTIFIER      │ Syntax           │ 44   │ 1      │ variable            │
+│ IDENTIFIER      │ Errors:          │ 44   │ 8      │ variable            │
+│ NUMBER          │ 1                │ 44   │ 16     │ literal             │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 93                                                ║
+║ 📄 Total Lines Analyzed      : 44                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:56:33                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/invalid3_syntax_output.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

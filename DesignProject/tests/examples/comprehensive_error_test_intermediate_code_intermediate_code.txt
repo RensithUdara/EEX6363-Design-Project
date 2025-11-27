@@ -1,18 +1,19 @@
-========================================
-Intermediate Code Generation
-Design Project - Code Generation Phase
-========================================
-Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_intermediate_code.txt
-Target: x86-64 Assembly (AT&T Syntax)
-Generated: Nov 27 2025 21:47:04
+================================================================================
+                    🖥️  INTERMEDIATE CODE GENERATION REPORT                   
+================================================================================
+📅 Generated: Nov 28 2025 02:55:30
+📁 Input File: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_intermediate_code.txt
+🎯 Target Architecture: x86-64 Assembly (AT&T Syntax)
+🔧 Code Generation Phase: Three-Address Code, Quadruples & Triples
+================================================================================
 
-THREE-ADDRESS CODE:
--------------------
+🔍 THREE-ADDRESS CODE (TAC):
+────────────────────────────────────────────────────────────────────────────────
 // Program start
 // Program end
 
-REGISTER ALLOCATION:
---------------------
+📊 REGISTER ALLOCATION INFO:
+────────────────────────────────────────────────────────────────────────────────
 Register Allocation Strategy: Linear Scan
 Available Registers: 16 (x86-64)
 Registers Used: 0
@@ -21,8 +22,22 @@ Spill Operations: 0
 Register Assignments:
 - No registers allocated
 
-OPTIMIZATIONS APPLIED:
-----------------------
+🧩 QUADRUPLE (4-TUPLE) REPRESENTATION:
+────────────────────────────────────────────────────────────────────────────────
+┌────────────┬────────────┬────────────┬────────────┐
+│ Operation  │ Arg1       │ Arg2       │ Result     │
+├────────────┼────────────┼────────────┼────────────┤
+└────────────┴────────────┴────────────┴────────────┘
+
+🧱 TRIPLE REPRESENTATION:
+────────────────────────────────────────────────────────────────────────────────
+┌───────┬────────────┬────────────┬────────────┐
+│ #     │ Operation  │ Arg1       │ Arg2       │
+├───────┼────────────┼────────────┼────────────┤
+└───────┴────────────┴────────────┴────────────┘
+
+⚡ OPTIMIZATIONS APPLIED:
+────────────────────────────────────────────────────────────────────────────────
 ✓ Dead code elimination
 ✓ Constant folding
 ✓ Register optimization

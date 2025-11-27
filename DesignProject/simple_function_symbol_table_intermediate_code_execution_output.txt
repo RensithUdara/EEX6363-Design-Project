@@ -1,0 +1,29 @@
+================================================================================
+                        PROGRAM EXECUTION OUTPUT                                
+================================================================================
+Source File:     /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_symbol_table_intermediate_code.txt
+Generated:       Nov 28 2025 02:55:31
+Execution Mode:  AST Interpretation Simulation
+Compiler:        EEX6363 Design Project Compiler
+================================================================================
+
+🚀 PROGRAM EXECUTION TRACE:
+════════════════════════════════════════════════════════════════════════════
+
+📋 Starting program execution...
+
+
+════════════════════════════════════════════════════════════════════════════
+📊 EXECUTION SUMMARY:
+════════════════════════════════════════════════════════════════════════════
+
+💾 FINAL VARIABLE STATES:
+   └─ No variables declared
+
+🎯 PROGRAM RESULT:
+   └─ Return Value: 0
+   └─ Execution Status: ✅ SUCCESS
+
+================================================================================
+                           END OF EXECUTION                                     
+================================================================================

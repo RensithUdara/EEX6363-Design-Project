@@ -1,7 +1,7 @@
 ========================================
 Design Project - Performance Report
 ========================================
-Generated: November 28, 2025 at 01:26:09
+Generated: November 28, 2025 at 02:56:34
 Test Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function.txt
 
 COMPILER PERFORMANCE ANALYSIS:
@@ -11,12 +11,12 @@ COMPILER PERFORMANCE ANALYSIS:
    ┌─────────────────────┬──────────────┬─────────────┐
    │ Phase               │ Time (ms)    │ Percentage  │
    ├─────────────────────┼──────────────┼─────────────┤
-   │ Lexical Analysis    │ 0.1          │ 26.6        │
-   │ Syntax Analysis     │ 0.1          │ 22.2        │
-   │ Semantic Analysis   │ 0.2          │ 40.3        │
-   │ Code Generation     │ 0.1          │ 10.9        │
+   │ Lexical Analysis    │ 0.3          │ 26.1        │
+   │ Syntax Analysis     │ 0.2          │ 21.2        │
+   │ Semantic Analysis   │ 0.4          │ 35.0        │
+   │ Code Generation     │ 0.2          │ 17.7        │
    ├─────────────────────┼──────────────┼─────────────┤
-   │ TOTAL               │ 0.5          │ 100.0%      │
+   │ TOTAL               │ 1.1          │ 100.0%      │
    └─────────────────────┴──────────────┴─────────────┘
 
 2. MEMORY USAGE ANALYSIS:
@@ -27,7 +27,7 @@ COMPILER PERFORMANCE ANALYSIS:
    TOTAL MEMORY:        13.10 KB
 
 3. COMPILATION RESULTS:
-   Total Compilation Time: 0.002 seconds
+   Total Compilation Time: 0.004 seconds
    Tokens Processed:       31
    AST Nodes Created:      40
    Memory Usage:           13.10 KB

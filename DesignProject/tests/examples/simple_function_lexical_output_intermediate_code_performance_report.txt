@@ -1,0 +1,49 @@
+========================================
+Design Project - Performance Report
+========================================
+Generated: November 28, 2025 at 02:56:34
+Test Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_lexical_output_intermediate_code.txt
+
+COMPILER PERFORMANCE ANALYSIS:
+=============================
+
+1. COMPILATION PHASES TIMING:
+   ┌─────────────────────┬──────────────┬─────────────┐
+   │ Phase               │ Time (ms)    │ Percentage  │
+   ├─────────────────────┼──────────────┼─────────────┤
+   │ Lexical Analysis    │ 0.1          │ 18.6        │
+   │ Syntax Analysis     │ 0.1          │ 18.4        │
+   │ Semantic Analysis   │ 0.2          │ 47.2        │
+   │ Code Generation     │ 0.1          │ 15.8        │
+   ├─────────────────────┼──────────────┼─────────────┤
+   │ TOTAL               │ 0.5          │ 100.0%      │
+   └─────────────────────┴──────────────┴─────────────┘
+
+2. MEMORY USAGE ANALYSIS:
+   Token Storage:       0.00 KB
+   AST Nodes:           0.08 KB
+   Symbol Tables:       1.50 KB
+   Code Generation:     2.00 KB
+   TOTAL MEMORY:        10.00 KB
+
+3. COMPILATION RESULTS:
+   Total Compilation Time: 0.003 seconds
+   Tokens Processed:       0
+   AST Nodes Created:      1
+   Memory Usage:           10.00 KB
+   Errors Found:           0
+   Warnings:               0
+   Success Rate:           100%% (Perfect)
+   Performance Rating:     Excellent
+
+PERFORMANCE SUMMARY:
+==================
+✅ STATUS: COMPILATION SUCCESSFUL
+   - All phases completed without errors
+   - Code generation successful
+   - Performance: Excellent
+
+RECOMMENDATIONS:
+===============
+✅ Code is ready for use
+→ Consider adding more comprehensive tests

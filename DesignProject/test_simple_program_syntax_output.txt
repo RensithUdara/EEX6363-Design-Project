@@ -1,7 +1,7 @@
 ========================================
 Syntax Analysis Output (TMA2)
 ========================================
-Input: test_simple_program.txt
+Input: ./test_simple_program.txt
 Grammar: Complete language grammar from TMA2
 
 PARSE TREE:
@@ -23,19 +23,19 @@ AST_PROGRAM
       AST_ASSIGN_STMT
         AST_VARIABLE
           AST_ID (x)
-        AST_INT_LITERAL (0)
+        AST_INT_LITERAL (42) [type: integer]
       AST_ASSIGN_STMT
         AST_VARIABLE
           AST_ID (y)
         AST_BINARY_EXPR (+)
           AST_VARIABLE
             AST_ID (x)
-          AST_INT_LITERAL (0)
+          AST_INT_LITERAL (5) [type: integer]
       AST_WRITE_STMT
         AST_VARIABLE
           AST_ID (y)
       AST_RETURN_STMT
-        AST_INT_LITERAL (0)
+        AST_INT_LITERAL (0) [type: integer]
 
 STATISTICS:
 -----------

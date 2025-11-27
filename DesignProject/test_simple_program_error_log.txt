@@ -1,8 +1,8 @@
 ================================================================================
                      🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              
 ================================================================================
-📅 Generated: November 24, 2025 at 00:50:18
-📁 Input File: test_simple_program.txt
+📅 Generated: November 28, 2025 at 02:03:39
+📁 Input File: ./test_simple_program.txt
 
 🔍 REAL-TIME COMPILATION LOG:
 ────────────────────────────────────────────────────────────────────────────────

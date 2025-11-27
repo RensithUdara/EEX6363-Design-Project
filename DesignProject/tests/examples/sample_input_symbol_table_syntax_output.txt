@@ -1,0 +1,15 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/sample_input_symbol_table.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+AST_PROGRAM
+
+STATISTICS:
+-----------
+AST Nodes: 1
+Tree Depth: 1
+Syntax Errors: 0

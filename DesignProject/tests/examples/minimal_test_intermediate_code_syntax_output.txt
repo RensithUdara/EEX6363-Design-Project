@@ -7,6 +7,10 @@ Grammar: Complete language grammar from TMA2
 PARSE TREE (Generated from Input Analysis):
 -------------------------------------------
 PROGRAM
+    RETURN_STMT
+      ID("t0")
+    RETURN_STMT
+      ID("    │ (3)        │ -          │")
 
 STATISTICS:
 -----------

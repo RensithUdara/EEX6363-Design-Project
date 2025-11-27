@@ -1,0 +1,41 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/sample_input_lexical_output.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+    LOCAL_VAR_DECL
+      VAR_DECL
+    LOCAL_VAR_DECL
+      VAR_DECL
+    LOCAL_VAR_DECL
+      VAR_DECL
+    RETURN_STMT
+      ID("          │ 24   │ 5      │ reserved            │")
+    LOCAL_VAR_DECL
+      VAR_DECL
+    RETURN_STMT
+      ID("          │ 31   │ 9      │ reserved            │")
+    RETURN_STMT
+      ID("          │ 34   │ 9      │ reserved            │")
+    LOCAL_VAR_DECL
+      VAR_DECL
+    LOCAL_VAR_DECL
+      VAR_DECL
+    LOCAL_VAR_DECL
+      VAR_DECL
+    LOCAL_VAR_DECL
+      VAR_DECL
+    RETURN_STMT
+      ID("          │ 45   │ 9      │ reserved            │")
+    RETURN_STMT
+      ID("          │ 59   │ 5      │ reserved            │")
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 1

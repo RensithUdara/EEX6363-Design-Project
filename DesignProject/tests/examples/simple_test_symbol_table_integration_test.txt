@@ -1,7 +1,7 @@
 ========================================
 Design Project - Integration Test Report
 ========================================
-Generated: November 28, 2025 at 01:26:09
+Generated: November 28, 2025 at 02:56:37
 Test Suite: Complete Integration Testing
 
 TEST EXECUTION SUMMARY:
@@ -26,7 +26,7 @@ TEST EXECUTION SUMMARY:
    │ Syntax Output       │ ✅ PASSED    │ 389         │ Valid       │
    │ Semantic Output     │ ✅ PASSED    │ 2047        │ Valid       │
    │ Symbol Table Output │ ✅ PASSED    │ 2217        │ Valid       │
-   │ Intermediate Code   │ ✅ PASSED    │ 743         │ Valid       │
+   │ Intermediate Code   │ ✅ PASSED    │ 3297        │ Valid       │
    │ Assembly Output     │ ✅ PASSED    │ 665         │ Valid       │
    └─────────────────────┴──────────────┴─────────────┴─────────────┘
 

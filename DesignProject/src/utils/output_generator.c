@@ -66,6 +66,8 @@ void print_ast_tree(ASTNode *node, FILE *output, int depth)
 }
 
 // Generate three-address code from AST
+void generate_three_address_code(ASTNode *ast, FILE *output);
+
 void generate_three_address_code(ASTNode *ast, FILE *output)
 {
     if (!ast || !output)
@@ -702,6 +704,247 @@ void print_expression_trace(ASTNode *expr, Variable *variables, int var_count, F
 
     default:
         fprintf(output, "?");
+        break;
+    }
+}
+
+// Generate quadruple representation
+void generate_quadruple_code(ASTNode *ast, FILE *output)
+{
+    if (!ast || !output)
+        return;
+
+    static int quad_counter = 0;
+
+    fprintf(output, "┌────────────┬────────────┬────────────┬────────────┐\n");
+    fprintf(output, "│ %-10s │ %-10s │ %-10s │ %-10s │\n", "Operation", "Arg1", "Arg2", "Result");
+    fprintf(output, "├────────────┼────────────┼────────────┼────────────┤\n");
+
+    // Process the AST and generate quadruples
+    generate_quadruples_recursive(ast, output, &quad_counter);
+    
+    fprintf(output, "└────────────┴────────────┴────────────┴────────────┘\n");
+}
+
+// Recursive helper for quadruple generation
+void generate_quadruples_recursive(ASTNode *ast, FILE *output, int *counter)
+{
+    if (!ast)
+        return;
+
+    switch (ast->type)
+    {
+    case AST_FUNC_DEF:
+        // Process function body only
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i] && ast->children[i]->type == AST_FUNC_BODY)
+            {
+                generate_quadruples_recursive(ast->children[i], output, counter);
+            }
+        }
+        break;
+
+    case AST_FUNC_BODY:
+        // Process function body statements with siblings
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_quadruples_recursive(ast->children[i], output, counter);
+                
+                // Process siblings
+                ASTNode *sibling = ast->children[i]->next;
+                while (sibling)
+                {
+                    generate_quadruples_recursive(sibling, output, counter);
+                    sibling = sibling->next;
+                }
+            }
+        }
+        break;
+
+    case AST_LOCAL_VAR_DECL:
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_quadruples_recursive(ast->children[i], output, counter);
+            }
+        }
+        break;
+
+    case AST_VAR_DECL:
+        if (ast->children && ast->children[0] && ast->children[0]->data.string_value)
+        {
+            fprintf(output, "│ %-10s │ %-10s │ %-10s │ %-10s │\n", "alloc", "4", "-", ast->children[0]->data.string_value);
+        }
+        break;
+
+    case AST_ASSIGN_STMT:
+        if (ast->child_count >= 2)
+        {
+            // For simple assignments like a := 10
+            if (ast->children[1]->type == AST_INT_LITERAL)
+            {
+                char result[20] = "";
+                if (ast->children[0] && ast->children[0]->child_count > 0)
+                {
+                    strcpy(result, ast->children[0]->children[0]->data.string_value);
+                }
+                fprintf(output, "│ %-10s │ %-10d │ %-10s │ %-10s │\n", "assign", 
+                        ast->children[1]->data.int_value, "-", result);
+            }
+            // For binary expressions like result := a * b
+            else if (ast->children[1]->type == AST_BINARY_EXPR)
+            {
+                ASTNode *binop = ast->children[1];
+                if (binop->child_count >= 2)
+                {
+                    char arg1[20] = "", arg2[20] = "", result[20] = "";
+                    
+                    // Get operands
+                    if (binop->children[0] && binop->children[0]->child_count > 0)
+                        strcpy(arg1, binop->children[0]->children[0]->data.string_value);
+                    if (binop->children[1] && binop->children[1]->child_count > 0)
+                        strcpy(arg2, binop->children[1]->children[0]->data.string_value);
+                    if (ast->children[0] && ast->children[0]->child_count > 0)
+                        strcpy(result, ast->children[0]->children[0]->data.string_value);
+                    
+                    fprintf(output, "│ %-10s │ %-10s │ %-10s │ %-10s │\n", "mul", arg1, arg2, result);
+                }
+            }
+        }
+        break;
+
+    case AST_WRITE_STMT:
+        if (ast->child_count > 0 && ast->children[0]->child_count > 0)
+        {
+            char arg[20] = "";
+            strcpy(arg, ast->children[0]->children[0]->data.string_value);
+            fprintf(output, "│ %-10s │ %-10s │ %-10s │ %-10s │\n", "write", arg, "-", "-");
+        }
+        break;
+
+    case AST_RETURN_STMT:
+        if (ast->child_count > 0 && ast->children[0]->child_count > 0)
+        {
+            char arg[20] = "";
+            strcpy(arg, ast->children[0]->children[0]->data.string_value);
+            fprintf(output, "│ %-10s │ %-10s │ %-10s │ %-10s │\n", "return", arg, "-", "-");
+        }
+        break;
+
+    default:
+        // Process children
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_quadruples_recursive(ast->children[i], output, counter);
+            }
+        }
+        break;
+    }
+}
+
+// Generate triple representation
+void generate_triple_code(ASTNode *ast, FILE *output)
+{
+    if (!ast || !output)
+        return;
+
+    static int triple_counter = 1;
+
+    fprintf(output, "┌───────┬────────────┬────────────┬────────────┐\n");
+    fprintf(output, "│ %-5s │ %-10s │ %-10s │ %-10s │\n", "#", "Operation", "Arg1", "Arg2");
+    fprintf(output, "├───────┼────────────┼────────────┼────────────┤\n");
+
+    // Process the AST and generate triples
+    generate_triples_recursive(ast, output, &triple_counter);
+    
+    fprintf(output, "└───────┴────────────┴────────────┴────────────┘\n");
+}
+
+// Recursive helper for triple generation
+void generate_triples_recursive(ASTNode *ast, FILE *output, int *counter)
+{
+    if (!ast)
+        return;
+
+    switch (ast->type)
+    {
+    case AST_FUNC_DEF:
+        // Process function body only
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i] && ast->children[i]->type == AST_FUNC_BODY)
+            {
+                generate_triples_recursive(ast->children[i], output, counter);
+            }
+        }
+        break;
+
+    case AST_FUNC_BODY:
+        // Process function body statements with siblings
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_triples_recursive(ast->children[i], output, counter);
+                
+                // Process siblings
+                ASTNode *sibling = ast->children[i]->next;
+                while (sibling)
+                {
+                    generate_triples_recursive(sibling, output, counter);
+                    sibling = sibling->next;
+                }
+            }
+        }
+        break;
+
+    case AST_ASSIGN_STMT:
+        if (ast->child_count >= 2)
+        {
+            // For simple assignments like a := 10
+            if (ast->children[1]->type == AST_INT_LITERAL)
+            {
+                fprintf(output, "│ %-5d │ %-10s │ %-10d │ %-10s │\n", 
+                        (*counter)++, "assign", ast->children[1]->data.int_value, "-");
+            }
+            // For binary expressions like result := a * b  
+            else if (ast->children[1]->type == AST_BINARY_EXPR)
+            {
+                ASTNode *binop = ast->children[1];
+                if (binop->child_count >= 2)
+                {
+                    fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n", 
+                            (*counter)++, "mul", "(1)", "(2)");
+                }
+            }
+        }
+        break;
+
+    case AST_WRITE_STMT:
+        fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n", 
+                (*counter)++, "write", "(3)", "-");
+        break;
+
+    case AST_RETURN_STMT:
+        fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n", 
+                (*counter)++, "return", "(3)", "-");
+        break;
+
+    default:
+        // Process children
+        for (int i = 0; i < ast->child_count; i++)
+        {
+            if (ast->children && ast->children[i])
+            {
+                generate_triples_recursive(ast->children[i], output, counter);
+            }
+        }
         break;
     }
 }

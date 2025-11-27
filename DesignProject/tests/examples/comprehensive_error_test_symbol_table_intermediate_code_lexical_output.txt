@@ -1,0 +1,145 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_symbol_table_intermediate_code.txt
+🕒 GENERATED: November 28, 2025 at 02:56:32
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ ================================================================================ │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ 🖥️          │ 2    │ 21     │ variable            │
+│ IDENTIFIER      │ INTERMEDIATE     │ 2    │ 30     │ variable            │
+│ IDENTIFIER      │ CODE             │ 2    │ 43     │ variable            │
+│ IDENTIFIER      │ GENERATION       │ 2    │ 48     │ variable            │
+│ IDENTIFIER      │ REPORT           │ 2    │ 59     │ variable            │
+│ IDENTIFIER      │ ================================================================================ │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ 📅             │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ Generated:       │ 4    │ 6      │ variable            │
+│ IDENTIFIER      │ Nov              │ 4    │ 17     │ variable            │
+│ NUMBER          │ 28               │ 4    │ 21     │ literal             │
+│ NUMBER          │ 2025             │ 4    │ 24     │ literal             │
+│ IDENTIFIER      │ 02:55:30         │ 4    │ 29     │ variable            │
+│ IDENTIFIER      │ 📁             │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ Input            │ 5    │ 6      │ variable            │
+│ IDENTIFIER      │ File:            │ 5    │ 12     │ variable            │
+│ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_symbol_table.txt │ 5    │ 18     │ variable            │
+│ IDENTIFIER      │ 🎯             │ 6    │ 1      │ variable            │
+│ IDENTIFIER      │ Target           │ 6    │ 6      │ variable            │
+│ IDENTIFIER      │ Architecture:    │ 6    │ 13     │ variable            │
+│ IDENTIFIER      │ x86-64           │ 6    │ 27     │ variable            │
+│ IDENTIFIER      │ Assembly         │ 6    │ 34     │ variable            │
+│ IDENTIFIER      │ AT&T             │ 6    │ 44     │ variable            │
+│ IDENTIFIER      │ Syntax           │ 6    │ 49     │ variable            │
+│ IDENTIFIER      │ 🔧             │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ Code             │ 7    │ 6      │ variable            │
+│ IDENTIFIER      │ Generation       │ 7    │ 11     │ variable            │
+│ IDENTIFIER      │ Phase:           │ 7    │ 22     │ variable            │
+│ IDENTIFIER      │ Three-Address    │ 7    │ 29     │ variable            │
+│ IDENTIFIER      │ Code             │ 7    │ 43     │ variable            │
+│ IDENTIFIER      │ Quadruples       │ 7    │ 49     │ variable            │
+│ IDENTIFIER      │ &                │ 7    │ 60     │ variable            │
+│ IDENTIFIER      │ Triples          │ 7    │ 62     │ variable            │
+│ IDENTIFIER      │ ================================================================================ │ 8    │ 1      │ variable            │
+│ IDENTIFIER      │ 🔍             │ 10   │ 1      │ variable            │
+│ IDENTIFIER      │ THREE-ADDRESS    │ 10   │ 6      │ variable            │
+│ IDENTIFIER      │ CODE             │ 10   │ 20     │ variable            │
+│ IDENTIFIER      │ TAC              │ 10   │ 26     │ variable            │
+│ PUNCTUATION     │ :                │ 10   │ 30     │ delimiter           │
+│ IDENTIFIER      │ ──────────────────────────────────────────────────────────────────────────────── │ 11   │ 1      │ variable            │
+│ IDENTIFIER      │ //               │ 12   │ 1      │ variable            │
+│ IDENTIFIER      │ Program          │ 12   │ 4      │ variable            │
+│ IDENTIFIER      │ start            │ 12   │ 12     │ variable            │
+│ IDENTIFIER      │ //               │ 13   │ 1      │ variable            │
+│ IDENTIFIER      │ Program          │ 13   │ 4      │ variable            │
+│ IDENTIFIER      │ end              │ 13   │ 12     │ variable            │
+│ IDENTIFIER      │ 📊             │ 15   │ 1      │ variable            │
+│ IDENTIFIER      │ REGISTER         │ 15   │ 6      │ variable            │
+│ IDENTIFIER      │ ALLOCATION       │ 15   │ 15     │ variable            │
+│ IDENTIFIER      │ INFO:            │ 15   │ 26     │ variable            │
+│ IDENTIFIER      │ ──────────────────────────────────────────────────────────────────────────────── │ 16   │ 1      │ variable            │
+│ IDENTIFIER      │ Register         │ 17   │ 1      │ variable            │
+│ IDENTIFIER      │ Allocation       │ 17   │ 10     │ variable            │
+│ IDENTIFIER      │ Strategy:        │ 17   │ 21     │ variable            │
+│ IDENTIFIER      │ Linear           │ 17   │ 31     │ variable            │
+│ IDENTIFIER      │ Scan             │ 17   │ 38     │ variable            │
+│ IDENTIFIER      │ Available        │ 18   │ 1      │ variable            │
+│ IDENTIFIER      │ Registers:       │ 18   │ 11     │ variable            │
+│ NUMBER          │ 16               │ 18   │ 22     │ literal             │
+│ IDENTIFIER      │ x86-64           │ 18   │ 26     │ variable            │
+│ IDENTIFIER      │ Registers        │ 19   │ 1      │ variable            │
+│ IDENTIFIER      │ Used:            │ 19   │ 11     │ variable            │
+│ NUMBER          │ 0                │ 19   │ 17     │ literal             │
+│ IDENTIFIER      │ Spill            │ 20   │ 1      │ variable            │
+│ IDENTIFIER      │ Operations:      │ 20   │ 7      │ variable            │
+│ NUMBER          │ 0                │ 20   │ 19     │ literal             │
+│ IDENTIFIER      │ Register         │ 22   │ 1      │ variable            │
+│ IDENTIFIER      │ Assignments:     │ 22   │ 10     │ variable            │
+│ OPERATOR        │ -                │ 23   │ 1      │ arithmetic          │
+│ IDENTIFIER      │ No               │ 23   │ 3      │ variable            │
+│ IDENTIFIER      │ registers        │ 23   │ 6      │ variable            │
+│ IDENTIFIER      │ allocated        │ 23   │ 16     │ variable            │
+│ IDENTIFIER      │ 🧩             │ 25   │ 1      │ variable            │
+│ IDENTIFIER      │ QUADRUPLE        │ 25   │ 6      │ variable            │
+│ IDENTIFIER      │ 4-TUPLE          │ 25   │ 17     │ variable            │
+│ IDENTIFIER      │ REPRESENTATION:  │ 25   │ 26     │ variable            │
+│ IDENTIFIER      │ ──────────────────────────────────────────────────────────────────────────────── │ 26   │ 1      │ variable            │
+│ IDENTIFIER      │ ┌────────────┬────────────┬────────────┬────────────┐ │ 27   │ 1      │ variable            │
+│ IDENTIFIER      │ │              │ 28   │ 1      │ variable            │
+│ IDENTIFIER      │ Operation        │ 28   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 28   │ 16     │ variable            │
+│ IDENTIFIER      │ Arg1             │ 28   │ 20     │ variable            │
+│ IDENTIFIER      │ │              │ 28   │ 31     │ variable            │
+│ IDENTIFIER      │ Arg2             │ 28   │ 35     │ variable            │
+│ IDENTIFIER      │ │              │ 28   │ 46     │ variable            │
+│ IDENTIFIER      │ Result           │ 28   │ 50     │ variable            │
+│ IDENTIFIER      │ │              │ 28   │ 61     │ variable            │
+│ IDENTIFIER      │ ├────────────┼────────────┼────────────┼────────────┤ │ 29   │ 1      │ variable            │
+│ IDENTIFIER      │ └────────────┴────────────┴────────────┴────────────┘ │ 30   │ 1      │ variable            │
+│ IDENTIFIER      │ 🧱             │ 32   │ 1      │ variable            │
+│ IDENTIFIER      │ TRIPLE           │ 32   │ 6      │ variable            │
+│ IDENTIFIER      │ REPRESENTATION:  │ 32   │ 13     │ variable            │
+│ IDENTIFIER      │ ──────────────────────────────────────────────────────────────────────────────── │ 33   │ 1      │ variable            │
+│ IDENTIFIER      │ ┌───────┬────────────┬────────────┬────────────┐ │ 34   │ 1      │ variable            │
+│ IDENTIFIER      │ │              │ 35   │ 1      │ variable            │
+│ IDENTIFIER      │ #                │ 35   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 35   │ 11     │ variable            │
+│ IDENTIFIER      │ Operation        │ 35   │ 15     │ variable            │
+│ IDENTIFIER      │ │              │ 35   │ 26     │ variable            │
+│ IDENTIFIER      │ Arg1             │ 35   │ 30     │ variable            │
+│ IDENTIFIER      │ │              │ 35   │ 41     │ variable            │
+│ IDENTIFIER      │ Arg2             │ 35   │ 45     │ variable            │
+│ IDENTIFIER      │ │              │ 35   │ 56     │ variable            │
+│ IDENTIFIER      │ ├───────┼────────────┼────────────┼────────────┤ │ 36   │ 1      │ variable            │
+│ IDENTIFIER      │ └───────┴────────────┴────────────┴────────────┘ │ 37   │ 1      │ variable            │
+│ IDENTIFIER      │ ⚡              │ 39   │ 1      │ variable            │
+│ IDENTIFIER      │ OPTIMIZATIONS    │ 39   │ 5      │ variable            │
+│ IDENTIFIER      │ APPLIED:         │ 39   │ 19     │ variable            │
+│ IDENTIFIER      │ ──────────────────────────────────────────────────────────────────────────────── │ 40   │ 1      │ variable            │
+│ IDENTIFIER      │ ✓              │ 41   │ 1      │ variable            │
+│ IDENTIFIER      │ Dead             │ 41   │ 5      │ variable            │
+│ IDENTIFIER      │ code             │ 41   │ 10     │ variable            │
+│ IDENTIFIER      │ elimination      │ 41   │ 15     │ variable            │
+│ IDENTIFIER      │ ✓              │ 42   │ 1      │ variable            │
+│ IDENTIFIER      │ Constant         │ 42   │ 5      │ variable            │
+│ IDENTIFIER      │ folding          │ 42   │ 14     │ variable            │
+│ IDENTIFIER      │ ✓              │ 43   │ 1      │ variable            │
+│ IDENTIFIER      │ Register         │ 43   │ 5      │ variable            │
+│ IDENTIFIER      │ optimization     │ 43   │ 14     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 119                                               ║
+║ 📄 Total Lines Analyzed      : 43                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:56:32                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_symbol_table_intermediate_code.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

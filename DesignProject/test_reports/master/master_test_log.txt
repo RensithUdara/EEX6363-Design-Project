@@ -1,18 +1,18 @@
-Master Test Run - Fri Nov 28 01:26:07 +0530 2025
-Mode: full
+Master Test Run - Fri Nov 28 02:56:30 +0530 2025
+Mode: integration
 =======================================
 Running Unit Tests...
-✗ Unit Tests: FAILED (0s)
+✓ Unit Tests: SUCCESS (1s)
 Running Regression Tests...
-✗ Regression Tests: FAILED (1s)
+✓ Regression Tests: SUCCESS (0s)
 Running Integration Tests...
-✗ Integration Tests: FAILED (1s)
+✗ Integration Tests: FAILED (7s)
 
 FINAL RESULTS:
 =============
-Unit: FAIL
-Regression: FAIL
+Unit: PASS
+Regression: PASS
 Integration: FAIL
 
-Summary: 0 passed, 3 failed
-Success Rate: 0%
+Summary: 2 passed, 1 failed
+Success Rate: 66%

@@ -1,0 +1,45 @@
+================================================================================
+                    GENERATED ASSEMBLY CODE OUTPUT                              
+================================================================================
+Source File:     /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/invalid3_semantic_output.txt
+Generated:       Nov 28 2025 02:55:30
+Target Arch:     x86-64 (Intel/AMD 64-bit)
+Assembly Syntax: AT&T Syntax
+Compiler:        EEX6363 Design Project Compiler
+================================================================================
+
+# ======================================
+# Generated Assembly Code
+# Compiler Design Project - Code Generation Phase
+# Target Architecture: x86-64
+# Assembly Syntax: AT&T
+# Register Allocation: Default
+# ======================================
+
+.section .data
+    # Global variables and constants
+    .align 8
+
+.section .text
+.globl main
+.type main, @function
+
+    # Program: Code generation from semantic analyzer
+
+# ======================================
+# Code Generation Statistics
+# Instructions generated: 0
+# Registers spilled: 0
+# Optimization passes: 0
+# ======================================
+
+.section .note.GNU-stack,"",@progbits
+# End of generated code
+
+
+================================================================================
+                           END OF ASSEMBLY OUTPUT                               
+================================================================================
+Assembly code generation completed successfully.
+This file contains the generated x86-64 assembly code for: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/invalid3_semantic_output.txt
+================================================================================

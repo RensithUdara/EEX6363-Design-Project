@@ -2,7 +2,7 @@
 Semantic Analysis Output (TMA3)
 ========================================
 Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_array_test.txt
-Generated: Nov 27 2025 21:47:04
+Generated: Nov 28 2025 02:55:30
 
 SYMBOL TABLE:
 -------------

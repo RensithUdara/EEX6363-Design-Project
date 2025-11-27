@@ -2,7 +2,7 @@
                     GENERATED ASSEMBLY CODE OUTPUT                              
 ================================================================================
 Source File:     /tmp/sem_test2.txt
-Generated:       Nov 27 2025 21:47:04
+Generated:       Nov 28 2025 02:55:30
 Target Arch:     x86-64 (Intel/AMD 64-bit)
 Assembly Syntax: AT&T Syntax
 Compiler:        EEX6363 Design Project Compiler
@@ -38,18 +38,6 @@ typeTest:
     # Variable: x allocated on stack
     # Local variable declaration
     # Variable: y allocated on stack
-    # Additional statement found
-    # Assignment: variable := integer_literal
-    movq $10, -8(%rbp)
-    # Additional statement found
-    # Additional statement found
-    # Write statement
-    movq -8(%rbp), %rdi       # Load value for write
-    call write_int             # Call write function
-    # Additional statement found
-    # Write statement
-    movq -16(%rbp), %rdi       # Load value for write
-    call write_int             # Call write function
     # Function epilogue
     movq %rbp, %rsp
     popq %rbp

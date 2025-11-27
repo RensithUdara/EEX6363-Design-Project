@@ -1,7 +1,7 @@
 ========================================
 Design Project - Integration Test Report
 ========================================
-Generated: November 24, 2025 at 00:50:18
+Generated: November 28, 2025 at 02:03:39
 Test Suite: Complete Integration Testing
 
 TEST EXECUTION SUMMARY:
@@ -11,7 +11,7 @@ TEST EXECUTION SUMMARY:
    ┌─────────────────────┬──────────────┬─────────────┬─────────────┐
    │ Integration Test    │ Status       │ Time (ms)   │ Result      │
    ├─────────────────────┼──────────────┼─────────────┼─────────────┤
-   │ Lexer → Parser      │ ✅ PASSED   │ 0.1         │ SUCCESS     │
+   │ Lexer → Parser      │ ✅ PASSED   │ 0.2         │ SUCCESS     │
    │ Parser → Semantic   │ ✅ PASSED   │ 0.3         │ SUCCESS     │
    │ Semantic → CodeGen  │ ✅ PASSED   │ 0.5         │ SUCCESS     │
    │ End-to-End Pipeline │ ✅ PASSED   │ 1.1         │ SUCCESS     │
@@ -22,12 +22,12 @@ TEST EXECUTION SUMMARY:
    │ File Operation      │ Status       │ Size (bytes)│ Quality     │
    ├─────────────────────┼──────────────┼─────────────┼─────────────┤
    │ Input File Reading  │ ✅ PASSED    │ N/A         │ Complete    │
-   │ Lexical Output      │ ✅ PASSED    │ 5243        │ Valid       │
-   │ Syntax Output       │ ✅ PASSED    │ 1005        │ Valid       │
-   │ Semantic Output     │ ✅ PASSED    │ 3413        │ Valid       │
-   │ Symbol Table Output │ ✅ PASSED    │ 3583        │ Valid       │
-   │ Intermediate Code   │ ✅ PASSED    │ 663         │ Valid       │
-   │ Assembly Output     │ ✅ PASSED    │ 1519        │ Valid       │
+   │ Lexical Output      │ ✅ PASSED    │ 5245        │ Valid       │
+   │ Syntax Output       │ ✅ PASSED    │ 1056        │ Valid       │
+   │ Semantic Output     │ ✅ PASSED    │ 3415        │ Valid       │
+   │ Symbol Table Output │ ✅ PASSED    │ 3585        │ Valid       │
+   │ Intermediate Code   │ ✅ PASSED    │ 1429        │ Valid       │
+   │ Assembly Output     │ ✅ PASSED    │ 1520        │ Valid       │
    └─────────────────────┴──────────────┴─────────────┴─────────────┘
 
 INTEGRATION QUALITY SCORE: A+ (100%)

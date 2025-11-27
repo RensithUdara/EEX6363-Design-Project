@@ -1026,7 +1026,7 @@ ASTNode *parse_impl_def(void)
 // funcDefList → funcDef funcDefList | ε
 ASTNode *parse_func_def_list(void)
 {
-    if (current_token == FUNC)
+    if (current_token == FUNC || current_token == CONSTRUCTOR)
     {
         write_derivation("funcDefList → funcDef funcDefList");
         ASTNode *func_def = parse_func_def();
@@ -1066,33 +1066,65 @@ ASTNode *parse_func_def(void)
 // funcHead → FUNC ID LPAREN fParams RPAREN ARROW returnType
 ASTNode *parse_func_head(void)
 {
-    write_derivation("funcHead → FUNC ID LPAREN fParams RPAREN ARROW returnType");
-    expect_token(FUNC);
-
-    if (current_token != ID)
-    {
-        parse_error("Expected function identifier");
-        return NULL;
-    }
-
     ASTNode *func_head = create_ast_node(AST_FUNC_HEAD, line, column);
-    ASTNode *func_id = create_id_node(token_value.str_val, line, column);
-    add_child(func_head, func_id);
-    get_next_token();
 
-    expect_token(LPAREN);
-    ASTNode *params = parse_fparams();
-    if (params)
+    if (current_token == FUNC)
     {
-        add_child(func_head, params);
+        // Regular function: func id ( fParams ) => returnType
+        write_derivation("funcHead → FUNC ID LPAREN fParams RPAREN ARROW returnType");
+        expect_token(FUNC);
+
+        if (current_token != ID)
+        {
+            parse_error("Expected function identifier");
+            return NULL;
+        }
+
+        ASTNode *func_id = create_string_node(AST_ID, token_value.str_val, line, column);
+        add_child(func_head, func_id);
+        get_next_token();
+
+        expect_token(LPAREN);
+        ASTNode *params = parse_fparams();
+        if (params)
+        {
+            add_child(func_head, params);
+        }
+        expect_token(RPAREN);
+        expect_token(ARROW);
+
+        ASTNode *return_type = parse_return_type();
+        if (return_type)
+        {
+            add_child(func_head, return_type);
+        }
     }
-    expect_token(RPAREN);
-    expect_token(ARROW);
-
-    ASTNode *return_type = parse_return_type();
-    if (return_type)
+    else if (current_token == CONSTRUCTOR)
     {
-        add_child(func_head, return_type);
+        // Constructor: constructor ( fParams )
+        write_derivation("funcHead → CONSTRUCTOR LPAREN fParams RPAREN");
+        expect_token(CONSTRUCTOR);
+
+        // Add constructor identifier
+        ASTNode *constructor_id = create_string_node(AST_ID, "constructor", line, column);
+        add_child(func_head, constructor_id);
+
+        expect_token(LPAREN);
+        ASTNode *params = parse_fparams();
+        if (params)
+        {
+            add_child(func_head, params);
+        }
+        expect_token(RPAREN);
+
+        // Constructor has implicit void return type
+        ASTNode *void_type = create_type_node(TYPE_VOID, line, column);
+        add_child(func_head, void_type);
+    }
+    else
+    {
+        parse_error("Expected 'func' or 'constructor'");
+        return NULL;
     }
 
     return func_head;
@@ -1235,7 +1267,7 @@ ASTNode *parse_visibility_member_list(void)
 
 ASTNode *parse_member_decl(void)
 {
-    if (current_token == FUNC)
+    if (current_token == FUNC || current_token == CONSTRUCTOR)
     {
         write_derivation("memberDecl → funcDecl");
         return parse_func_decl();
