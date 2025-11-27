@@ -27,11 +27,11 @@ AST_PROGRAM
       AST_ASSIGN_STMT
         AST_VARIABLE
           AST_ID (a)
-        AST_INT_LITERAL (0)
+        AST_INT_LITERAL (10) [type: integer]
       AST_ASSIGN_STMT
         AST_VARIABLE
           AST_ID (b)
-        AST_INT_LITERAL (0)
+        AST_INT_LITERAL (25) [type: integer]
       AST_ASSIGN_STMT
         AST_VARIABLE
           AST_ID (sum)
