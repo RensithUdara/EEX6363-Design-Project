@@ -1,0 +1,132 @@
+================================================================================
+                     🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              
+================================================================================
+📅 Generated: November 28, 2025 at 01:26:08
+📁 Input File: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_array_test.txt
+
+🔍 REAL-TIME COMPILATION LOG:
+────────────────────────────────────────────────────────────────────────────────
+
+❌ [E008] Semantic Error at line 15:17: Incompatible assignment to 'unknown': cannot assign integer to array
+   └─ 💡 Suggestion: Cast the integer value to array or change the variable type
+❌ [E007] Semantic Error at line 15:17: Type mismatch: expected array, but got integer
+   ├─ Context: assignment operation
+   └─ 💡 Suggestion: Change the assignment operation to match the expected type array
+❌ [E008] Semantic Error at line 16:17: Incompatible assignment to 'unknown': cannot assign integer to array
+   └─ 💡 Suggestion: Cast the integer value to array or change the variable type
+❌ [E007] Semantic Error at line 16:17: Type mismatch: expected array, but got integer
+   ├─ Context: assignment operation
+   └─ 💡 Suggestion: Change the assignment operation to match the expected type array
+❌ [E008] Semantic Error at line 17:18: Incompatible assignment to 'unknown': cannot assign integer to array
+   └─ 💡 Suggestion: Cast the integer value to array or change the variable type
+❌ [E007] Semantic Error at line 17:18: Type mismatch: expected array, but got integer
+   ├─ Context: assignment operation
+   └─ 💡 Suggestion: Change the assignment operation to match the expected type array
+⚠️ [UNK] Warning at line 13:12: Variable 'i' declared but never used
+   └─ 💡 Suggestion: Remove unused variable or add usage
+⚠️ [UNK] Warning at line 12:14: Variable 'arr' declared but never used
+   └─ 💡 Suggestion: Remove unused variable or add usage
+
+
+================================================================================
+                           📊 ERROR SUMMARY REPORT                                
+================================================================================
+┌─ Error Statistics ─────────────────────────────────────────────────────────┐
+│ Lexical Errors            │     0 │ Invalid tokens, numbers, identifiers     │
+│ Syntax Errors             │     0 │ Grammar violations, missing tokens       │
+│ Semantic Errors           │     6 │ Type mismatches, undefined symbols       │
+│ Warnings                  │     2 │ Non-critical issues                      │
+└────────────────────────────────────────────────────────────────────────────┘
+
+❌ FAILED: Found 6 error(s) that need to be fixed before compilation.
+
+================================================================================
+                    TMA03 COMPREHENSIVE ERROR REPORT                           
+================================================================================
+Features: Detailed error context, suggestions, and comprehensive diagnostics
+================================================================================
+
+COMPILATION SUMMARY:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Error Type           │ Count │ Severity │ Status                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Syntax Errors        │     0 │   HIGH   │ ✓ PASSED                      │
+│ Semantic Errors      │     6 │   HIGH   │ ✗ FAILED                      │
+│ Semantic Warnings    │     2 │   LOW    │ ⚠ WARNINGS                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+                             SEMANTIC ERRORS                                   
+================================================================================
+
+❌ SEMANTIC ERROR #1
+   ├─ Location: Line 12, Column 14
+   ├─ Type: UNK
+   ├─ Description: Variable 'arr' declared but never used
+   └─ 💡 Suggestion: Remove unused variable or add usage
+
+❌ SEMANTIC ERROR #2
+   ├─ Location: Line 13, Column 12
+   ├─ Type: UNK
+   ├─ Description: Variable 'i' declared but never used
+   └─ 💡 Suggestion: Remove unused variable or add usage
+
+❌ SEMANTIC ERROR #3
+   ├─ Location: Line 17, Column 18
+   ├─ Type: E007
+   ├─ Description: Type mismatch: expected array, but got integer
+   ├─ Context: assignment operation
+   └─ 💡 Suggestion: Change the assignment operation to match the expected type array
+
+❌ SEMANTIC ERROR #4
+   ├─ Location: Line 17, Column 18
+   ├─ Type: E008
+   ├─ Description: Incompatible assignment to 'unknown': cannot assign integer to array
+   └─ 💡 Suggestion: Cast the integer value to array or change the variable type
+
+❌ SEMANTIC ERROR #5
+   ├─ Location: Line 16, Column 17
+   ├─ Type: E007
+   ├─ Description: Type mismatch: expected array, but got integer
+   ├─ Context: assignment operation
+   └─ 💡 Suggestion: Change the assignment operation to match the expected type array
+
+❌ SEMANTIC ERROR #6
+   ├─ Location: Line 16, Column 17
+   ├─ Type: E008
+   ├─ Description: Incompatible assignment to 'unknown': cannot assign integer to array
+   └─ 💡 Suggestion: Cast the integer value to array or change the variable type
+
+❌ SEMANTIC ERROR #7
+   ├─ Location: Line 15, Column 17
+   ├─ Type: E007
+   ├─ Description: Type mismatch: expected array, but got integer
+   ├─ Context: assignment operation
+   └─ 💡 Suggestion: Change the assignment operation to match the expected type array
+
+❌ SEMANTIC ERROR #8
+   ├─ Location: Line 15, Column 17
+   ├─ Type: E008
+   ├─ Description: Incompatible assignment to 'unknown': cannot assign integer to array
+   └─ 💡 Suggestion: Cast the integer value to array or change the variable type
+
+================================================================================
+                            RESOLUTION GUIDE                                   
+================================================================================
+
+🔍 SEMANTIC ERROR RESOLUTION:
+   1. Verify variable declarations before use
+   2. Check type compatibility in assignments
+   3. Ensure function calls match signatures
+   4. Validate scope and visibility rules
+
+📚 ADDITIONAL RESOURCES:
+   • Language Grammar: Check semantic.c for syntax rules and grammar implementation
+   • Semantic Rules: Review TMA03 specification document
+   • Test Cases: Examine valid*.txt files for examples
+
+================================================================================
+
+================================================================================
+                              🏁 END OF ERROR LOG                               
+================================================================================

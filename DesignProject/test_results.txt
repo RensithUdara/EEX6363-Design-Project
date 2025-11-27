@@ -726,3 +726,1319 @@ AST Nodes: 0
 Semantic Errors: 0
 ----------------------------------------
 
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/lex_test1.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 7
+AST Nodes: 8
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/lex_test2.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 8
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/lex_test3.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 18
+AST Nodes: 22
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/syn_test1.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 35
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/syn_test2.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 7
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/syn_test3.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 15
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/sem_test1.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 22
+AST Nodes: 28
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/sem_test2.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 22
+AST Nodes: 28
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/lex_test1.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 7
+AST Nodes: 8
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/lex_test2.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 8
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/lex_test3.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 18
+AST Nodes: 22
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/syn_test1.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 35
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/syn_test2.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 7
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/syn_test3.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 15
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/sem_test1.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 22
+AST Nodes: 28
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/sem_test2.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 22
+AST Nodes: 28
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 4
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 14
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 35
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 4
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 6
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 18
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 8
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 7
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 28
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /tmp/regression_55444.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 27
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 22
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt
+Result: PASSED
+Compilation Time: 0.003 seconds
+Tokens Generated: 9
+AST Nodes: 9
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_syntax_error_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 9
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_class_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 40
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_array_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 25
+AST Nodes: 47
+Semantic Errors: 6
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_control_test.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 39
+AST Nodes: 53
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_empty_class_test.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 4
+AST Nodes: 5
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_multiple_errors_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 22
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_intermediate_code.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_lexical_output.txt
+Result: FAILED
+Compilation Time: 0.007 seconds
+Tokens Generated: 4727
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_semantic_output.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_symbol_table.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_syntax_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 558
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 184
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 38
+AST Nodes: 34
+Semantic Errors: 4
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test_error_log.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 602
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test_intermediate_code.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test_lexical_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 536
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test_semantic_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 193
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test_symbol_table.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 212
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test_syntax_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 86
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/final_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 127
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 9
+AST Nodes: 9
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_architecture_design.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 527
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_error_log.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 188
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_integration_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 242
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_intermediate_code.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 69
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_lexical_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 217
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 194
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_performance_report.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 164
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_semantic_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 170
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_symbol_table.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 174
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_syntax_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 43
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/sample_input.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 159
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_architecture_design.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 527
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_error_log.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 253
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_integration_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 242
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_intermediate_code.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 72
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_lexical_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 459
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 225
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_performance_report.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 164
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_semantic_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 222
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_symbol_table.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 226
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_syntax_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 98
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_intermediate_code.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_lexical_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 65
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_semantic_output.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_symbol_table.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_syntax_output.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 22
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_error_log.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 363
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_intermediate_code.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_lexical_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 360
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_semantic_output.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_symbol_table.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 0
+AST Nodes: 1
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_syntax_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 55
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple.txt
+Result: PASSED
+Compilation Time: 0.002 seconds
+Tokens Generated: 31
+AST Nodes: 40
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_architecture_design.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 527
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_error_log.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 253
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_integration_test.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 242
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_intermediate_code.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 72
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_lexical_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 459
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_performance_report.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 164
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_semantic_output.txt
+Result: FAILED
+Compilation Time: 0.001 seconds
+Tokens Generated: 222
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_symbol_table.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 226
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Nov 27 2025 21:47:04
+
+Test: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_syntax_output.txt
+Result: FAILED
+Compilation Time: 0.002 seconds
+Tokens Generated: 98
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+

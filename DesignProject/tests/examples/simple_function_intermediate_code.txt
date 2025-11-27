@@ -2,9 +2,9 @@
 Intermediate Code Generation
 Design Project - Code Generation Phase
 ========================================
-Input: tests/examples/simple_function.txt
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function.txt
 Target: x86-64 Assembly (AT&T Syntax)
-Generated: Nov 23 2025 19:45:09
+Generated: Nov 27 2025 21:47:04
 
 THREE-ADDRESS CODE:
 -------------------

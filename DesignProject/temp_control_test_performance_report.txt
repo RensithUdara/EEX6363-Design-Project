@@ -1,0 +1,49 @@
+========================================
+Design Project - Performance Report
+========================================
+Generated: November 28, 2025 at 01:26:08
+Test Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_control_test.txt
+
+COMPILER PERFORMANCE ANALYSIS:
+=============================
+
+1. COMPILATION PHASES TIMING:
+   ┌─────────────────────┬──────────────┬─────────────┐
+   │ Phase               │ Time (ms)    │ Percentage  │
+   ├─────────────────────┼──────────────┼─────────────┤
+   │ Lexical Analysis    │ 0.1          │ 21.4        │
+   │ Syntax Analysis     │ 0.1          │ 22.7        │
+   │ Semantic Analysis   │ 0.2          │ 41.7        │
+   │ Code Generation     │ 0.1          │ 14.2        │
+   ├─────────────────────┼──────────────┼─────────────┤
+   │ TOTAL               │ 0.5          │ 100.0%      │
+   └─────────────────────┴──────────────┴─────────────┘
+
+2. MEMORY USAGE ANALYSIS:
+   Token Storage:       1.95 KB
+   AST Nodes:           4.24 KB
+   Symbol Tables:       1.50 KB
+   Code Generation:     2.00 KB
+   TOTAL MEMORY:        13.90 KB
+
+3. COMPILATION RESULTS:
+   Total Compilation Time: 0.002 seconds
+   Tokens Processed:       39
+   AST Nodes Created:      53
+   Memory Usage:           13.90 KB
+   Errors Found:           0
+   Warnings:               2
+   Success Rate:           100%% (Perfect)
+   Performance Rating:     Excellent
+
+PERFORMANCE SUMMARY:
+==================
+✅ STATUS: COMPILATION SUCCESSFUL
+   - All phases completed without errors
+   - Code generation successful
+   - Performance: Excellent
+
+RECOMMENDATIONS:
+===============
+✅ Code is ready for use
+→ Consider adding more comprehensive tests

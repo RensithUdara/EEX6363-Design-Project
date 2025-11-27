@@ -2,8 +2,8 @@
 Comprehensive Symbol Table
 Design Project - Complete Compiler
 ========================================
-Input: tests/examples/error_test.txt
-Generated: Nov 24 2025 00:21:08
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test.txt
+Generated: Nov 27 2025 21:47:04
 
 GLOBAL SCOPE:
 +---------------+----------+--------+----------+---------+--------+

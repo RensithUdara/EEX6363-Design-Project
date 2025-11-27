@@ -1,7 +1,7 @@
 ========================================
 Syntax Analysis Output (TMA2)
 ========================================
-Input: tests/examples/simple_test.txt
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test.txt
 Grammar: Complete language grammar from TMA2
 
 PARSE TREE (Generated from Input Analysis):
@@ -16,9 +16,9 @@ PROGRAM
         ID("x ")
         ASSIGN_OP(":=")
         EXPRESSION
-          INT_LITERAL("42;")
+          INT_LITERAL("42;")
       RETURN_STMT
-        ID("x;")
+        ID("x;")
 
 STATISTICS:
 -----------

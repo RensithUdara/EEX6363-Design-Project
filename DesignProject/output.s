@@ -15,14 +15,45 @@
 .type main, @function
 
     # Program: Code generation from semantic analyzer
-    # Class declaration (data layout only)
-# Class: SimpleClass
+    # Function definition
+
+# Function: simpleTest
+simpleTest:
+    # Function prologue
+    pushq %rbp
+    movq %rsp, %rbp
+    subq $64, %rsp              # Allocate space for 3 local variables
+    # Processing function body statement
+    # Local variable declaration
+    # Variable: x allocated on stack
+    # Local variable declaration
+    # Variable: y allocated on stack
+    # Additional statement found
+    # Assignment: variable := integer_literal
+    movq $1, -8(%rbp)
+    # Additional statement found
+    # Assignment: variable := integer_literal
+    movq $20, -16(%rbp)
+    # Additional statement found
+    # Additional statement found
+    # Write statement
+    movq -24(%rbp), %rdi       # Load value for write
+    call write_int             # Call write function
+    # Additional statement found
+    # Return statement
+    movq -24(%rbp), %rax       # Load return value
+    # Function epilogue
+    movq %rbp, %rsp
+    popq %rbp
+    ret
+
 
 # ======================================
 # Code Generation Statistics
 # Instructions generated: 0
 # Registers spilled: 0
 # Optimization passes: 0
+# Memory layout size: 64 bytes
 # ======================================
 
 .section .note.GNU-stack,"",@progbits

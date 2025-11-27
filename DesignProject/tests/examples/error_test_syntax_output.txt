@@ -1,21 +1,45 @@
 ========================================
 Syntax Analysis Output (TMA2)
 ========================================
-Input: tests/examples/error_test.txt
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test.txt
 Grammar: Complete language grammar from TMA2
 
 PARSE TREE:
 -----------
-PROGRAM
-  FUNC_DEF
-    FUNC_HEAD
-      ID("testWithErrors")
-      TYPE
-    FUNC_BODY
-      LOCAL_VAR_DECL
-        VAR_DECL
-          ID("x")
-          TYPE
+AST_PROGRAM
+  AST_FUNC_DEF
+    AST_FUNC_HEAD
+      AST_ID (testWithErrors)
+      AST_TYPE (integer) [type: integer]
+    AST_FUNC_BODY
+      AST_LOCAL_VAR_DECL
+        AST_VAR_DECL
+          AST_ID (x)
+          AST_TYPE (integer) [type: integer]
+      AST_LOCAL_VAR_DECL
+        AST_VAR_DECL
+          AST_ID (undeclared_var)
+          AST_TYPE (integer)
+            AST_ID (unknown_type)
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (x)
+        AST_INT_LITERAL (1) [type: integer]
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (y)
+        AST_INT_LITERAL (2) [type: integer]
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (z)
+        AST_BINARY_EXPR (+)
+          AST_VARIABLE
+            AST_ID (x)
+          AST_VARIABLE
+            AST_ID (undefined_var)
+      AST_RETURN_STMT
+        AST_VARIABLE
+          AST_ID (x)
 
 STATISTICS:
 -----------

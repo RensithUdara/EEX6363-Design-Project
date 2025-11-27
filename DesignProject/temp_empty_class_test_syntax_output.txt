@@ -1,0 +1,19 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_empty_class_test.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+AST_PROGRAM
+  AST_CLASS_DECL
+    AST_ID (EmptyClass)
+  AST_IMPL_DEF
+    AST_ID (EmptyClass)
+
+STATISTICS:
+-----------
+AST Nodes: 5
+Tree Depth: 4
+Syntax Errors: 0

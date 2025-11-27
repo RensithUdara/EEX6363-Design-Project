@@ -1,0 +1,69 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_syntax_output.txt
+🕒 GENERATED: November 28, 2025 at 01:26:09
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ ======================================== │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ Syntax           │ 2    │ 1      │ variable            │
+│ IDENTIFIER      │ Analysis         │ 2    │ 8      │ variable            │
+│ IDENTIFIER      │ Output           │ 2    │ 17     │ variable            │
+│ IDENTIFIER      │ TMA2             │ 2    │ 25     │ variable            │
+│ IDENTIFIER      │ ======================================== │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ Input:           │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt │ 4    │ 8      │ variable            │
+│ IDENTIFIER      │ Grammar:         │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ Complete         │ 5    │ 10     │ variable            │
+│ IDENTIFIER      │ language         │ 5    │ 19     │ variable            │
+│ IDENTIFIER      │ grammar          │ 5    │ 28     │ variable            │
+│ IDENTIFIER      │ from             │ 5    │ 36     │ variable            │
+│ IDENTIFIER      │ TMA2             │ 5    │ 41     │ variable            │
+│ IDENTIFIER      │ PARSE            │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ TREE:            │ 7    │ 7      │ variable            │
+│ IDENTIFIER      │ -----------      │ 8    │ 1      │ variable            │
+│ IDENTIFIER      │ AST_PROGRAM      │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ AST_FUNC_DEF     │ 10   │ 3      │ variable            │
+│ IDENTIFIER      │ AST_FUNC_HEAD    │ 11   │ 5      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 12   │ 7      │ variable            │
+│ IDENTIFIER      │ test             │ 12   │ 15     │ variable            │
+│ IDENTIFIER      │ AST_TYPE         │ 13   │ 7      │ variable            │
+│ KEYWORD         │ integer          │ 13   │ 17     │ reserved            │
+│ IDENTIFIER      │ AST_ID           │ 14   │ 9      │ variable            │
+│ IDENTIFIER      │ integera         │ 14   │ 17     │ variable            │
+│ IDENTIFIER      │ AST_FUNC_BODY    │ 15   │ 5      │ variable            │
+│ IDENTIFIER      │ AST_RETURN_STMT  │ 16   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_INT_LITERAL  │ 17   │ 9      │ variable            │
+│ NUMBER          │ 1                │ 17   │ 26     │ literal             │
+│ IDENTIFIER      │ [type:           │ 17   │ 29     │ variable            │
+│ IDENTIFIER      │ integer]         │ 17   │ 36     │ variable            │
+│ IDENTIFIER      │ STATISTICS:      │ 19   │ 1      │ variable            │
+│ IDENTIFIER      │ -----------      │ 20   │ 1      │ variable            │
+│ IDENTIFIER      │ AST              │ 21   │ 1      │ variable            │
+│ IDENTIFIER      │ Nodes:           │ 21   │ 5      │ variable            │
+│ NUMBER          │ 9                │ 21   │ 12     │ literal             │
+│ IDENTIFIER      │ Tree             │ 22   │ 1      │ variable            │
+│ IDENTIFIER      │ Depth:           │ 22   │ 6      │ variable            │
+│ NUMBER          │ 5                │ 22   │ 13     │ literal             │
+│ IDENTIFIER      │ Syntax           │ 23   │ 1      │ variable            │
+│ IDENTIFIER      │ Errors:          │ 23   │ 8      │ variable            │
+│ NUMBER          │ 0                │ 23   │ 16     │ literal             │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 43                                                ║
+║ 📄 Total Lines Analyzed      : 23                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_syntax_output.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

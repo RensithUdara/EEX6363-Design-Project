@@ -1,0 +1,215 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_lexical_output.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+  FUNC_DEF
+    FUNC_HEAD
+    FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 8    │ 17     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 9    │ 19     │ assignment          │")
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 21   │ 11     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 23   │ 7      │ assignment          │")
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 26   │ 7      │ assignment          │")
+      RETURN_STMT
+        ID("          │ 27   │ 5      │ reserved            │")
+      RETURN_STMT
+        ID("          │ 27   │ 69     │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 35   │ 7      │ assignment          │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      RETURN_STMT
+        ID("          │ 39   │ 5      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 48   │ 9      │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 49   │ 12     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 50   │ 10     │ assignment          │")
+      RETURN_STMT
+        ID("          │ 52   │ 5      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      RETURN_STMT
+        ID("          │ 57   │ 5      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 63   │ 12     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 64   │ 12     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 65   │ 12     │ assignment          │")
+      RETURN_STMT
+        ID("          │ 67   │ 5      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 75   │ 14     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 76   │ 13     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 77   │ 13     │ assignment          │")
+      RETURN_STMT
+        ID("          │ 79   │ 5      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      RETURN_STMT
+        ID("          │ 87   │ 9      │ reserved            │")
+      RETURN_STMT
+        ID("          │ 91   │ 9      │ reserved            │")
+      RETURN_STMT
+        ID("          │ 91   │ 61     │ reserved            │")
+      LOCAL_VAR_DECL
+        VAR_DECL
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 118  │ 11     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 119  │ 17     │ assignment          │")
+      RETURN_STMT
+        ID("          │ 121  │ 5      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 127  │ 7      │ assignment          │")
+      RETURN_STMT
+        ID("          │ 128  │ 42     │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      RETURN_STMT
+        ID("          │ 133  │ 5      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      RETURN_STMT
+        ID("          │ 137  │ 5      │ reserved            │")
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 1

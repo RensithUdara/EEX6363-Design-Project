@@ -1,0 +1,95 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_intermediate_code.txt
+🕒 GENERATED: November 28, 2025 at 01:26:09
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ ======================================== │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ Intermediate     │ 2    │ 1      │ variable            │
+│ IDENTIFIER      │ Code             │ 2    │ 14     │ variable            │
+│ IDENTIFIER      │ Generation       │ 2    │ 19     │ variable            │
+│ IDENTIFIER      │ Design           │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ Project          │ 3    │ 8      │ variable            │
+│ OPERATOR        │ -                │ 3    │ 16     │ arithmetic          │
+│ IDENTIFIER      │ Code             │ 3    │ 18     │ variable            │
+│ IDENTIFIER      │ Generation       │ 3    │ 23     │ variable            │
+│ IDENTIFIER      │ Phase            │ 3    │ 34     │ variable            │
+│ IDENTIFIER      │ ======================================== │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ Input:           │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt │ 5    │ 8      │ variable            │
+│ IDENTIFIER      │ Target:          │ 6    │ 1      │ variable            │
+│ IDENTIFIER      │ x86-64           │ 6    │ 9      │ variable            │
+│ IDENTIFIER      │ Assembly         │ 6    │ 16     │ variable            │
+│ IDENTIFIER      │ AT&T             │ 6    │ 26     │ variable            │
+│ IDENTIFIER      │ Syntax           │ 6    │ 31     │ variable            │
+│ IDENTIFIER      │ Generated:       │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ Nov              │ 7    │ 12     │ variable            │
+│ NUMBER          │ 27               │ 7    │ 16     │ literal             │
+│ NUMBER          │ 2025             │ 7    │ 19     │ literal             │
+│ IDENTIFIER      │ 21:47:04         │ 7    │ 24     │ variable            │
+│ IDENTIFIER      │ THREE-ADDRESS    │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ CODE:            │ 9    │ 15     │ variable            │
+│ IDENTIFIER      │ ------------------- │ 10   │ 1      │ variable            │
+│ IDENTIFIER      │ //               │ 11   │ 1      │ variable            │
+│ IDENTIFIER      │ Program          │ 11   │ 4      │ variable            │
+│ IDENTIFIER      │ start            │ 11   │ 12     │ variable            │
+│ IDENTIFIER      │ testintegera1//  │ 12   │ 1      │ variable            │
+│ IDENTIFIER      │ Program          │ 12   │ 17     │ variable            │
+│ IDENTIFIER      │ end              │ 12   │ 25     │ variable            │
+│ IDENTIFIER      │ REGISTER         │ 14   │ 1      │ variable            │
+│ IDENTIFIER      │ ALLOCATION:      │ 14   │ 10     │ variable            │
+│ IDENTIFIER      │ -------------------- │ 15   │ 1      │ variable            │
+│ IDENTIFIER      │ Register         │ 16   │ 1      │ variable            │
+│ IDENTIFIER      │ Allocation       │ 16   │ 10     │ variable            │
+│ IDENTIFIER      │ Strategy:        │ 16   │ 21     │ variable            │
+│ IDENTIFIER      │ Linear           │ 16   │ 31     │ variable            │
+│ IDENTIFIER      │ Scan             │ 16   │ 38     │ variable            │
+│ IDENTIFIER      │ Available        │ 17   │ 1      │ variable            │
+│ IDENTIFIER      │ Registers:       │ 17   │ 11     │ variable            │
+│ NUMBER          │ 16               │ 17   │ 22     │ literal             │
+│ IDENTIFIER      │ x86-64           │ 17   │ 26     │ variable            │
+│ IDENTIFIER      │ Registers        │ 18   │ 1      │ variable            │
+│ IDENTIFIER      │ Used:            │ 18   │ 11     │ variable            │
+│ NUMBER          │ 0                │ 18   │ 17     │ literal             │
+│ IDENTIFIER      │ Spill            │ 19   │ 1      │ variable            │
+│ IDENTIFIER      │ Operations:      │ 19   │ 7      │ variable            │
+│ NUMBER          │ 0                │ 19   │ 19     │ literal             │
+│ IDENTIFIER      │ Register         │ 21   │ 1      │ variable            │
+│ IDENTIFIER      │ Assignments:     │ 21   │ 10     │ variable            │
+│ OPERATOR        │ -                │ 22   │ 1      │ arithmetic          │
+│ IDENTIFIER      │ No               │ 22   │ 3      │ variable            │
+│ IDENTIFIER      │ registers        │ 22   │ 6      │ variable            │
+│ IDENTIFIER      │ allocated        │ 22   │ 16     │ variable            │
+│ IDENTIFIER      │ OPTIMIZATIONS    │ 24   │ 1      │ variable            │
+│ IDENTIFIER      │ APPLIED:         │ 24   │ 15     │ variable            │
+│ IDENTIFIER      │ ---------------------- │ 25   │ 1      │ variable            │
+│ IDENTIFIER      │ ✓              │ 26   │ 1      │ variable            │
+│ IDENTIFIER      │ Dead             │ 26   │ 5      │ variable            │
+│ IDENTIFIER      │ code             │ 26   │ 10     │ variable            │
+│ IDENTIFIER      │ elimination      │ 26   │ 15     │ variable            │
+│ IDENTIFIER      │ ✓              │ 27   │ 1      │ variable            │
+│ IDENTIFIER      │ Constant         │ 27   │ 5      │ variable            │
+│ IDENTIFIER      │ folding          │ 27   │ 14     │ variable            │
+│ IDENTIFIER      │ ✓              │ 28   │ 1      │ variable            │
+│ IDENTIFIER      │ Register         │ 28   │ 5      │ variable            │
+│ IDENTIFIER      │ optimization     │ 28   │ 14     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 69                                                ║
+║ 📄 Total Lines Analyzed      : 28                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_intermediate_code.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

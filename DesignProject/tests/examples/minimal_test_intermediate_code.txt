@@ -2,14 +2,14 @@
 Intermediate Code Generation
 Design Project - Code Generation Phase
 ========================================
-Input: tests/examples/minimal_test.txt
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt
 Target: x86-64 Assembly (AT&T Syntax)
-Generated: Nov 23 2025 01:34:00
+Generated: Nov 27 2025 21:47:04
 
 THREE-ADDRESS CODE:
 -------------------
 // Program start
-testintegera0// Program end
+testintegera1// Program end
 
 REGISTER ALLOCATION:
 --------------------
