@@ -1,9 +1,0 @@
-func main() => integer {
-    local x : integer;
-    local y : integer;
-    
-    x := 42;
-    y := x + 5;
-    write(y);
-    return(0);
-}
