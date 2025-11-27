@@ -1,8 +1,8 @@
 ========================================
 Design Project - Performance Report
 ========================================
-Generated: November 24, 2025 at 00:50:18
-Test Input: test_simple_program.txt
+Generated: November 28, 2025 at 02:03:39
+Test Input: ./test_simple_program.txt
 
 COMPILER PERFORMANCE ANALYSIS:
 =============================
@@ -11,10 +11,10 @@ COMPILER PERFORMANCE ANALYSIS:
    ┌─────────────────────┬──────────────┬─────────────┐
    │ Phase               │ Time (ms)    │ Percentage  │
    ├─────────────────────┼──────────────┼─────────────┤
-   │ Lexical Analysis    │ 0.1          │ 13.2        │
-   │ Syntax Analysis     │ 0.3          │ 27.2        │
-   │ Semantic Analysis   │ 0.5          │ 46.0        │
-   │ Code Generation     │ 0.1          │ 13.6        │
+   │ Lexical Analysis    │ 0.2          │ 14.7        │
+   │ Syntax Analysis     │ 0.3          │ 25.0        │
+   │ Semantic Analysis   │ 0.5          │ 47.6        │
+   │ Code Generation     │ 0.1          │ 12.7        │
    ├─────────────────────┼──────────────┼─────────────┤
    │ TOTAL               │ 1.1          │ 100.0%      │
    └─────────────────────┴──────────────┴─────────────┘
