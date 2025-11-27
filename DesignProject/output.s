@@ -39,6 +39,9 @@ calculate:
     # Write statement
     movq -24(%rbp), %rdi       # Load value for write
     call write_int             # Call write function
+    # Additional statement found
+    # Return statement
+    movq -24(%rbp), %rax       # Load return value
     # Sample implementation for calculate function
     # Assignment: a := 10
     movq $10, -8(%rbp)          # Store 10 in variable a
