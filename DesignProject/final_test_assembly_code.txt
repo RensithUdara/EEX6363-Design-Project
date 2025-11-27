@@ -2,7 +2,7 @@
                     GENERATED ASSEMBLY CODE OUTPUT                              
 ================================================================================
 Source File:     tests/examples/final_test.txt
-Generated:       Nov 24 2025 00:49:36
+Generated:       Nov 27 2025 01:09:43
 Target Arch:     x86-64 (Intel/AMD 64-bit)
 Assembly Syntax: AT&T Syntax
 Compiler:        EEX6363 Design Project Compiler
@@ -40,10 +40,10 @@ calculate:
     # Variable: b allocated on stack
     # Additional statement found
     # Assignment: variable := integer_literal
-    movq $0, -8(%rbp)
+    movq $10, -8(%rbp)
     # Additional statement found
     # Assignment: variable := integer_literal
-    movq $0, -16(%rbp)
+    movq $25, -16(%rbp)
     # Additional statement found
     # Additional statement found
     # Write statement
