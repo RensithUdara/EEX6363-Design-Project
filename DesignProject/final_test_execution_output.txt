@@ -2,7 +2,7 @@
                         PROGRAM EXECUTION OUTPUT                                
 ================================================================================
 Source File:     final_test.txt
-Generated:       Nov 28 2025 01:56:45
+Generated:       Nov 28 2025 02:04:05
 Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
 ================================================================================
