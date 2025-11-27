@@ -1,0 +1,43 @@
+========================================
+Intermediate Code Generation
+Design Project - Code Generation Phase
+========================================
+Input: final_test.txt
+Target: x86-64 Assembly (AT&T Syntax)
+Generated: Nov 28 2025 01:50:23
+
+THREE-ADDRESS CODE:
+-------------------
+// Program start
+// Function: calculate
+ALLOC a, 4
+ALLOC b, 4
+ALLOC result, 4
+t0 = 10
+a = t0
+t1 = 25
+b = t1
+t2 = a * b
+result = t2
+t3 = result
+param t3
+call write
+t4 = result
+return t4
+// Program end
+
+REGISTER ALLOCATION:
+--------------------
+Register Allocation Strategy: Linear Scan
+Available Registers: 16 (x86-64)
+Registers Used: 0
+Spill Operations: 0
+
+Register Assignments:
+- No registers allocated
+
+OPTIMIZATIONS APPLIED:
+----------------------
+✓ Dead code elimination
+✓ Constant folding
+✓ Register optimization

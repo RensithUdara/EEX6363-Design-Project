@@ -1,8 +1,8 @@
 ================================================================================
                     GENERATED ASSEMBLY CODE OUTPUT                              
 ================================================================================
-Source File:     tests/examples/final_test.txt
-Generated:       Nov 27 2025 01:09:43
+Source File:     final_test.txt
+Generated:       Nov 28 2025 01:50:23
 Target Arch:     x86-64 (Intel/AMD 64-bit)
 Assembly Syntax: AT&T Syntax
 Compiler:        EEX6363 Design Project Compiler
@@ -88,5 +88,5 @@ calculate:
                            END OF ASSEMBLY OUTPUT                               
 ================================================================================
 Assembly code generation completed successfully.
-This file contains the generated x86-64 assembly code for: tests/examples/final_test.txt
+This file contains the generated x86-64 assembly code for: final_test.txt
 ================================================================================

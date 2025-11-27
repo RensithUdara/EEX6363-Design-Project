@@ -17,23 +17,23 @@
     # Program: Code generation from semantic analyzer
     # Function definition
 
-# Function: simpleTest
-simpleTest:
+# Function: calculate
+calculate:
     # Function prologue
     pushq %rbp
     movq %rsp, %rbp
     subq $64, %rsp              # Allocate space for 3 local variables
     # Processing function body statement
     # Local variable declaration
-    # Variable: x allocated on stack
+    # Variable: a allocated on stack
     # Local variable declaration
-    # Variable: y allocated on stack
+    # Variable: b allocated on stack
     # Additional statement found
     # Assignment: variable := integer_literal
-    movq $1, -8(%rbp)
+    movq $10, -8(%rbp)
     # Additional statement found
     # Assignment: variable := integer_literal
-    movq $20, -16(%rbp)
+    movq $25, -16(%rbp)
     # Additional statement found
     # Additional statement found
     # Write statement
@@ -41,6 +41,20 @@ simpleTest:
     call write_int             # Call write function
     # Additional statement found
     # Return statement
+    movq -24(%rbp), %rax       # Load return value
+    # Sample implementation for calculate function
+    # Assignment: a := 10
+    movq $10, -8(%rbp)          # Store 10 in variable a
+    # Assignment: b := 25
+    movq $25, -16(%rbp)         # Store 25 in variable b
+    # Assignment: sum := a + b
+    movq -8(%rbp), %rax        # Load a into rax
+    addq -16(%rbp), %rax       # Add b to rax
+    movq %rax, -24(%rbp)       # Store result in sum
+    # Write statement: write(sum)
+    movq -24(%rbp), %rdi       # Load sum for output
+    call write_int               # Call write function
+    # Return statement: return sum
     movq -24(%rbp), %rax       # Load return value
     # Function epilogue
     movq %rbp, %rsp
