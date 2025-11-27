@@ -3,8 +3,8 @@
 ║                              Complete Token Stream                           ║
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
-📄 INPUT FILE: test_simple_program.txt
-🕒 GENERATED: November 24, 2025 at 00:50:18
+📄 INPUT FILE: ./test_simple_program.txt
+🕒 GENERATED: November 28, 2025 at 02:03:39
 ⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
 🎯 PHASE: Phase 1 - Lexical Analysis
 
@@ -43,8 +43,8 @@
 ║ 📊 Total Tokens Processed    : 24                                                ║
 ║ 📄 Total Lines Analyzed      : 9                                                 ║
 ║ ⚠️  Lexical Errors Found      : 0                                                 ║
-║ 🕐 Generation Timestamp      : 2025-11-24 00:50:18                               ║
-║ 📂 Input Source File         : test_simple_program.txt                           ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:03:39                               ║
+║ 📂 Input Source File         : ./test_simple_program.txt                         ║
 ║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
 ║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
 ╚═══════════════════════════════════════════════════════════════════════════════════╝
