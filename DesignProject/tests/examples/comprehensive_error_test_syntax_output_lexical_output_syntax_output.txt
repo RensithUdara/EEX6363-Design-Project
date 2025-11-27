@@ -1,0 +1,108 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_syntax_output_lexical_output.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 27   │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 32   │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 56   │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 61   │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 73   │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 95   │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 123  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 128  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 136  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 159  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 164  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 169  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 189  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 194  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 199  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 234  │ 19     │ variable            │")
+    ASSIGNMENT
+      ID("│ IDENTIFIER      │ "")
+      ASSIGN_OP(":=")
+      EXPRESSION
+        ID("│ 239  │ 19     │ variable            │")
+  FUNC_DEF
+    FUNC_HEAD
+    FUNC_BODY
+      ASSIGNMENT
+        ID("│ IDENTIFIER      │ "")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 255  │ 19     │ variable            │")
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 1

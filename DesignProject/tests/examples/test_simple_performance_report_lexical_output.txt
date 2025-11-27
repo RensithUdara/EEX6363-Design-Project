@@ -4,7 +4,7 @@
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
 📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_performance_report.txt
-🕒 GENERATED: November 28, 2025 at 01:26:09
+🕒 GENERATED: November 28, 2025 at 02:56:37
 ⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
 🎯 PHASE: Phase 1 - Lexical Analysis
 
@@ -23,7 +23,7 @@
 │ NUMBER          │ 28               │ 4    │ 21     │ literal             │
 │ NUMBER          │ 2025             │ 4    │ 25     │ literal             │
 │ IDENTIFIER      │ at               │ 4    │ 30     │ variable            │
-│ IDENTIFIER      │ 01:26:09         │ 4    │ 33     │ variable            │
+│ IDENTIFIER      │ 02:56:37         │ 4    │ 33     │ variable            │
 │ IDENTIFIER      │ Test             │ 5    │ 1      │ variable            │
 │ IDENTIFIER      │ Input:           │ 5    │ 6      │ variable            │
 │ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple.txt │ 5    │ 13     │ variable            │
@@ -51,37 +51,37 @@
 │ IDENTIFIER      │ │              │ 14   │ 28     │ variable            │
 │ IDENTIFIER      │ 0.2              │ 14   │ 32     │ variable            │
 │ IDENTIFIER      │ │              │ 14   │ 45     │ variable            │
-│ IDENTIFIER      │ 27.1             │ 14   │ 49     │ variable            │
+│ IDENTIFIER      │ 26.6             │ 14   │ 49     │ variable            │
 │ IDENTIFIER      │ │              │ 14   │ 61     │ variable            │
 │ IDENTIFIER      │ │              │ 15   │ 4      │ variable            │
 │ IDENTIFIER      │ Syntax           │ 15   │ 8      │ variable            │
 │ IDENTIFIER      │ Analysis         │ 15   │ 15     │ variable            │
 │ IDENTIFIER      │ │              │ 15   │ 28     │ variable            │
-│ IDENTIFIER      │ 0.1              │ 15   │ 32     │ variable            │
+│ IDENTIFIER      │ 0.2              │ 15   │ 32     │ variable            │
 │ IDENTIFIER      │ │              │ 15   │ 45     │ variable            │
-│ IDENTIFIER      │ 21.7             │ 15   │ 49     │ variable            │
+│ IDENTIFIER      │ 20.1             │ 15   │ 49     │ variable            │
 │ IDENTIFIER      │ │              │ 15   │ 61     │ variable            │
 │ IDENTIFIER      │ │              │ 16   │ 4      │ variable            │
 │ IDENTIFIER      │ Semantic         │ 16   │ 8      │ variable            │
 │ IDENTIFIER      │ Analysis         │ 16   │ 17     │ variable            │
 │ IDENTIFIER      │ │              │ 16   │ 28     │ variable            │
-│ IDENTIFIER      │ 0.2              │ 16   │ 32     │ variable            │
+│ IDENTIFIER      │ 0.3              │ 16   │ 32     │ variable            │
 │ IDENTIFIER      │ │              │ 16   │ 45     │ variable            │
-│ IDENTIFIER      │ 41.1             │ 16   │ 49     │ variable            │
+│ IDENTIFIER      │ 35.1             │ 16   │ 49     │ variable            │
 │ IDENTIFIER      │ │              │ 16   │ 61     │ variable            │
 │ IDENTIFIER      │ │              │ 17   │ 4      │ variable            │
 │ IDENTIFIER      │ Code             │ 17   │ 8      │ variable            │
 │ IDENTIFIER      │ Generation       │ 17   │ 13     │ variable            │
 │ IDENTIFIER      │ │              │ 17   │ 28     │ variable            │
-│ IDENTIFIER      │ 0.1              │ 17   │ 32     │ variable            │
+│ IDENTIFIER      │ 0.2              │ 17   │ 32     │ variable            │
 │ IDENTIFIER      │ │              │ 17   │ 45     │ variable            │
-│ IDENTIFIER      │ 10.1             │ 17   │ 49     │ variable            │
+│ IDENTIFIER      │ 18.3             │ 17   │ 49     │ variable            │
 │ IDENTIFIER      │ │              │ 17   │ 61     │ variable            │
 │ IDENTIFIER      │ ├─────────────────────┼──────────────┼─────────────┤ │ 18   │ 4      │ variable            │
 │ IDENTIFIER      │ │              │ 19   │ 4      │ variable            │
 │ IDENTIFIER      │ TOTAL            │ 19   │ 8      │ variable            │
 │ IDENTIFIER      │ │              │ 19   │ 28     │ variable            │
-│ IDENTIFIER      │ 0.6              │ 19   │ 32     │ variable            │
+│ IDENTIFIER      │ 0.9              │ 19   │ 32     │ variable            │
 │ IDENTIFIER      │ │              │ 19   │ 45     │ variable            │
 │ IDENTIFIER      │ 100.0%           │ 19   │ 49     │ variable            │
 │ IDENTIFIER      │ │              │ 19   │ 61     │ variable            │
@@ -116,7 +116,7 @@
 │ IDENTIFIER      │ Total            │ 30   │ 4      │ variable            │
 │ IDENTIFIER      │ Compilation      │ 30   │ 10     │ variable            │
 │ IDENTIFIER      │ Time:            │ 30   │ 22     │ variable            │
-│ IDENTIFIER      │ 0.002            │ 30   │ 28     │ variable            │
+│ IDENTIFIER      │ 0.003            │ 30   │ 28     │ variable            │
 │ IDENTIFIER      │ seconds          │ 30   │ 34     │ variable            │
 │ IDENTIFIER      │ Tokens           │ 31   │ 4      │ variable            │
 │ IDENTIFIER      │ Processed:       │ 31   │ 11     │ variable            │
@@ -183,7 +183,7 @@
 ║ 📊 Total Tokens Processed    : 164                                               ║
 ║ 📄 Total Lines Analyzed      : 49                                                ║
 ║ ⚠️  Lexical Errors Found      : 0                                                 ║
-║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:56:37                               ║
 ║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_performance_report.txt ║
 ║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
 ║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║

@@ -1,27 +1,20 @@
-Regression Test Results - Fri Nov 28 01:26:08 +0530 2025
+Regression Test Results - Fri Nov 28 02:56:31 +0530 2025
 ===========================================
-FAIL: Constructor in class declaration (Issue: Constructor keyword not recognized in grammar)
-  Expected: pass, Got exit code: 255
-FAIL: Constructor implementation (Issue: Constructor not allowed in implementation block)
-  Expected: pass, Got exit code: 255
-FAIL: Constructor with regular functions (Issue: Constructor parsing interferes with regular functions)
-  Expected: pass, Got exit code: 255
+PASS: Constructor in class declaration (Issue: Constructor keyword not recognized in grammar)
+PASS: Constructor implementation (Issue: Constructor not allowed in implementation block)
+PASS: Constructor with regular functions (Issue: Constructor parsing interferes with regular functions)
 PASS: Constructor without parentheses (Issue: Should reject constructor without parentheses)
 PASS: Constructor with return type (Issue: Should reject constructor with explicit return type)
-FAIL: Constructor with parameters (Issue: Constructor should support parameters)
-  Expected: pass, Got exit code: 255
-PASS: Multiple constructors (Issue: Multiple constructors should be rejected)
-FAIL: Empty constructor body (Issue: Empty constructor should be allowed)
-  Expected: pass, Got exit code: 255
-FAIL: Nested scopes in constructor (Issue: Nested scopes in constructor)
-  Expected: pass, Got exit code: 255
-FAIL: Constructor basic functionality (Issue: Constructor should work with other class methods)
-  Expected: pass, Got exit code: 255
+PASS: Constructor with parameters (Issue: Constructor should support parameters)
+PASS: Multiple constructors (Issue: Multiple constructors should be allowed for overloading)
+PASS: Empty constructor body (Issue: Empty constructor should be allowed)
+PASS: Nested scopes in constructor (Issue: Nested scopes in constructor)
+PASS: Constructor basic functionality (Issue: Constructor should work with other class methods)
 
 SUMMARY:
 ========
 Total Tests: 10
-Passed: 3
-Failed: 7
-Success Rate: 30%
+Passed: 10
+Failed: 0
+Success Rate: 100%
 

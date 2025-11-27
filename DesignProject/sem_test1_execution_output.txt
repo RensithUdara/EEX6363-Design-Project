@@ -2,7 +2,7 @@
                         PROGRAM EXECUTION OUTPUT                                
 ================================================================================
 Source File:     /tmp/sem_test1.txt
-Generated:       Nov 27 2025 21:47:04
+Generated:       Nov 28 2025 02:55:31
 Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
 ================================================================================
@@ -19,18 +19,8 @@ Compiler:        EEX6363 Design Project Compiler
    ├─ Type: integer
    └─ Initial value: uninitialized
 
-📝 Variable Declaration: y
-   ├─ Type: integer
-   └─ Initial value: uninitialized
-
-🔄 Assignment: x := 10
-   └─ x now contains: 10
-
-🔄 Assignment: y := 20
-   └─ y now contains: 20
-
-🏁 Return: return(30)
-   └─ Function returns: 30
+📤 Output: write(0)
+   └─ Program outputs: 0
 
 
 ════════════════════════════════════════════════════════════════════════════
@@ -38,11 +28,10 @@ Compiler:        EEX6363 Design Project Compiler
 ════════════════════════════════════════════════════════════════════════════
 
 💾 FINAL VARIABLE STATES:
-   ├─ x = 10
-   ├─ y = 20
+   ├─ x = 0 (uninitialized)
 
 🎯 PROGRAM RESULT:
-   └─ Return Value: 30
+   └─ Return Value: 0
    └─ Execution Status: ✅ SUCCESS
 
 ================================================================================

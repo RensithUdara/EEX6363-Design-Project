@@ -1,0 +1,40 @@
+========================================
+Semantic Analysis Output (TMA3)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function_performance_report_intermediate_code.txt
+Generated: Nov 28 2025 02:55:30
+
+SYMBOL TABLE:
+-------------
+================================================================================
+                    TMA03 COMPREHENSIVE SYMBOL TABLE                           
+================================================================================
+Description: Complete hierarchical scope structure with detailed symbol info
+Features: Types, visibility, parameters, inheritance, array dimensions
+================================================================================
+
+┌─── SCOPE: global (Level 0) ─── [0 symbols] ──────────────────────────────────┐
+│   ⚬ (no symbols declared in this scope)
+└─────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+                              SYMBOL TABLE SUMMARY                             
+================================================================================
+Total Scopes:       1
+Total Symbols:      0
+  ├─ Functions:     0
+  ├─ Classes:       0
+  └─ Variables:     0 (includes parameters and attributes)
+
+Scope Hierarchy:    0 levels deep
+Analysis Status:    Two-phase semantic analysis completed
+Parser Type:        Recursive descent parser with syntax-directed translation
+================================================================================
+
+TYPE CHECKING RESULTS:
+----------------------
+Semantic Errors: 0
+Semantic Warnings: 0
+✓ All type checks passed
+✓ All variables properly declared
+✓ All function calls validated

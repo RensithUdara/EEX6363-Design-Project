@@ -4,7 +4,7 @@
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
 📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_lexical_output.txt
-🕒 GENERATED: November 28, 2025 at 01:26:09
+🕒 GENERATED: November 28, 2025 at 02:56:36
 ⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
 🎯 PHASE: Phase 1 - Lexical Analysis
 
@@ -33,7 +33,7 @@
 │ NUMBER          │ 28               │ 7    │ 26     │ literal             │
 │ NUMBER          │ 2025             │ 7    │ 30     │ literal             │
 │ IDENTIFIER      │ at               │ 7    │ 35     │ variable            │
-│ IDENTIFIER      │ 01:26:09         │ 7    │ 38     │ variable            │
+│ IDENTIFIER      │ 02:56:36         │ 7    │ 38     │ variable            │
 │ IDENTIFIER      │ ⚙️           │ 8    │ 1      │ variable            │
 │ IDENTIFIER      │ ANALYZER:        │ 8    │ 9      │ variable            │
 │ IDENTIFIER      │ Enhanced         │ 8    │ 19     │ variable            │
@@ -205,15 +205,15 @@
 │ IDENTIFIER      │ delimiter        │ 26   │ 66     │ variable            │
 │ IDENTIFIER      │ │              │ 26   │ 86     │ variable            │
 │ IDENTIFIER      │ │              │ 27   │ 1      │ variable            │
-│ IDENTIFIER      │ IDENTIFIER       │ 27   │ 5      │ variable            │
+│ IDENTIFIER      │ KEYWORD          │ 27   │ 5      │ variable            │
 │ IDENTIFIER      │ │              │ 27   │ 21     │ variable            │
-│ IDENTIFIER      │ integeraa        │ 27   │ 25     │ variable            │
+│ KEYWORD         │ integer          │ 27   │ 25     │ reserved            │
 │ IDENTIFIER      │ │              │ 27   │ 42     │ variable            │
 │ NUMBER          │ 4                │ 27   │ 46     │ literal             │
 │ IDENTIFIER      │ │              │ 27   │ 51     │ variable            │
 │ NUMBER          │ 23               │ 27   │ 55     │ literal             │
 │ IDENTIFIER      │ │              │ 27   │ 62     │ variable            │
-│ IDENTIFIER      │ variable         │ 27   │ 66     │ variable            │
+│ IDENTIFIER      │ reserved         │ 27   │ 66     │ variable            │
 │ IDENTIFIER      │ │              │ 27   │ 86     │ variable            │
 │ IDENTIFIER      │ │              │ 28   │ 1      │ variable            │
 │ IDENTIFIER      │ KEYWORD          │ 28   │ 5      │ variable            │
@@ -342,7 +342,7 @@
 │ IDENTIFIER      │ Timestamp        │ 44   │ 21     │ variable            │
 │ PUNCTUATION     │ :                │ 44   │ 36     │ delimiter           │
 │ IDENTIFIER      │ 2025-11-28       │ 44   │ 38     │ variable            │
-│ IDENTIFIER      │ 01:26:09         │ 44   │ 49     │ variable            │
+│ IDENTIFIER      │ 02:56:36         │ 44   │ 49     │ variable            │
 │ IDENTIFIER      │ ║              │ 44   │ 88     │ variable            │
 │ IDENTIFIER      │ ║              │ 45   │ 1      │ variable            │
 │ IDENTIFIER      │ 📂             │ 45   │ 5      │ variable            │
@@ -379,7 +379,7 @@
 ║ 📊 Total Tokens Processed    : 360                                               ║
 ║ 📄 Total Lines Analyzed      : 48                                                ║
 ║ ⚠️  Lexical Errors Found      : 0                                                 ║
-║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:56:36                               ║
 ║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test_lexical_output.txt ║
 ║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
 ║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║

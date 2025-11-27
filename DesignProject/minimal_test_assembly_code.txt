@@ -2,7 +2,7 @@
                     GENERATED ASSEMBLY CODE OUTPUT                              
 ================================================================================
 Source File:     /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt
-Generated:       Nov 27 2025 21:47:04
+Generated:       Nov 28 2025 02:55:30
 Target Arch:     x86-64 (Intel/AMD 64-bit)
 Assembly Syntax: AT&T Syntax
 Compiler:        EEX6363 Design Project Compiler

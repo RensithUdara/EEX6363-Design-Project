@@ -15,8 +15,6 @@
 .type main, @function
 
     # Program: Code generation from semantic analyzer
-    # Class declaration (data layout only)
-# Class: TestClass
 
 # ======================================
 # Code Generation Statistics

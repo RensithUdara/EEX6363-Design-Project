@@ -3,7 +3,7 @@ Comprehensive Symbol Table
 Design Project - Complete Compiler
 ========================================
 Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_error_test_intermediate_code.txt
-Generated: Nov 27 2025 21:47:04
+Generated: Nov 28 2025 02:55:30
 
 GLOBAL SCOPE:
 +---------------+----------+--------+----------+---------+--------+

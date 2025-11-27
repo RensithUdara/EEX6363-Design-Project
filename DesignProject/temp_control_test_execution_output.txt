@@ -2,7 +2,7 @@
                         PROGRAM EXECUTION OUTPUT                                
 ================================================================================
 Source File:     /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_control_test.txt
-Generated:       Nov 27 2025 21:47:04
+Generated:       Nov 28 2025 02:55:31
 Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
 ================================================================================
@@ -29,13 +29,27 @@ Compiler:        EEX6363 Design Project Compiler
 🔄 Assignment: y := 10
    └─ y now contains: 10
 
+📤 Output: write(5)
+   └─ Program outputs: 5
+
+📤 Output: write(10)
+   └─ Program outputs: 10
+
+🔄 Assignment: x := expression result
+   ├─ Expression: x(6) + 1
+   └─ Computed value: 6
+   └─ x now contains: 6
+
+📤 Output: write(6)
+   └─ Program outputs: 6
+
 
 ════════════════════════════════════════════════════════════════════════════
 📊 EXECUTION SUMMARY:
 ════════════════════════════════════════════════════════════════════════════
 
 💾 FINAL VARIABLE STATES:
-   ├─ x = 5
+   ├─ x = 6
    ├─ y = 10
 
 🎯 PROGRAM RESULT:

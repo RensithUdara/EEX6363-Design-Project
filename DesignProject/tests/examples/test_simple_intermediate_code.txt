@@ -1,19 +1,34 @@
-========================================
-Intermediate Code Generation
-Design Project - Code Generation Phase
-========================================
-Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple.txt
-Target: x86-64 Assembly (AT&T Syntax)
-Generated: Nov 27 2025 21:47:04
+================================================================================
+                    🖥️  INTERMEDIATE CODE GENERATION REPORT                   
+================================================================================
+📅 Generated: Nov 28 2025 02:55:30
+📁 Input File: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple.txt
+🎯 Target Architecture: x86-64 Assembly (AT&T Syntax)
+🔧 Code Generation Phase: Three-Address Code, Quadruples & Triples
+================================================================================
 
-THREE-ADDRESS CODE:
--------------------
+🔍 THREE-ADDRESS CODE (TAC):
+────────────────────────────────────────────────────────────────────────────────
 // Program start
-simpleTestALLOC x, 4
+// Function: simpleTest
+ALLOC x, 4
+ALLOC y, 4
+ALLOC result, 4
+t0 = 1
+x = t0
+t1 = 20
+y = t1
+t2 = x + y
+result = t2
+t3 = result
+param t3
+call write
+t4 = result
+return t4
 // Program end
 
-REGISTER ALLOCATION:
---------------------
+📊 REGISTER ALLOCATION INFO:
+────────────────────────────────────────────────────────────────────────────────
 Register Allocation Strategy: Linear Scan
 Available Registers: 16 (x86-64)
 Registers Used: 0
@@ -22,8 +37,35 @@ Spill Operations: 0
 Register Assignments:
 - No registers allocated
 
-OPTIMIZATIONS APPLIED:
-----------------------
+🧩 QUADRUPLE (4-TUPLE) REPRESENTATION:
+────────────────────────────────────────────────────────────────────────────────
+┌────────────┬────────────┬────────────┬────────────┐
+│ Operation  │ Arg1       │ Arg2       │ Result     │
+├────────────┼────────────┼────────────┼────────────┤
+│ alloc      │ 4          │ -          │ x          │
+│ alloc      │ 4          │ -          │ y          │
+│ alloc      │ 4          │ -          │ result     │
+│ assign     │ 1          │ -          │ x          │
+│ assign     │ 20         │ -          │ y          │
+│ mul        │ x          │ y          │ result     │
+│ write      │ result     │ -          │ -          │
+│ return     │ result     │ -          │ -          │
+└────────────┴────────────┴────────────┴────────────┘
+
+🧱 TRIPLE REPRESENTATION:
+────────────────────────────────────────────────────────────────────────────────
+┌───────┬────────────┬────────────┬────────────┐
+│ #     │ Operation  │ Arg1       │ Arg2       │
+├───────┼────────────┼────────────┼────────────┤
+│ 1     │ assign     │ 1          │ -          │
+│ 2     │ assign     │ 20         │ -          │
+│ 3     │ mul        │ (1)        │ (2)        │
+│ 4     │ write      │ (3)        │ -          │
+│ 5     │ return     │ (3)        │ -          │
+└───────┴────────────┴────────────┴────────────┘
+
+⚡ OPTIMIZATIONS APPLIED:
+────────────────────────────────────────────────────────────────────────────────
 ✓ Dead code elimination
 ✓ Constant folding
 ✓ Register optimization

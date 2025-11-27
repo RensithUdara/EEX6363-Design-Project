@@ -1,0 +1,160 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_semantic_output_output.txt
+🕒 GENERATED: November 28, 2025 at 02:56:35
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ =============================================================================== │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ COMPILATION      │ 2    │ 25     │ variable            │
+│ IDENTIFIER      │ OUTPUT           │ 2    │ 37     │ variable            │
+│ IDENTIFIER      │ EXPLANATION      │ 2    │ 44     │ variable            │
+│ IDENTIFIER      │ =============================================================================== │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ Generated:       │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ November         │ 4    │ 12     │ variable            │
+│ NUMBER          │ 28               │ 4    │ 21     │ literal             │
+│ NUMBER          │ 2025             │ 4    │ 25     │ literal             │
+│ IDENTIFIER      │ at               │ 4    │ 30     │ variable            │
+│ IDENTIFIER      │ 02:56:35         │ 4    │ 33     │ variable            │
+│ IDENTIFIER      │ Input            │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ File:            │ 5    │ 7      │ variable            │
+│ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_semantic_output.txt │ 5    │ 13     │ variable            │
+│ IDENTIFIER      │ Assembly         │ 6    │ 1      │ variable            │
+│ IDENTIFIER      │ File:            │ 6    │ 10     │ variable            │
+│ IDENTIFIER      │ output.s         │ 6    │ 16     │ variable            │
+│ IDENTIFIER      │ Status:          │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ Compilation      │ 7    │ 9      │ variable            │
+│ IDENTIFIER      │ Successful       │ 7    │ 21     │ variable            │
+│ IDENTIFIER      │ No               │ 7    │ 33     │ variable            │
+│ IDENTIFIER      │ Errors           │ 7    │ 36     │ variable            │
+│ IDENTIFIER      │ 📋             │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ PROGRAM          │ 9    │ 6      │ variable            │
+│ IDENTIFIER      │ STRUCTURE        │ 9    │ 14     │ variable            │
+│ IDENTIFIER      │ ANALYSIS:        │ 9    │ 24     │ variable            │
+│ IDENTIFIER      │ ═══════════════════════════════════════════════════════════════════════════════ │ 10   │ 1      │ variable            │
+│ IDENTIFIER      │ 🏗️          │ 12   │ 1      │ variable            │
+│ IDENTIFIER      │ INPUT            │ 12   │ 10     │ variable            │
+│ IDENTIFIER      │ PROGRAM          │ 12   │ 16     │ variable            │
+│ IDENTIFIER      │ COMPONENTS:      │ 12   │ 24     │ variable            │
+│ IDENTIFIER      │ ├─           │ 13   │ 4      │ variable            │
+│ IDENTIFIER      │ Functions        │ 13   │ 11     │ variable            │
+│ IDENTIFIER      │ Defined:         │ 13   │ 21     │ variable            │
+│ NUMBER          │ 0                │ 13   │ 30     │ literal             │
+│ IDENTIFIER      │ ├─           │ 14   │ 4      │ variable            │
+│ IDENTIFIER      │ Local            │ 14   │ 11     │ variable            │
+│ IDENTIFIER      │ Variables:       │ 14   │ 17     │ variable            │
+│ NUMBER          │ 0                │ 14   │ 28     │ literal             │
+│ IDENTIFIER      │ └─           │ 15   │ 4      │ variable            │
+│ IDENTIFIER      │ Program          │ 15   │ 11     │ variable            │
+│ IDENTIFIER      │ Type:            │ 15   │ 19     │ variable            │
+│ IDENTIFIER      │ Procedural       │ 15   │ 25     │ variable            │
+│ IDENTIFIER      │ with             │ 15   │ 36     │ variable            │
+│ KEYWORD         │ function         │ 15   │ 41     │ reserved            │
+│ IDENTIFIER      │ definitions      │ 15   │ 50     │ variable            │
+│ IDENTIFIER      │ ⚙️           │ 17   │ 1      │ variable            │
+│ IDENTIFIER      │ GENERATED        │ 17   │ 9      │ variable            │
+│ IDENTIFIER      │ ASSEMBLY         │ 17   │ 19     │ variable            │
+│ IDENTIFIER      │ CODE             │ 17   │ 28     │ variable            │
+│ IDENTIFIER      │ EXPLANATION:     │ 17   │ 33     │ variable            │
+│ IDENTIFIER      │ ═══════════════════════════════════════════════════════════════════════════════ │ 18   │ 1      │ variable            │
+│ IDENTIFIER      │ The              │ 20   │ 1      │ variable            │
+│ IDENTIFIER      │ compiler         │ 20   │ 5      │ variable            │
+│ IDENTIFIER      │ generated        │ 20   │ 14     │ variable            │
+│ IDENTIFIER      │ x86-64           │ 20   │ 24     │ variable            │
+│ IDENTIFIER      │ assembly         │ 20   │ 31     │ variable            │
+│ IDENTIFIER      │ code             │ 20   │ 40     │ variable            │
+│ IDENTIFIER      │ with             │ 20   │ 45     │ variable            │
+│ IDENTIFIER      │ the              │ 20   │ 50     │ variable            │
+│ IDENTIFIER      │ following        │ 20   │ 54     │ variable            │
+│ IDENTIFIER      │ structure:       │ 20   │ 64     │ variable            │
+│ IDENTIFIER      │ 📊             │ 22   │ 1      │ variable            │
+│ IDENTIFIER      │ COMPILATION      │ 22   │ 6      │ variable            │
+│ IDENTIFIER      │ STATISTICS:      │ 22   │ 18     │ variable            │
+│ IDENTIFIER      │ ═══════════════════════════════════════════════════════════════════════════════ │ 23   │ 1      │ variable            │
+│ IDENTIFIER      │ ✅              │ 25   │ 1      │ variable            │
+│ IDENTIFIER      │ Lexical          │ 25   │ 5      │ variable            │
+│ IDENTIFIER      │ Analysis:        │ 25   │ 13     │ variable            │
+│ IDENTIFIER      │ PASSED           │ 25   │ 26     │ variable            │
+│ IDENTIFIER      │ No               │ 25   │ 34     │ variable            │
+│ IDENTIFIER      │ lexical          │ 25   │ 37     │ variable            │
+│ IDENTIFIER      │ errors           │ 25   │ 45     │ variable            │
+│ IDENTIFIER      │ ✅              │ 26   │ 1      │ variable            │
+│ IDENTIFIER      │ Syntax           │ 26   │ 5      │ variable            │
+│ IDENTIFIER      │ Analysis:        │ 26   │ 12     │ variable            │
+│ IDENTIFIER      │ PASSED           │ 26   │ 26     │ variable            │
+│ IDENTIFIER      │ Valid            │ 26   │ 34     │ variable            │
+│ IDENTIFIER      │ program          │ 26   │ 40     │ variable            │
+│ IDENTIFIER      │ structure        │ 26   │ 48     │ variable            │
+│ IDENTIFIER      │ ✅              │ 27   │ 1      │ variable            │
+│ IDENTIFIER      │ Semantic         │ 27   │ 5      │ variable            │
+│ IDENTIFIER      │ Analysis:        │ 27   │ 14     │ variable            │
+│ IDENTIFIER      │ PASSED           │ 27   │ 26     │ variable            │
+│ IDENTIFIER      │ All              │ 27   │ 34     │ variable            │
+│ IDENTIFIER      │ types            │ 27   │ 38     │ variable            │
+│ IDENTIFIER      │ and              │ 27   │ 44     │ variable            │
+│ IDENTIFIER      │ scopes           │ 27   │ 48     │ variable            │
+│ IDENTIFIER      │ valid            │ 27   │ 55     │ variable            │
+│ IDENTIFIER      │ ✅              │ 28   │ 1      │ variable            │
+│ IDENTIFIER      │ Code             │ 28   │ 5      │ variable            │
+│ IDENTIFIER      │ Generation:      │ 28   │ 10     │ variable            │
+│ IDENTIFIER      │ PASSED           │ 28   │ 26     │ variable            │
+│ IDENTIFIER      │ Assembly         │ 28   │ 34     │ variable            │
+│ IDENTIFIER      │ code             │ 28   │ 43     │ variable            │
+│ IDENTIFIER      │ generated        │ 28   │ 48     │ variable            │
+│ IDENTIFIER      │ 🎯             │ 30   │ 1      │ variable            │
+│ IDENTIFIER      │ EXECUTION        │ 30   │ 6      │ variable            │
+│ IDENTIFIER      │ GUIDANCE:        │ 30   │ 16     │ variable            │
+│ IDENTIFIER      │ ═══════════════════════════════════════════════════════════════════════════════ │ 31   │ 1      │ variable            │
+│ IDENTIFIER      │ To               │ 33   │ 1      │ variable            │
+│ IDENTIFIER      │ execute          │ 33   │ 4      │ variable            │
+│ IDENTIFIER      │ the              │ 33   │ 12     │ variable            │
+│ IDENTIFIER      │ generated        │ 33   │ 16     │ variable            │
+│ IDENTIFIER      │ assembly         │ 33   │ 26     │ variable            │
+│ IDENTIFIER      │ code:            │ 33   │ 35     │ variable            │
+│ IDENTIFIER      │ 1.               │ 34   │ 1      │ variable            │
+│ IDENTIFIER      │ Assemble:        │ 34   │ 4      │ variable            │
+│ IDENTIFIER      │ as               │ 34   │ 14     │ variable            │
+│ IDENTIFIER      │ -64              │ 34   │ 17     │ variable            │
+│ IDENTIFIER      │ output.s         │ 34   │ 21     │ variable            │
+│ IDENTIFIER      │ -o               │ 34   │ 30     │ variable            │
+│ IDENTIFIER      │ program.o        │ 34   │ 33     │ variable            │
+│ IDENTIFIER      │ 2.               │ 35   │ 1      │ variable            │
+│ IDENTIFIER      │ Link:            │ 35   │ 4      │ variable            │
+│ IDENTIFIER      │ ld               │ 35   │ 10     │ variable            │
+│ IDENTIFIER      │ program.o        │ 35   │ 13     │ variable            │
+│ IDENTIFIER      │ -o               │ 35   │ 23     │ variable            │
+│ IDENTIFIER      │ program          │ 35   │ 26     │ variable            │
+│ IDENTIFIER      │ 3.               │ 36   │ 1      │ variable            │
+│ IDENTIFIER      │ Run:             │ 36   │ 4      │ variable            │
+│ IDENTIFIER      │ ./program        │ 36   │ 9      │ variable            │
+│ IDENTIFIER      │ Note:            │ 38   │ 1      │ variable            │
+│ IDENTIFIER      │ You              │ 38   │ 7      │ variable            │
+│ IDENTIFIER      │ may              │ 38   │ 11     │ variable            │
+│ IDENTIFIER      │ need             │ 38   │ 15     │ variable            │
+│ IDENTIFIER      │ to               │ 38   │ 20     │ variable            │
+│ IDENTIFIER      │ provide          │ 38   │ 23     │ variable            │
+│ IDENTIFIER      │ runtime          │ 38   │ 31     │ variable            │
+│ IDENTIFIER      │ library          │ 38   │ 39     │ variable            │
+│ IDENTIFIER      │ functions        │ 38   │ 47     │ variable            │
+│ IDENTIFIER      │ like             │ 38   │ 58     │ variable            │
+│ IDENTIFIER      │ write_int        │ 38   │ 63     │ variable            │
+│ IDENTIFIER      │ =============================================================================== │ 40   │ 1      │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 134                                               ║
+║ 📄 Total Lines Analyzed      : 40                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:56:35                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_semantic_output_output.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

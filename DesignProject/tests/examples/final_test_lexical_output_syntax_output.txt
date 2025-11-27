@@ -1,0 +1,88 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/final_test_lexical_output.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+  FUNC_DEF
+    FUNC_HEAD
+    FUNC_BODY
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 19   │ 21     │ assignment          │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 27   │ 16     │ assignment          │")
+      RETURN_STMT
+        ID("          │ 29   │ 9      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 37   │ 20     │ assignment          │")
+      WRITE_STMT
+        ID("           │ 41   │ 13     │ variable            │")
+      WRITE_STMT
+        ID("           │ 45   │ 13     │ variable            │")
+      RETURN_STMT
+        ID("          │ 49   │ 9      │ reserved            │")
+    FUNC_DEF
+      FUNC_HEAD
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 59   │ 17     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 61   │ 17     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 65   │ 21     │ assignment          │")
+      ASSIGNMENT
+        ID("│ OPERATOR        │ ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          ID("│ 67   │ 21     │ assignment          │")
+      RETURN_STMT
+        ID("          │ 71   │ 9      │ reserved            │")
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 1

@@ -4,7 +4,7 @@
 ╚═══════════════════════════════════════════════════════════════════════════════╝
 
 📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_architecture_design.txt
-🕒 GENERATED: November 28, 2025 at 01:26:09
+🕒 GENERATED: November 28, 2025 at 02:56:33
 ⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
 🎯 PHASE: Phase 1 - Lexical Analysis
 
@@ -23,7 +23,7 @@
 │ NUMBER          │ 28               │ 4    │ 21     │ literal             │
 │ NUMBER          │ 2025             │ 4    │ 25     │ literal             │
 │ IDENTIFIER      │ at               │ 4    │ 30     │ variable            │
-│ IDENTIFIER      │ 01:26:09         │ 4    │ 33     │ variable            │
+│ IDENTIFIER      │ 02:56:33         │ 4    │ 33     │ variable            │
 │ IDENTIFIER      │ 🏗️          │ 6    │ 1      │ variable            │
 │ IDENTIFIER      │ COMPILER         │ 6    │ 10     │ variable            │
 │ IDENTIFIER      │ ARCHITECTURE     │ 6    │ 19     │ variable            │
@@ -92,7 +92,7 @@
 │ IDENTIFIER      │ ✅              │ 23   │ 31     │ variable            │
 │ IDENTIFIER      │ ACTIVE           │ 23   │ 35     │ variable            │
 │ IDENTIFIER      │ │              │ 23   │ 43     │ variable            │
-│ IDENTIFIER      │ 0.09             │ 23   │ 51     │ variable            │
+│ IDENTIFIER      │ 0.11             │ 23   │ 51     │ variable            │
 │ IDENTIFIER      │ │              │ 23   │ 59     │ variable            │
 │ IDENTIFIER      │ 🚀             │ 23   │ 63     │ variable            │
 │ IDENTIFIER      │ Excellent        │ 23   │ 68     │ variable            │
@@ -105,7 +105,7 @@
 │ IDENTIFIER      │ ✅              │ 24   │ 31     │ variable            │
 │ IDENTIFIER      │ ACTIVE           │ 24   │ 35     │ variable            │
 │ IDENTIFIER      │ │              │ 24   │ 43     │ variable            │
-│ IDENTIFIER      │ 0.09             │ 24   │ 51     │ variable            │
+│ IDENTIFIER      │ 0.11             │ 24   │ 51     │ variable            │
 │ IDENTIFIER      │ │              │ 24   │ 59     │ variable            │
 │ IDENTIFIER      │ 🚀             │ 24   │ 63     │ variable            │
 │ IDENTIFIER      │ Excellent        │ 24   │ 68     │ variable            │
@@ -117,7 +117,7 @@
 │ IDENTIFIER      │ ✅              │ 25   │ 31     │ variable            │
 │ IDENTIFIER      │ ACTIVE           │ 25   │ 35     │ variable            │
 │ IDENTIFIER      │ │              │ 25   │ 43     │ variable            │
-│ IDENTIFIER      │ 0.20             │ 25   │ 51     │ variable            │
+│ IDENTIFIER      │ 0.24             │ 25   │ 51     │ variable            │
 │ IDENTIFIER      │ │              │ 25   │ 59     │ variable            │
 │ IDENTIFIER      │ 🚀             │ 25   │ 63     │ variable            │
 │ IDENTIFIER      │ Excellent        │ 25   │ 68     │ variable            │
@@ -130,7 +130,7 @@
 │ IDENTIFIER      │ ✅              │ 26   │ 34     │ variable            │
 │ IDENTIFIER      │ ACTIVE           │ 26   │ 38     │ variable            │
 │ IDENTIFIER      │ │              │ 26   │ 46     │ variable            │
-│ IDENTIFIER      │ 0.06             │ 26   │ 54     │ variable            │
+│ IDENTIFIER      │ 0.07             │ 26   │ 54     │ variable            │
 │ IDENTIFIER      │ │              │ 26   │ 62     │ variable            │
 │ IDENTIFIER      │ 🚀             │ 26   │ 66     │ variable            │
 │ IDENTIFIER      │ Excellent        │ 26   │ 71     │ variable            │
@@ -219,7 +219,7 @@
 │ IDENTIFIER      │ tokens           │ 65   │ 17     │ variable            │
 │ IDENTIFIER      │ generated        │ 65   │ 24     │ variable            │
 │ IDENTIFIER      │ Processing:      │ 66   │ 1      │ variable            │
-│ IDENTIFIER      │ 0.09ms           │ 66   │ 15     │ variable            │
+│ IDENTIFIER      │ 0.11ms           │ 66   │ 15     │ variable            │
 │ IDENTIFIER      │ execution        │ 66   │ 22     │ variable            │
 │ IDENTIFIER      │ time             │ 66   │ 32     │ variable            │
 │ IDENTIFIER      │ Tool             │ 67   │ 1      │ variable            │
@@ -259,7 +259,7 @@
 │ IDENTIFIER      │ nodes            │ 76   │ 17     │ variable            │
 │ IDENTIFIER      │ created          │ 76   │ 23     │ variable            │
 │ IDENTIFIER      │ Processing:      │ 77   │ 1      │ variable            │
-│ IDENTIFIER      │ 0.09ms           │ 77   │ 15     │ variable            │
+│ IDENTIFIER      │ 0.11ms           │ 77   │ 15     │ variable            │
 │ IDENTIFIER      │ execution        │ 77   │ 22     │ variable            │
 │ IDENTIFIER      │ time             │ 77   │ 32     │ variable            │
 │ IDENTIFIER      │ Tool             │ 78   │ 1      │ variable            │
@@ -305,7 +305,7 @@
 │ IDENTIFIER      │ warnings         │ 88   │ 17     │ variable            │
 │ IDENTIFIER      │ issued           │ 88   │ 26     │ variable            │
 │ IDENTIFIER      │ Processing:      │ 89   │ 1      │ variable            │
-│ IDENTIFIER      │ 0.20ms           │ 89   │ 15     │ variable            │
+│ IDENTIFIER      │ 0.24ms           │ 89   │ 15     │ variable            │
 │ IDENTIFIER      │ execution        │ 89   │ 22     │ variable            │
 │ IDENTIFIER      │ time             │ 89   │ 32     │ variable            │
 │ IDENTIFIER      │ Components:      │ 90   │ 1      │ variable            │
@@ -350,7 +350,7 @@
 │ IDENTIFIER      │ Assembly         │ 100  │ 20     │ variable            │
 │ IDENTIFIER      │ Syntax           │ 100  │ 29     │ variable            │
 │ IDENTIFIER      │ Processing:      │ 101  │ 1      │ variable            │
-│ IDENTIFIER      │ 0.06ms           │ 101  │ 15     │ variable            │
+│ IDENTIFIER      │ 0.07ms           │ 101  │ 15     │ variable            │
 │ IDENTIFIER      │ execution        │ 101  │ 22     │ variable            │
 │ IDENTIFIER      │ time             │ 101  │ 32     │ variable            │
 │ IDENTIFIER      │ Components:      │ 102  │ 1      │ variable            │
@@ -381,19 +381,19 @@
 │ IDENTIFIER      │ Total            │ 112  │ 1      │ variable            │
 │ IDENTIFIER      │ Compilation      │ 112  │ 7      │ variable            │
 │ IDENTIFIER      │ Time:            │ 112  │ 19     │ variable            │
-│ IDENTIFIER      │ 0.44ms           │ 112  │ 26     │ variable            │
+│ IDENTIFIER      │ 0.54ms           │ 112  │ 26     │ variable            │
 │ IDENTIFIER      │ Average          │ 113  │ 1      │ variable            │
 │ IDENTIFIER      │ Phase            │ 113  │ 9      │ variable            │
 │ IDENTIFIER      │ Time:            │ 113  │ 15     │ variable            │
-│ IDENTIFIER      │ 0.11ms           │ 113  │ 26     │ variable            │
+│ IDENTIFIER      │ 0.13ms           │ 113  │ 26     │ variable            │
 │ IDENTIFIER      │ Fastest          │ 114  │ 1      │ variable            │
 │ IDENTIFIER      │ Phase:           │ 114  │ 9      │ variable            │
 │ IDENTIFIER      │ CodeGen          │ 114  │ 25     │ variable            │
-│ IDENTIFIER      │ 0.06ms           │ 114  │ 34     │ variable            │
+│ IDENTIFIER      │ 0.07ms           │ 114  │ 34     │ variable            │
 │ IDENTIFIER      │ Slowest          │ 115  │ 1      │ variable            │
 │ IDENTIFIER      │ Phase:           │ 115  │ 9      │ variable            │
 │ IDENTIFIER      │ Semantic         │ 115  │ 25     │ variable            │
-│ IDENTIFIER      │ 0.20ms           │ 115  │ 35     │ variable            │
+│ IDENTIFIER      │ 0.24ms           │ 115  │ 35     │ variable            │
 │ IDENTIFIER      │ Compilation      │ 116  │ 1      │ variable            │
 │ IDENTIFIER      │ Speed:           │ 116  │ 13     │ variable            │
 │ IDENTIFIER      │ 🚀             │ 116  │ 26     │ variable            │
@@ -546,7 +546,7 @@
 ║ 📊 Total Tokens Processed    : 527                                               ║
 ║ 📄 Total Lines Analyzed      : 150                                               ║
 ║ ⚠️  Lexical Errors Found      : 0                                                 ║
-║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 🕐 Generation Timestamp      : 2025-11-28 02:56:33                               ║
 ║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_architecture_design.txt ║
 ║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
 ║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
