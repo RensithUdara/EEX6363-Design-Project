@@ -1,8 +1,8 @@
 ================================================================================
                     GENERATED ASSEMBLY CODE OUTPUT                              
 ================================================================================
-Source File:     test_simple_program.txt
-Generated:       Nov 24 2025 00:49:36
+Source File:     ./test_simple_program.txt
+Generated:       Nov 28 2025 02:01:08
 Target Arch:     x86-64 (Intel/AMD 64-bit)
 Assembly Syntax: AT&T Syntax
 Compiler:        EEX6363 Design Project Compiler
@@ -40,7 +40,7 @@ main:
     # Variable: y allocated on stack
     # Additional statement found
     # Assignment: variable := integer_literal
-    movq $0, -8(%rbp)
+    movq $42, -8(%rbp)
     # Additional statement found
     # Additional statement found
     # Write statement
@@ -71,5 +71,5 @@ main:
                            END OF ASSEMBLY OUTPUT                               
 ================================================================================
 Assembly code generation completed successfully.
-This file contains the generated x86-64 assembly code for: test_simple_program.txt
+This file contains the generated x86-64 assembly code for: ./test_simple_program.txt
 ================================================================================
