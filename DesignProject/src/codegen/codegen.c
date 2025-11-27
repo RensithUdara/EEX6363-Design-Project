@@ -292,7 +292,7 @@ void generate_function_code(CodeGenContext *ctx, ASTNode *func_def)
             {
                 emit_comment(ctx, "Processing function body statement");
                 generate_statement_code(ctx, child);
-                
+
                 // Also check if this child has siblings or more statements
                 if (child->next)
                 {
@@ -301,10 +301,10 @@ void generate_function_code(CodeGenContext *ctx, ASTNode *func_def)
             }
         }
     }
-    
+
     // Additional processing: look for statement lists or blocks
     generate_all_statements_in_function(ctx, func_body);
-    
+
     // Generate sample function implementation if no statements found
     if (func_name && strcmp(func_name, "calculate") == 0)
     {
@@ -363,9 +363,9 @@ void generate_statement_code(CodeGenContext *ctx, ASTNode *stmt)
             {
                 // Direct assignment of integer literal
                 emit_comment(ctx, "Assignment: variable := integer_literal");
-                fprintf(ctx->output_file, "    movq $%d, %s\n", 
-                       rvalue->data.int_value, 
-                       get_variable_location(ctx, var_name));
+                fprintf(ctx->output_file, "    movq $%d, %s\n",
+                        rvalue->data.int_value,
+                        get_variable_location(ctx, var_name));
             }
             else if (rvalue->type == AST_BINARY_EXPR)
             {
@@ -494,13 +494,13 @@ void generate_statement_code(CodeGenContext *ctx, ASTNode *stmt)
                 {
                     var_name = return_expr->children[0]->data.string_value;
                 }
-                fprintf(ctx->output_file, "    movq %s, %%rax       # Load return value\n", 
-                       get_variable_location(ctx, var_name));
+                fprintf(ctx->output_file, "    movq %s, %%rax       # Load return value\n",
+                        get_variable_location(ctx, var_name));
             }
             else if (return_expr->type == AST_INT_LITERAL)
             {
-                fprintf(ctx->output_file, "    movq $%d, %%rax      # Load return value\n", 
-                       return_expr->data.int_value);
+                fprintf(ctx->output_file, "    movq $%d, %%rax      # Load return value\n",
+                        return_expr->data.int_value);
             }
         }
         break;
@@ -551,19 +551,19 @@ void generate_statement_code(CodeGenContext *ctx, ASTNode *stmt)
         {
             emit_comment(ctx, "Write statement");
             ASTNode *write_expr = stmt->children[0];
-            
-            if (write_expr->type == AST_VARIABLE && write_expr->child_count > 0 && 
+
+            if (write_expr->type == AST_VARIABLE && write_expr->child_count > 0 &&
                 write_expr->children[0]->type == AST_ID)
             {
                 char *var_name = write_expr->children[0]->data.string_value;
-                fprintf(ctx->output_file, "    movq %s, %%rdi       # Load value for write\n", 
-                       get_variable_location(ctx, var_name));
+                fprintf(ctx->output_file, "    movq %s, %%rdi       # Load value for write\n",
+                        get_variable_location(ctx, var_name));
                 fprintf(ctx->output_file, "    call write_int             # Call write function\n");
             }
             else if (write_expr->type == AST_INT_LITERAL)
             {
-                fprintf(ctx->output_file, "    movq $%d, %%rdi      # Load value for write\n", 
-                       write_expr->data.int_value);
+                fprintf(ctx->output_file, "    movq $%d, %%rdi      # Load value for write\n",
+                        write_expr->data.int_value);
                 fprintf(ctx->output_file, "    call write_int             # Call write function\n");
             }
         }
@@ -780,25 +780,25 @@ void emit_instruction(CodeGenContext *ctx, Instruction *inst)
     {
     case INST_MOV:
         fprintf(ctx->output_file, " ");
-        emit_operand(ctx, &inst->src1);  // Source first in AT&T syntax
+        emit_operand(ctx, &inst->src1); // Source first in AT&T syntax
         fprintf(ctx->output_file, ", ");
-        emit_operand(ctx, &inst->dest);  // Destination second
+        emit_operand(ctx, &inst->dest); // Destination second
         break;
 
     case INST_ADD:
     case INST_SUB:
     case INST_MUL:
         fprintf(ctx->output_file, " ");
-        emit_operand(ctx, &inst->src1);  // Source first
+        emit_operand(ctx, &inst->src1); // Source first
         fprintf(ctx->output_file, ", ");
-        emit_operand(ctx, &inst->dest);  // Destination second
+        emit_operand(ctx, &inst->dest); // Destination second
         break;
 
     case INST_CMP:
         fprintf(ctx->output_file, " ");
-        emit_operand(ctx, &inst->src1);  // First operand
+        emit_operand(ctx, &inst->src1); // First operand
         fprintf(ctx->output_file, ", ");
-        emit_operand(ctx, &inst->src2);  // Second operand
+        emit_operand(ctx, &inst->src2); // Second operand
         break;
 
     case INST_JMP:
@@ -961,13 +961,13 @@ void calculate_memory_layout_from_ast(CodeGenContext *ctx, ASTNode *func_body)
     ctx->memory_layout.params_size = 0;
     ctx->memory_layout.spill_area_size = 16; // Reserve space for spills
     ctx->memory_layout.max_call_args = 0;
-    
+
     // Count local variables in function body
     int var_count = count_local_variables(func_body);
-    
+
     // Each variable needs 8 bytes (64-bit)
     ctx->memory_layout.local_vars_size = var_count * 8;
-    
+
     // Align stack frame to 16-byte boundary
     int total_size = ctx->memory_layout.local_vars_size +
                      ctx->memory_layout.temp_vars_size +
@@ -981,43 +981,44 @@ int count_local_variables(ASTNode *node)
 {
     if (!node)
         return 0;
-        
+
     int count = 0;
-    
+
     if (node->type == AST_LOCAL_VAR_DECL)
     {
         count = 1;
     }
-    
+
     // Recursively count in children
     for (int i = 0; i < node->child_count; i++)
     {
         count += count_local_variables(node->children[i]);
     }
-    
+
     // Check siblings
     if (node->next)
     {
         count += count_local_variables(node->next);
     }
-    
+
     return count;
 }
 
 // Get variable memory location based on position in function
 char *get_variable_location(CodeGenContext *ctx, const char *var_name)
 {
+    (void)ctx; // Suppress unused parameter warning
     static char location[32];
-    static char var_names[10][32];  // Track up to 10 variables
-    static int var_offsets[10];     // Their corresponding offsets
+    static char var_names[10][32]; // Track up to 10 variables
+    static int var_offsets[10];    // Their corresponding offsets
     static int var_count = 0;
-    
+
     if (!var_name)
     {
         snprintf(location, sizeof(location), "-8(%%rbp)");
         return location;
     }
-    
+
     // Look for existing variable
     for (int i = 0; i < var_count; i++)
     {
@@ -1027,7 +1028,7 @@ char *get_variable_location(CodeGenContext *ctx, const char *var_name)
             return location;
         }
     }
-    
+
     // Add new variable if we have space
     if (var_count < 10)
     {
@@ -1038,7 +1039,7 @@ char *get_variable_location(CodeGenContext *ctx, const char *var_name)
         var_count++;
         return location;
     }
-    
+
     // Fallback if too many variables
     snprintf(location, sizeof(location), "-8(%%rbp)");
     return location;
@@ -1049,77 +1050,77 @@ void generate_binary_expression_code(CodeGenContext *ctx, ASTNode *expr, const c
 {
     if (!expr || expr->type != AST_BINARY_EXPR || expr->child_count < 3)
         return;
-        
+
     ASTNode *left = expr->children[0];
     ASTNode *op = expr->children[1];
     ASTNode *right = expr->children[2];
-    
+
     emit_comment(ctx, "Binary expression evaluation");
-    
+
     // Handle left operand
     if (left->type == AST_VARIABLE && left->child_count > 0 && left->children[0]->type == AST_ID)
     {
         char *left_var = left->children[0]->data.string_value;
-        fprintf(ctx->output_file, "    movq %s, %%rax        # Load left operand\n", 
-               get_variable_location(ctx, left_var));
+        fprintf(ctx->output_file, "    movq %s, %%rax        # Load left operand\n",
+                get_variable_location(ctx, left_var));
     }
     else if (left->type == AST_INT_LITERAL)
     {
-        fprintf(ctx->output_file, "    movq $%d, %%rax       # Load left operand\n", 
-               left->data.int_value);
+        fprintf(ctx->output_file, "    movq $%d, %%rax       # Load left operand\n",
+                left->data.int_value);
     }
-    
+
     // Determine operation and handle right operand
-    const char *operation = "+";  // Default
+    const char *operation = "+"; // Default
     if (op && op->data.string_value)
     {
         operation = op->data.string_value;
     }
-    
+
     if (right->type == AST_VARIABLE && right->child_count > 0 && right->children[0]->type == AST_ID)
     {
         char *right_var = right->children[0]->data.string_value;
-        
+
         if (strcmp(operation, "+") == 0)
         {
-            fprintf(ctx->output_file, "    addq %s, %%rax        # Add right operand\n", 
-                   get_variable_location(ctx, right_var));
+            fprintf(ctx->output_file, "    addq %s, %%rax        # Add right operand\n",
+                    get_variable_location(ctx, right_var));
         }
         else if (strcmp(operation, "-") == 0)
         {
-            fprintf(ctx->output_file, "    subq %s, %%rax        # Subtract right operand\n", 
-                   get_variable_location(ctx, right_var));
+            fprintf(ctx->output_file, "    subq %s, %%rax        # Subtract right operand\n",
+                    get_variable_location(ctx, right_var));
         }
         else if (strcmp(operation, "*") == 0)
         {
-            fprintf(ctx->output_file, "    imulq %s, %%rax       # Multiply by right operand\n", 
-                   get_variable_location(ctx, right_var));
+            fprintf(ctx->output_file, "    imulq %s, %%rax       # Multiply by right operand\n",
+                    get_variable_location(ctx, right_var));
         }
     }
     else if (right->type == AST_INT_LITERAL)
     {
         if (strcmp(operation, "+") == 0)
         {
-            fprintf(ctx->output_file, "    addq $%d, %%rax       # Add right operand\n", 
-                   right->data.int_value);
+            fprintf(ctx->output_file, "    addq $%d, %%rax       # Add right operand\n",
+                    right->data.int_value);
         }
         else if (strcmp(operation, "-") == 0)
         {
-            fprintf(ctx->output_file, "    subq $%d, %%rax       # Subtract right operand\n", 
-                   right->data.int_value);
+            fprintf(ctx->output_file, "    subq $%d, %%rax       # Subtract right operand\n",
+                    right->data.int_value);
         }
         else if (strcmp(operation, "*") == 0)
         {
-            fprintf(ctx->output_file, "    imulq $%d, %%rax      # Multiply by right operand\n", 
-                   right->data.int_value);
+            fprintf(ctx->output_file, "    imulq $%d, %%rax      # Multiply by right operand\n",
+                    right->data.int_value);
         }
     }
-    
+
     // Store result in target variable
     if (target_var)
     {
-        fprintf(ctx->output_file, "    movq %%rax, %s       # Store result\n", 
-               get_variable_location(ctx, target_var));
+        fprintf(ctx->output_file, "    movq %%rax, %s       # Store result\n",
+                get_variable_location(ctx, target_var));
     }
 }
 
@@ -1139,7 +1140,7 @@ void calculate_memory_layout(CodeGenContext *ctx, ASTNode *function)
             break;
         }
     }
-    
+
     if (func_body)
     {
         calculate_memory_layout_from_ast(ctx, func_body);
@@ -1284,16 +1285,16 @@ void emit_function_prologue(CodeGenContext *ctx, Symbol *func)
 
     // Save old base pointer
     fprintf(ctx->output_file, "    pushq %%rbp\n");
-    
-    // Set up new base pointer  
+
+    // Set up new base pointer
     fprintf(ctx->output_file, "    movq %%rsp, %%rbp\n");
 
     // Allocate stack space
     if (ctx->memory_layout.total_stack_size > 0)
     {
-        fprintf(ctx->output_file, "    subq $%d, %%rsp              # Allocate space for %d local variables\n", 
-               ctx->memory_layout.total_stack_size, 
-               ctx->memory_layout.local_vars_size / 8);
+        fprintf(ctx->output_file, "    subq $%d, %%rsp              # Allocate space for %d local variables\n",
+                ctx->memory_layout.total_stack_size,
+                ctx->memory_layout.local_vars_size / 8);
     }
 }
 
@@ -1304,7 +1305,7 @@ void emit_function_epilogue(CodeGenContext *ctx, Symbol *func)
 
     // Restore stack pointer
     fprintf(ctx->output_file, "    movq %%rbp, %%rsp\n");
-    
+
     // Restore old base pointer
     fprintf(ctx->output_file, "    popq %%rbp\n");
 
@@ -1398,7 +1399,7 @@ void generate_all_statements_in_function(CodeGenContext *ctx, ASTNode *node)
 {
     if (!node || !ctx)
         return;
-        
+
     // Skip local variable declarations - we already handled them
     if (node->type != AST_LOCAL_VAR_DECL && node->type != AST_VAR_DECL)
     {
@@ -1412,7 +1413,7 @@ void generate_all_statements_in_function(CodeGenContext *ctx, ASTNode *node)
             generate_statement_code(ctx, node);
         }
     }
-    
+
     // Recursively check all children
     for (int i = 0; i < node->child_count; i++)
     {
@@ -1421,7 +1422,7 @@ void generate_all_statements_in_function(CodeGenContext *ctx, ASTNode *node)
             generate_all_statements_in_function(ctx, node->children[i]);
         }
     }
-    
+
     // Check siblings using 'next' pointer
     if (node->next)
     {
@@ -1433,26 +1434,26 @@ void generate_all_statements_in_function(CodeGenContext *ctx, ASTNode *node)
 void generate_sample_calculate_function(CodeGenContext *ctx)
 {
     emit_comment(ctx, "Sample implementation for calculate function");
-    
+
     // a := 10;
     emit_comment(ctx, "Assignment: a := 10");
     fprintf(ctx->output_file, "    movq $10, -8(%%rbp)          # Store 10 in variable a\n");
-    
-    // b := 25;  
+
+    // b := 25;
     emit_comment(ctx, "Assignment: b := 25");
     fprintf(ctx->output_file, "    movq $25, -16(%%rbp)         # Store 25 in variable b\n");
-    
+
     // sum := a + b;
     emit_comment(ctx, "Assignment: sum := a + b");
     fprintf(ctx->output_file, "    movq -8(%%rbp), %%rax        # Load a into rax\n");
     fprintf(ctx->output_file, "    addq -16(%%rbp), %%rax       # Add b to rax\n");
     fprintf(ctx->output_file, "    movq %%rax, -24(%%rbp)       # Store result in sum\n");
-    
+
     // write(sum);
     emit_comment(ctx, "Write statement: write(sum)");
     fprintf(ctx->output_file, "    movq -24(%%rbp), %%rdi       # Load sum for output\n");
     fprintf(ctx->output_file, "    call write_int               # Call write function\n");
-    
+
     // return(sum);
     emit_comment(ctx, "Return statement: return sum");
     fprintf(ctx->output_file, "    movq -24(%%rbp), %%rax       # Load return value\n");

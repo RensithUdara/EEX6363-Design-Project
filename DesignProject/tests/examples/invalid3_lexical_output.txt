@@ -1,0 +1,76 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: tests/examples/invalid3.txt
+🕒 GENERATED: November 28, 2025 at 00:10:32
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ TestClass        │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │                 │ 1    │ 18     │ variable            │
+│ IDENTIFIER      │ public           │ 2    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 2    │ 12     │ variable            │
+│ IDENTIFIER      │ a:float          │ 2    │ 24     │ variable            │
+│ IDENTIFIER      │                 │ 2    │ 33     │ variable            │
+│ IDENTIFIER      │                 │ 3    │ 3      │ variable            │
+│ IDENTIFIER      │                 │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ implement        │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ TestClass        │ 5    │ 11     │ variable            │
+│ IDENTIFIER      │                 │ 5    │ 22     │ variable            │
+│ IDENTIFIER      │ constructor      │ 6    │ 5      │ variable            │
+│ IDENTIFIER      │ a:float          │ 6    │ 17     │ variable            │
+│ IDENTIFIER      │                 │ 6    │ 27     │ variable            │
+│ KEYWORD         │ local            │ 7    │ 9      │ reserved            │
+│ IDENTIFIER      │ z                │ 7    │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 7    │ 17     │ delimiter           │
+│ IDENTIFIER      │ float            │ 7    │ 19     │ variable            │
+│ IDENTIFIER      │                 │ 7    │ 25     │ variable            │
+│ IDENTIFIER      │                 │ 8    │ 6      │ variable            │
+│ IDENTIFIER      │                 │ 9    │ 1      │ variable            │
+│ KEYWORD         │ func             │ 10   │ 5      │ reserved            │
+│ IDENTIFIER      │ TestFunc         │ 10   │ 10     │ variable            │
+│ IDENTIFIER      │ x0:              │ 10   │ 19     │ variable            │
+│ KEYWORD         │ integer          │ 10   │ 23     │ reserved            │
+│ IDENTIFIER      │ y0:              │ 10   │ 32     │ variable            │
+│ KEYWORD         │ integer          │ 10   │ 36     │ reserved            │
+│ OPERATOR        │ =>               │ 10   │ 45     │ arrow               │
+│ IDENTIFIER      │ void             │ 10   │ 48     │ variable            │
+│ IDENTIFIER      │                 │ 10   │ 54     │ variable            │
+│ KEYWORD         │ local            │ 11   │ 9      │ reserved            │
+│ IDENTIFIER      │ x                │ 11   │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 11   │ 17     │ delimiter           │
+│ KEYWORD         │ integer          │ 11   │ 19     │ reserved            │
+│ IDENTIFIER      │                 │ 11   │ 27     │ variable            │
+│ KEYWORD         │ local            │ 12   │ 9      │ reserved            │
+│ IDENTIFIER      │ y                │ 12   │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 12   │ 17     │ delimiter           │
+│ KEYWORD         │ integer          │ 12   │ 19     │ reserved            │
+│ IDENTIFIER      │                 │ 12   │ 27     │ variable            │
+│ IDENTIFIER      │ x                │ 13   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 13   │ 11     │ assignment          │
+│ IDENTIFIER      │ x0               │ 13   │ 14     │ variable            │
+│ IDENTIFIER      │                 │ 13   │ 17     │ variable            │
+│ IDENTIFIER      │ y                │ 14   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 14   │ 11     │ assignment          │
+│ IDENTIFIER      │ y0               │ 14   │ 14     │ variable            │
+│ IDENTIFIER      │                 │ 14   │ 17     │ variable            │
+│ IDENTIFIER      │                 │ 15   │ 6      │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 50                                                ║
+║ 📄 Total Lines Analyzed      : 16                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 00:10:32                               ║
+║ 📂 Input Source File         : tests/examples/invalid3.txt                       ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

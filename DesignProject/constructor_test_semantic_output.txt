@@ -1,8 +1,13 @@
 ========================================
 Semantic Analysis Output (TMA3)
 ========================================
+<<<<<<< HEAD:DesignProject/tests/examples/final_test_semantic_output.txt
+Input: tests/examples/final_test.txt
+Generated: Nov 27 2025 01:09:43
+=======
 Input: constructor_test.txt
 Generated: Nov 27 2025 21:47:04
+>>>>>>> 7de0f00144b051c75fdb5cd2268294fa8648ef82:DesignProject/constructor_test_semantic_output.txt
 
 SYMBOL TABLE:
 -------------
