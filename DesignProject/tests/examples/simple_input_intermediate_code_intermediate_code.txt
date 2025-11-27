@@ -1,0 +1,28 @@
+========================================
+Intermediate Code Generation
+Design Project - Code Generation Phase
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_input_intermediate_code.txt
+Target: x86-64 Assembly (AT&T Syntax)
+Generated: Nov 27 2025 21:47:04
+
+THREE-ADDRESS CODE:
+-------------------
+// Program start
+// Program end
+
+REGISTER ALLOCATION:
+--------------------
+Register Allocation Strategy: Linear Scan
+Available Registers: 16 (x86-64)
+Registers Used: 0
+Spill Operations: 0
+
+Register Assignments:
+- No registers allocated
+
+OPTIMIZATIONS APPLIED:
+----------------------
+✓ Dead code elimination
+✓ Constant folding
+✓ Register optimization

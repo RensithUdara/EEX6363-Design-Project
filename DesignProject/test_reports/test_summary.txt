@@ -1,0 +1,71 @@
+Design Project Automated Test Results
+Generated: Fri Nov 28 01:26:08 +0530 2025
+============================================
+Simple Valid Program: FAIL (Exit code: 255)
+Minimal Valid Program: PASS
+Syntax Error Detection: PASS
+Deliberate Syntax Error: PASS
+Class and Inheritance: FAIL (Exit code: 255)
+Arrays and Expressions: FAIL (Exit code: 6)
+Control Structures: PASS
+Empty Class: PASS
+Multiple Syntax Errors: PASS
+Existing: comprehensive_error_test_intermediate_code: FAIL (Exit code: )
+Existing: comprehensive_error_test_lexical_output: PASS
+Existing: comprehensive_error_test_semantic_output: FAIL (Exit code: )
+Existing: comprehensive_error_test_symbol_table: FAIL (Exit code: )
+Existing: comprehensive_error_test_syntax_output: PASS
+Existing: comprehensive_test: FAIL (Exit code: 255)
+Existing: error_test: PASS
+Existing: error_test_error_log: PASS
+Existing: error_test_intermediate_code: FAIL (Exit code: )
+Existing: error_test_lexical_output: PASS
+Existing: error_test_semantic_output: PASS
+Existing: error_test_symbol_table: PASS
+Existing: error_test_syntax_output: PASS
+Existing: final_test: FAIL (Exit code: 255)
+Existing: minimal_test: PASS
+Existing: minimal_test_architecture_design: FAIL (Exit code: 255)
+Existing: minimal_test_error_log: PASS
+Existing: minimal_test_integration_test: FAIL (Exit code: 255)
+Existing: minimal_test_intermediate_code: FAIL (Exit code: 255)
+Existing: minimal_test_lexical_output: FAIL (Exit code: 255)
+Existing: minimal_test_output: FAIL (Exit code: 255)
+Existing: minimal_test_performance_report: FAIL (Exit code: 255)
+Existing: minimal_test_semantic_output: FAIL (Exit code: 255)
+Existing: minimal_test_symbol_table: FAIL (Exit code: 255)
+Existing: minimal_test_syntax_output: FAIL (Exit code: 255)
+Existing: sample_input: FAIL (Exit code: 255)
+Existing: simple_function: PASS
+Existing: simple_function_architecture_design: FAIL (Exit code: 255)
+Existing: simple_function_error_log: PASS
+Existing: simple_function_integration_test: FAIL (Exit code: 255)
+Existing: simple_function_intermediate_code: FAIL (Exit code: 255)
+Existing: simple_function_lexical_output: FAIL (Exit code: 255)
+Existing: simple_function_output: FAIL (Exit code: 255)
+Existing: simple_function_performance_report: FAIL (Exit code: 255)
+Existing: simple_function_semantic_output: FAIL (Exit code: 255)
+Existing: simple_function_symbol_table: FAIL (Exit code: 255)
+Existing: simple_function_syntax_output: FAIL (Exit code: 255)
+Existing: simple_input_intermediate_code: PASS
+Existing: simple_input_lexical_output: FAIL (Exit code: 255)
+Existing: simple_input_semantic_output: PASS
+Existing: simple_input_symbol_table: PASS
+Existing: simple_input_syntax_output: PASS
+Existing: simple_test: FAIL (Exit code: 255)
+Existing: simple_test_error_log: PASS
+Existing: simple_test_intermediate_code: PASS
+Existing: simple_test_lexical_output: FAIL (Exit code: 255)
+Existing: simple_test_semantic_output: PASS
+Existing: simple_test_symbol_table: PASS
+Existing: simple_test_syntax_output: FAIL (Exit code: 255)
+Existing: test_simple: PASS
+Existing: test_simple_architecture_design: FAIL (Exit code: 255)
+Existing: test_simple_error_log: PASS
+Existing: test_simple_integration_test: FAIL (Exit code: 255)
+Existing: test_simple_intermediate_code: FAIL (Exit code: 255)
+Existing: test_simple_lexical_output: FAIL (Exit code: 255)
+Existing: test_simple_performance_report: FAIL (Exit code: 255)
+Existing: test_simple_semantic_output: FAIL (Exit code: 255)
+Existing: test_simple_symbol_table: FAIL (Exit code: 255)
+Existing: test_simple_syntax_output: FAIL (Exit code: 255)

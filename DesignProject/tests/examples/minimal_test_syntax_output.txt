@@ -1,20 +1,20 @@
 ========================================
 Syntax Analysis Output (TMA2)
 ========================================
-Input: tests/examples/minimal_test.txt
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt
 Grammar: Complete language grammar from TMA2
 
 PARSE TREE:
 -----------
-PROGRAM
-  FUNC_DEF
-    FUNC_HEAD
-      ID("test")
-      TYPE
-        ID("integera")
-    FUNC_BODY
-      RETURN_STMT
-        INT_LITERAL(0)
+AST_PROGRAM
+  AST_FUNC_DEF
+    AST_FUNC_HEAD
+      AST_ID (test)
+      AST_TYPE (integer)
+        AST_ID (integera)
+    AST_FUNC_BODY
+      AST_RETURN_STMT
+        AST_INT_LITERAL (1) [type: integer]
 
 STATISTICS:
 -----------

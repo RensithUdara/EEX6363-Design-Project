@@ -1,8 +1,8 @@
 ========================================
 Semantic Analysis Output (TMA3)
 ========================================
-Input: tests/examples/simple_function.txt
-Generated: Nov 23 2025 19:45:09
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function.txt
+Generated: Nov 27 2025 21:47:04
 
 SYMBOL TABLE:
 -------------

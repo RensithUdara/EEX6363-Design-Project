@@ -1,0 +1,61 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_array_test.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+AST_PROGRAM
+  AST_FUNC_DEF
+    AST_FUNC_HEAD
+      AST_ID (arrayTest)
+      AST_TYPE (void) [type: void]
+    AST_FUNC_BODY
+      AST_LOCAL_VAR_DECL
+        AST_VAR_DECL
+          AST_ID (arr)
+          AST_TYPE (integer) [type: integer]
+          AST_ARRAY_SIZE
+            AST_INT_LITERAL (5) [type: integer]
+      AST_LOCAL_VAR_DECL
+        AST_VAR_DECL
+          AST_ID (i)
+          AST_TYPE (integer) [type: integer]
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (arr)
+          AST_INT_LITERAL (0) [type: integer]
+        AST_INT_LITERAL (10) [type: integer]
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (arr)
+          AST_INT_LITERAL (1) [type: integer]
+        AST_INT_LITERAL (20) [type: integer]
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (arr)
+          AST_INT_LITERAL (2) [type: integer]
+        AST_BINARY_EXPR (+)
+          AST_VARIABLE
+            AST_ID (arr)
+            AST_UNKNOWN
+              AST_UNKNOWN
+                AST_INT_LITERAL (0) [type: integer]
+          AST_VARIABLE
+            AST_ID (arr)
+            AST_UNKNOWN
+              AST_UNKNOWN
+                AST_INT_LITERAL (1) [type: integer]
+      AST_WRITE_STMT
+        AST_VARIABLE
+          AST_ID (arr)
+          AST_UNKNOWN
+            AST_UNKNOWN
+              AST_INT_LITERAL (2) [type: integer]
+
+STATISTICS:
+-----------
+AST Nodes: 47
+Tree Depth: 13
+Syntax Errors: 0

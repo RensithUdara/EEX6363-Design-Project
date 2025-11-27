@@ -1,0 +1,19 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_output.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+    RETURN_STMT
+      ID("value")
+    RETURN_STMT
+      ID("value")
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 1

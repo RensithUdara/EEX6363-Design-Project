@@ -1,0 +1,29 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_multiple_errors_test.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+  FUNC_DEF
+    FUNC_HEAD
+      ID("method1() integer;  // Missing")
+      PARAM_LIST
+      RETURN_TYPE
+        TYPE("")
+    FUNC_BODY
+    FUNC_DEF
+      FUNC_HEAD
+        ID("method2(")
+        PARAM_LIST
+        RETURN_TYPE
+          TYPE(" void;   // Missing param")
+      FUNC_BODY
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 4

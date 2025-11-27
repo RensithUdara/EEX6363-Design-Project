@@ -1,60 +1,58 @@
-========================================
-Design Project - Error Log
-========================================
-Generated: November 23, 2025 at 19:46:46
-Input File: tests/examples/simple_function.txt
+================================================================================
+                     🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              
+================================================================================
+📅 Generated: November 28, 2025 at 01:26:09
+📁 Input File: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_function.txt
 
-COMPILATION SESSION LOG:
-=======================
+🔍 REAL-TIME COMPILATION LOG:
+────────────────────────────────────────────────────────────────────────────────
 
-[INFO] Starting compilation of tests/examples/simple_function.txt
-[INFO] Phase 1: Lexical Analysis - Started
-[INFO] Phase 1: Lexical Analysis - Completed (0 errors)
-[INFO] Phase 2: Syntax Analysis - Started
-[INFO] Phase 2: Syntax Analysis - Completed (0 errors)
-[INFO] Phase 3: Semantic Analysis - Started
-[INFO] Phase 3: Semantic Analysis - Completed (0 errors, 3 warnings)
-[INFO] Phase 4: Code Generation - Started
-[INFO] Phase 4: Code Generation - Completed (0 errors)
-[INFO] Compilation successful
+⚠️ [UNK] Warning at line 14:17: Variable 'result' declared but never used
+   └─ 💡 Suggestion: Remove unused variable or add usage
+⚠️ [UNK] Warning at line 13:12: Variable 'y' declared but never used
+   └─ 💡 Suggestion: Remove unused variable or add usage
+⚠️ [UNK] Warning at line 12:12: Variable 'x' declared but never used
+   └─ 💡 Suggestion: Remove unused variable or add usage
 
-ERROR SUMMARY:
-=============
-Lexical Errors: 0
-Syntax Errors: 0
-Semantic Errors: 0
-Code Generation Errors: 0
-Total Errors: 0
 
-WARNING SUMMARY:
-===============
-Total Warnings: 3
+================================================================================
+                           📊 ERROR SUMMARY REPORT                                
+================================================================================
+┌─ Error Statistics ─────────────────────────────────────────────────────────┐
+│ Lexical Errors            │     0 │ Invalid tokens, numbers, identifiers     │
+│ Syntax Errors             │     0 │ Grammar violations, missing tokens       │
+│ Semantic Errors           │     0 │ Type mismatches, undefined symbols       │
+│ Warnings                  │     3 │ Non-critical issues                      │
+└────────────────────────────────────────────────────────────────────────────┘
 
-FILE GENERATION STATUS:
-======================
-✅ tests/examples/simple_function_lexical_output.txt - Generated successfully
-✅ tests/examples/simple_function_syntax_output.txt - Generated successfully
-✅ tests/examples/simple_function_semantic_output.txt - Generated successfully
-✅ tests/examples/simple_function_symbol_table.txt - Generated successfully
-✅ tests/examples/simple_function_intermediate_code.txt - Generated successfully
-✅ output.s - Generated successfully
+✅ SUCCESS: No errors found! Code analysis completed successfully.
 
-PERFORMANCE METRICS:
-==================
-Compilation Time: < 1 second
-Memory Usage: Minimal
-Token Count: 31 tokens processed
-AST Nodes: 40 nodes created
-Symbol Table Entries: 0 symbols
-Generated Instructions: 15 assembly instructions
+================================================================================
+                    TMA03 COMPREHENSIVE ERROR REPORT                           
+================================================================================
+Features: Detailed error context, suggestions, and comprehensive diagnostics
+================================================================================
 
-DEBUG INFORMATION:
-=================
-[DEBUG] Lexical phase processed 31 tokens
-[DEBUG] Parser generated AST with 40 nodes
-[DEBUG] Semantic analyzer found 0 scopes
-[DEBUG] Code generator allocated 8 registers
-[DEBUG] No spill operations required
-[DEBUG] Output assembly written to output.s
+COMPILATION SUMMARY:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Error Type           │ Count │ Severity │ Status                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ Syntax Errors        │     0 │   HIGH   │ ✓ PASSED                      │
+│ Semantic Errors      │     0 │   HIGH   │ ✓ PASSED                      │
+│ Semantic Warnings    │     3 │   LOW    │ ⚠ WARNINGS                   │
+└─────────────────────────────────────────────────────────────────────────────┘
 
-✅ SUCCESS: Compilation completed without errors.
+================================================================================
+                            RESOLUTION GUIDE                                   
+================================================================================
+
+📚 ADDITIONAL RESOURCES:
+   • Language Grammar: Check semantic.c for syntax rules and grammar implementation
+   • Semantic Rules: Review TMA03 specification document
+   • Test Cases: Examine valid*.txt files for examples
+
+================================================================================
+
+================================================================================
+                              🏁 END OF ERROR LOG                               
+================================================================================

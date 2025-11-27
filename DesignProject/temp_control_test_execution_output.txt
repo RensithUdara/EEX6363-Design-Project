@@ -1,0 +1,47 @@
+================================================================================
+                        PROGRAM EXECUTION OUTPUT                                
+================================================================================
+Source File:     /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/temp_control_test.txt
+Generated:       Nov 27 2025 21:47:04
+Execution Mode:  AST Interpretation Simulation
+Compiler:        EEX6363 Design Project Compiler
+================================================================================
+
+🚀 PROGRAM EXECUTION TRACE:
+════════════════════════════════════════════════════════════════════════════
+
+📋 Starting program execution...
+
+🔧 Entering function: controlTest()
+   ├─ Setting up local scope...
+
+📝 Variable Declaration: x
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+📝 Variable Declaration: y
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+🔄 Assignment: x := 5
+   └─ x now contains: 5
+
+🔄 Assignment: y := 10
+   └─ y now contains: 10
+
+
+════════════════════════════════════════════════════════════════════════════
+📊 EXECUTION SUMMARY:
+════════════════════════════════════════════════════════════════════════════
+
+💾 FINAL VARIABLE STATES:
+   ├─ x = 5
+   ├─ y = 10
+
+🎯 PROGRAM RESULT:
+   └─ Return Value: 0
+   └─ Execution Status: ✅ SUCCESS
+
+================================================================================
+                           END OF EXECUTION                                     
+================================================================================

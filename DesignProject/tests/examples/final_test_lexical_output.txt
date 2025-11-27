@@ -1,0 +1,153 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/final_test.txt
+🕒 GENERATED: November 28, 2025 at 01:26:09
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ Calculator       │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │ public           │ 3    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 3    │ 12     │ variable            │
+│ IDENTIFIER      │ public           │ 5    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 5    │ 12     │ reserved            │
+│ IDENTIFIER      │ add              │ 5    │ 17     │ variable            │
+│ IDENTIFIER      │ x:               │ 5    │ 21     │ variable            │
+│ KEYWORD         │ integer          │ 5    │ 24     │ reserved            │
+│ IDENTIFIER      │ y:               │ 5    │ 33     │ variable            │
+│ KEYWORD         │ integer          │ 5    │ 36     │ reserved            │
+│ OPERATOR        │ =>               │ 5    │ 45     │ arrow               │
+│ KEYWORD         │ integer          │ 5    │ 48     │ reserved            │
+│ IDENTIFIER      │ public           │ 7    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 7    │ 12     │ reserved            │
+│ IDENTIFIER      │ subtract         │ 7    │ 17     │ variable            │
+│ IDENTIFIER      │ a:               │ 7    │ 26     │ variable            │
+│ IDENTIFIER      │ float            │ 7    │ 29     │ variable            │
+│ IDENTIFIER      │ b:               │ 7    │ 36     │ variable            │
+│ IDENTIFIER      │ float            │ 7    │ 39     │ variable            │
+│ OPERATOR        │ =>               │ 7    │ 46     │ arrow               │
+│ IDENTIFIER      │ float            │ 7    │ 49     │ variable            │
+│ IDENTIFIER      │ public           │ 9    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 9    │ 12     │ reserved            │
+│ IDENTIFIER      │ multiply         │ 9    │ 17     │ variable            │
+│ IDENTIFIER      │ x:               │ 9    │ 26     │ variable            │
+│ KEYWORD         │ integer          │ 9    │ 29     │ reserved            │
+│ IDENTIFIER      │ y:               │ 9    │ 38     │ variable            │
+│ KEYWORD         │ integer          │ 9    │ 41     │ reserved            │
+│ OPERATOR        │ =>               │ 9    │ 50     │ arrow               │
+│ KEYWORD         │ integer          │ 9    │ 53     │ reserved            │
+│ IDENTIFIER      │ implement        │ 13   │ 1      │ variable            │
+│ IDENTIFIER      │ Calculator       │ 13   │ 11     │ variable            │
+│ IDENTIFIER      │ constructor      │ 15   │ 5      │ variable            │
+│ KEYWORD         │ local            │ 17   │ 9      │ reserved            │
+│ IDENTIFIER      │ initialized      │ 17   │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 17   │ 27     │ delimiter           │
+│ KEYWORD         │ integer          │ 17   │ 29     │ reserved            │
+│ IDENTIFIER      │ initialized      │ 19   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 19   │ 21     │ assignment          │
+│ NUMBER          │ 1                │ 19   │ 24     │ literal             │
+│ KEYWORD         │ func             │ 23   │ 5      │ reserved            │
+│ IDENTIFIER      │ add              │ 23   │ 10     │ variable            │
+│ IDENTIFIER      │ x:               │ 23   │ 14     │ variable            │
+│ KEYWORD         │ integer          │ 23   │ 17     │ reserved            │
+│ IDENTIFIER      │ y:               │ 23   │ 26     │ variable            │
+│ KEYWORD         │ integer          │ 23   │ 29     │ reserved            │
+│ OPERATOR        │ =>               │ 23   │ 38     │ arrow               │
+│ KEYWORD         │ integer          │ 23   │ 41     │ reserved            │
+│ KEYWORD         │ local            │ 25   │ 9      │ reserved            │
+│ IDENTIFIER      │ result           │ 25   │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 25   │ 22     │ delimiter           │
+│ KEYWORD         │ integer          │ 25   │ 24     │ reserved            │
+│ IDENTIFIER      │ result           │ 27   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 27   │ 16     │ assignment          │
+│ IDENTIFIER      │ x                │ 27   │ 19     │ variable            │
+│ OPERATOR        │ +                │ 27   │ 21     │ arithmetic          │
+│ IDENTIFIER      │ y                │ 27   │ 23     │ variable            │
+│ KEYWORD         │ return           │ 29   │ 9      │ reserved            │
+│ IDENTIFIER      │ result           │ 29   │ 16     │ variable            │
+│ KEYWORD         │ func             │ 33   │ 5      │ reserved            │
+│ IDENTIFIER      │ subtract         │ 33   │ 10     │ variable            │
+│ IDENTIFIER      │ a:               │ 33   │ 19     │ variable            │
+│ IDENTIFIER      │ float            │ 33   │ 22     │ variable            │
+│ IDENTIFIER      │ b:               │ 33   │ 29     │ variable            │
+│ IDENTIFIER      │ float            │ 33   │ 32     │ variable            │
+│ OPERATOR        │ =>               │ 33   │ 39     │ arrow               │
+│ IDENTIFIER      │ float            │ 33   │ 42     │ variable            │
+│ KEYWORD         │ local            │ 35   │ 9      │ reserved            │
+│ IDENTIFIER      │ difference       │ 35   │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 35   │ 26     │ delimiter           │
+│ IDENTIFIER      │ float            │ 35   │ 28     │ variable            │
+│ IDENTIFIER      │ difference       │ 37   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 37   │ 20     │ assignment          │
+│ IDENTIFIER      │ a                │ 37   │ 23     │ variable            │
+│ OPERATOR        │ -                │ 37   │ 25     │ arithmetic          │
+│ IDENTIFIER      │ b                │ 37   │ 27     │ variable            │
+│ KEYWORD         │ if               │ 39   │ 9      │ reserved            │
+│ IDENTIFIER      │ difference       │ 39   │ 13     │ variable            │
+│ IDENTIFIER      │ <                │ 39   │ 24     │ variable            │
+│ IDENTIFIER      │ 0.0              │ 39   │ 26     │ variable            │
+│ IDENTIFIER      │ then             │ 39   │ 31     │ variable            │
+│ IDENTIFIER      │ write            │ 41   │ 13     │ variable            │
+│ IDENTIFIER      │ difference       │ 41   │ 19     │ variable            │
+│ IDENTIFIER      │ else             │ 43   │ 11     │ variable            │
+│ IDENTIFIER      │ write            │ 45   │ 13     │ variable            │
+│ IDENTIFIER      │ 0.0              │ 45   │ 19     │ variable            │
+│ KEYWORD         │ return           │ 49   │ 9      │ reserved            │
+│ IDENTIFIER      │ difference       │ 49   │ 16     │ variable            │
+│ KEYWORD         │ func             │ 53   │ 5      │ reserved            │
+│ IDENTIFIER      │ multiply         │ 53   │ 10     │ variable            │
+│ IDENTIFIER      │ x:               │ 53   │ 19     │ variable            │
+│ KEYWORD         │ integer          │ 53   │ 22     │ reserved            │
+│ IDENTIFIER      │ y:               │ 53   │ 31     │ variable            │
+│ KEYWORD         │ integer          │ 53   │ 34     │ reserved            │
+│ OPERATOR        │ =>               │ 53   │ 43     │ arrow               │
+│ KEYWORD         │ integer          │ 53   │ 46     │ reserved            │
+│ KEYWORD         │ local            │ 55   │ 9      │ reserved            │
+│ IDENTIFIER      │ product          │ 55   │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 55   │ 23     │ delimiter           │
+│ KEYWORD         │ integer          │ 55   │ 25     │ reserved            │
+│ KEYWORD         │ local            │ 57   │ 9      │ reserved            │
+│ IDENTIFIER      │ counter          │ 57   │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 57   │ 23     │ delimiter           │
+│ KEYWORD         │ integer          │ 57   │ 25     │ reserved            │
+│ IDENTIFIER      │ product          │ 59   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 59   │ 17     │ assignment          │
+│ NUMBER          │ 0                │ 59   │ 20     │ literal             │
+│ IDENTIFIER      │ counter          │ 61   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 61   │ 17     │ assignment          │
+│ NUMBER          │ 0                │ 61   │ 20     │ literal             │
+│ KEYWORD         │ while            │ 63   │ 9      │ reserved            │
+│ IDENTIFIER      │ counter          │ 63   │ 16     │ variable            │
+│ IDENTIFIER      │ <                │ 63   │ 24     │ variable            │
+│ IDENTIFIER      │ y                │ 63   │ 26     │ variable            │
+│ IDENTIFIER      │ product          │ 65   │ 13     │ variable            │
+│ OPERATOR        │ :=               │ 65   │ 21     │ assignment          │
+│ IDENTIFIER      │ product          │ 65   │ 24     │ variable            │
+│ OPERATOR        │ +                │ 65   │ 32     │ arithmetic          │
+│ IDENTIFIER      │ x                │ 65   │ 34     │ variable            │
+│ IDENTIFIER      │ counter          │ 67   │ 13     │ variable            │
+│ OPERATOR        │ :=               │ 67   │ 21     │ assignment          │
+│ IDENTIFIER      │ counter          │ 67   │ 24     │ variable            │
+│ OPERATOR        │ +                │ 67   │ 32     │ arithmetic          │
+│ NUMBER          │ 1                │ 67   │ 34     │ literal             │
+│ KEYWORD         │ return           │ 71   │ 9      │ reserved            │
+│ IDENTIFIER      │ product          │ 71   │ 16     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 127                                               ║
+║ 📄 Total Lines Analyzed      : 76                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/final_test.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

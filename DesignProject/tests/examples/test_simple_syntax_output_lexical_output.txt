@@ -1,0 +1,124 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_syntax_output.txt
+🕒 GENERATED: November 28, 2025 at 01:26:09
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ ======================================== │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ Syntax           │ 2    │ 1      │ variable            │
+│ IDENTIFIER      │ Analysis         │ 2    │ 8      │ variable            │
+│ IDENTIFIER      │ Output           │ 2    │ 17     │ variable            │
+│ IDENTIFIER      │ TMA2             │ 2    │ 25     │ variable            │
+│ IDENTIFIER      │ ======================================== │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ Input:           │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple.txt │ 4    │ 8      │ variable            │
+│ IDENTIFIER      │ Grammar:         │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ Complete         │ 5    │ 10     │ variable            │
+│ IDENTIFIER      │ language         │ 5    │ 19     │ variable            │
+│ IDENTIFIER      │ grammar          │ 5    │ 28     │ variable            │
+│ IDENTIFIER      │ from             │ 5    │ 36     │ variable            │
+│ IDENTIFIER      │ TMA2             │ 5    │ 41     │ variable            │
+│ IDENTIFIER      │ PARSE            │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ TREE:            │ 7    │ 7      │ variable            │
+│ IDENTIFIER      │ -----------      │ 8    │ 1      │ variable            │
+│ IDENTIFIER      │ AST_PROGRAM      │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ AST_FUNC_DEF     │ 10   │ 3      │ variable            │
+│ IDENTIFIER      │ AST_FUNC_HEAD    │ 11   │ 5      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 12   │ 7      │ variable            │
+│ IDENTIFIER      │ simpleTest       │ 12   │ 15     │ variable            │
+│ IDENTIFIER      │ AST_TYPE         │ 13   │ 7      │ variable            │
+│ KEYWORD         │ integer          │ 13   │ 17     │ reserved            │
+│ IDENTIFIER      │ [type:           │ 13   │ 26     │ variable            │
+│ IDENTIFIER      │ integer]         │ 13   │ 33     │ variable            │
+│ IDENTIFIER      │ AST_FUNC_BODY    │ 14   │ 5      │ variable            │
+│ IDENTIFIER      │ AST_LOCAL_VAR_DECL │ 15   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VAR_DECL     │ 16   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 17   │ 11     │ variable            │
+│ IDENTIFIER      │ x                │ 17   │ 19     │ variable            │
+│ IDENTIFIER      │ AST_TYPE         │ 18   │ 11     │ variable            │
+│ KEYWORD         │ integer          │ 18   │ 21     │ reserved            │
+│ IDENTIFIER      │ [type:           │ 18   │ 30     │ variable            │
+│ IDENTIFIER      │ integer]         │ 18   │ 37     │ variable            │
+│ IDENTIFIER      │ AST_LOCAL_VAR_DECL │ 19   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VAR_DECL     │ 20   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 21   │ 11     │ variable            │
+│ IDENTIFIER      │ y                │ 21   │ 19     │ variable            │
+│ IDENTIFIER      │ AST_TYPE         │ 22   │ 11     │ variable            │
+│ KEYWORD         │ integer          │ 22   │ 21     │ reserved            │
+│ IDENTIFIER      │ [type:           │ 22   │ 30     │ variable            │
+│ IDENTIFIER      │ integer]         │ 22   │ 37     │ variable            │
+│ IDENTIFIER      │ AST_LOCAL_VAR_DECL │ 23   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VAR_DECL     │ 24   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 25   │ 11     │ variable            │
+│ IDENTIFIER      │ result           │ 25   │ 19     │ variable            │
+│ IDENTIFIER      │ AST_TYPE         │ 26   │ 11     │ variable            │
+│ KEYWORD         │ integer          │ 26   │ 21     │ reserved            │
+│ IDENTIFIER      │ [type:           │ 26   │ 30     │ variable            │
+│ IDENTIFIER      │ integer]         │ 26   │ 37     │ variable            │
+│ IDENTIFIER      │ AST_ASSIGN_STMT  │ 27   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VARIABLE     │ 28   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 29   │ 11     │ variable            │
+│ IDENTIFIER      │ x                │ 29   │ 19     │ variable            │
+│ IDENTIFIER      │ AST_INT_LITERAL  │ 30   │ 9      │ variable            │
+│ NUMBER          │ 1                │ 30   │ 26     │ literal             │
+│ IDENTIFIER      │ [type:           │ 30   │ 29     │ variable            │
+│ IDENTIFIER      │ integer]         │ 30   │ 36     │ variable            │
+│ IDENTIFIER      │ AST_ASSIGN_STMT  │ 31   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VARIABLE     │ 32   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 33   │ 11     │ variable            │
+│ IDENTIFIER      │ y                │ 33   │ 19     │ variable            │
+│ IDENTIFIER      │ AST_INT_LITERAL  │ 34   │ 9      │ variable            │
+│ NUMBER          │ 20               │ 34   │ 26     │ literal             │
+│ IDENTIFIER      │ [type:           │ 34   │ 30     │ variable            │
+│ IDENTIFIER      │ integer]         │ 34   │ 37     │ variable            │
+│ IDENTIFIER      │ AST_ASSIGN_STMT  │ 35   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VARIABLE     │ 36   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 37   │ 11     │ variable            │
+│ IDENTIFIER      │ result           │ 37   │ 19     │ variable            │
+│ IDENTIFIER      │ AST_BINARY_EXPR  │ 38   │ 9      │ variable            │
+│ OPERATOR        │ +                │ 38   │ 26     │ arithmetic          │
+│ IDENTIFIER      │ AST_VARIABLE     │ 39   │ 11     │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 40   │ 13     │ variable            │
+│ IDENTIFIER      │ x                │ 40   │ 21     │ variable            │
+│ IDENTIFIER      │ AST_VARIABLE     │ 41   │ 11     │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 42   │ 13     │ variable            │
+│ IDENTIFIER      │ y                │ 42   │ 21     │ variable            │
+│ IDENTIFIER      │ AST_WRITE_STMT   │ 43   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VARIABLE     │ 44   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 45   │ 11     │ variable            │
+│ IDENTIFIER      │ result           │ 45   │ 19     │ variable            │
+│ IDENTIFIER      │ AST_RETURN_STMT  │ 46   │ 7      │ variable            │
+│ IDENTIFIER      │ AST_VARIABLE     │ 47   │ 9      │ variable            │
+│ IDENTIFIER      │ AST_ID           │ 48   │ 11     │ variable            │
+│ IDENTIFIER      │ result           │ 48   │ 19     │ variable            │
+│ IDENTIFIER      │ STATISTICS:      │ 50   │ 1      │ variable            │
+│ IDENTIFIER      │ -----------      │ 51   │ 1      │ variable            │
+│ IDENTIFIER      │ AST              │ 52   │ 1      │ variable            │
+│ IDENTIFIER      │ Nodes:           │ 52   │ 5      │ variable            │
+│ NUMBER          │ 40               │ 52   │ 12     │ literal             │
+│ IDENTIFIER      │ Tree             │ 53   │ 1      │ variable            │
+│ IDENTIFIER      │ Depth:           │ 53   │ 6      │ variable            │
+│ NUMBER          │ 13               │ 53   │ 13     │ literal             │
+│ IDENTIFIER      │ Syntax           │ 54   │ 1      │ variable            │
+│ IDENTIFIER      │ Errors:          │ 54   │ 8      │ variable            │
+│ NUMBER          │ 0                │ 54   │ 16     │ literal             │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 98                                                ║
+║ 📄 Total Lines Analyzed      : 54                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/test_simple_syntax_output.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

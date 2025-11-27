@@ -1,0 +1,243 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_lexical_output.txt
+🕒 GENERATED: November 28, 2025 at 01:26:09
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ ╔═══════════════════════════════════════════════════════════════════════════════╗ │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ ║              │ 2    │ 1      │ variable            │
+│ IDENTIFIER      │ LEXICAL          │ 2    │ 32     │ variable            │
+│ IDENTIFIER      │ ANALYSIS         │ 2    │ 40     │ variable            │
+│ IDENTIFIER      │ REPORT           │ 2    │ 49     │ variable            │
+│ IDENTIFIER      │ ║              │ 2    │ 82     │ variable            │
+│ IDENTIFIER      │ ║              │ 3    │ 1      │ variable            │
+│ IDENTIFIER      │ Complete         │ 3    │ 34     │ variable            │
+│ IDENTIFIER      │ Token            │ 3    │ 43     │ variable            │
+│ IDENTIFIER      │ Stream           │ 3    │ 49     │ variable            │
+│ IDENTIFIER      │ ║              │ 3    │ 82     │ variable            │
+│ IDENTIFIER      │ ╚═══════════════════════════════════════════════════════════════════════════════╝ │ 4    │ 1      │ variable            │
+│ IDENTIFIER      │ 📄             │ 6    │ 1      │ variable            │
+│ IDENTIFIER      │ INPUT            │ 6    │ 6      │ variable            │
+│ IDENTIFIER      │ FILE:            │ 6    │ 12     │ variable            │
+│ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt │ 6    │ 18     │ variable            │
+│ IDENTIFIER      │ 🕒             │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ GENERATED:       │ 7    │ 6      │ variable            │
+│ IDENTIFIER      │ November         │ 7    │ 17     │ variable            │
+│ NUMBER          │ 28               │ 7    │ 26     │ literal             │
+│ NUMBER          │ 2025             │ 7    │ 30     │ literal             │
+│ IDENTIFIER      │ at               │ 7    │ 35     │ variable            │
+│ IDENTIFIER      │ 01:26:09         │ 7    │ 38     │ variable            │
+│ IDENTIFIER      │ ⚙️           │ 8    │ 1      │ variable            │
+│ IDENTIFIER      │ ANALYZER:        │ 8    │ 9      │ variable            │
+│ IDENTIFIER      │ Enhanced         │ 8    │ 19     │ variable            │
+│ IDENTIFIER      │ Lexical          │ 8    │ 28     │ variable            │
+│ IDENTIFIER      │ Scanner          │ 8    │ 36     │ variable            │
+│ IDENTIFIER      │ v2.0             │ 8    │ 44     │ variable            │
+│ IDENTIFIER      │ 🎯             │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ PHASE:           │ 9    │ 6      │ variable            │
+│ IDENTIFIER      │ Phase            │ 9    │ 13     │ variable            │
+│ NUMBER          │ 1                │ 9    │ 19     │ literal             │
+│ OPERATOR        │ -                │ 9    │ 21     │ arithmetic          │
+│ IDENTIFIER      │ Lexical          │ 9    │ 23     │ variable            │
+│ IDENTIFIER      │ Analysis         │ 9    │ 31     │ variable            │
+│ IDENTIFIER      │ ┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐ │ 11   │ 1      │ variable            │
+│ IDENTIFIER      │ │              │ 12   │ 1      │ variable            │
+│ IDENTIFIER      │ Token            │ 12   │ 7      │ variable            │
+│ IDENTIFIER      │ Type             │ 12   │ 13     │ variable            │
+│ IDENTIFIER      │ │              │ 12   │ 21     │ variable            │
+│ IDENTIFIER      │ Lexeme           │ 12   │ 29     │ variable            │
+│ IDENTIFIER      │ │              │ 12   │ 42     │ variable            │
+│ IDENTIFIER      │ Line             │ 12   │ 46     │ variable            │
+│ IDENTIFIER      │ │              │ 12   │ 51     │ variable            │
+│ IDENTIFIER      │ Column           │ 12   │ 55     │ variable            │
+│ IDENTIFIER      │ │              │ 12   │ 62     │ variable            │
+│ IDENTIFIER      │ Attributes       │ 12   │ 70     │ variable            │
+│ IDENTIFIER      │ │              │ 12   │ 86     │ variable            │
+│ IDENTIFIER      │ ├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤ │ 13   │ 1      │ variable            │
+│ IDENTIFIER      │ │              │ 14   │ 1      │ variable            │
+│ IDENTIFIER      │ IDENTIFIER       │ 14   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 14   │ 21     │ variable            │
+│ IDENTIFIER      │ //               │ 14   │ 25     │ variable            │
+│ IDENTIFIER      │ │              │ 14   │ 42     │ variable            │
+│ NUMBER          │ 1                │ 14   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 14   │ 51     │ variable            │
+│ NUMBER          │ 1                │ 14   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 14   │ 62     │ variable            │
+│ IDENTIFIER      │ variable         │ 14   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 14   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 15   │ 1      │ variable            │
+│ IDENTIFIER      │ IDENTIFIER       │ 15   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 15   │ 21     │ variable            │
+│ IDENTIFIER      │ Minimal          │ 15   │ 25     │ variable            │
+│ IDENTIFIER      │ │              │ 15   │ 42     │ variable            │
+│ NUMBER          │ 1                │ 15   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 15   │ 51     │ variable            │
+│ NUMBER          │ 4                │ 15   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 15   │ 62     │ variable            │
+│ IDENTIFIER      │ variable         │ 15   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 15   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 16   │ 1      │ variable            │
+│ IDENTIFIER      │ IDENTIFIER       │ 16   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 16   │ 21     │ variable            │
+│ IDENTIFIER      │ test             │ 16   │ 25     │ variable            │
+│ IDENTIFIER      │ │              │ 16   │ 42     │ variable            │
+│ NUMBER          │ 1                │ 16   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 16   │ 51     │ variable            │
+│ NUMBER          │ 12               │ 16   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 16   │ 62     │ variable            │
+│ IDENTIFIER      │ variable         │ 16   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 16   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 17   │ 1      │ variable            │
+│ IDENTIFIER      │ KEYWORD          │ 17   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 17   │ 21     │ variable            │
+│ KEYWORD         │ func             │ 17   │ 25     │ reserved            │
+│ IDENTIFIER      │ │              │ 17   │ 42     │ variable            │
+│ NUMBER          │ 2                │ 17   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 17   │ 51     │ variable            │
+│ NUMBER          │ 1                │ 17   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 17   │ 62     │ variable            │
+│ IDENTIFIER      │ reserved         │ 17   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 17   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 18   │ 1      │ variable            │
+│ IDENTIFIER      │ IDENTIFIER       │ 18   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 18   │ 21     │ variable            │
+│ IDENTIFIER      │ test             │ 18   │ 25     │ variable            │
+│ IDENTIFIER      │ │              │ 18   │ 42     │ variable            │
+│ NUMBER          │ 2                │ 18   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 18   │ 51     │ variable            │
+│ NUMBER          │ 6                │ 18   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 18   │ 62     │ variable            │
+│ IDENTIFIER      │ variable         │ 18   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 18   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 19   │ 1      │ variable            │
+│ IDENTIFIER      │ OPERATOR         │ 19   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 19   │ 21     │ variable            │
+│ OPERATOR        │ =>               │ 19   │ 25     │ arrow               │
+│ IDENTIFIER      │ │              │ 19   │ 42     │ variable            │
+│ NUMBER          │ 2                │ 19   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 19   │ 51     │ variable            │
+│ NUMBER          │ 13               │ 19   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 19   │ 62     │ variable            │
+│ IDENTIFIER      │ arrow            │ 19   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 19   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 20   │ 1      │ variable            │
+│ IDENTIFIER      │ IDENTIFIER       │ 20   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 20   │ 21     │ variable            │
+│ IDENTIFIER      │ integera         │ 20   │ 25     │ variable            │
+│ IDENTIFIER      │ │              │ 20   │ 42     │ variable            │
+│ NUMBER          │ 2                │ 20   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 20   │ 51     │ variable            │
+│ NUMBER          │ 16               │ 20   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 20   │ 62     │ variable            │
+│ IDENTIFIER      │ variable         │ 20   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 20   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 21   │ 1      │ variable            │
+│ IDENTIFIER      │ KEYWORD          │ 21   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 21   │ 21     │ variable            │
+│ KEYWORD         │ return           │ 21   │ 25     │ reserved            │
+│ IDENTIFIER      │ │              │ 21   │ 42     │ variable            │
+│ NUMBER          │ 3                │ 21   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 21   │ 51     │ variable            │
+│ NUMBER          │ 5                │ 21   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 21   │ 62     │ variable            │
+│ IDENTIFIER      │ reserved         │ 21   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 21   │ 86     │ variable            │
+│ IDENTIFIER      │ │              │ 22   │ 1      │ variable            │
+│ IDENTIFIER      │ NUMBER           │ 22   │ 5      │ variable            │
+│ IDENTIFIER      │ │              │ 22   │ 21     │ variable            │
+│ NUMBER          │ 1                │ 22   │ 25     │ literal             │
+│ IDENTIFIER      │ │              │ 22   │ 42     │ variable            │
+│ NUMBER          │ 3                │ 22   │ 46     │ literal             │
+│ IDENTIFIER      │ │              │ 22   │ 51     │ variable            │
+│ NUMBER          │ 12               │ 22   │ 55     │ literal             │
+│ IDENTIFIER      │ │              │ 22   │ 62     │ variable            │
+│ IDENTIFIER      │ literal          │ 22   │ 66     │ variable            │
+│ IDENTIFIER      │ │              │ 22   │ 86     │ variable            │
+│ IDENTIFIER      │ └─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘ │ 23   │ 1      │ variable            │
+│ IDENTIFIER      │ ╔═══════════════════════════════════════════════════════════════════════════════════╗ │ 25   │ 1      │ variable            │
+│ IDENTIFIER      │ ║              │ 26   │ 1      │ variable            │
+│ IDENTIFIER      │ LEXICAL          │ 26   │ 28     │ variable            │
+│ IDENTIFIER      │ ANALYSIS         │ 26   │ 36     │ variable            │
+│ IDENTIFIER      │ SUMMARY          │ 26   │ 45     │ variable            │
+│ IDENTIFIER      │ REPORT           │ 26   │ 53     │ variable            │
+│ IDENTIFIER      │ ║              │ 26   │ 86     │ variable            │
+│ IDENTIFIER      │ ╠═══════════════════════════════════════════════════════════════════════════════════╣ │ 27   │ 1      │ variable            │
+│ IDENTIFIER      │ ║              │ 28   │ 1      │ variable            │
+│ IDENTIFIER      │ 📊             │ 28   │ 5      │ variable            │
+│ IDENTIFIER      │ Total            │ 28   │ 10     │ variable            │
+│ IDENTIFIER      │ Tokens           │ 28   │ 16     │ variable            │
+│ IDENTIFIER      │ Processed        │ 28   │ 23     │ variable            │
+│ PUNCTUATION     │ :                │ 28   │ 36     │ delimiter           │
+│ NUMBER          │ 9                │ 28   │ 38     │ literal             │
+│ IDENTIFIER      │ ║              │ 28   │ 88     │ variable            │
+│ IDENTIFIER      │ ║              │ 29   │ 1      │ variable            │
+│ IDENTIFIER      │ 📄             │ 29   │ 5      │ variable            │
+│ IDENTIFIER      │ Total            │ 29   │ 10     │ variable            │
+│ IDENTIFIER      │ Lines            │ 29   │ 16     │ variable            │
+│ IDENTIFIER      │ Analyzed         │ 29   │ 22     │ variable            │
+│ PUNCTUATION     │ :                │ 29   │ 36     │ delimiter           │
+│ NUMBER          │ 4                │ 29   │ 38     │ literal             │
+│ IDENTIFIER      │ ║              │ 29   │ 88     │ variable            │
+│ IDENTIFIER      │ ║              │ 30   │ 1      │ variable            │
+│ IDENTIFIER      │ ⚠️           │ 30   │ 5      │ variable            │
+│ IDENTIFIER      │ Lexical          │ 30   │ 13     │ variable            │
+│ IDENTIFIER      │ Errors           │ 30   │ 21     │ variable            │
+│ IDENTIFIER      │ Found            │ 30   │ 28     │ variable            │
+│ PUNCTUATION     │ :                │ 30   │ 39     │ delimiter           │
+│ NUMBER          │ 0                │ 30   │ 41     │ literal             │
+│ IDENTIFIER      │ ║              │ 30   │ 91     │ variable            │
+│ IDENTIFIER      │ ║              │ 31   │ 1      │ variable            │
+│ IDENTIFIER      │ 🕐             │ 31   │ 5      │ variable            │
+│ IDENTIFIER      │ Generation       │ 31   │ 10     │ variable            │
+│ IDENTIFIER      │ Timestamp        │ 31   │ 21     │ variable            │
+│ PUNCTUATION     │ :                │ 31   │ 36     │ delimiter           │
+│ IDENTIFIER      │ 2025-11-28       │ 31   │ 38     │ variable            │
+│ IDENTIFIER      │ 01:26:09         │ 31   │ 49     │ variable            │
+│ IDENTIFIER      │ ║              │ 31   │ 88     │ variable            │
+│ IDENTIFIER      │ ║              │ 32   │ 1      │ variable            │
+│ IDENTIFIER      │ 📂             │ 32   │ 5      │ variable            │
+│ IDENTIFIER      │ Input            │ 32   │ 10     │ variable            │
+│ IDENTIFIER      │ Source           │ 32   │ 16     │ variable            │
+│ IDENTIFIER      │ File             │ 32   │ 23     │ variable            │
+│ PUNCTUATION     │ :                │ 32   │ 36     │ delimiter           │
+│ IDENTIFIER      │ /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test.txt │ 32   │ 38     │ variable            │
+│ IDENTIFIER      │ ║              │ 32   │ 145    │ variable            │
+│ IDENTIFIER      │ ║              │ 33   │ 1      │ variable            │
+│ IDENTIFIER      │ 🔧             │ 33   │ 5      │ variable            │
+│ IDENTIFIER      │ Lexical          │ 33   │ 10     │ variable            │
+│ IDENTIFIER      │ Analyzer         │ 33   │ 18     │ variable            │
+│ IDENTIFIER      │ Version          │ 33   │ 27     │ variable            │
+│ PUNCTUATION     │ :                │ 33   │ 36     │ delimiter           │
+│ IDENTIFIER      │ TMA01            │ 33   │ 38     │ variable            │
+│ IDENTIFIER      │ Enhanced         │ 33   │ 44     │ variable            │
+│ IDENTIFIER      │ v2.0             │ 33   │ 53     │ variable            │
+│ IDENTIFIER      │ ║              │ 33   │ 88     │ variable            │
+│ IDENTIFIER      │ ║              │ 34   │ 1      │ variable            │
+│ IDENTIFIER      │ ✅              │ 34   │ 5      │ variable            │
+│ IDENTIFIER      │ Analysis         │ 34   │ 9      │ variable            │
+│ IDENTIFIER      │ Status           │ 34   │ 18     │ variable            │
+│ PUNCTUATION     │ :                │ 34   │ 35     │ delimiter           │
+│ IDENTIFIER      │ COMPLETED        │ 34   │ 37     │ variable            │
+│ IDENTIFIER      │ SUCCESSFULLY     │ 34   │ 47     │ variable            │
+│ IDENTIFIER      │ ║              │ 34   │ 87     │ variable            │
+│ IDENTIFIER      │ ╚═══════════════════════════════════════════════════════════════════════════════════╝ │ 35   │ 1      │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 217                                               ║
+║ 📄 Total Lines Analyzed      : 35                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-28 01:26:09                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/minimal_test_lexical_output.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

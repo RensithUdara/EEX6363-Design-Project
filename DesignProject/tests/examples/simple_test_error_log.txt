@@ -1,8 +1,8 @@
 ================================================================================
                      🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              
 ================================================================================
-📅 Generated: November 27, 2025 at 23:18:08
-📁 Input File: tests/examples/simple_test.txt
+📅 Generated: November 28, 2025 at 01:26:09
+📁 Input File: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/simple_test.txt
 
 🔍 REAL-TIME COMPILATION LOG:
 ────────────────────────────────────────────────────────────────────────────────
