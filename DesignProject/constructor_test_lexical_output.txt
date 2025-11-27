@@ -1,0 +1,42 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+📄 INPUT FILE: constructor_test.txt
+🕒 GENERATED: November 27, 2025 at 22:52:00
+⚙️  ANALYZER: Enhanced Lexical Scanner v2.0
+🎯 PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ SimpleClass      │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │ public           │ 2    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 2    │ 12     │ variable            │
+│ IDENTIFIER      │ implement        │ 5    │ 1      │ variable            │
+│ IDENTIFIER      │ SimpleClass      │ 5    │ 11     │ variable            │
+│ IDENTIFIER      │ constructor      │ 6    │ 5      │ variable            │
+│ KEYWORD         │ local            │ 7    │ 9      │ reserved            │
+│ IDENTIFIER      │ temp             │ 7    │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 7    │ 20     │ delimiter           │
+│ KEYWORD         │ integer          │ 7    │ 22     │ reserved            │
+│ IDENTIFIER      │ temp             │ 8    │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 8    │ 14     │ assignment          │
+│ NUMBER          │ 1                │ 8    │ 17     │ literal             │
+│ IDENTIFIER      │ write            │ 9    │ 9      │ variable            │
+│ IDENTIFIER      │ temp             │ 9    │ 15     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 16                                                ║
+║ 📄 Total Lines Analyzed      : 11                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-11-27 22:52:00                               ║
+║ 📂 Input Source File         : constructor_test.txt                              ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║ ✅ Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
