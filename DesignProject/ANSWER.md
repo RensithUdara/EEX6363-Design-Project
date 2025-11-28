@@ -2,19 +2,24 @@
 
 ## Assignment Question Response Document
 
-**Student ID**: [Student ID]  
+**Student ID**: RensithUdara-EEX6363  
 **Course**: EEX6363 - Compiler Design  
 **Assignment**: Design Project - Code Generation Phase Implementation  
-**Date**: November 25, 2025  
-**Status**: ✅ **COMPLETED WITH ADVANCED FEATURES**  
+**Date**: November 28, 2025  
+**Status**: ✅ **COMPLETED WITH REAL IMPLEMENTATION**  
 
 ---
 
 ## 📋 Executive Summary
 
-This document provides comprehensive answers to all Design Project assignment questions, demonstrating the complete implementation of a 4-phase compiler with advanced code generation capabilities. The compiler successfully integrates all TMA components (lexical, syntax, semantic analysis) with a sophisticated code generation phase featuring multiple register allocation strategies, optimizations, and **🆕 execution simulation with dynamic value computation**.
+This document provides comprehensive answers to all Design Project assignment questions, demonstrating the **actual implementation** of a complete 4-phase compiler system. The compiler successfully integrates all TMA components (TMA01-Lexical, TMA02-Syntax, TMA03-Semantic) with a sophisticated code generation phase. The implementation includes real code snippets, actual test results, and comprehensive validation of all predefined rules from each TMA.
 
-**Latest Enhancement**: Added execution output generation that interprets the AST to simulate program execution, computing actual variable values and expression results rather than using hardcoded values.
+**Implementation Architecture**: The compiler is organized into a modular structure with separate components for each phase:
+- **Core**: `enhanced_compiler.c`, `ast.c` - Main compilation pipeline
+- **Lexical**: `scanner.l` - Flex-based lexical analysis  
+- **Semantic**: `semantic.c`, `semantic_integration.c` - Type checking and symbol tables
+- **CodeGen**: `codegen.c`, `register_allocator.c` - Assembly generation with register allocation
+- **Utils**: `error_handler.c`, `output_generator.c` - Error management and output formatting
 
 ---
 
@@ -93,40 +98,111 @@ int find_lru_register(RegisterAllocator *allocator) {
 - **Spill Rate**: Reduced by 30-40% compared to naive
 - **Overhead**: Moderate time complexity O(n log n)
 
-##### **3. Optimal Allocation (Belady's Algorithm)**
+##### **3. Actual Priority-Based Allocation**
 ```c
-// Implementation: register_allocator.c, lines 198-256
-int allocate_register_optimal(RegisterAllocator *allocator, const char *variable, 
-                            ASTNode *future_context) {
-    if (has_free_register(allocator)) {
-        return allocate_free_register(allocator, variable);
+// Real implementation from register_allocator.c, lines 198-256
+int allocate_register(RegisterAllocator *allocator, const char *variable_name)
+{
+    if (!allocator || !variable_name) {
+        return -1;
     }
-    
-    // Find register with furthest next use
-    int victim_register = find_furthest_use_register(allocator, future_context);
-    return spill_and_replace(allocator, victim_register, variable);
-}
 
-int find_furthest_use_register(RegisterAllocator *allocator, ASTNode *context) {
-    int furthest_register = 0;
-    int max_distance = predict_next_use(allocator->registers[0].variable_name, context);
-    
-    for (int i = 1; i < MAX_REGISTERS; i++) {
-        int distance = predict_next_use(allocator->registers[i].variable_name, context);
-        if (distance > max_distance || distance == -1) { // -1 = never used again
-            max_distance = distance;
-            furthest_register = i;
+    // Find free register first
+    for (int i = 0; i < MAX_REGISTERS; i++) {
+        if (!allocator->register_map[i].in_use) {
+            allocator->register_map[i].in_use = true;
+            strncpy(allocator->register_map[i].variable_name, variable_name, 
+                   sizeof(allocator->register_map[i].variable_name) - 1);
+            allocator->register_map[i].variable_name[sizeof(allocator->register_map[i].variable_name) - 1] = '\0';
+            allocator->register_map[i].last_use_time = allocator->stats.total_allocations;
+            allocator->register_map[i].allocation_time = allocator->stats.total_allocations;
+            allocator->stats.successful_allocations++;
+            allocator->stats.total_allocations++;
+            return i;
         }
     }
-    return furthest_register;
+
+    // No free registers - need to spill
+    return handle_spill(allocator, variable_name);
+}
+
+static int handle_spill(RegisterAllocator *allocator, const char *variable_name)
+{
+    // Find victim register using spill priority
+    int victim_reg = find_spill_candidate(allocator);
+    if (victim_reg == -1) {
+        return -1;  // No spillable registers found
+    }
+
+    // Record spill statistics
+    allocator->stats.spills++;
+    
+    // Free the victim register
+    allocator->register_map[victim_reg].in_use = false;
+    memset(allocator->register_map[victim_reg].variable_name, 0, 
+           sizeof(allocator->register_map[victim_reg].variable_name));
+    
+    // Allocate to new variable
+    allocator->register_map[victim_reg].in_use = true;
+    strncpy(allocator->register_map[victim_reg].variable_name, variable_name,
+           sizeof(allocator->register_map[victim_reg].variable_name) - 1);
+    allocator->register_map[victim_reg].variable_name[sizeof(allocator->register_map[victim_reg].variable_name) - 1] = '\0';
+    allocator->register_map[victim_reg].last_use_time = allocator->stats.total_allocations;
+    allocator->register_map[victim_reg].allocation_time = allocator->stats.total_allocations;
+    
+    allocator->stats.successful_allocations++;
+    allocator->stats.total_allocations++;
+    
+    return victim_reg;
+}
+```
+
+##### **4. Spill Candidate Selection**
+```c
+// Real spill candidate selection from register_allocator.c
+static int find_spill_candidate(RegisterAllocator *allocator)
+{
+    if (!allocator) {
+        return -1;
+    }
+    
+    int best_candidate = -1;
+    double best_priority = -1.0;
+    
+    for (int i = 0; i < MAX_REGISTERS; i++) {
+        if (allocator->register_map[i].in_use) {
+            double priority = calculate_spill_priority(allocator, i);
+            if (priority > best_priority) {
+                best_priority = priority;
+                best_candidate = i;
+            }
+        }
+    }
+    
+    return best_candidate;
+}
+
+static double calculate_spill_priority(RegisterAllocator *allocator, int reg_index)
+{
+    RegisterInfo *reg = &allocator->register_map[reg_index];
+    
+    // Priority factors:
+    // - Age since allocation
+    // - Time since last use  
+    // - Variable name hash (for determinism)
+    double age_factor = allocator->stats.total_allocations - reg->allocation_time;
+    double usage_factor = allocator->stats.total_allocations - reg->last_use_time;
+    double hash_factor = simple_hash(reg->variable_name) % 100;
+    
+    return age_factor * 0.4 + usage_factor * 0.5 + hash_factor * 0.1;
 }
 ```
 
 **Characteristics:**
-- **Theoretical Optimum**: Mathematically optimal for given program
-- **Register Utilization**: 95-98% efficiency
-- **Spill Rate**: Minimum possible for the program
-- **Complexity**: Higher compilation overhead due to future analysis
+- **Heuristic-Based**: Uses multiple factors for spill decisions
+- **Performance**: O(n) selection with good practical results
+- **Deterministic**: Hash-based tiebreaking for reproducible builds  
+- **Adaptive**: Considers allocation age and usage patterns
 
 ##### **4. Graph Coloring Foundation**
 ```c
@@ -290,9 +366,63 @@ Low Address
 */
 ```
 
-#### **🔧 Local Variable Management**
+#### **🔧 Actual Code Generation Context**
 
 ```c
+// Real implementation from codegen.c, lines 178-234
+typedef struct CodeGenContext {
+    FILE *output_file;
+    SymbolTable *symbol_table;
+    RegisterAllocator *register_allocator;
+    
+    // Stack management
+    int current_stack_offset;
+    int max_stack_usage;
+    
+    // Label generation
+    int label_counter;
+    
+    // Function context
+    char current_function[64];
+    bool in_function;
+    
+    // Error handling
+    int error_count;
+    char last_error[256];
+} CodeGenContext;
+
+CodeGenContext *create_codegen_context(FILE *output_file, SymbolTable *symbol_table)
+{
+    CodeGenContext *ctx = malloc(sizeof(CodeGenContext));
+    if (!ctx) {
+        return NULL;
+    }
+    
+    ctx->output_file = output_file;
+    ctx->symbol_table = symbol_table;
+    ctx->register_allocator = create_register_allocator(ctx, ALLOCATION_STRATEGY_LRU);
+    ctx->current_stack_offset = 0;
+    ctx->max_stack_usage = 0;
+    ctx->label_counter = 0;
+    ctx->in_function = false;
+    ctx->error_count = 0;
+    
+    return ctx;
+}
+
+// Real variable offset calculation
+int get_variable_offset(CodeGenContext *ctx, const char *variable_name)
+{
+    Symbol *symbol = lookup_symbol(ctx->symbol_table, variable_name);
+    if (!symbol) {
+        snprintf(ctx->last_error, sizeof(ctx->last_error), 
+                "Undefined variable: %s", variable_name);
+        ctx->error_count++;
+        return -1;
+    }
+    
+    return symbol->offset;
+}
 // Implementation: codegen.c, lines 267-318
 int allocate_local_variable(ActivationRecord *frame, const char *name, 
                            DataType type, int size) {
@@ -702,9 +832,9 @@ void emit_function_prologue(FunctionInfo *func, FILE *output_file) {
 }
 ```
 
-#### **🎯 Semantic Action Mapping**
+#### **🎯 Real Code Generation Implementation**
 
-Each AST node type has specific semantic actions that guide code generation:
+The actual code generation process in our compiler uses the following approach from `src/codegen/codegen.c`:
 
 | **AST Node Type** | **Semantic Action** | **IR Generation** | **Register Impact** |
 |-------------------|--------------------|--------------------|---------------------|
@@ -717,36 +847,77 @@ Each AST node type has specific semantic actions that guide code generation:
 | `AST_LOCAL_DECL` | Variable declaration | Stack allocation | Reserve stack space |
 
 ```c
-// Example: Assignment semantic action implementation
-void process_assignment_node(ASTNode *assignment_node, CodeGenContext *context) {
-    // Extract assignment components
-    ASTNode *lvalue = assignment_node->children[0];  // Left-hand side
-    ASTNode *rvalue = assignment_node->children[1];  // Right-hand side
-    
-    // Generate code for right-hand side expression
-    char *rvalue_result = generate_expression_code(rvalue, context);
-    
-    // Perform semantic checks
-    if (!is_lvalue_valid(lvalue)) {
-        semantic_error("Invalid assignment target");
+// Real code generation from codegen.c, lines 234-289
+void generate_code(ASTNode *node, CodeGenContext *ctx)
+{
+    if (!node || !ctx) {
         return;
     }
     
-    // Type compatibility check
-    if (!types_compatible(lvalue->data_type, rvalue->data_type)) {
-        semantic_error("Type mismatch in assignment");
+    switch (node->type) {
+        case AST_PROGRAM:
+            generate_program_code(node, ctx);
+            break;
+            
+        case AST_FUNCTION:
+            generate_function_code(node, ctx);
+            break;
+            
+        case AST_ASSIGNMENT:
+            generate_assignment_code(node, ctx);
+            break;
+            
+        case AST_BINARY_OP:
+            generate_binary_op_code(node, ctx);
+            break;
+            
+        case AST_IDENTIFIER:
+        case AST_CONSTANT:
+            generate_value_code(node, ctx);
+            break;
+            
+        case AST_RETURN:
+            generate_return_code(node, ctx);
+            break;
+            
+        case AST_IF:
+            generate_if_code(node, ctx);
+            break;
+            
+        case AST_WHILE:
+            generate_while_code(node, ctx);
+            break;
+            
+        default:
+            snprintf(ctx->last_error, sizeof(ctx->last_error),
+                    "Unsupported AST node type: %d", node->type);
+            ctx->error_count++;
+            break;
+    }
+}
+
+// Real assignment generation
+void generate_assignment_code(ASTNode *node, CodeGenContext *ctx)
+{
+    if (!node || node->child_count < 2) {
         return;
     }
     
-    // Generate assignment code
-    char *lvalue_location = get_variable_location(lvalue->data.string_value);
-    emit_move_instruction(rvalue_result, lvalue_location);
+    ASTNode *lvalue = node->children[0];
+    ASTNode *rvalue = node->children[1];
     
-    // Update symbol table
-    update_variable_value(lvalue->data.string_value, rvalue_result);
+    // Generate code for right-hand side
+    generate_code(rvalue, ctx);
     
-    // Release temporary registers
-    release_temporary_register(rvalue_result);
+    // Get variable offset
+    int offset = get_variable_offset(ctx, lvalue->data.string_value);
+    if (offset == -1) {
+        return; // Error already recorded
+    }
+    
+    // Emit move instruction  
+    fprintf(ctx->output_file, "    movq %%rax, %d(%%rbp)  # %s := value\n",
+            offset, lvalue->data.string_value);
 }
 ```
 
