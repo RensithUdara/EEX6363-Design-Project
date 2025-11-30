@@ -1,12 +1,12 @@
 ========================================
 Design Project - Architecture Design
 ========================================
-Generated: November 30, 2025 at 22:38:48
+Generated: November 30, 2025 at 22:47:09
 
 🏗️  COMPILER ARCHITECTURE ANALYSIS
 ═══════════════════════════════════════════════════════════════════════════════
 
-📋 COMPILER OVERVIEW:
+COMPILER OVERVIEW:
 ─────────────────────
 • Architecture Type: Multi-Phase Compilation Pipeline
 • Target Platform: x86-64 Assembly (AT&T Syntax)
@@ -14,40 +14,40 @@ Generated: November 30, 2025 at 22:38:48
 • Optimization Level: Basic with Register Allocation
 • Error Recovery: Comprehensive Multi-Level System
 
-🔄 COMPILATION PIPELINE STATUS:
+COMPILATION PIPELINE STATUS:
 ───────────────────────────────
-                                                     ⏱️  Performance
+                                                     Performance
 ┌─────────────────────┬─────────────┬─────────────┬─────────────────┐
 │ Phase               │ Status      │ Time (ms)   │ Efficiency      │
 ├─────────────────────┼─────────────┼─────────────┼─────────────────┤
-│ 🔤 Lexical Analysis │ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
-│ 🌳 Syntax Analysis  │ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
-│ 🧠 Semantic Analysis│ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
-│ ⚙️  Code Generation  │ ✅ ACTIVE  │     0.00    │ 🚀 Excellent          │
+│ Lexical Analysis    │ ACTIVE      │     0.00    │ Excellent          │
+│ Syntax Analysis     │ ACTIVE      │     0.00    │ Excellent          │
+│ Semantic Analysis   │ ACTIVE      │     0.00    │ Excellent          │
+│ Code Generation     │ ACTIVE      │     0.00    │ Excellent          │
 └─────────────────────┴─────────────┴─────────────┴─────────────────┘
 
-🔄 COMPILATION FLOW:
+COMPILATION FLOW:
 ───────────────────
-     📄 Source Code (.txt)
+     Source Code (.txt)
             │
             ▼
-     🔤 LEXICAL ANALYZER
+     LEXICAL ANALYZER
        ┌─ scanner.l
        └─ Tokens: 41
             │
             ▼
-     🌳 SYNTAX ANALYZER
+     SYNTAX ANALYZER
        ┌─ parser.y
        └─ AST Nodes: 40
             │
             ▼
-     🧠 SEMANTIC ANALYZER
+     SEMANTIC ANALYZER
        ┌─ semantic.c
        ├─ Symbol Tables
        └─ Type Checking
             │
             ▼
-     ⚙️  CODE GENERATOR
+     CODE GENERATOR
        ┌─ codegen.c
        ├─ register_allocator.c
        └─ x86-64 Assembly
