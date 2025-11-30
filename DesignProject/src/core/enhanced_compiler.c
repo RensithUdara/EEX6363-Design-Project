@@ -243,10 +243,10 @@ void generate_lexical_output(const char *input_file)
     fprintf(lexical_output_file, "║                              Complete Token Stream                           ║\n");
     fprintf(lexical_output_file, "╚═══════════════════════════════════════════════════════════════════════════════╝\n\n");
 
-    fprintf(lexical_output_file, "📄 INPUT FILE: %s\n", input_file);
-    fprintf(lexical_output_file, "🕒 GENERATED: %s\n", timestamp);
-    fprintf(lexical_output_file, "⚙️  ANALYZER: Enhanced Lexical Scanner v2.0\n");
-    fprintf(lexical_output_file, "🎯 PHASE: Phase 1 - Lexical Analysis\n\n");
+    fprintf(lexical_output_file, "INPUT FILE: %s\n", input_file);
+    fprintf(lexical_output_file, "GENERATED: %s\n", timestamp);
+    fprintf(lexical_output_file, "ANALYZER: Enhanced Lexical Scanner v2.0\n");
+    fprintf(lexical_output_file, "PHASE: Phase 1 - Lexical Analysis\n\n");
 
     fprintf(lexical_output_file, "┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐\n");
     fprintf(lexical_output_file, "│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │\n");
@@ -681,30 +681,30 @@ void generate_intermediate_code_output(const char *input_file, ASTNode *ast)
         return;
 
     fprintf(intermediate_code_file, "================================================================================\n");
-    fprintf(intermediate_code_file, "                    🖥️  INTERMEDIATE CODE GENERATION REPORT                   \n");
+    fprintf(intermediate_code_file, "                    INTERMEDIATE CODE GENERATION REPORT                   \n");
     fprintf(intermediate_code_file, "================================================================================\n");
-    fprintf(intermediate_code_file, "📅 Generated: %s\n", __DATE__ " " __TIME__);
-    fprintf(intermediate_code_file, "📁 Input File: %s\n", input_file);
-    fprintf(intermediate_code_file, "🎯 Target Architecture: x86-64 Assembly (AT&T Syntax)\n");
-    fprintf(intermediate_code_file, "🔧 Code Generation Phase: Three-Address Code, Quadruples & Triples\n");
+    fprintf(intermediate_code_file, "Generated: %s\n", __DATE__ " " __TIME__);
+    fprintf(intermediate_code_file, "Input File: %s\n", input_file);
+    fprintf(intermediate_code_file, "Target Architecture: x86-64 Assembly (AT&T Syntax)\n");
+    fprintf(intermediate_code_file, "Code Generation Phase: Three-Address Code, Quadruples & Triples\n");
     fprintf(intermediate_code_file, "================================================================================\n");
     fprintf(intermediate_code_file, "\n");
 
     if (ast)
     {
-        fprintf(intermediate_code_file, "🔍 THREE-ADDRESS CODE (TAC):\n");
+        fprintf(intermediate_code_file, "THREE-ADDRESS CODE (TAC):\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         generate_three_address_code(ast, intermediate_code_file);
 
-        fprintf(intermediate_code_file, "\n📊 REGISTER ALLOCATION INFO:\n");
+        fprintf(intermediate_code_file, "\nREGISTER ALLOCATION INFO:\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         print_register_info_to_file(intermediate_code_file);
 
-        fprintf(intermediate_code_file, "\n🧩 QUADRUPLE (4-TUPLE) REPRESENTATION:\n");
+        fprintf(intermediate_code_file, "\nQUADRUPLE (4-TUPLE) REPRESENTATION:\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         generate_quadruple_code(ast, intermediate_code_file);
 
-        fprintf(intermediate_code_file, "\n🧱 TRIPLE REPRESENTATION:\n");
+        fprintf(intermediate_code_file, "\nTRIPLE REPRESENTATION:\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         generate_triple_code(ast, intermediate_code_file);
 
@@ -1064,7 +1064,7 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     double codegen_ms = ((double)codegen_time / CLOCKS_PER_SEC) * 1000.0;
     double total_time = lexical_ms + syntax_ms + semantic_ms + codegen_ms;
 
-    fprintf(arch_file, "📋 COMPILER OVERVIEW:\n");
+    fprintf(arch_file, "COMPILER OVERVIEW:\n");
     fprintf(arch_file, "─────────────────────\n");
     fprintf(arch_file, "• Architecture Type: Multi-Phase Compilation Pipeline\n");
     fprintf(arch_file, "• Target Platform: x86-64 Assembly (AT&T Syntax)\n");
@@ -1072,53 +1072,53 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     fprintf(arch_file, "• Optimization Level: Basic with Register Allocation\n");
     fprintf(arch_file, "• Error Recovery: Comprehensive Multi-Level System\n\n");
 
-    fprintf(arch_file, "🔄 COMPILATION PIPELINE STATUS:\n");
+    fprintf(arch_file, "COMPILATION PIPELINE STATUS:\n");
     fprintf(arch_file, "───────────────────────────────\n");
-    fprintf(arch_file, "                                                     ⏱️  Performance\n");
+    fprintf(arch_file, "                                                     Performance\n");
     fprintf(arch_file, "┌─────────────────────┬─────────────┬─────────────┬─────────────────┐\n");
     fprintf(arch_file, "│ Phase               │ Status      │ Time (ms)   │ Efficiency      │\n");
     fprintf(arch_file, "├─────────────────────┼─────────────┼─────────────┼─────────────────┤\n");
-    fprintf(arch_file, "│ 🔤 Lexical Analysis │ %-11s │ %8.2f    │ %s          │\n",
-            has_lexical ? "✅ ACTIVE" : "❌ FAILED", lexical_ms,
-            lexical_ms < 1.0 ? "🚀 Excellent" : lexical_ms < 5.0 ? "⚡ Good"
-                                                                 : "⚠️  Slow");
-    fprintf(arch_file, "│ 🌳 Syntax Analysis  │ %-11s │ %8.2f    │ %s          │\n",
-            has_syntax ? "✅ ACTIVE" : "❌ FAILED", syntax_ms,
-            syntax_ms < 2.0 ? "🚀 Excellent" : syntax_ms < 10.0 ? "⚡ Good"
-                                                                : "⚠️  Slow");
-    fprintf(arch_file, "│ 🧠 Semantic Analysis│ %-11s │ %8.2f    │ %s          │\n",
-            has_semantic ? "✅ ACTIVE" : "❌ FAILED", semantic_ms,
-            semantic_ms < 3.0 ? "🚀 Excellent" : semantic_ms < 15.0 ? "⚡ Good"
-                                                                    : "⚠️  Slow");
-    fprintf(arch_file, "│ ⚙️  Code Generation  │ %-11s │ %8.2f    │ %s          │\n",
-            has_codegen ? "✅ ACTIVE" : "❌ FAILED", codegen_ms,
-            codegen_ms < 5.0 ? "🚀 Excellent" : codegen_ms < 20.0 ? "⚡ Good"
-                                                                  : "⚠️  Slow");
+    fprintf(arch_file, "│ Lexical Analysis    │ %-11s │ %8.2f    │ %s          │\n",
+            has_lexical ? "ACTIVE" : "FAILED", lexical_ms,
+            lexical_ms < 1.0 ? "Excellent" : lexical_ms < 5.0 ? "Good"
+                                                              : "Slow");
+    fprintf(arch_file, "│ Syntax Analysis     │ %-11s │ %8.2f    │ %s          │\n",
+            has_syntax ? "ACTIVE" : "FAILED", syntax_ms,
+            syntax_ms < 2.0 ? "Excellent" : syntax_ms < 10.0 ? "Good"
+                                                             : "Slow");
+    fprintf(arch_file, "│ Semantic Analysis   │ %-11s │ %8.2f    │ %s          │\n",
+            has_semantic ? "ACTIVE" : "FAILED", semantic_ms,
+            semantic_ms < 3.0 ? "Excellent" : semantic_ms < 15.0 ? "Good"
+                                                                 : "Slow");
+    fprintf(arch_file, "│ Code Generation     │ %-11s │ %8.2f    │ %s          │\n",
+            has_codegen ? "ACTIVE" : "FAILED", codegen_ms,
+            codegen_ms < 5.0 ? "Excellent" : codegen_ms < 20.0 ? "Good"
+                                                               : "Slow");
     fprintf(arch_file, "└─────────────────────┴─────────────┴─────────────┴─────────────────┘\n\n");
 
     // Visual pipeline representation
-    fprintf(arch_file, "🔄 COMPILATION FLOW:\n");
+    fprintf(arch_file, "COMPILATION FLOW:\n");
     fprintf(arch_file, "───────────────────\n");
-    fprintf(arch_file, "     📄 Source Code (.txt)\n");
+    fprintf(arch_file, "     Source Code (.txt)\n");
     fprintf(arch_file, "            │\n");
     fprintf(arch_file, "            ▼\n");
-    fprintf(arch_file, "     🔤 LEXICAL ANALYZER\n");
+    fprintf(arch_file, "     LEXICAL ANALYZER\n");
     fprintf(arch_file, "       ┌─ scanner.l\n");
     fprintf(arch_file, "       └─ Tokens: %d\n", total_tokens);
     fprintf(arch_file, "            │\n");
     fprintf(arch_file, "            ▼\n");
-    fprintf(arch_file, "     🌳 SYNTAX ANALYZER\n");
+    fprintf(arch_file, "     SYNTAX ANALYZER\n");
     fprintf(arch_file, "       ┌─ parser.y\n");
     fprintf(arch_file, "       └─ AST Nodes: %d\n", total_ast_nodes);
     fprintf(arch_file, "            │\n");
     fprintf(arch_file, "            ▼\n");
-    fprintf(arch_file, "     🧠 SEMANTIC ANALYZER\n");
+    fprintf(arch_file, "     SEMANTIC ANALYZER\n");
     fprintf(arch_file, "       ┌─ semantic.c\n");
     fprintf(arch_file, "       ├─ Symbol Tables\n");
     fprintf(arch_file, "       └─ Type Checking\n");
     fprintf(arch_file, "            │\n");
     fprintf(arch_file, "            ▼\n");
-    fprintf(arch_file, "     ⚙️  CODE GENERATOR\n");
+    fprintf(arch_file, "     CODE GENERATOR\n");
     fprintf(arch_file, "       ┌─ codegen.c\n");
     fprintf(arch_file, "       ├─ register_allocator.c\n");
     fprintf(arch_file, "       └─ x86-64 Assembly\n");
@@ -1589,7 +1589,7 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
     fprintf(output_file, "Assembly File: %s\n", assembly_file);
     fprintf(output_file, "Status: Compilation Successful (No Errors)\n\n");
 
-    fprintf(output_file, "📋 PROGRAM STRUCTURE ANALYSIS:\n");
+    fprintf(output_file, "PROGRAM STRUCTURE ANALYSIS:\n");
     fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
 
     if (ast && ast->type == AST_PROGRAM)
@@ -1617,7 +1617,7 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
     }
 
     // Assembly code explanation
-    fprintf(output_file, "⚙️  GENERATED ASSEMBLY CODE EXPLANATION:\n");
+    fprintf(output_file, "GENERATED ASSEMBLY CODE EXPLANATION:\n");
     fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
 
     FILE *assembly = fopen(assembly_file, "r");
@@ -1841,10 +1841,10 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
         total_ms = lexical_ms + syntax_ms + semantic_ms + codegen_ms;
     }
 
-    const char *lexer_status = "✅ PASSED   ";
-    const char *parser_status = ast ? "✅ PASSED   " : "❌ FAILED   ";
-    const char *semantic_status = (actual_errors == 0) ? "✅ PASSED   " : "❌ FAILED   ";
-    const char *overall_status = (success && ast && actual_errors == 0) ? "✅ PASSED   " : "❌ FAILED   ";
+    const char *lexer_status = "PASSED      ";
+    const char *parser_status = ast ? "PASSED      " : "FAILED      ";
+    const char *semantic_status = (actual_errors == 0) ? "PASSED      " : "FAILED      ";
+    const char *overall_status = (success && ast && actual_errors == 0) ? "PASSED      " : "FAILED      ";
 
     fprintf(test_file, "1. PHASE INTEGRATION TESTS:\n");
     fprintf(test_file, "   ┌─────────────────────┬──────────────┬─────────────┬─────────────┐\n");
@@ -1946,13 +1946,13 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
     fprintf(test_file, "   ┌─────────────────────┬──────────────┬─────────────┬─────────────┐\n");
     fprintf(test_file, "   │ File Operation      │ Status       │ Size (bytes)│ Quality     │\n");
     fprintf(test_file, "   ├─────────────────────┼──────────────┼─────────────┼─────────────┤\n");
-    fprintf(test_file, "   │ Input File Reading  │ %s │ %-11s │ %-11s │\n", "✅ PASSED   ", "N/A", "Complete");
-    fprintf(test_file, "   │ Lexical Output      │ %s │ %-11ld │ %-11s │\n", lexical_ok ? "✅ PASSED   " : "❌ FAILED   ", lexical_size, lexical_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Syntax Output       │ %s │ %-11ld │ %-11s │\n", syntax_ok ? "✅ PASSED   " : "❌ FAILED   ", syntax_size, syntax_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Semantic Output     │ %s │ %-11ld │ %-11s │\n", semantic_ok ? "✅ PASSED   " : "❌ FAILED   ", semantic_size, semantic_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Symbol Table Output │ %s │ %-11ld │ %-11s │\n", symbol_ok ? "✅ PASSED   " : "❌ FAILED   ", symbol_size, symbol_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Intermediate Code   │ %s │ %-11ld │ %-11s │\n", intermediate_ok ? "✅ PASSED   " : "❌ FAILED   ", intermediate_size, intermediate_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Assembly Output     │ %s │ %-11ld │ %-11s │\n", assembly_ok ? "✅ PASSED   " : "❌ FAILED   ", assembly_size, assembly_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Input File Reading  │ %s │ %-11s │ %-11s │\n", "PASSED      ", "N/A", "Complete");
+    fprintf(test_file, "   │ Lexical Output      │ %s │ %-11ld │ %-11s │\n", lexical_ok ? "PASSED      " : "FAILED      ", lexical_size, lexical_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Syntax Output       │ %s │ %-11ld │ %-11s │\n", syntax_ok ? "PASSED      " : "FAILED      ", syntax_size, syntax_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Semantic Output     │ %s │ %-11ld │ %-11s │\n", semantic_ok ? "PASSED      " : "FAILED      ", semantic_size, semantic_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Symbol Table Output │ %s │ %-11ld │ %-11s │\n", symbol_ok ? "PASSED      " : "FAILED      ", symbol_size, symbol_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Intermediate Code   │ %s │ %-11ld │ %-11s │\n", intermediate_ok ? "PASSED      " : "FAILED      ", intermediate_size, intermediate_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Assembly Output     │ %s │ %-11ld │ %-11s │\n", assembly_ok ? "PASSED      " : "FAILED      ", assembly_size, assembly_ok ? "Valid" : "Missing");
     fprintf(test_file, "   └─────────────────────┴──────────────┴─────────────┴─────────────┘\n\n");
 
     // Calculate actual quality score
@@ -1981,7 +1981,7 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
         fprintf(test_file, "work together seamlessly. The system shows excellent reliability,\n");
         fprintf(test_file, "performance, and maintainability characteristics.\n\n");
 
-        fprintf(test_file, "RECOMMENDATION: ✅ APPROVED FOR PRODUCTION USE\n");
+        fprintf(test_file, "RECOMMENDATION: APPROVED FOR PRODUCTION USE\n");
     }
     else
     {
@@ -1999,7 +1999,7 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
         fprintf(test_file, "The integration testing revealed %d issue(s) that need to be\n", total_tests - tests_passed);
         fprintf(test_file, "addressed before the system can be considered production-ready.\n\n");
 
-        fprintf(test_file, "RECOMMENDATION: ❌ REQUIRES FIXES BEFORE APPROVAL\n");
+        fprintf(test_file, "RECOMMENDATION: REQUIRES FIXES BEFORE APPROVAL\n");
     }
 
     fclose(test_file);

@@ -1375,7 +1375,7 @@ void print_detailed_error_report(FILE *output)
             }
             if (error->suggestion)
             {
-                fprintf(output, "   └─ 💡 Suggestion: %s\n", error->suggestion);
+                fprintf(output, "   Suggestion: %s\n", error->suggestion);
             }
             fprintf(output, "\n");
             error = error->next;
@@ -1403,11 +1403,11 @@ void write_comprehensive_error_report(FILE *file)
     fprintf(file, "│ Error Type           │ Count │ Severity │ Status                           │\n");
     fprintf(file, "├─────────────────────────────────────────────────────────────────────────────┤\n");
     fprintf(file, "│ Syntax Errors        │ %5d │   HIGH   │ %s │\n",
-            syntax_errors, syntax_errors > 0 ? "✗ FAILED                     " : "✓ PASSED                     ");
+            syntax_errors, syntax_errors > 0 ? "FAILED                       " : "PASSED                       ");
     fprintf(file, "│ Semantic Errors      │ %5d │   HIGH   │ %s │\n",
-            semantic_errors, semantic_errors > 0 ? "✗ FAILED                     " : "✓ PASSED                     ");
+            semantic_errors, semantic_errors > 0 ? "FAILED                       " : "PASSED                       ");
     fprintf(file, "│ Semantic Warnings    │ %5d │   LOW    │ %s │\n",
-            warning_count, warning_count > 0 ? "⚠ WARNINGS                  " : "✓ CLEAN                      ");
+            warning_count, warning_count > 0 ? "WARNINGS                     " : "CLEAN                        ");
     fprintf(file, "└─────────────────────────────────────────────────────────────────────────────┘\n\n");
 
     // Print syntax errors if any
@@ -1421,7 +1421,7 @@ void write_comprehensive_error_report(FILE *file)
         int error_num = 1;
         while (error)
         {
-            fprintf(file, "❌ SYNTAX ERROR #%d\n", error_num++);
+            fprintf(file, "[ERROR] SYNTAX ERROR #%d\n", error_num++);
             fprintf(file, "   ├─ Location: Line %d, Column %d\n", error->line, error->column);
             fprintf(file, "   ├─ Type: %s\n", error->error_code ? error->error_code : "SYNTAX_ERROR");
             fprintf(file, "   ├─ Description: %s\n", error->message);
@@ -1471,7 +1471,7 @@ void write_comprehensive_error_report(FILE *file)
         int error_num = 1;
         while (error)
         {
-            fprintf(file, "❌ SEMANTIC ERROR #%d\n", error_num++);
+            fprintf(file, "[ERROR] SEMANTIC ERROR #%d\n", error_num++);
             fprintf(file, "   ├─ Location: Line %d, Column %d\n", error->line, error->column);
             fprintf(file, "   ├─ Type: %s\n", error->error_code ? error->error_code : "SEMANTIC_ERROR");
             fprintf(file, "   ├─ Description: %s\n", error->message);
@@ -1496,7 +1496,7 @@ void write_comprehensive_error_report(FILE *file)
 
     if (syntax_errors > 0)
     {
-        fprintf(file, "🔧 SYNTAX ERROR RESOLUTION:\n");
+        fprintf(file, "SYNTAX ERROR RESOLUTION:\n");
         fprintf(file, "   1. Fix syntax errors first - they prevent proper parsing\n");
         fprintf(file, "   2. Check for missing semicolons, braces, or parentheses\n");
         fprintf(file, "   3. Verify proper token spelling and casing\n");
@@ -1505,14 +1505,14 @@ void write_comprehensive_error_report(FILE *file)
 
     if (semantic_errors > 0)
     {
-        fprintf(file, "🔍 SEMANTIC ERROR RESOLUTION:\n");
+        fprintf(file, "SEMANTIC ERROR RESOLUTION:\n");
         fprintf(file, "   1. Verify variable declarations before use\n");
         fprintf(file, "   2. Check type compatibility in assignments\n");
         fprintf(file, "   3. Ensure function calls match signatures\n");
         fprintf(file, "   4. Validate scope and visibility rules\n\n");
     }
 
-    fprintf(file, "📚 ADDITIONAL RESOURCES:\n");
+    fprintf(file, "ADDITIONAL RESOURCES:\n");
     fprintf(file, "   • Language Grammar: Check semantic.c for syntax rules and grammar implementation\n");
     fprintf(file, "   • Semantic Rules: Review TMA03 specification document\n");
     fprintf(file, "   • Test Cases: Examine valid*.txt files for examples\n\n");
@@ -1663,7 +1663,7 @@ void init_error_log_file(const char *input_file)
     if (global_error_log_file)
     {
         fprintf(global_error_log_file, "================================================================================\n");
-        fprintf(global_error_log_file, "                     🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              \n");
+        fprintf(global_error_log_file, "                     DESIGN PROJECT - COMPREHENSIVE ERROR LOG              \n");
         fprintf(global_error_log_file, "================================================================================\n");
         char timestamp[100];
         time_t rawtime;
@@ -1671,9 +1671,9 @@ void init_error_log_file(const char *input_file)
         time(&rawtime);
         timeinfo = localtime(&rawtime);
         strftime(timestamp, sizeof(timestamp), "%B %d, %Y at %H:%M:%S", timeinfo);
-        fprintf(global_error_log_file, "📅 Generated: %s\n", timestamp);
-        fprintf(global_error_log_file, "📁 Input File: %s\n\n", input_file);
-        fprintf(global_error_log_file, "🔍 REAL-TIME COMPILATION LOG:\n");
+        fprintf(global_error_log_file, "Generated: %s\n", timestamp);
+        fprintf(global_error_log_file, "Input File: %s\n\n", input_file);
+        fprintf(global_error_log_file, "REAL-TIME COMPILATION LOG:\n");
         fprintf(global_error_log_file, "────────────────────────────────────────────────────────────────────────────────\n\n");
         fflush(global_error_log_file);
     }
@@ -1687,7 +1687,7 @@ void close_error_log_file(void)
         // Add comprehensive error summary like terminal output
         fprintf(global_error_log_file, "\n\n");
         fprintf(global_error_log_file, "================================================================================\n");
-        fprintf(global_error_log_file, "                           📊 ERROR SUMMARY REPORT                                \n");
+        fprintf(global_error_log_file, "                           ERROR SUMMARY REPORT                                \n");
         fprintf(global_error_log_file, "================================================================================\n");
         fprintf(global_error_log_file, "┌─ Error Statistics ─────────────────────────────────────────────────────────┐\n");
         fprintf(global_error_log_file, "│ Lexical Errors            │ %5d │ Invalid tokens, numbers, identifiers     │\n", get_lexical_error_count());
@@ -1699,11 +1699,11 @@ void close_error_log_file(void)
         int total_errors = get_total_error_count();
         if (total_errors == 0)
         {
-            fprintf(global_error_log_file, "✅ SUCCESS: No errors found! Code analysis completed successfully.\n\n");
+            fprintf(global_error_log_file, "SUCCESS: No errors found! Code analysis completed successfully.\n\n");
         }
         else
         {
-            fprintf(global_error_log_file, "❌ FAILED: Found %d error(s) that need to be fixed before compilation.\n\n", total_errors);
+            fprintf(global_error_log_file, "FAILED: Found %d error(s) that need to be fixed before compilation.\n\n", total_errors);
         }
 
         // Add comprehensive error report like terminal
@@ -1713,7 +1713,7 @@ void close_error_log_file(void)
         }
 
         fprintf(global_error_log_file, "\n================================================================================\n");
-        fprintf(global_error_log_file, "                              🏁 END OF ERROR LOG                               \n");
+        fprintf(global_error_log_file, "                              END OF ERROR LOG                               \n");
         fprintf(global_error_log_file, "================================================================================\n");
         fclose(global_error_log_file);
         global_error_log_file = NULL;

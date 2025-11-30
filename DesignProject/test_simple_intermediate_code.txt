@@ -1,13 +1,13 @@
 ================================================================================
-                    🖥️  INTERMEDIATE CODE GENERATION REPORT                   
+                    INTERMEDIATE CODE GENERATION REPORT                   
 ================================================================================
-📅 Generated: Nov 30 2025 22:03:02
-📁 Input File: tests/examples/test_simple.txt
-🎯 Target Architecture: x86-64 Assembly (AT&T Syntax)
-🔧 Code Generation Phase: Three-Address Code, Quadruples & Triples
+Generated: Nov 30 2025 22:51:52
+Input File: tests/examples/test_simple.txt
+Target Architecture: x86-64 Assembly (AT&T Syntax)
+Code Generation Phase: Three-Address Code, Quadruples & Triples
 ================================================================================
 
-🔍 THREE-ADDRESS CODE (TAC):
+THREE-ADDRESS CODE (TAC):
 ────────────────────────────────────────────────────────────────────────────────
 // Program start
 // Function: simpleTest
@@ -27,7 +27,7 @@ t4 = result
 return t4
 // Program end
 
-📊 REGISTER ALLOCATION INFO:
+REGISTER ALLOCATION INFO:
 ────────────────────────────────────────────────────────────────────────────────
 Register Allocation Strategy: Linear Scan
 Available Registers: 16 (x86-64)
@@ -37,7 +37,7 @@ Spill Operations: 0
 Register Assignments:
 - No registers allocated
 
-🧩 QUADRUPLE (4-TUPLE) REPRESENTATION:
+QUADRUPLE (4-TUPLE) REPRESENTATION:
 ────────────────────────────────────────────────────────────────────────────────
 ┌────────────┬────────────┬────────────┬────────────┐
 │ Operation  │ Arg1       │ Arg2       │ Result     │
@@ -52,7 +52,7 @@ Register Assignments:
 │ return     │ result     │ -          │ -          │
 └────────────┴────────────┴────────────┴────────────┘
 
-🧱 TRIPLE REPRESENTATION:
+TRIPLE REPRESENTATION:
 ────────────────────────────────────────────────────────────────────────────────
 ┌───────┬────────────┬────────────┬────────────┐
 │ #     │ Operation  │ Arg1       │ Arg2       │
