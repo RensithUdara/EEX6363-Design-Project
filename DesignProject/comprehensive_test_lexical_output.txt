@@ -1,0 +1,210 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_test.txt
+GENERATED: December 01, 2025 at 00:43:22
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ IDENTIFIER      │ //               │ 1    │ 1      │ variable            │
+│ IDENTIFIER      │ Comprehensive    │ 1    │ 4      │ variable            │
+│ IDENTIFIER      │ Test             │ 1    │ 18     │ variable            │
+│ IDENTIFIER      │ File             │ 1    │ 23     │ variable            │
+│ IDENTIFIER      │ for              │ 1    │ 28     │ variable            │
+│ IDENTIFIER      │ TMA03            │ 1    │ 32     │ variable            │
+│ IDENTIFIER      │ Integration      │ 1    │ 38     │ variable            │
+│ IDENTIFIER      │ //               │ 2    │ 1      │ variable            │
+│ IDENTIFIER      │ This             │ 2    │ 4      │ variable            │
+│ IDENTIFIER      │ file             │ 2    │ 9      │ variable            │
+│ IDENTIFIER      │ contains         │ 2    │ 14     │ variable            │
+│ IDENTIFIER      │ various          │ 2    │ 23     │ variable            │
+│ IDENTIFIER      │ semantic         │ 2    │ 31     │ variable            │
+│ IDENTIFIER      │ errors           │ 2    │ 40     │ variable            │
+│ IDENTIFIER      │ to               │ 2    │ 47     │ variable            │
+│ IDENTIFIER      │ test             │ 2    │ 50     │ variable            │
+│ IDENTIFIER      │ the              │ 2    │ 55     │ variable            │
+│ IDENTIFIER      │ comprehensive    │ 2    │ 59     │ variable            │
+│ IDENTIFIER      │ error            │ 2    │ 73     │ variable            │
+│ IDENTIFIER      │ detection        │ 2    │ 79     │ variable            │
+│ KEYWORD         │ class            │ 4    │ 1      │ reserved            │
+│ IDENTIFIER      │ TestClass        │ 4    │ 7      │ variable            │
+│ IDENTIFIER      │ isa              │ 4    │ 17     │ variable            │
+│ IDENTIFIER      │ NonExistentClass │ 4    │ 21     │ variable            │
+│ IDENTIFIER      │ public:          │ 5    │ 5      │ variable            │
+│ IDENTIFIER      │ //               │ 6    │ 9      │ variable            │
+│ IDENTIFIER      │ Type             │ 6    │ 12     │ variable            │
+│ IDENTIFIER      │ mismatch         │ 6    │ 17     │ variable            │
+│ IDENTIFIER      │ error            │ 6    │ 26     │ variable            │
+│ OPERATOR        │ -                │ 6    │ 32     │ arithmetic          │
+│ IDENTIFIER      │ assigning        │ 6    │ 34     │ variable            │
+│ IDENTIFIER      │ float            │ 6    │ 44     │ variable            │
+│ IDENTIFIER      │ to               │ 6    │ 50     │ variable            │
+│ KEYWORD         │ integer          │ 6    │ 53     │ reserved            │
+│ KEYWORD         │ func             │ 7    │ 9      │ reserved            │
+│ IDENTIFIER      │ main             │ 7    │ 14     │ variable            │
+│ PUNCTUATION     │ :                │ 7    │ 21     │ delimiter           │
+│ IDENTIFIER      │ void             │ 7    │ 23     │ variable            │
+│ KEYWORD         │ local            │ 8    │ 13     │ reserved            │
+│ KEYWORD         │ integer          │ 8    │ 19     │ reserved            │
+│ IDENTIFIER      │ x                │ 8    │ 27     │ variable            │
+│ IDENTIFIER      │ x                │ 9    │ 13     │ variable            │
+│ OPERATOR        │ :=               │ 9    │ 15     │ assignment          │
+│ IDENTIFIER      │ 1.5              │ 9    │ 18     │ variable            │
+│ IDENTIFIER      │ //               │ 9    │ 24     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 9    │ 27     │ variable            │
+│ IDENTIFIER      │ Type             │ 9    │ 34     │ variable            │
+│ IDENTIFIER      │ mismatch         │ 9    │ 39     │ variable            │
+│ OPERATOR        │ -                │ 9    │ 48     │ arithmetic          │
+│ IDENTIFIER      │ float            │ 9    │ 50     │ variable            │
+│ IDENTIFIER      │ assigned         │ 9    │ 56     │ variable            │
+│ IDENTIFIER      │ to               │ 9    │ 65     │ variable            │
+│ KEYWORD         │ integer          │ 9    │ 68     │ reserved            │
+│ IDENTIFIER      │ //               │ 11   │ 13     │ variable            │
+│ IDENTIFIER      │ Undefined        │ 11   │ 16     │ variable            │
+│ IDENTIFIER      │ variable         │ 11   │ 26     │ variable            │
+│ IDENTIFIER      │ error            │ 11   │ 35     │ variable            │
+│ IDENTIFIER      │ y                │ 12   │ 13     │ variable            │
+│ OPERATOR        │ :=               │ 12   │ 15     │ assignment          │
+│ NUMBER          │ 10               │ 12   │ 18     │ literal             │
+│ IDENTIFIER      │ //               │ 12   │ 24     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 12   │ 27     │ variable            │
+│ IDENTIFIER      │ Undefined        │ 12   │ 34     │ variable            │
+│ IDENTIFIER      │ variable         │ 12   │ 44     │ variable            │
+│ IDENTIFIER      │ 'y'              │ 12   │ 53     │ variable            │
+│ IDENTIFIER      │ //               │ 14   │ 13     │ variable            │
+│ IDENTIFIER      │ Function         │ 14   │ 16     │ variable            │
+│ IDENTIFIER      │ call             │ 14   │ 25     │ variable            │
+│ IDENTIFIER      │ with             │ 14   │ 30     │ variable            │
+│ IDENTIFIER      │ wrong            │ 14   │ 35     │ variable            │
+│ IDENTIFIER      │ arguments        │ 14   │ 41     │ variable            │
+│ IDENTIFIER      │ testFunc         │ 15   │ 13     │ variable            │
+│ IDENTIFIER      │ x                │ 15   │ 22     │ variable            │
+│ IDENTIFIER      │ "string"         │ 15   │ 25     │ variable            │
+│ IDENTIFIER      │ //               │ 15   │ 37     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 15   │ 40     │ variable            │
+│ IDENTIFIER      │ Wrong            │ 15   │ 47     │ variable            │
+│ IDENTIFIER      │ argument         │ 15   │ 53     │ variable            │
+│ IDENTIFIER      │ types            │ 15   │ 62     │ variable            │
+│ IDENTIFIER      │ //               │ 17   │ 13     │ variable            │
+│ IDENTIFIER      │ Array            │ 17   │ 16     │ variable            │
+│ IDENTIFIER      │ access           │ 17   │ 22     │ variable            │
+│ IDENTIFIER      │ error            │ 17   │ 29     │ variable            │
+│ KEYWORD         │ local            │ 18   │ 13     │ reserved            │
+│ KEYWORD         │ integer          │ 18   │ 19     │ reserved            │
+│ IDENTIFIER      │ arr[5]           │ 18   │ 27     │ variable            │
+│ IDENTIFIER      │ arr[10]          │ 19   │ 13     │ variable            │
+│ OPERATOR        │ :=               │ 19   │ 21     │ assignment          │
+│ NUMBER          │ 5                │ 19   │ 24     │ literal             │
+│ IDENTIFIER      │ //               │ 19   │ 28     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 19   │ 31     │ variable            │
+│ IDENTIFIER      │ Array            │ 19   │ 38     │ variable            │
+│ IDENTIFIER      │ index            │ 19   │ 44     │ variable            │
+│ IDENTIFIER      │ out              │ 19   │ 50     │ variable            │
+│ IDENTIFIER      │ of               │ 19   │ 54     │ variable            │
+│ IDENTIFIER      │ bounds           │ 19   │ 57     │ variable            │
+│ IDENTIFIER      │ //               │ 21   │ 13     │ variable            │
+│ IDENTIFIER      │ Missing          │ 21   │ 16     │ variable            │
+│ KEYWORD         │ return           │ 21   │ 24     │ reserved            │
+│ IDENTIFIER      │ statement        │ 21   │ 31     │ variable            │
+│ IDENTIFIER      │ will             │ 21   │ 41     │ variable            │
+│ IDENTIFIER      │ be               │ 21   │ 46     │ variable            │
+│ IDENTIFIER      │ detected         │ 21   │ 49     │ variable            │
+│ IDENTIFIER      │ //               │ 24   │ 9      │ variable            │
+│ IDENTIFIER      │ Duplicate        │ 24   │ 12     │ variable            │
+│ KEYWORD         │ function         │ 24   │ 22     │ reserved            │
+│ IDENTIFIER      │ declaration      │ 24   │ 31     │ variable            │
+│ KEYWORD         │ func             │ 25   │ 9      │ reserved            │
+│ IDENTIFIER      │ testFunc         │ 25   │ 14     │ variable            │
+│ KEYWORD         │ integer          │ 25   │ 23     │ reserved            │
+│ IDENTIFIER      │ a                │ 25   │ 31     │ variable            │
+│ PUNCTUATION     │ :                │ 25   │ 34     │ delimiter           │
+│ KEYWORD         │ integer          │ 25   │ 36     │ reserved            │
+│ KEYWORD         │ return           │ 26   │ 13     │ reserved            │
+│ IDENTIFIER      │ a                │ 26   │ 20     │ variable            │
+│ OPERATOR        │ +                │ 26   │ 22     │ arithmetic          │
+│ NUMBER          │ 1                │ 26   │ 24     │ literal             │
+│ KEYWORD         │ func             │ 29   │ 9      │ reserved            │
+│ IDENTIFIER      │ testFunc         │ 29   │ 14     │ variable            │
+│ KEYWORD         │ integer          │ 29   │ 23     │ reserved            │
+│ IDENTIFIER      │ b                │ 29   │ 31     │ variable            │
+│ PUNCTUATION     │ :                │ 29   │ 34     │ delimiter           │
+│ KEYWORD         │ integer          │ 29   │ 36     │ reserved            │
+│ IDENTIFIER      │ //               │ 29   │ 47     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 29   │ 50     │ variable            │
+│ IDENTIFIER      │ Duplicate        │ 29   │ 57     │ variable            │
+│ KEYWORD         │ function         │ 29   │ 67     │ reserved            │
+│ KEYWORD         │ return           │ 30   │ 13     │ reserved            │
+│ IDENTIFIER      │ b                │ 30   │ 20     │ variable            │
+│ OPERATOR        │ *                │ 30   │ 22     │ arithmetic          │
+│ NUMBER          │ 2                │ 30   │ 24     │ literal             │
+│ IDENTIFIER      │ private:         │ 33   │ 5      │ variable            │
+│ IDENTIFIER      │ attribute        │ 34   │ 9      │ variable            │
+│ KEYWORD         │ integer          │ 34   │ 19     │ reserved            │
+│ IDENTIFIER      │ value            │ 34   │ 27     │ variable            │
+│ IDENTIFIER      │ attribute        │ 35   │ 9      │ variable            │
+│ KEYWORD         │ integer          │ 35   │ 19     │ reserved            │
+│ IDENTIFIER      │ value            │ 35   │ 27     │ variable            │
+│ IDENTIFIER      │ //               │ 35   │ 35     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 35   │ 38     │ variable            │
+│ IDENTIFIER      │ Duplicate        │ 35   │ 45     │ variable            │
+│ IDENTIFIER      │ attribute        │ 35   │ 55     │ variable            │
+│ IDENTIFIER      │ //               │ 38   │ 1      │ variable            │
+│ IDENTIFIER      │ Duplicate        │ 38   │ 4      │ variable            │
+│ KEYWORD         │ class            │ 38   │ 14     │ reserved            │
+│ IDENTIFIER      │ declaration      │ 38   │ 20     │ variable            │
+│ KEYWORD         │ class            │ 39   │ 1      │ reserved            │
+│ IDENTIFIER      │ TestClass        │ 39   │ 7      │ variable            │
+│ IDENTIFIER      │ //               │ 39   │ 20     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 39   │ 23     │ variable            │
+│ IDENTIFIER      │ Duplicate        │ 39   │ 30     │ variable            │
+│ KEYWORD         │ class            │ 39   │ 40     │ reserved            │
+│ IDENTIFIER      │ public:          │ 40   │ 5      │ variable            │
+│ KEYWORD         │ func             │ 41   │ 9      │ reserved            │
+│ IDENTIFIER      │ dummy            │ 41   │ 14     │ variable            │
+│ PUNCTUATION     │ :                │ 41   │ 22     │ delimiter           │
+│ IDENTIFIER      │ void             │ 41   │ 24     │ variable            │
+│ IDENTIFIER      │ //               │ 45   │ 1      │ variable            │
+│ IDENTIFIER      │ Class            │ 45   │ 4      │ variable            │
+│ IDENTIFIER      │ with             │ 45   │ 10     │ variable            │
+│ IDENTIFIER      │ inheritance      │ 45   │ 15     │ variable            │
+│ IDENTIFIER      │ error            │ 45   │ 27     │ variable            │
+│ KEYWORD         │ class            │ 46   │ 1      │ reserved            │
+│ IDENTIFIER      │ InvalidInherit   │ 46   │ 7      │ variable            │
+│ IDENTIFIER      │ isa              │ 46   │ 22     │ variable            │
+│ IDENTIFIER      │ TestClass        │ 46   │ 26     │ variable            │
+│ IDENTIFIER      │ NonExistent      │ 46   │ 37     │ variable            │
+│ IDENTIFIER      │ //               │ 46   │ 52     │ variable            │
+│ IDENTIFIER      │ ERROR:           │ 46   │ 55     │ variable            │
+│ IDENTIFIER      │ NonExistent      │ 46   │ 62     │ variable            │
+│ KEYWORD         │ class            │ 46   │ 74     │ reserved            │
+│ IDENTIFIER      │ not              │ 46   │ 80     │ variable            │
+│ IDENTIFIER      │ found            │ 46   │ 84     │ variable            │
+│ IDENTIFIER      │ public:          │ 47   │ 5      │ variable            │
+│ KEYWORD         │ func             │ 48   │ 9      │ reserved            │
+│ IDENTIFIER      │ test             │ 48   │ 14     │ variable            │
+│ PUNCTUATION     │ :                │ 48   │ 21     │ delimiter           │
+│ KEYWORD         │ integer          │ 48   │ 23     │ reserved            │
+│ IDENTIFIER      │ //               │ 49   │ 13     │ variable            │
+│ IDENTIFIER      │ Missing          │ 49   │ 16     │ variable            │
+│ KEYWORD         │ return           │ 49   │ 24     │ reserved            │
+│ IDENTIFIER      │ statement        │ 49   │ 31     │ variable            │
+│ OPERATOR        │ -                │ 49   │ 41     │ arithmetic          │
+│ IDENTIFIER      │ ERROR            │ 49   │ 43     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 184                                               ║
+║ 📄 Total Lines Analyzed      : 51                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-01 00:43:22                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/comprehensive_test.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
