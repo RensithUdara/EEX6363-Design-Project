@@ -1134,15 +1134,15 @@ const char *get_severity_icon(ErrorSeverity severity)
     switch (severity)
     {
     case ERROR_INFO:
-        return "ℹ️";
+        return "[INFO]";
     case ERROR_WARNING:
-        return "⚠️";
+        return "[WARNING]";
     case ERROR_ERROR:
-        return "❌";
+        return "[ERROR]";
     case ERROR_FATAL:
-        return "💀";
+        return "[FATAL]";
     default:
-        return "❓";
+        return "[UNKNOWN]";
     }
 }
 
