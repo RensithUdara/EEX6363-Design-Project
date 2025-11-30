@@ -124,7 +124,7 @@ int initialize_output_files(const char *input_filename)
     char *dot_pos = strrchr(input_filename, '.');
     char *slash_pos = strrchr(input_filename, '/');
     char *backslash_pos = strrchr(input_filename, '\\');
-    
+
     // Get the filename without path
     const char *filename_only = input_filename;
     if (slash_pos && (!backslash_pos || slash_pos > backslash_pos))
@@ -147,7 +147,8 @@ int initialize_output_files(const char *input_filename)
     // Create lexical output file
     snprintf(filename, sizeof(filename), "%s_lexical_output.txt", base_name);
     lexical_output_file = fopen(filename, "w");
-    if (!lexical_output_file) {
+    if (!lexical_output_file)
+    {
         fprintf(stderr, "Error: Cannot create lexical output file: %s\n", filename);
         return 0;
     }
@@ -155,7 +156,8 @@ int initialize_output_files(const char *input_filename)
     // Create syntax output file
     snprintf(filename, sizeof(filename), "%s_syntax_output.txt", base_name);
     syntax_output_file = fopen(filename, "w");
-    if (!syntax_output_file) {
+    if (!syntax_output_file)
+    {
         fprintf(stderr, "Error: Cannot create syntax output file: %s\n", filename);
         return 0;
     }
@@ -163,7 +165,8 @@ int initialize_output_files(const char *input_filename)
     // Create semantic output file
     snprintf(filename, sizeof(filename), "%s_semantic_output.txt", base_name);
     semantic_output_file = fopen(filename, "w");
-    if (!semantic_output_file) {
+    if (!semantic_output_file)
+    {
         fprintf(stderr, "Error: Cannot create semantic output file: %s\n", filename);
         return 0;
     }
@@ -171,7 +174,8 @@ int initialize_output_files(const char *input_filename)
     // Create symbol table file
     snprintf(filename, sizeof(filename), "%s_symbol_table.txt", base_name);
     symbol_table_file = fopen(filename, "w");
-    if (!symbol_table_file) {
+    if (!symbol_table_file)
+    {
         fprintf(stderr, "Error: Cannot create symbol table file: %s\n", filename);
         return 0;
     }
@@ -179,7 +183,8 @@ int initialize_output_files(const char *input_filename)
     // Create intermediate code file
     snprintf(filename, sizeof(filename), "%s_intermediate_code.txt", base_name);
     intermediate_code_file = fopen(filename, "w");
-    if (!intermediate_code_file) {
+    if (!intermediate_code_file)
+    {
         fprintf(stderr, "Error: Cannot create intermediate code file: %s\n", filename);
         return 0;
     }
@@ -759,7 +764,8 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     // Check if input file exists
     FILE *test_input = fopen(input_file, "r");
-    if (!test_input) {
+    if (!test_input)
+    {
         fprintf(stderr, "Error: Cannot open input file: %s\n", input_file);
         return -1;
     }
