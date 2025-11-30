@@ -2,7 +2,7 @@
 Semantic Analysis Output (TMA3)
 ========================================
 Input: tests/examples/test_simple.txt
-Generated: Nov 30 2025 21:54:36
+Generated: Nov 30 2025 22:03:02
 
 SYMBOL TABLE:
 -------------
@@ -46,7 +46,7 @@ Parser Type:        Recursive descent parser with syntax-directed translation
 TYPE CHECKING RESULTS:
 ----------------------
 Semantic Errors: 0
-Semantic Warnings: 3
+Semantic Warnings: 0
 ✓ All type checks passed
 ✓ All variables properly declared
 ✓ All function calls validated
