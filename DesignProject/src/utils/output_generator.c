@@ -379,22 +379,22 @@ void generate_execution_output_file(const char *input_file, ASTNode *ast)
     int return_value = execute_program(ast, variables, &var_count, output);
 
     fprintf(output, "\n════════════════════════════════════════════════════════════════════════════\n");
-    fprintf(output, "📊 EXECUTION SUMMARY:\n");
+    fprintf(output, "EXECUTION SUMMARY:\n");
     fprintf(output, "════════════════════════════════════════════════════════════════════════════\n\n");
 
-    fprintf(output, "💾 FINAL VARIABLE STATES:\n");
+    fprintf(output, "FINAL VARIABLE STATES:\n");
     print_variable_state(variables, var_count, output);
 
-    fprintf(output, "\n🎯 PROGRAM RESULT:\n");
+    fprintf(output, "\nPROGRAM RESULT:\n");
     fprintf(output, "   └─ Return Value: %d\n", return_value);
-    fprintf(output, "   └─ Execution Status: ✅ SUCCESS\n");
+    fprintf(output, "   └─ Execution Status: SUCCESS\n");
 
     fprintf(output, "\n================================================================================\n");
     fprintf(output, "                           END OF EXECUTION                                     \n");
     fprintf(output, "================================================================================\n");
 
     fclose(output);
-    printf("✅ Execution output generated: %s\n", output_filename);
+    printf("Execution output generated: %s\n", output_filename);
 }
 
 // Execute program AST and compute actual values
@@ -542,7 +542,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
         if (node->child_count > 0)
         {
             return_value = evaluate_expression(node->children[0], variables, *var_count);
-            fprintf(output, "🏁 Return: return(%d)\n", return_value);
+            fprintf(output, "Return: return(%d)\n", return_value);
             fprintf(output, "   └─ Function returns: %d\n\n", return_value);
         }
         break;
