@@ -243,10 +243,10 @@ void generate_lexical_output(const char *input_file)
     fprintf(lexical_output_file, "║                              Complete Token Stream                           ║\n");
     fprintf(lexical_output_file, "╚═══════════════════════════════════════════════════════════════════════════════╝\n\n");
 
-    fprintf(lexical_output_file, "📄 INPUT FILE: %s\n", input_file);
-    fprintf(lexical_output_file, "🕒 GENERATED: %s\n", timestamp);
-    fprintf(lexical_output_file, "⚙️  ANALYZER: Enhanced Lexical Scanner v2.0\n");
-    fprintf(lexical_output_file, "🎯 PHASE: Phase 1 - Lexical Analysis\n\n");
+    fprintf(lexical_output_file, "INPUT FILE: %s\n", input_file);
+    fprintf(lexical_output_file, "GENERATED: %s\n", timestamp);
+    fprintf(lexical_output_file, "ANALYZER: Enhanced Lexical Scanner v2.0\n");
+    fprintf(lexical_output_file, "PHASE: Phase 1 - Lexical Analysis\n\n");
 
     fprintf(lexical_output_file, "┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐\n");
     fprintf(lexical_output_file, "│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │\n");
@@ -1064,7 +1064,7 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     double codegen_ms = ((double)codegen_time / CLOCKS_PER_SEC) * 1000.0;
     double total_time = lexical_ms + syntax_ms + semantic_ms + codegen_ms;
 
-    fprintf(arch_file, "📋 COMPILER OVERVIEW:\n");
+    fprintf(arch_file, "COMPILER OVERVIEW:\n");
     fprintf(arch_file, "─────────────────────\n");
     fprintf(arch_file, "• Architecture Type: Multi-Phase Compilation Pipeline\n");
     fprintf(arch_file, "• Target Platform: x86-64 Assembly (AT&T Syntax)\n");
@@ -1072,9 +1072,9 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     fprintf(arch_file, "• Optimization Level: Basic with Register Allocation\n");
     fprintf(arch_file, "• Error Recovery: Comprehensive Multi-Level System\n\n");
 
-    fprintf(arch_file, "🔄 COMPILATION PIPELINE STATUS:\n");
+    fprintf(arch_file, "COMPILATION PIPELINE STATUS:\n");
     fprintf(arch_file, "───────────────────────────────\n");
-    fprintf(arch_file, "                                                     ⏱️  Performance\n");
+    fprintf(arch_file, "                                                     Performance\n");
     fprintf(arch_file, "┌─────────────────────┬─────────────┬─────────────┬─────────────────┐\n");
     fprintf(arch_file, "│ Phase               │ Status      │ Time (ms)   │ Efficiency      │\n");
     fprintf(arch_file, "├─────────────────────┼─────────────┼─────────────┼─────────────────┤\n");
