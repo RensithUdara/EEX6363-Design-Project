@@ -1,7 +1,7 @@
 ===============================================================================
                         COMPILATION OUTPUT EXPLANATION                        
 ===============================================================================
-Generated: November 30, 2025 at 23:11:20
+Generated: November 30, 2025 at 23:21:14
 Input File: tests/examples/test_simple.txt
 Assembly File: output.s
 Status: Compilation Successful (No Errors)
