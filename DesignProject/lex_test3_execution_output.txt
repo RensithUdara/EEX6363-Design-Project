@@ -1,0 +1,47 @@
+================================================================================
+                        PROGRAM EXECUTION OUTPUT                                
+================================================================================
+Source File:     /tmp/lex_test3.txt
+Generated:       Dec  1 2025 00:24:56
+Execution Mode:  AST Interpretation Simulation
+Compiler:        EEX6363 Design Project Compiler
+================================================================================
+
+PROGRAM EXECUTION TRACE:
+════════════════════════════════════════════════════════════════════════════
+
+Starting program execution...
+
+Entering function: numTest()
+   ├─ Setting up local scope...
+
+Variable Declaration: x
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+Variable Declaration: y
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+Assignment: x := 123
+   └─ x now contains: 123
+
+Assignment: y := 0
+   └─ y now contains: 0
+
+
+════════════════════════════════════════════════════════════════════════════
+EXECUTION SUMMARY:
+════════════════════════════════════════════════════════════════════════════
+
+FINAL VARIABLE STATES:
+   ├─ x = 123
+   ├─ y = 0
+
+PROGRAM RESULT:
+   └─ Return Value: 0
+   └─ Execution Status: SUCCESS
+
+================================================================================
+                           END OF EXECUTION                                     
+================================================================================
