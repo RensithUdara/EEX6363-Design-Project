@@ -1,7 +1,7 @@
 ========================================
 Design Project - Performance Report
 ========================================
-Generated: November 30, 2025 at 22:51:59
+Generated: November 30, 2025 at 23:11:20
 Test Input: tests/examples/test_simple.txt
 
 COMPILER PERFORMANCE ANALYSIS:
@@ -38,12 +38,12 @@ COMPILER PERFORMANCE ANALYSIS:
 
 PERFORMANCE SUMMARY:
 ==================
-✅ STATUS: COMPILATION SUCCESSFUL
+ STATUS: COMPILATION SUCCESSFUL
    - All phases completed without errors
    - Code generation successful
    - Performance: Excellent
 
 RECOMMENDATIONS:
 ===============
-✅ Code is ready for use
+ Code is ready for use
 → Consider adding more comprehensive tests
