@@ -1,0 +1,52 @@
+========================================
+Semantic Analysis Output (TMA3)
+========================================
+Input: tests/examples/test_simple.txt
+Generated: Nov 30 2025 23:09:18
+
+SYMBOL TABLE:
+-------------
+================================================================================
+                    TMA03 COMPREHENSIVE SYMBOL TABLE                           
+================================================================================
+Description: Complete hierarchical scope structure with detailed symbol info
+Features: Types, visibility, parameters, inheritance, array dimensions
+================================================================================
+
+┌─── SCOPE: global (Level 0) ─── [1 symbols] ──────────────────────────────────┐
+│
+│   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
+│   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
+│   simpleTest         │ FUNCTION     │ integer      │ public     │ Line 11  │ Returns: integer, No parameters
+└────────────────────────────────────────────────────────────────────────────────┘
+
+  ┌─── SCOPE: func_simpleTest (Level 1) ─── [3 symbols] ─────────────────────────┐
+  │
+  │   Symbol Name        │ Symbol Type  │ Data Type    │ Visibility │ Location │ Details
+  │   ──────────────────┼──────────────┼──────────────┼────────────┼──────────┼────────────
+  │   result             │ VARIABLE     │ integer      │ public     │ Line 14  │ Simple integer
+  │   y                  │ VARIABLE     │ integer      │ public     │ Line 13  │ Simple integer
+  │   x                  │ VARIABLE     │ integer      │ public     │ Line 12  │ Simple integer
+  └────────────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+                              SYMBOL TABLE SUMMARY                             
+================================================================================
+Total Scopes:       2
+Total Symbols:      4
+  ├─ Functions:     1
+  ├─ Classes:       0
+  └─ Variables:     3 (includes parameters and attributes)
+
+Scope Hierarchy:    1 levels deep
+Analysis Status:    Two-phase semantic analysis completed
+Parser Type:        Recursive descent parser with syntax-directed translation
+================================================================================
+
+TYPE CHECKING RESULTS:
+----------------------
+Semantic Errors: 0
+Semantic Warnings: 0
+✓ All type checks passed
+✓ All variables properly declared
+✓ All function calls validated

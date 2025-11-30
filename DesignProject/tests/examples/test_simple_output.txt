@@ -1,7 +1,7 @@
 ===============================================================================
                         COMPILATION OUTPUT EXPLANATION                        
 ===============================================================================
-Generated: November 30, 2025 at 22:51:59
+Generated: November 30, 2025 at 23:11:20
 Input File: tests/examples/test_simple.txt
 Assembly File: output.s
 Status: Compilation Successful (No Errors)
@@ -9,7 +9,7 @@ Status: Compilation Successful (No Errors)
 PROGRAM STRUCTURE ANALYSIS:
 ═══════════════════════════════════════════════════════════════════════════════
 
-🏗️  INPUT PROGRAM COMPONENTS:
+  INPUT PROGRAM COMPONENTS:
    ├─ Functions Defined: 1
    │  └─ Names: simpleTest
    ├─ Local Variables: 3
@@ -21,36 +21,36 @@ GENERATED ASSEMBLY CODE EXPLANATION:
 
 The compiler generated x86-64 assembly code with the following structure:
 
-🔧 # Function: simpleTest
+ # Function: simpleTest
    This defines the entry point for a function
 
-🏷️  simpleTest:
+  simpleTest:
    Function label - marks the beginning of executable code
 
-📝     movq $1, -8(%rbp)
+     movq $1, -8(%rbp)
    Store constant value in local variable
 
-📝     movq $20, -16(%rbp)
+     movq $20, -16(%rbp)
    Store constant value in local variable
 
-📺     call write_int             # Call write function
+     call write_int             # Call write function
    Call system function to display integer value
 
-📤     movq -24(%rbp), %rax       # Load return value
+     movq -24(%rbp), %rax       # Load return value
    Load variable value into accumulator register
 
-🚪     ret
+     ret
    Return control to calling function
 
-📊 COMPILATION STATISTICS:
+ COMPILATION STATISTICS:
 ═══════════════════════════════════════════════════════════════════════════════
 
-✅ Lexical Analysis:    PASSED (No lexical errors)
-✅ Syntax Analysis:     PASSED (Valid program structure)
-✅ Semantic Analysis:   PASSED (All types and scopes valid)
-✅ Code Generation:     PASSED (Assembly code generated)
+ Lexical Analysis:    PASSED (No lexical errors)
+ Syntax Analysis:     PASSED (Valid program structure)
+ Semantic Analysis:   PASSED (All types and scopes valid)
+ Code Generation:     PASSED (Assembly code generated)
 
-🎯 EXECUTION GUIDANCE:
+ EXECUTION GUIDANCE:
 ═══════════════════════════════════════════════════════════════════════════════
 
 To execute the generated assembly code:

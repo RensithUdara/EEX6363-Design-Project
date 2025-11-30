@@ -374,7 +374,7 @@ void generate_lexical_output(const char *input_file)
     fprintf(lexical_output_file, "║ 🕐 Generation Timestamp      : %-49s ║\n", timestamp);
     fprintf(lexical_output_file, "║ 📂 Input Source File         : %-49s ║\n", input_file);
     fprintf(lexical_output_file, "║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║\n");
-    fprintf(lexical_output_file, "║ ✅ Analysis Status           : %-49s ║\n",
+    fprintf(lexical_output_file, "║  Analysis Status           : %-49s ║\n",
             (get_lexical_error_count() == 0) ? "COMPLETED SUCCESSFULLY" : "COMPLETED WITH WARNINGS");
     fprintf(lexical_output_file, "╚═══════════════════════════════════════════════════════════════════════════════════╝\n");
 
@@ -842,13 +842,13 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     if (tma03_result != 0 || semantic_errors > 0)
     {
-        printf("✗ TMA03 semantic analysis detected %d error(s)!\n", semantic_errors);
+        printf("TMA03 semantic analysis detected %d error(s)!\n", semantic_errors);
         printf("  - Semantic errors: %d\n", semantic_errors);
         ast = NULL; // Mark compilation as failed
     }
     else
     {
-        printf("✓ TMA03 semantic analysis: No errors detected\n");
+        printf("TMA03 semantic analysis: No errors detected\n");
     }
 
     // Display actual semantic errors if any found
@@ -868,7 +868,7 @@ int compile_with_output_generation(const char *input_file, const char *output_fi
 
     if (semantic_errors > 0)
     {
-        printf("\n❌ COMPILATION FAILED\n");
+        printf("\n COMPILATION FAILED\n");
         printf("Semantic analysis failed with %d errors.\n", semantic_errors);
         printf("Check the semantic output and error log files for details.\n");
         close_output_files();
@@ -988,9 +988,9 @@ int main(int argc, char *argv[])
     }
 
     printf("\n========================================\n");
-    printf("✅ ALL FILES GENERATED SUCCESSFULLY!\n");
+    printf(" ALL FILES GENERATED SUCCESSFULLY!\n");
     printf("========================================\n");
-    printf("\n📊 CORE ANALYSIS FILES:\n");
+    printf("\nCORE ANALYSIS FILES:\n");
     printf("- Lexical Analysis: %s_lexical_output.txt\n", base_name);
     printf("- Syntax Analysis: %s_syntax_output.txt\n", base_name);
     printf("- Semantic Analysis: %s_semantic_output.txt\n", base_name);
@@ -1000,10 +1000,10 @@ int main(int argc, char *argv[])
 
     if (result == 0)
     {
-        printf("- 🎯 OUTPUT EXPLANATION: %s_output.txt\n", base_name);
+        printf("- OUTPUT EXPLANATION: %s_output.txt\n", base_name);
     }
 
-    printf("\n📋 DETAILED REPORTS:\n");
+    printf("\nDETAILED REPORTS:\n");
     printf("- Architecture Design: %s_architecture_design.txt\n", base_name);
     printf("- Performance Report: %s_performance_report.txt\n", base_name);
     printf("- Integration Tests: %s_integration_test.txt\n", base_name);
@@ -1011,7 +1011,7 @@ int main(int argc, char *argv[])
     printf("- Test Results: test_results.txt\n");
 
     int total_files = result == 0 ? 11 : 10;
-    printf("\n🎉 Total: %d comprehensive output files created!\n", total_files);
+    printf("\nTotal: %d comprehensive output files created!\n", total_files);
     printf("========================================\n");
 
     // Close real-time error log file
@@ -1049,8 +1049,8 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     get_current_timestamp(timestamp, sizeof(timestamp));
     fprintf(arch_file, "Generated: %s\n\n", timestamp);
 
-    fprintf(arch_file, "🏗️  COMPILER ARCHITECTURE ANALYSIS\n");
-    fprintf(arch_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
+    fprintf(arch_file, "COMPILER ARCHITECTURE ANALYSIS\n");
+    fprintf(arch_file, "===============================================================================\n\n");
 
     // Analyze actual compiler configuration with detailed metrics
     int has_lexical = (lexical_time > 0 || total_tokens > 0);
@@ -1065,7 +1065,7 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     double total_time = lexical_ms + syntax_ms + semantic_ms + codegen_ms;
 
     fprintf(arch_file, "COMPILER OVERVIEW:\n");
-    fprintf(arch_file, "─────────────────────\n");
+    fprintf(arch_file, "---------------------\n");
     fprintf(arch_file, "• Architecture Type: Multi-Phase Compilation Pipeline\n");
     fprintf(arch_file, "• Target Platform: x86-64 Assembly (AT&T Syntax)\n");
     fprintf(arch_file, "• Implementation: C Language with Flex/Bison\n");
@@ -1073,32 +1073,32 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     fprintf(arch_file, "• Error Recovery: Comprehensive Multi-Level System\n\n");
 
     fprintf(arch_file, "COMPILATION PIPELINE STATUS:\n");
-    fprintf(arch_file, "───────────────────────────────\n");
+    fprintf(arch_file, "-------------------------------\n");
     fprintf(arch_file, "                                                     Performance\n");
-    fprintf(arch_file, "┌─────────────────────┬─────────────┬─────────────┬─────────────────┐\n");
-    fprintf(arch_file, "│ Phase               │ Status      │ Time (ms)   │ Efficiency      │\n");
-    fprintf(arch_file, "├─────────────────────┼─────────────┼─────────────┼─────────────────┤\n");
-    fprintf(arch_file, "│ Lexical Analysis    │ %-11s │ %8.2f    │ %s          │\n",
+    fprintf(arch_file, "+---------------------+-------------+-------------+-----------------+\n");
+    fprintf(arch_file, "| Phase               | Status      | Time (ms)   | Efficiency      |\n");
+    fprintf(arch_file, "+---------------------+-------------+-------------+-----------------+\n");
+    fprintf(arch_file, "| Lexical Analysis    | %-11s | %8.2f    | %s          |\n",
             has_lexical ? "ACTIVE" : "FAILED", lexical_ms,
             lexical_ms < 1.0 ? "Excellent" : lexical_ms < 5.0 ? "Good"
                                                               : "Slow");
-    fprintf(arch_file, "│ Syntax Analysis     │ %-11s │ %8.2f    │ %s          │\n",
+    fprintf(arch_file, "| Syntax Analysis     | %-11s | %8.2f    | %s          |\n",
             has_syntax ? "ACTIVE" : "FAILED", syntax_ms,
             syntax_ms < 2.0 ? "Excellent" : syntax_ms < 10.0 ? "Good"
                                                              : "Slow");
-    fprintf(arch_file, "│ Semantic Analysis   │ %-11s │ %8.2f    │ %s          │\n",
+    fprintf(arch_file, "| Semantic Analysis   | %-11s | %8.2f    | %s          |\n",
             has_semantic ? "ACTIVE" : "FAILED", semantic_ms,
             semantic_ms < 3.0 ? "Excellent" : semantic_ms < 15.0 ? "Good"
                                                                  : "Slow");
-    fprintf(arch_file, "│ Code Generation     │ %-11s │ %8.2f    │ %s          │\n",
+    fprintf(arch_file, "| Code Generation     | %-11s | %8.2f    | %s          |\n",
             has_codegen ? "ACTIVE" : "FAILED", codegen_ms,
             codegen_ms < 5.0 ? "Excellent" : codegen_ms < 20.0 ? "Good"
                                                                : "Slow");
-    fprintf(arch_file, "└─────────────────────┴─────────────┴─────────────┴─────────────────┘\n\n");
+    fprintf(arch_file, "+---------------------+-------------+-------------+-----------------+\n\n");
 
     // Visual pipeline representation
     fprintf(arch_file, "COMPILATION FLOW:\n");
-    fprintf(arch_file, "───────────────────\n");
+    fprintf(arch_file, "-------------------\n");
     fprintf(arch_file, "     Source Code (.txt)\n");
     fprintf(arch_file, "            │\n");
     fprintf(arch_file, "            ▼\n");
@@ -1124,38 +1124,38 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     fprintf(arch_file, "       └─ x86-64 Assembly\n");
     fprintf(arch_file, "            │\n");
     fprintf(arch_file, "            ▼\n");
-    fprintf(arch_file, "     📦 OUTPUT (.s)\n\n");
+    fprintf(arch_file, "      OUTPUT (.s)\n\n");
 
-    fprintf(arch_file, "📊 DETAILED PHASE ANALYSIS:\n");
-    fprintf(arch_file, "═══════════════════════════\n\n");
+    fprintf(arch_file, "DETAILED PHASE ANALYSIS:\n");
+    fprintf(arch_file, "===========================\n\n");
 
     // Phase 1: Lexical Analysis
-    fprintf(arch_file, "🔤 PHASE 1: LEXICAL ANALYSIS\n");
-    fprintf(arch_file, "────────────────────────────\n");
-    fprintf(arch_file, "Status:       %s\n", has_lexical ? "✅ OPERATIONAL" : "❌ FAILED");
+    fprintf(arch_file, "PHASE 1: LEXICAL ANALYSIS\n");
+    fprintf(arch_file, "----------------------------\n");
+    fprintf(arch_file, "Status:       %s\n", has_lexical ? "OPERATIONAL" : "FAILED");
     fprintf(arch_file, "Input:        Source code from %s\n", input_file);
     fprintf(arch_file, "Output:       %d tokens generated\n", total_tokens);
     fprintf(arch_file, "Processing:   %.2fms execution time\n", lexical_ms);
     fprintf(arch_file, "Tool Used:    Flex (scanner.l)\n");
     fprintf(arch_file, "Errors:       %d lexical errors detected\n", get_lexical_error_count());
-    fprintf(arch_file, "Performance:  %s\n\n", lexical_ms < 1.0 ? "🚀 Excellent" : "⚡ Good");
+    fprintf(arch_file, "Performance:  %s\n\n", lexical_ms < 1.0 ? "Excellent" : "Good");
 
     // Phase 2: Syntax Analysis
-    fprintf(arch_file, "🌳 PHASE 2: SYNTAX ANALYSIS\n");
-    fprintf(arch_file, "───────────────────────────\n");
-    fprintf(arch_file, "Status:       %s\n", has_syntax ? "✅ OPERATIONAL" : "❌ FAILED");
+    fprintf(arch_file, "PHASE 2: SYNTAX ANALYSIS\n");
+    fprintf(arch_file, "---------------------------\n");
+    fprintf(arch_file, "Status:       %s\n", has_syntax ? "OPERATIONAL" : "FAILED");
     fprintf(arch_file, "Input:        Token stream (%d tokens)\n", total_tokens);
-    fprintf(arch_file, "Output:       %s\n", ast ? "Abstract Syntax Tree generated" : "❌ AST generation failed");
+    fprintf(arch_file, "Output:       %s\n", ast ? "Abstract Syntax Tree generated" : "AST generation failed");
     fprintf(arch_file, "AST Nodes:    %d nodes created\n", total_ast_nodes);
     fprintf(arch_file, "Processing:   %.2fms execution time\n", syntax_ms);
     fprintf(arch_file, "Tool Used:    Bison (parser.y)\n");
     fprintf(arch_file, "Errors:       %d syntax errors detected\n", get_syntax_error_count());
-    fprintf(arch_file, "Performance:  %s\n\n", syntax_ms < 2.0 ? "🚀 Excellent" : "⚡ Good");
+    fprintf(arch_file, "Performance:  %s\n\n", syntax_ms < 2.0 ? "Excellent" : "Good");
 
     // Phase 3: Semantic Analysis
-    fprintf(arch_file, "🧠 PHASE 3: SEMANTIC ANALYSIS\n");
-    fprintf(arch_file, "─────────────────────────────\n");
-    fprintf(arch_file, "Status:       %s\n", has_semantic ? "✅ OPERATIONAL" : "❌ FAILED");
+    fprintf(arch_file, "PHASE 3: SEMANTIC ANALYSIS\n");
+    fprintf(arch_file, "-----------------------------\n");
+    fprintf(arch_file, "Status:       %s\n", has_semantic ? "OPERATIONAL" : "FAILED");
     fprintf(arch_file, "Input:        Abstract Syntax Tree (%d nodes)\n", total_ast_nodes);
     fprintf(arch_file, "Output:       Annotated AST + Symbol Tables\n");
     fprintf(arch_file, "Errors:       %d semantic errors found\n", get_semantic_error_count());
@@ -1163,12 +1163,12 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     fprintf(arch_file, "Processing:   %.2fms execution time\n", semantic_ms);
     fprintf(arch_file, "Components:   semantic.c, ast.c, error_handler.c\n");
     fprintf(arch_file, "Symbols:      %d symbols in table\n", count_total_symbols());
-    fprintf(arch_file, "Performance:  %s\n\n", semantic_ms < 3.0 ? "🚀 Excellent" : "⚡ Good");
+    fprintf(arch_file, "Performance:  %s\n\n", semantic_ms < 3.0 ? "Excellent" : "Good");
 
     // Phase 4: Code Generation
-    fprintf(arch_file, "⚙️  PHASE 4: CODE GENERATION\n");
-    fprintf(arch_file, "────────────────────────────\n");
-    fprintf(arch_file, "Status:       %s\n", has_codegen ? "✅ OPERATIONAL" : "❌ FAILED");
+    fprintf(arch_file, "PHASE 4: CODE GENERATION\n");
+    fprintf(arch_file, "----------------------------\n");
+    fprintf(arch_file, "Status:       %s\n", has_codegen ? "OPERATIONAL" : "FAILED");
     fprintf(arch_file, "Input:        Annotated AST + Symbol Tables\n");
     fprintf(arch_file, "Output:       x86-64 Assembly Code (output.s)\n");
     fprintf(arch_file, "Target Arch:  x86-64 (64-bit Intel/AMD)\n");
@@ -1177,45 +1177,45 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     fprintf(arch_file, "Components:   codegen.c, register_allocator.c\n");
     fprintf(arch_file, "Registers:    16 general-purpose registers available\n");
     fprintf(arch_file, "Optimization: Basic register allocation\n");
-    fprintf(arch_file, "Performance:  %s\n", codegen_ms < 5.0 ? "🚀 Excellent" : "⚡ Good");
+    fprintf(arch_file, "Performance:  %s\n", codegen_ms < 5.0 ? "Excellent" : "Good");
 
     // Add diagnostic information if code generation failed
     if (!has_codegen)
     {
-        fprintf(arch_file, "\n🔍 CODE GENERATION DIAGNOSTICS:\n");
+        fprintf(arch_file, "\n CODE GENERATION DIAGNOSTICS:\n");
         fprintf(arch_file, "───────────────────────────────\n");
         fprintf(arch_file, "Failure Reason: ");
         if (!ast)
         {
-            fprintf(arch_file, "❌ No AST available (syntax errors)\n");
+            fprintf(arch_file, " No AST available (syntax errors)\n");
         }
         else if (get_semantic_error_count() > 0)
         {
-            fprintf(arch_file, "❌ Semantic errors prevent code generation\n");
+            fprintf(arch_file, " Semantic errors prevent code generation\n");
         }
         else if (codegen_errors > 0)
         {
-            fprintf(arch_file, "❌ Code generation module errors\n");
+            fprintf(arch_file, " Code generation module errors\n");
         }
         else
         {
-            fprintf(arch_file, "❌ Unknown issue in code generation pipeline\n");
+            fprintf(arch_file, " Unknown issue in code generation pipeline\n");
         }
         fprintf(arch_file, "Prerequisites: AST: %s, Semantic: %s\n",
-                ast ? "✅ Available" : "❌ Missing",
-                get_semantic_error_count() == 0 ? "✅ Clean" : "❌ Errors");
+                ast ? " Available" : " Missing",
+                get_semantic_error_count() == 0 ? " Clean" : " Errors");
         fprintf(arch_file, "Suggested Fix: %s\n",
                 !ast ? "Fix syntax errors first" : get_semantic_error_count() > 0 ? "Fix semantic errors first"
                                                                                   : "Check codegen module implementation");
     }
     fprintf(arch_file, "\n");
 
-    fprintf(arch_file, "📈 SYSTEM PERFORMANCE & RESOURCES:\n");
-    fprintf(arch_file, "═══════════════════════════════════\n\n");
+    fprintf(arch_file, "SYSTEM PERFORMANCE & RESOURCES:\n");
+    fprintf(arch_file, "===================================\n\n");
 
     // Performance metrics
-    fprintf(arch_file, "⏱️  TIMING ANALYSIS:\n");
-    fprintf(arch_file, "──────────────────\n");
+    fprintf(arch_file, "TIMING ANALYSIS:\n");
+    fprintf(arch_file, "------------------\n");
     fprintf(arch_file, "Total Compilation Time:  %.2fms\n", total_time);
     fprintf(arch_file, "Average Phase Time:      %.2fms\n", total_time / 4.0);
     fprintf(arch_file, "Fastest Phase:          %s (%.2fms)\n",
@@ -1233,53 +1233,53 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
                                                                                                         : semantic_ms >= codegen_ms                             ? semantic_ms
                                                                                                                                                                 : codegen_ms);
     fprintf(arch_file, "Compilation Speed:       %s\n\n",
-            total_time < 10.0 ? "🚀 Very Fast" : total_time < 50.0 ? "⚡ Fast"
-                                             : total_time < 200.0  ? "🐌 Moderate"
-                                                                   : "⚠️  Slow");
+            total_time < 10.0 ? "Very Fast" : total_time < 50.0 ? "Fast"
+                                          : total_time < 200.0  ? "Moderate"
+                                                                : "Slow");
 
     // Memory and resources
-    fprintf(arch_file, "💾 MEMORY & RESOURCES:\n");
-    fprintf(arch_file, "─────────────────────\n");
+    fprintf(arch_file, "MEMORY & RESOURCES:\n");
+    fprintf(arch_file, "---------------------\n");
     fprintf(arch_file, "Memory Model:           Dynamic allocation\n");
     fprintf(arch_file, "Token Buffer:           %d tokens stored\n", total_tokens);
     fprintf(arch_file, "AST Memory:             %d nodes allocated\n", total_ast_nodes);
     fprintf(arch_file, "Symbol Tables:          %d entries\n", count_total_symbols());
     fprintf(arch_file, "File Handles:           6 output files\n");
-    fprintf(arch_file, "Memory Efficiency:      ✅ Optimal\n\n");
+    fprintf(arch_file, "Memory Efficiency:       Optimal\n\n");
 
     // Quality metrics
-    fprintf(arch_file, "🔍 CODE QUALITY METRICS:\n");
-    fprintf(arch_file, "───────────────────────\n");
+    fprintf(arch_file, "CODE QUALITY METRICS:\n");
+    fprintf(arch_file, "-----------------------\n");
     int total_errors = get_total_error_count();
     int warnings = get_warning_count();
     fprintf(arch_file, "Error Status:           %s (%d errors, %d warnings)\n",
-            total_errors == 0 ? "✅ Clean" : total_errors <= 5 ? "⚠️  Minor Issues"
-                                                               : "❌ Major Issues",
+            total_errors == 0 ? "Clean" : total_errors <= 5 ? "Minor Issues"
+                                                            : "Major Issues",
             total_errors, warnings);
-    fprintf(arch_file, "Parser Success:         %s\n", ast ? "✅ AST Generated" : "❌ Parse Failed");
-    fprintf(arch_file, "Symbol Resolution:      %s\n", get_semantic_error_count() == 0 ? "✅ Complete" : "⚠️  Issues Found");
-    fprintf(arch_file, "Code Generation:        %s\n", has_codegen ? "✅ Assembly Generated" : "❌ Failed");
+    fprintf(arch_file, "Parser Success:         %s\n", ast ? "AST Generated" : "Parse Failed");
+    fprintf(arch_file, "Symbol Resolution:      %s\n", get_semantic_error_count() == 0 ? "Complete" : "Issues Found");
+    fprintf(arch_file, "Code Generation:        %s\n", has_codegen ? "Assembly Generated" : "Failed");
     fprintf(arch_file, "Overall Quality:        %s\n\n",
-            total_errors == 0 && ast && has_codegen ? "🏆 Excellent" : total_errors <= 2 && ast ? "⭐ Good"
-                                                                                                : "⚠️  Needs Attention");
+            total_errors == 0 && ast && has_codegen ? "Excellent" : total_errors <= 2 && ast ? "Good"
+                                                                                             : "Needs Attention");
 
     // Architecture summary
-    fprintf(arch_file, "🏗️  ARCHITECTURE SUMMARY:\n");
-    fprintf(arch_file, "─────────────────────────\n");
+    fprintf(arch_file, "ARCHITECTURE SUMMARY:\n");
+    fprintf(arch_file, "-------------------------\n");
     fprintf(arch_file, "Compiler Type:          Multi-pass compiler\n");
     fprintf(arch_file, "Phases Implemented:     4/4 (100%%)\n");
-    fprintf(arch_file, "Error Recovery:         ✅ Comprehensive system\n");
+    fprintf(arch_file, "Error Recovery:         Comprehensive system\n");
     fprintf(arch_file, "Output Formats:         6 detailed reports + assembly\n");
-    fprintf(arch_file, "Integration Status:     ✅ TMA01 + TMA02 + TMA03 + Design Project\n");
-    fprintf(arch_file, "Documentation:          ✅ Auto-generated reports\n");
-    fprintf(arch_file, "Testing Framework:      ✅ Integrated test suite\n\n");
+    fprintf(arch_file, "Integration Status:     TMA01 + TMA02 + TMA03 + Design Project\n");
+    fprintf(arch_file, "Documentation:          Auto-generated reports\n");
+    fprintf(arch_file, "Testing Framework:      Integrated test suite\n\n");
 
-    fprintf(arch_file, "═══════════════════════════════════════════════════════════════════════════════\n");
-    fprintf(arch_file, "🎯 CONCLUSION: This compiler successfully implements a complete 4-phase\n");
+    fprintf(arch_file, "===============================================================================\n");
+    fprintf(arch_file, "CONCLUSION: This compiler successfully implements a complete 4-phase\n");
     fprintf(arch_file, "   compilation pipeline with comprehensive error handling, detailed reporting,\n");
     fprintf(arch_file, "   and efficient resource management. All phases are operational and\n");
     fprintf(arch_file, "   producing high-quality output.\n");
-    fprintf(arch_file, "═══════════════════════════════════════════════════════════════════════════════\n");
+    fprintf(arch_file, "===============================================================================\n");
 
     fclose(arch_file);
 }
@@ -1365,12 +1365,12 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
 
     fprintf(error_file, "FILE GENERATION STATUS:\n");
     fprintf(error_file, "======================\n");
-    fprintf(error_file, "✅ %s_lexical_output.txt - Generated successfully\n", base_name);
-    fprintf(error_file, "✅ %s_syntax_output.txt - Generated successfully\n", base_name);
-    fprintf(error_file, "✅ %s_semantic_output.txt - Generated successfully\n", base_name);
-    fprintf(error_file, "✅ %s_symbol_table.txt - Generated successfully\n", base_name);
-    fprintf(error_file, "✅ %s_intermediate_code.txt - Generated successfully\n", base_name);
-    fprintf(error_file, "✅ output.s - Generated successfully\n\n");
+    fprintf(error_file, " %s_lexical_output.txt - Generated successfully\n", base_name);
+    fprintf(error_file, " %s_syntax_output.txt - Generated successfully\n", base_name);
+    fprintf(error_file, " %s_semantic_output.txt - Generated successfully\n", base_name);
+    fprintf(error_file, " %s_symbol_table.txt - Generated successfully\n", base_name);
+    fprintf(error_file, " %s_intermediate_code.txt - Generated successfully\n", base_name);
+    fprintf(error_file, " output.s - Generated successfully\n\n");
 
     fprintf(error_file, "PERFORMANCE METRICS:\n");
     fprintf(error_file, "==================\n");
@@ -1393,21 +1393,21 @@ void generate_error_log_file(const char *input_file, int has_errors, ASTNode *as
     // Final status based on actual error counts
     if (actual_total_errors > 0)
     {
-        fprintf(error_file, "❌ FAILED: Compilation completed with %d error(s).\n", actual_total_errors);
+        fprintf(error_file, " FAILED: Compilation completed with %d error(s).\n", actual_total_errors);
         fprintf(error_file, "\nREQUIRED ACTIONS:\n");
         fprintf(error_file, "================\n");
         if (actual_semantic_errors > 0)
-            fprintf(error_file, "⚠️  Fix all %d semantic error(s) before proceeding\n", actual_semantic_errors);
+            fprintf(error_file, "Fix all %d semantic error(s) before proceeding\n", actual_semantic_errors);
         if (actual_syntax_errors > 0)
-            fprintf(error_file, "⚠️  Fix all %d syntax error(s) before proceeding\n", actual_syntax_errors);
+            fprintf(error_file, "Fix all %d syntax error(s) before proceeding\n", actual_syntax_errors);
         if (actual_lexical_errors > 0)
-            fprintf(error_file, "⚠️  Fix all %d lexical error(s) before proceeding\n", actual_lexical_errors);
-        fprintf(error_file, "📝 Review detailed error information in output files\n");
-        fprintf(error_file, "🔧 Apply suggested fixes and recompile\n");
+            fprintf(error_file, "Fix all %d lexical error(s) before proceeding\n", actual_lexical_errors);
+        fprintf(error_file, "Review detailed error information in output files\n");
+        fprintf(error_file, "Apply suggested fixes and recompile\n");
     }
     else
     {
-        fprintf(error_file, "✅ SUCCESS: Compilation completed without errors.\n");
+        fprintf(error_file, " SUCCESS: Compilation completed without errors.\n");
     }
 
     fclose(error_file);
@@ -1523,14 +1523,14 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
 
     if (actual_errors == 0)
     {
-        fprintf(perf_file, "✅ STATUS: COMPILATION SUCCESSFUL\n");
+        fprintf(perf_file, " STATUS: COMPILATION SUCCESSFUL\n");
         fprintf(perf_file, "   - All phases completed without errors\n");
         fprintf(perf_file, "   - Code generation successful\n");
         fprintf(perf_file, "   - Performance: %s\n", time_seconds < 0.1 ? "Excellent" : "Good");
     }
     else
     {
-        fprintf(perf_file, "❌ STATUS: COMPILATION FAILED\n");
+        fprintf(perf_file, " STATUS: COMPILATION FAILED\n");
         fprintf(perf_file, "   - %d error(s) encountered\n", actual_errors);
         fprintf(perf_file, "   - Review error log for details\n");
         fprintf(perf_file, "   - Fix issues before deployment\n");
@@ -1540,7 +1540,7 @@ void generate_performance_report_file(const char *input_file, clock_t compilatio
     fprintf(perf_file, "===============\n");
     if (actual_errors == 0)
     {
-        fprintf(perf_file, "✅ Code is ready for use\n");
+        fprintf(perf_file, " Code is ready for use\n");
         if (time_seconds > 1.0)
         {
             fprintf(perf_file, "→ Consider optimizing for faster compilation\n");
@@ -1602,7 +1602,7 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
 
         analyze_program_structure(ast, &func_count, &var_count, function_names, variable_names);
 
-        fprintf(output_file, "🏗️  INPUT PROGRAM COMPONENTS:\n");
+        fprintf(output_file, "  INPUT PROGRAM COMPONENTS:\n");
         fprintf(output_file, "   ├─ Functions Defined: %d\n", func_count);
         if (func_count > 0)
         {
@@ -1637,62 +1637,62 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
 
             if (strstr(line, "Function:"))
             {
-                fprintf(output_file, "🔧 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   This defines the entry point for a function\n\n");
             }
             else if (strstr(line, ":") && !strstr(line, "#"))
             {
-                fprintf(output_file, "🏷️  %s", line);
+                fprintf(output_file, "  %s", line);
                 fprintf(output_file, "   Function label - marks the beginning of executable code\n\n");
             }
             else if (strstr(line, "push %rbp"))
             {
-                fprintf(output_file, "📥 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Save caller's base pointer on stack\n\n");
             }
             else if (strstr(line, "mov %rsp, %rbp"))
             {
-                fprintf(output_file, "🎯 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Set up new stack frame for this function\n\n");
             }
             else if (strstr(line, "sub $"))
             {
-                fprintf(output_file, "🏗️  %s", line);
+                fprintf(output_file, "  %s", line);
                 fprintf(output_file, "   Allocate stack space for local variables\n\n");
             }
             else if (strstr(line, "movq $") && strstr(line, "(%rbp)"))
             {
-                fprintf(output_file, "📝 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Store constant value in local variable\n\n");
             }
             else if (strstr(line, "movq") && strstr(line, "(%rbp)") && strstr(line, "%rax"))
             {
-                fprintf(output_file, "📤 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Load variable value into accumulator register\n\n");
             }
             else if (strstr(line, "addq"))
             {
-                fprintf(output_file, "➕ %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Perform addition operation\n\n");
             }
             else if (strstr(line, "call write_int"))
             {
-                fprintf(output_file, "📺 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Call system function to display integer value\n\n");
             }
             else if (strstr(line, "mov %rbp, %rsp"))
             {
-                fprintf(output_file, "🔄 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Restore stack pointer (cleanup local variables)\n\n");
             }
             else if (strstr(line, "pop %rbp"))
             {
-                fprintf(output_file, "📤 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Restore caller's base pointer\n\n");
             }
             else if (strstr(line, "ret"))
             {
-                fprintf(output_file, "🚪 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Return control to calling function\n\n");
             }
         }
@@ -1700,13 +1700,13 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
         fclose(assembly);
     }
 
-    fprintf(output_file, "📊 COMPILATION STATISTICS:\n");
+    fprintf(output_file, " COMPILATION STATISTICS:\n");
     fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
-    fprintf(output_file, "✅ Lexical Analysis:    PASSED (No lexical errors)\n");
-    fprintf(output_file, "✅ Syntax Analysis:     PASSED (Valid program structure)\n");
-    fprintf(output_file, "✅ Semantic Analysis:   PASSED (All types and scopes valid)\n");
-    fprintf(output_file, "✅ Code Generation:     PASSED (Assembly code generated)\n\n");
-    fprintf(output_file, "🎯 EXECUTION GUIDANCE:\n");
+    fprintf(output_file, " Lexical Analysis:    PASSED (No lexical errors)\n");
+    fprintf(output_file, " Syntax Analysis:     PASSED (Valid program structure)\n");
+    fprintf(output_file, " Semantic Analysis:   PASSED (All types and scopes valid)\n");
+    fprintf(output_file, " Code Generation:     PASSED (Assembly code generated)\n\n");
+    fprintf(output_file, " EXECUTION GUIDANCE:\n");
     fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
     fprintf(output_file, "To execute the generated assembly code:\n");
     fprintf(output_file, "1. Assemble: as -64 %s -o program.o\n", assembly_file);
@@ -2071,7 +2071,7 @@ void generate_assembly_output_file(const char *input_file, const char *assembly_
     fclose(source);
     fclose(dest);
 
-    printf("✅ Assembly code generated: %s\n", output_filename);
+    printf(" Assembly code generated: %s\n", output_filename);
 }
 
 // TMA03 function declarations (implemented in semantic.c)
