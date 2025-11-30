@@ -1505,14 +1505,14 @@ void write_comprehensive_error_report(FILE *file)
 
     if (semantic_errors > 0)
     {
-        fprintf(file, "🔍 SEMANTIC ERROR RESOLUTION:\n");
+        fprintf(file, "SEMANTIC ERROR RESOLUTION:\n");
         fprintf(file, "   1. Verify variable declarations before use\n");
         fprintf(file, "   2. Check type compatibility in assignments\n");
         fprintf(file, "   3. Ensure function calls match signatures\n");
         fprintf(file, "   4. Validate scope and visibility rules\n\n");
     }
 
-    fprintf(file, "📚 ADDITIONAL RESOURCES:\n");
+    fprintf(file, "ADDITIONAL RESOURCES:\n");
     fprintf(file, "   • Language Grammar: Check semantic.c for syntax rules and grammar implementation\n");
     fprintf(file, "   • Semantic Rules: Review TMA03 specification document\n");
     fprintf(file, "   • Test Cases: Examine valid*.txt files for examples\n\n");
