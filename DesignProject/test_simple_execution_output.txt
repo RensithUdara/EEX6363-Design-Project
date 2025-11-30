@@ -2,7 +2,7 @@
                         PROGRAM EXECUTION OUTPUT                                
 ================================================================================
 Source File:     tests/examples/test_simple.txt
-Generated:       Nov 30 2025 22:28:56
+Generated:       Nov 30 2025 22:34:07
 Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
 ================================================================================
@@ -10,7 +10,7 @@ Compiler:        EEX6363 Design Project Compiler
 🚀 PROGRAM EXECUTION TRACE:
 ════════════════════════════════════════════════════════════════════════════
 
-📋 Starting program execution...
+Starting program execution...
 
 🔧 Entering function: simpleTest()
    ├─ Setting up local scope...
