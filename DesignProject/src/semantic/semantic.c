@@ -4031,7 +4031,7 @@ void analyze_variable_access(ASTNode *node)
         }
 
         node->symbol = symbol;
-        
+
         // Mark variable as used when accessed
         symbol->is_used = 1;
 
