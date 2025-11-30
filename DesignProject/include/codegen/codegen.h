@@ -43,7 +43,7 @@ typedef enum
 {
     REG_FREE = 0,
     REG_ALLOCATED = 1,
-    REG_RESERVED = 2, // For special purposes (RSP, RBP)
+    REG_RESERVED = 2,
     REG_CALLER_SAVED = 3,
     REG_CALLEE_SAVED = 4
 } RegisterStatus;
