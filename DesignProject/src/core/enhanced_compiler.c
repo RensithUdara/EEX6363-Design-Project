@@ -1602,7 +1602,7 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
 
         analyze_program_structure(ast, &func_count, &var_count, function_names, variable_names);
 
-        fprintf(output_file, "🏗️  INPUT PROGRAM COMPONENTS:\n");
+        fprintf(output_file, "  INPUT PROGRAM COMPONENTS:\n");
         fprintf(output_file, "   ├─ Functions Defined: %d\n", func_count);
         if (func_count > 0)
         {
@@ -1637,62 +1637,62 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
 
             if (strstr(line, "Function:"))
             {
-                fprintf(output_file, "🔧 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   This defines the entry point for a function\n\n");
             }
             else if (strstr(line, ":") && !strstr(line, "#"))
             {
-                fprintf(output_file, "🏷️  %s", line);
+                fprintf(output_file, "  %s", line);
                 fprintf(output_file, "   Function label - marks the beginning of executable code\n\n");
             }
             else if (strstr(line, "push %rbp"))
             {
-                fprintf(output_file, "📥 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Save caller's base pointer on stack\n\n");
             }
             else if (strstr(line, "mov %rsp, %rbp"))
             {
-                fprintf(output_file, "🎯 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Set up new stack frame for this function\n\n");
             }
             else if (strstr(line, "sub $"))
             {
-                fprintf(output_file, "🏗️  %s", line);
+                fprintf(output_file, "  %s", line);
                 fprintf(output_file, "   Allocate stack space for local variables\n\n");
             }
             else if (strstr(line, "movq $") && strstr(line, "(%rbp)"))
             {
-                fprintf(output_file, "📝 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Store constant value in local variable\n\n");
             }
             else if (strstr(line, "movq") && strstr(line, "(%rbp)") && strstr(line, "%rax"))
             {
-                fprintf(output_file, "📤 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Load variable value into accumulator register\n\n");
             }
             else if (strstr(line, "addq"))
             {
-                fprintf(output_file, "➕ %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Perform addition operation\n\n");
             }
             else if (strstr(line, "call write_int"))
             {
-                fprintf(output_file, "📺 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Call system function to display integer value\n\n");
             }
             else if (strstr(line, "mov %rbp, %rsp"))
             {
-                fprintf(output_file, "🔄 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Restore stack pointer (cleanup local variables)\n\n");
             }
             else if (strstr(line, "pop %rbp"))
             {
-                fprintf(output_file, "📤 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Restore caller's base pointer\n\n");
             }
             else if (strstr(line, "ret"))
             {
-                fprintf(output_file, "🚪 %s", line);
+                fprintf(output_file, " %s", line);
                 fprintf(output_file, "   Return control to calling function\n\n");
             }
         }
@@ -1700,13 +1700,13 @@ void generate_detailed_output_explanation(const char *input_file, const char *as
         fclose(assembly);
     }
 
-    fprintf(output_file, "📊 COMPILATION STATISTICS:\n");
+    fprintf(output_file, " COMPILATION STATISTICS:\n");
     fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
     fprintf(output_file, " Lexical Analysis:    PASSED (No lexical errors)\n");
     fprintf(output_file, " Syntax Analysis:     PASSED (Valid program structure)\n");
     fprintf(output_file, " Semantic Analysis:   PASSED (All types and scopes valid)\n");
     fprintf(output_file, " Code Generation:     PASSED (Assembly code generated)\n\n");
-    fprintf(output_file, "🎯 EXECUTION GUIDANCE:\n");
+    fprintf(output_file, " EXECUTION GUIDANCE:\n");
     fprintf(output_file, "═══════════════════════════════════════════════════════════════════════════════\n\n");
     fprintf(output_file, "To execute the generated assembly code:\n");
     fprintf(output_file, "1. Assemble: as -64 %s -o program.o\n", assembly_file);
