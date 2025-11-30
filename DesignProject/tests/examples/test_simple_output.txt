@@ -1,12 +1,12 @@
 ===============================================================================
                         COMPILATION OUTPUT EXPLANATION                        
 ===============================================================================
-Generated: November 30, 2025 at 22:38:48
+Generated: November 30, 2025 at 22:47:09
 Input File: tests/examples/test_simple.txt
 Assembly File: output.s
 Status: Compilation Successful (No Errors)
 
-📋 PROGRAM STRUCTURE ANALYSIS:
+PROGRAM STRUCTURE ANALYSIS:
 ═══════════════════════════════════════════════════════════════════════════════
 
 🏗️  INPUT PROGRAM COMPONENTS:
@@ -16,7 +16,7 @@ Status: Compilation Successful (No Errors)
    │  └─ Names: x, y, result
    └─ Program Type: Procedural with function definitions
 
-⚙️  GENERATED ASSEMBLY CODE EXPLANATION:
+GENERATED ASSEMBLY CODE EXPLANATION:
 ═══════════════════════════════════════════════════════════════════════════════
 
 The compiler generated x86-64 assembly code with the following structure:
