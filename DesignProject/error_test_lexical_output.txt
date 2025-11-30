@@ -1,0 +1,64 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test.txt
+GENERATED: December 01, 2025 at 00:43:22
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ func             │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ testWithErrors   │ 1    │ 6      │ variable            │
+│ OPERATOR        │ =>               │ 1    │ 23     │ arrow               │
+│ KEYWORD         │ integer          │ 1    │ 26     │ reserved            │
+│ KEYWORD         │ local            │ 2    │ 5      │ reserved            │
+│ IDENTIFIER      │ x                │ 2    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 2    │ 13     │ delimiter           │
+│ KEYWORD         │ integer          │ 2    │ 15     │ reserved            │
+│ KEYWORD         │ local            │ 3    │ 5      │ reserved            │
+│ IDENTIFIER      │ undeclared_var   │ 3    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 3    │ 26     │ delimiter           │
+│ IDENTIFIER      │ unknown_type     │ 3    │ 28     │ variable            │
+│ IDENTIFIER      │ //               │ 3    │ 43     │ variable            │
+│ IDENTIFIER      │ Error:           │ 3    │ 46     │ variable            │
+│ IDENTIFIER      │ unknown          │ 3    │ 53     │ variable            │
+│ IDENTIFIER      │ type             │ 3    │ 61     │ variable            │
+│ IDENTIFIER      │ x                │ 5    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 5    │ 7      │ assignment          │
+│ NUMBER          │ 1                │ 5    │ 10     │ literal             │
+│ IDENTIFIER      │ y                │ 6    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 6    │ 7      │ assignment          │
+│ NUMBER          │ 2                │ 6    │ 10     │ literal             │
+│ IDENTIFIER      │ //               │ 6    │ 14     │ variable            │
+│ IDENTIFIER      │ Error:           │ 6    │ 17     │ variable            │
+│ IDENTIFIER      │ undeclared       │ 6    │ 24     │ variable            │
+│ IDENTIFIER      │ variable         │ 6    │ 35     │ variable            │
+│ IDENTIFIER      │ z                │ 7    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 7    │ 7      │ assignment          │
+│ IDENTIFIER      │ x                │ 7    │ 10     │ variable            │
+│ OPERATOR        │ +                │ 7    │ 12     │ arithmetic          │
+│ IDENTIFIER      │ undefined_var    │ 7    │ 14     │ variable            │
+│ IDENTIFIER      │ //               │ 7    │ 30     │ variable            │
+│ IDENTIFIER      │ Error:           │ 7    │ 33     │ variable            │
+│ IDENTIFIER      │ undefined_var    │ 7    │ 40     │ variable            │
+│ IDENTIFIER      │ not              │ 7    │ 54     │ variable            │
+│ IDENTIFIER      │ declared         │ 7    │ 58     │ variable            │
+│ KEYWORD         │ return           │ 9    │ 5      │ reserved            │
+│ IDENTIFIER      │ x                │ 9    │ 12     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 38                                                ║
+║ 📄 Total Lines Analyzed      : 10                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-01 00:43:22                               ║
+║ 📂 Input Source File         : /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests/examples/error_test.txt ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
