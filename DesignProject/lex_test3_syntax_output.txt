@@ -1,0 +1,36 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /tmp/lex_test3.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+AST_PROGRAM
+  AST_FUNC_DEF
+    AST_FUNC_HEAD
+      AST_ID (numTest)
+      AST_TYPE (void) [type: void]
+    AST_FUNC_BODY
+      AST_LOCAL_VAR_DECL
+        AST_VAR_DECL
+          AST_ID (x)
+          AST_TYPE (integer) [type: integer]
+      AST_LOCAL_VAR_DECL
+        AST_VAR_DECL
+          AST_ID (y)
+          AST_TYPE (float) [type: float]
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (x)
+        AST_INT_LITERAL (123) [type: integer]
+      AST_ASSIGN_STMT
+        AST_VARIABLE
+          AST_ID (y)
+        AST_FLOAT_LITERAL (45.67) [type: float]
+
+STATISTICS:
+-----------
+AST Nodes: 22
+Tree Depth: 9
+Syntax Errors: 0
