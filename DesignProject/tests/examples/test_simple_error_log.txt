@@ -1,16 +1,16 @@
 ================================================================================
-                     🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              
+                     DESIGN PROJECT - COMPREHENSIVE ERROR LOG              
 ================================================================================
-📅 Generated: November 30, 2025 at 22:29:00
-📁 Input File: tests/examples/test_simple.txt
+Generated: November 30, 2025 at 22:38:48
+Input File: tests/examples/test_simple.txt
 
-🔍 REAL-TIME COMPILATION LOG:
+REAL-TIME COMPILATION LOG:
 ────────────────────────────────────────────────────────────────────────────────
 
 
 
 ================================================================================
-                           📊 ERROR SUMMARY REPORT                                
+                           ERROR SUMMARY REPORT                                
 ================================================================================
 ┌─ Error Statistics ─────────────────────────────────────────────────────────┐
 │ Lexical Errors            │     0 │ Invalid tokens, numbers, identifiers     │
@@ -19,13 +19,13 @@
 │ Warnings                  │     0 │ Non-critical issues                      │
 └────────────────────────────────────────────────────────────────────────────┘
 
-✅ SUCCESS: No errors found! Code analysis completed successfully.
+SUCCESS: No errors found! Code analysis completed successfully.
 
 
 ================================================================================
-                              🏁 END OF ERROR LOG                               
+                              END OF ERROR LOG                               
 ================================================================================
-me: < 1 second
+Compilation Time: < 1 second
 Memory Usage: Minimal
 Token Count: 41 tokens processed
 AST Nodes: 40 nodes created
