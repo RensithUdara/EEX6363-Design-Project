@@ -1081,19 +1081,19 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
     fprintf(arch_file, "│ Lexical Analysis    │ %-11s │ %8.2f    │ %s          │\n",
             has_lexical ? "ACTIVE" : "FAILED", lexical_ms,
             lexical_ms < 1.0 ? "Excellent" : lexical_ms < 5.0 ? "Good"
-                                                                 : "Slow");
+                                                              : "Slow");
     fprintf(arch_file, "│ Syntax Analysis     │ %-11s │ %8.2f    │ %s          │\n",
             has_syntax ? "ACTIVE" : "FAILED", syntax_ms,
             syntax_ms < 2.0 ? "Excellent" : syntax_ms < 10.0 ? "Good"
-                                                                : "Slow");
+                                                             : "Slow");
     fprintf(arch_file, "│ Semantic Analysis   │ %-11s │ %8.2f    │ %s          │\n",
             has_semantic ? "ACTIVE" : "FAILED", semantic_ms,
             semantic_ms < 3.0 ? "Excellent" : semantic_ms < 15.0 ? "Good"
-                                                                    : "Slow");
+                                                                 : "Slow");
     fprintf(arch_file, "│ Code Generation     │ %-11s │ %8.2f    │ %s          │\n",
             has_codegen ? "ACTIVE" : "FAILED", codegen_ms,
             codegen_ms < 5.0 ? "Excellent" : codegen_ms < 20.0 ? "Good"
-                                                                  : "Slow");
+                                                               : "Slow");
     fprintf(arch_file, "└─────────────────────┴─────────────┴─────────────┴─────────────────┘\n\n");
 
     // Visual pipeline representation
