@@ -404,7 +404,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
     switch (node->type)
     {
     case AST_PROGRAM:
-        fprintf(output, "📋 Starting program execution...\n\n");
+        fprintf(output, "Starting program execution...\n\n");
         for (int i = 0; i < node->child_count; i++)
         {
             return_value = execute_program(node->children[i], variables, var_count, output);
