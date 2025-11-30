@@ -301,11 +301,11 @@ void write_comprehensive_ast_report(ASTNode *root, FILE *file)
         fprintf(file, "│ Error Type           │ Count │ Severity │ Status                           │\n");
         fprintf(file, "├─────────────────────────────────────────────────────────────────────────────┤\n");
         fprintf(file, "│ Syntax Errors        │ %5d │   HIGH   │ %s │\n",
-                syntax_errors, syntax_errors > 0 ? "✗ FAILED                     " : "✓ PASSED                     ");
+                syntax_errors, syntax_errors > 0 ? "FAILED                       " : "PASSED                       ");
         fprintf(file, "│ Semantic Errors      │ %5d │   HIGH   │ %s │\n",
-                semantic_errors, semantic_errors > 0 ? "✗ FAILED                     " : "✓ PASSED                     ");
+                semantic_errors, semantic_errors > 0 ? "FAILED                       " : "PASSED                       ");
         fprintf(file, "│ Semantic Warnings    │ %5d │   LOW    │ %s │\n",
-                warning_count, warning_count > 0 ? "⚠ WARNINGS                  " : "✓ CLEAN                      ");
+                warning_count, warning_count > 0 ? "WARNINGS                     " : "CLEAN                        ");
         fprintf(file, "└─────────────────────────────────────────────────────────────────────────────┘\n\n");
 
         // Print syntax errors if any
@@ -319,7 +319,7 @@ void write_comprehensive_ast_report(ASTNode *root, FILE *file)
             int error_num = 1;
             while (error)
             {
-                fprintf(file, "❌ SYNTAX ERROR #%d\n", error_num++);
+                fprintf(file, "[ERROR] SYNTAX ERROR #%d\n", error_num++);
                 fprintf(file, "   ├─ Location: Line %d, Column %d\n", error->line, error->column);
                 fprintf(file, "   ├─ Type: %s\n", error->error_code ? error->error_code : "SYNTAX_ERROR");
                 fprintf(file, "   ├─ Description: %s\n", error->message);
@@ -375,7 +375,7 @@ void write_comprehensive_ast_report(ASTNode *root, FILE *file)
             int error_num = 1;
             while (error)
             {
-                fprintf(file, "❌ SEMANTIC ERROR #%d\n", error_num++);
+                fprintf(file, "[ERROR] SEMANTIC ERROR #%d\n", error_num++);
                 fprintf(file, "   ├─ Location: Line %d, Column %d\n", error->line, error->column);
                 fprintf(file, "   ├─ Type: %s\n", error->error_code ? error->error_code : "SEMANTIC_ERROR");
                 fprintf(file, "   ├─ Description: %s\n", error->message);
@@ -387,7 +387,7 @@ void write_comprehensive_ast_report(ASTNode *root, FILE *file)
 
                 if (error->suggestion)
                 {
-                    fprintf(file, "   └─ 💡 Suggestion: %s\n", error->suggestion);
+                    fprintf(file, "   Suggestion: %s\n", error->suggestion);
                 }
                 fprintf(file, "\n");
                 error = error->next;
