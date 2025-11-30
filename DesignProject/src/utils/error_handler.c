@@ -1375,7 +1375,7 @@ void print_detailed_error_report(FILE *output)
             }
             if (error->suggestion)
             {
-                fprintf(output, "   └─ 💡 Suggestion: %s\n", error->suggestion);
+                fprintf(output, "   Suggestion: %s\n", error->suggestion);
             }
             fprintf(output, "\n");
             error = error->next;
