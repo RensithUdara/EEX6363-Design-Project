@@ -1663,7 +1663,7 @@ void init_error_log_file(const char *input_file)
     if (global_error_log_file)
     {
         fprintf(global_error_log_file, "================================================================================\n");
-        fprintf(global_error_log_file, "                     🖥️  DESIGN PROJECT - COMPREHENSIVE ERROR LOG              \n");
+        fprintf(global_error_log_file, "                     DESIGN PROJECT - COMPREHENSIVE ERROR LOG              \n");
         fprintf(global_error_log_file, "================================================================================\n");
         char timestamp[100];
         time_t rawtime;
@@ -1671,9 +1671,9 @@ void init_error_log_file(const char *input_file)
         time(&rawtime);
         timeinfo = localtime(&rawtime);
         strftime(timestamp, sizeof(timestamp), "%B %d, %Y at %H:%M:%S", timeinfo);
-        fprintf(global_error_log_file, "📅 Generated: %s\n", timestamp);
-        fprintf(global_error_log_file, "📁 Input File: %s\n\n", input_file);
-        fprintf(global_error_log_file, "🔍 REAL-TIME COMPILATION LOG:\n");
+        fprintf(global_error_log_file, "Generated: %s\n", timestamp);
+        fprintf(global_error_log_file, "Input File: %s\n\n", input_file);
+        fprintf(global_error_log_file, "REAL-TIME COMPILATION LOG:\n");
         fprintf(global_error_log_file, "────────────────────────────────────────────────────────────────────────────────\n\n");
         fflush(global_error_log_file);
     }
@@ -1687,7 +1687,7 @@ void close_error_log_file(void)
         // Add comprehensive error summary like terminal output
         fprintf(global_error_log_file, "\n\n");
         fprintf(global_error_log_file, "================================================================================\n");
-        fprintf(global_error_log_file, "                           📊 ERROR SUMMARY REPORT                                \n");
+        fprintf(global_error_log_file, "                           ERROR SUMMARY REPORT                                \n");
         fprintf(global_error_log_file, "================================================================================\n");
         fprintf(global_error_log_file, "┌─ Error Statistics ─────────────────────────────────────────────────────────┐\n");
         fprintf(global_error_log_file, "│ Lexical Errors            │ %5d │ Invalid tokens, numbers, identifiers     │\n", get_lexical_error_count());
@@ -1699,11 +1699,11 @@ void close_error_log_file(void)
         int total_errors = get_total_error_count();
         if (total_errors == 0)
         {
-            fprintf(global_error_log_file, "✅ SUCCESS: No errors found! Code analysis completed successfully.\n\n");
+            fprintf(global_error_log_file, "SUCCESS: No errors found! Code analysis completed successfully.\n\n");
         }
         else
         {
-            fprintf(global_error_log_file, "❌ FAILED: Found %d error(s) that need to be fixed before compilation.\n\n", total_errors);
+            fprintf(global_error_log_file, "FAILED: Found %d error(s) that need to be fixed before compilation.\n\n", total_errors);
         }
 
         // Add comprehensive error report like terminal
@@ -1713,7 +1713,7 @@ void close_error_log_file(void)
         }
 
         fprintf(global_error_log_file, "\n================================================================================\n");
-        fprintf(global_error_log_file, "                              🏁 END OF ERROR LOG                               \n");
+        fprintf(global_error_log_file, "                              END OF ERROR LOG                               \n");
         fprintf(global_error_log_file, "================================================================================\n");
         fclose(global_error_log_file);
         global_error_log_file = NULL;
