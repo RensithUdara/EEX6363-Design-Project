@@ -260,11 +260,11 @@ void report_lexical_error(ErrorType type, int line, int col, const char *message
     global_error_manager->lexical_error_count++;
 
     // Print immediate feedback to both stderr and error log file
-    fprintf(stderr, "❌ [%s] Lexical Error at line %d:%d: %s\n",
+    fprintf(stderr, " [%s] Lexical Error at line %d:%d: %s\n",
             error->error_code, line, col, message);
     if (global_error_log_file)
     {
-        fprintf(global_error_log_file, "❌ [%s] Lexical Error at line %d:%d: %s\n",
+        fprintf(global_error_log_file, " [%s] Lexical Error at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
     if (found)
@@ -277,10 +277,10 @@ void report_lexical_error(ErrorType type, int line, int col, const char *message
     }
     if (suggestion)
     {
-        fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
+        fprintf(stderr, "   └─  Suggestion: %s\n", suggestion);
         if (global_error_log_file)
         {
-            fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
+            fprintf(global_error_log_file, "   └─  Suggestion: %s\n", suggestion);
         }
     }
 }
@@ -319,11 +319,11 @@ void report_syntax_error_enhanced(ErrorType type, int line, int col, const char 
     global_error_manager->syntax_error_count++;
 
     // Print immediate feedback to both stderr and error log file
-    fprintf(stderr, "❌ [%s] Syntax Error at line %d:%d: %s\n",
+    fprintf(stderr, " [%s] Syntax Error at line %d:%d: %s\n",
             error->error_code, line, col, message);
     if (global_error_log_file)
     {
-        fprintf(global_error_log_file, "❌ [%s] Syntax Error at line %d:%d: %s\n",
+        fprintf(global_error_log_file, " [%s] Syntax Error at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
     if (expected && found)
@@ -338,10 +338,10 @@ void report_syntax_error_enhanced(ErrorType type, int line, int col, const char 
     }
     if (suggestion)
     {
-        fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
+        fprintf(stderr, "   └─  Suggestion: %s\n", suggestion);
         if (global_error_log_file)
         {
-            fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
+            fprintf(global_error_log_file, "   └─  Suggestion: %s\n", suggestion);
         }
     }
 }
@@ -373,11 +373,11 @@ void report_semantic_error_enhanced(ErrorType type, int line, int col, const cha
     global_error_manager->semantic_error_count++;
 
     // Print immediate feedback to both stderr and error log file
-    fprintf(stderr, "❌ [%s] Semantic Error at line %d:%d: %s\n",
+    fprintf(stderr, " [%s] Semantic Error at line %d:%d: %s\n",
             error->error_code, line, col, message);
     if (global_error_log_file)
     {
-        fprintf(global_error_log_file, "❌ [%s] Semantic Error at line %d:%d: %s\n",
+        fprintf(global_error_log_file, " [%s] Semantic Error at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
     if (context)
@@ -390,10 +390,10 @@ void report_semantic_error_enhanced(ErrorType type, int line, int col, const cha
     }
     if (suggestion)
     {
-        fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
+        fprintf(stderr, "   └─  Suggestion: %s\n", suggestion);
         if (global_error_log_file)
         {
-            fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
+            fprintf(global_error_log_file, "   └─  Suggestion: %s\n", suggestion);
         }
     }
 }
@@ -423,19 +423,19 @@ void report_warning(ErrorType type, int line, int col, const char *message, cons
     global_error_manager->warning_count++;
 
     // Print immediate feedback to both stderr and error log file
-    fprintf(stderr, "⚠️ [%s] Warning at line %d:%d: %s\n",
+    fprintf(stderr, " [%s] Warning at line %d:%d: %s\n",
             error->error_code, line, col, message);
     if (global_error_log_file)
     {
-        fprintf(global_error_log_file, "⚠️ [%s] Warning at line %d:%d: %s\n",
+        fprintf(global_error_log_file, " [%s] Warning at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
     if (suggestion)
     {
-        fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
+        fprintf(stderr, "   └─  Suggestion: %s\n", suggestion);
         if (global_error_log_file)
         {
-            fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
+            fprintf(global_error_log_file, "   └─  Suggestion: %s\n", suggestion);
         }
     }
 }
@@ -1453,7 +1453,7 @@ void write_comprehensive_error_report(FILE *file)
 
             if (error->suggestion)
             {
-                fprintf(file, "   └─ 💡 Suggestion: %s\n", error->suggestion);
+                fprintf(file, "   └─  Suggestion: %s\n", error->suggestion);
             }
             fprintf(file, "\n");
             error = error->next;
@@ -1483,7 +1483,7 @@ void write_comprehensive_error_report(FILE *file)
 
             if (error->suggestion)
             {
-                fprintf(file, "   └─ 💡 Suggestion: %s\n", error->suggestion);
+                fprintf(file, "   └─  Suggestion: %s\n", error->suggestion);
             }
             fprintf(file, "\n");
             error = error->next;
@@ -1960,28 +1960,28 @@ void print_error_statistics(FILE *output)
 
     fprintf(output, "║ Lexical Errors        │ %5d │    %6.1f%% │ %-28s ║\n",
             global_error_manager->lexical_error_count, lex_pct,
-            global_error_manager->lexical_error_count > 0 ? "❌ Issues Found" : "✅ Clean");
+            global_error_manager->lexical_error_count > 0 ? " Issues Found" : " Clean");
 
     fprintf(output, "║ Syntax Errors         │ %5d │    %6.1f%% │ %-28s ║\n",
             global_error_manager->syntax_error_count, syn_pct,
-            global_error_manager->syntax_error_count > 0 ? "❌ Issues Found" : "✅ Clean");
+            global_error_manager->syntax_error_count > 0 ? " Issues Found" : " Clean");
 
     fprintf(output, "║ Semantic Errors       │ %5d │    %6.1f%% │ %-28s ║\n",
             global_error_manager->semantic_error_count, sem_pct,
-            global_error_manager->semantic_error_count > 0 ? "❌ Issues Found" : "✅ Clean");
+            global_error_manager->semantic_error_count > 0 ? " Issues Found" : " Clean");
 
     fprintf(output, "║ Warnings              │ %5d │       N/A │ %-28s ║\n",
             global_error_manager->warning_count,
-            global_error_manager->warning_count > 0 ? "⚠️  Warnings Present" : "✅ Clean");
+            global_error_manager->warning_count > 0 ? "  Warnings Present" : " Clean");
 
     fprintf(output, "╠═══════════════════════╪═══════╪════════════╪══════════════════════════════╣\n");
     fprintf(output, "║ TOTAL ERRORS          │ %5d │    100.0%% │ %-28s ║\n",
-            total_errors, total_errors > 0 ? "❌ Compilation Failed" : "✅ Success");
+            total_errors, total_errors > 0 ? " Compilation Failed" : " Success");
     fprintf(output, "╚═══════════════════════╧═══════╧════════════╧══════════════════════════════╝\n");
 
     if (total_errors > 0)
     {
-        fprintf(output, "\n💡 RECOMMENDATION: Fix lexical errors first, then syntax errors, then semantic errors.\n");
+        fprintf(output, "\n RECOMMENDATION: Fix lexical errors first, then syntax errors, then semantic errors.\n");
         fprintf(output, "   This approach typically resolves cascading errors more efficiently.\n");
     }
 }
@@ -2023,7 +2023,7 @@ void perform_warning_analysis(ASTNode *root)
     if (!root)
         return;
 
-    printf("🔍 Performing comprehensive warning analysis...\n");
+    printf(" Performing comprehensive warning analysis...\n");
 
     // Initialize warning count
     total_warnings_found = 0;
@@ -2044,7 +2044,7 @@ void perform_warning_analysis(ASTNode *root)
         global_error_manager->warning_count = total_warnings_found;
     }
 
-    printf("✅ Warning analysis complete. Found %d warnings.\n", total_warnings_found);
+    printf(" Warning analysis complete. Found %d warnings.\n", total_warnings_found);
 }
 
 // Report all semantic warnings function
@@ -2058,7 +2058,7 @@ void report_semantic_warnings(void)
     }
     else
     {
-        printf("⚠️  Total warnings: %d\n", total_warnings_found);
+        printf("  Total warnings: %d\n", total_warnings_found);
         printf("   Recommendation: Review warnings to improve code quality.\n");
     }
 }
