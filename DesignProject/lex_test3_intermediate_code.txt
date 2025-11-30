@@ -1,0 +1,54 @@
+================================================================================
+                    INTERMEDIATE CODE GENERATION REPORT                   
+================================================================================
+Generated: Dec  1 2025 00:24:56
+Input File: /tmp/lex_test3.txt
+Target Architecture: x86-64 Assembly (AT&T Syntax)
+Code Generation Phase: Three-Address Code, Quadruples & Triples
+================================================================================
+
+THREE-ADDRESS CODE (TAC):
+────────────────────────────────────────────────────────────────────────────────
+// Program start
+// Function: numTest
+ALLOC x, 4
+ALLOC y, 4
+t0 = 123
+x = t0
+t1 = 
+y = t1
+// Program end
+
+REGISTER ALLOCATION INFO:
+────────────────────────────────────────────────────────────────────────────────
+Register Allocation Strategy: Linear Scan
+Available Registers: 16 (x86-64)
+Registers Used: 0
+Spill Operations: 0
+
+Register Assignments:
+- No registers allocated
+
+QUADRUPLE (4-TUPLE) REPRESENTATION:
+────────────────────────────────────────────────────────────────────────────────
+┌────────────┬────────────┬────────────┬────────────┐
+│ Operation  │ Arg1       │ Arg2       │ Result     │
+├────────────┼────────────┼────────────┼────────────┤
+│ alloc      │ 4          │ -          │ x          │
+│ alloc      │ 4          │ -          │ y          │
+│ assign     │ 123        │ -          │ x          │
+└────────────┴────────────┴────────────┴────────────┘
+
+TRIPLE REPRESENTATION:
+────────────────────────────────────────────────────────────────────────────────
+┌───────┬────────────┬────────────┬────────────┐
+│ #     │ Operation  │ Arg1       │ Arg2       │
+├───────┼────────────┼────────────┼────────────┤
+│ 1     │ assign     │ 123        │ -          │
+└───────┴────────────┴────────────┴────────────┘
+
+⚡ OPTIMIZATIONS APPLIED:
+────────────────────────────────────────────────────────────────────────────────
+✓ Dead code elimination
+✓ Constant folding
+✓ Register optimization
