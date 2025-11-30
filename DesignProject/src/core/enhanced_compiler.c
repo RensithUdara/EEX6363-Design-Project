@@ -681,30 +681,30 @@ void generate_intermediate_code_output(const char *input_file, ASTNode *ast)
         return;
 
     fprintf(intermediate_code_file, "================================================================================\n");
-    fprintf(intermediate_code_file, "                    🖥️  INTERMEDIATE CODE GENERATION REPORT                   \n");
+    fprintf(intermediate_code_file, "                    INTERMEDIATE CODE GENERATION REPORT                   \n");
     fprintf(intermediate_code_file, "================================================================================\n");
-    fprintf(intermediate_code_file, "📅 Generated: %s\n", __DATE__ " " __TIME__);
-    fprintf(intermediate_code_file, "📁 Input File: %s\n", input_file);
-    fprintf(intermediate_code_file, "🎯 Target Architecture: x86-64 Assembly (AT&T Syntax)\n");
-    fprintf(intermediate_code_file, "🔧 Code Generation Phase: Three-Address Code, Quadruples & Triples\n");
+    fprintf(intermediate_code_file, "Generated: %s\n", __DATE__ " " __TIME__);
+    fprintf(intermediate_code_file, "Input File: %s\n", input_file);
+    fprintf(intermediate_code_file, "Target Architecture: x86-64 Assembly (AT&T Syntax)\n");
+    fprintf(intermediate_code_file, "Code Generation Phase: Three-Address Code, Quadruples & Triples\n");
     fprintf(intermediate_code_file, "================================================================================\n");
     fprintf(intermediate_code_file, "\n");
 
     if (ast)
     {
-        fprintf(intermediate_code_file, "🔍 THREE-ADDRESS CODE (TAC):\n");
+        fprintf(intermediate_code_file, "THREE-ADDRESS CODE (TAC):\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         generate_three_address_code(ast, intermediate_code_file);
 
-        fprintf(intermediate_code_file, "\n📊 REGISTER ALLOCATION INFO:\n");
+        fprintf(intermediate_code_file, "\nREGISTER ALLOCATION INFO:\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         print_register_info_to_file(intermediate_code_file);
 
-        fprintf(intermediate_code_file, "\n🧩 QUADRUPLE (4-TUPLE) REPRESENTATION:\n");
+        fprintf(intermediate_code_file, "\nQUADRUPLE (4-TUPLE) REPRESENTATION:\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         generate_quadruple_code(ast, intermediate_code_file);
 
-        fprintf(intermediate_code_file, "\n🧱 TRIPLE REPRESENTATION:\n");
+        fprintf(intermediate_code_file, "\nTRIPLE REPRESENTATION:\n");
         fprintf(intermediate_code_file, "────────────────────────────────────────────────────────────────────────────────\n");
         generate_triple_code(ast, intermediate_code_file);
 
