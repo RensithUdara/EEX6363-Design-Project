@@ -1,0 +1,44 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /tmp/lex_test3.txt
+GENERATED: December 01, 2025 at 00:36:01
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ func             │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ numTest          │ 1    │ 6      │ variable            │
+│ OPERATOR        │ =>               │ 1    │ 16     │ arrow               │
+│ IDENTIFIER      │ void             │ 1    │ 19     │ variable            │
+│ KEYWORD         │ local            │ 2    │ 5      │ reserved            │
+│ IDENTIFIER      │ x                │ 2    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 2    │ 13     │ delimiter           │
+│ KEYWORD         │ integer          │ 2    │ 15     │ reserved            │
+│ KEYWORD         │ local            │ 3    │ 5      │ reserved            │
+│ IDENTIFIER      │ y                │ 3    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 3    │ 13     │ delimiter           │
+│ IDENTIFIER      │ float            │ 3    │ 15     │ variable            │
+│ IDENTIFIER      │ x                │ 4    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 4    │ 7      │ assignment          │
+│ NUMBER          │ 123              │ 4    │ 10     │ literal             │
+│ IDENTIFIER      │ y                │ 5    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 5    │ 7      │ assignment          │
+│ IDENTIFIER      │ 45.67            │ 5    │ 10     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 18                                                ║
+║ 📄 Total Lines Analyzed      : 6                                                 ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-01 00:36:01                               ║
+║ 📂 Input Source File         : /tmp/lex_test3.txt                                ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
