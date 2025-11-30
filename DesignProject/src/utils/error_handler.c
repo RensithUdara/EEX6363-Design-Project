@@ -1256,11 +1256,11 @@ void print_error_summary(FILE *output)
 
     if (total_errors == 0)
     {
-        fprintf(output, "\n✅ SUCCESS: No errors found! Code analysis completed successfully.\n");
+        fprintf(output, "\nSUCCESS: No errors found! Code analysis completed successfully.\n");
     }
     else
     {
-        fprintf(output, "\n❌ FAILED: Found %d error(s) that need to be fixed before compilation.\n", total_errors);
+        fprintf(output, "\nFAILED: Found %d error(s) that need to be fixed before compilation.\n", total_errors);
     }
 }
 
@@ -1279,7 +1279,7 @@ void print_detailed_error_report(FILE *output)
     // Print Lexical Errors
     if (global_error_manager->lexical_errors)
     {
-        fprintf(output, "\n🔍 LEXICAL ERRORS:\n");
+        fprintf(output, "\nLEXICAL ERRORS:\n");
         fprintf(output, "────────────────────────────────────────────────────────────────────────────\n");
 
         ComprehensiveError *error = global_error_manager->lexical_errors;
@@ -1309,7 +1309,7 @@ void print_detailed_error_report(FILE *output)
     // Print Syntax Errors
     if (global_error_manager->syntax_errors)
     {
-        fprintf(output, "\n📝 SYNTAX ERRORS:\n");
+        fprintf(output, "\nSYNTAX ERRORS:\n");
         fprintf(output, "────────────────────────────────────────────────────────────────────────────\n");
 
         ComprehensiveError *error = global_error_manager->syntax_errors;
@@ -1344,7 +1344,7 @@ void print_detailed_error_report(FILE *output)
     // Print Semantic Errors
     if (global_error_manager->semantic_errors)
     {
-        fprintf(output, "\n🧠 SEMANTIC ERRORS:\n");
+        fprintf(output, "\nSEMANTIC ERRORS:\n");
         fprintf(output, "────────────────────────────────────────────────────────────────────────────\n");
 
         ComprehensiveError *error = global_error_manager->semantic_errors;
