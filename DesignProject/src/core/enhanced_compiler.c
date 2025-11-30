@@ -1946,13 +1946,13 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
     fprintf(test_file, "   ┌─────────────────────┬──────────────┬─────────────┬─────────────┐\n");
     fprintf(test_file, "   │ File Operation      │ Status       │ Size (bytes)│ Quality     │\n");
     fprintf(test_file, "   ├─────────────────────┼──────────────┼─────────────┼─────────────┤\n");
-    fprintf(test_file, "   │ Input File Reading  │ %s │ %-11s │ %-11s │\n", "✅ PASSED   ", "N/A", "Complete");
-    fprintf(test_file, "   │ Lexical Output      │ %s │ %-11ld │ %-11s │\n", lexical_ok ? "✅ PASSED   " : "❌ FAILED   ", lexical_size, lexical_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Syntax Output       │ %s │ %-11ld │ %-11s │\n", syntax_ok ? "✅ PASSED   " : "❌ FAILED   ", syntax_size, syntax_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Semantic Output     │ %s │ %-11ld │ %-11s │\n", semantic_ok ? "✅ PASSED   " : "❌ FAILED   ", semantic_size, semantic_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Symbol Table Output │ %s │ %-11ld │ %-11s │\n", symbol_ok ? "✅ PASSED   " : "❌ FAILED   ", symbol_size, symbol_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Intermediate Code   │ %s │ %-11ld │ %-11s │\n", intermediate_ok ? "✅ PASSED   " : "❌ FAILED   ", intermediate_size, intermediate_ok ? "Valid" : "Missing");
-    fprintf(test_file, "   │ Assembly Output     │ %s │ %-11ld │ %-11s │\n", assembly_ok ? "✅ PASSED   " : "❌ FAILED   ", assembly_size, assembly_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Input File Reading  │ %s │ %-11s │ %-11s │\n", "PASSED      ", "N/A", "Complete");
+    fprintf(test_file, "   │ Lexical Output      │ %s │ %-11ld │ %-11s │\n", lexical_ok ? "PASSED      " : "FAILED      ", lexical_size, lexical_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Syntax Output       │ %s │ %-11ld │ %-11s │\n", syntax_ok ? "PASSED      " : "FAILED      ", syntax_size, syntax_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Semantic Output     │ %s │ %-11ld │ %-11s │\n", semantic_ok ? "PASSED      " : "FAILED      ", semantic_size, semantic_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Symbol Table Output │ %s │ %-11ld │ %-11s │\n", symbol_ok ? "PASSED      " : "FAILED      ", symbol_size, symbol_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Intermediate Code   │ %s │ %-11ld │ %-11s │\n", intermediate_ok ? "PASSED      " : "FAILED      ", intermediate_size, intermediate_ok ? "Valid" : "Missing");
+    fprintf(test_file, "   │ Assembly Output     │ %s │ %-11ld │ %-11s │\n", assembly_ok ? "PASSED      " : "FAILED      ", assembly_size, assembly_ok ? "Valid" : "Missing");
     fprintf(test_file, "   └─────────────────────┴──────────────┴─────────────┴─────────────┘\n\n");
 
     // Calculate actual quality score
@@ -1981,7 +1981,7 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
         fprintf(test_file, "work together seamlessly. The system shows excellent reliability,\n");
         fprintf(test_file, "performance, and maintainability characteristics.\n\n");
 
-        fprintf(test_file, "RECOMMENDATION: ✅ APPROVED FOR PRODUCTION USE\n");
+        fprintf(test_file, "RECOMMENDATION: APPROVED FOR PRODUCTION USE\n");
     }
     else
     {
@@ -1999,7 +1999,7 @@ void generate_integration_test_file(const char *input_file, int success, ASTNode
         fprintf(test_file, "The integration testing revealed %d issue(s) that need to be\n", total_tests - tests_passed);
         fprintf(test_file, "addressed before the system can be considered production-ready.\n\n");
 
-        fprintf(test_file, "RECOMMENDATION: ❌ REQUIRES FIXES BEFORE APPROVAL\n");
+        fprintf(test_file, "RECOMMENDATION: REQUIRES FIXES BEFORE APPROVAL\n");
     }
 
     fclose(test_file);
