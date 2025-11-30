@@ -1471,7 +1471,7 @@ void write_comprehensive_error_report(FILE *file)
         int error_num = 1;
         while (error)
         {
-            fprintf(file, "❌ SEMANTIC ERROR #%d\n", error_num++);
+            fprintf(file, "[ERROR] SEMANTIC ERROR #%d\n", error_num++);
             fprintf(file, "   ├─ Location: Line %d, Column %d\n", error->line, error->column);
             fprintf(file, "   ├─ Type: %s\n", error->error_code ? error->error_code : "SEMANTIC_ERROR");
             fprintf(file, "   ├─ Description: %s\n", error->message);
