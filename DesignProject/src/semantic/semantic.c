@@ -4032,6 +4032,9 @@ void analyze_variable_access(ASTNode *node)
 
         node->symbol = symbol;
 
+        // Mark variable as used when accessed
+        symbol->is_used = 1;
+
         // Check if this variable has array indices
         int has_indices = 0;
         for (int i = 1; i < node->child_count; i++)
