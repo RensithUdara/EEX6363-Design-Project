@@ -1496,7 +1496,7 @@ void write_comprehensive_error_report(FILE *file)
 
     if (syntax_errors > 0)
     {
-        fprintf(file, "🔧 SYNTAX ERROR RESOLUTION:\n");
+        fprintf(file, "SYNTAX ERROR RESOLUTION:\n");
         fprintf(file, "   1. Fix syntax errors first - they prevent proper parsing\n");
         fprintf(file, "   2. Check for missing semicolons, braces, or parentheses\n");
         fprintf(file, "   3. Verify proper token spelling and casing\n");
