@@ -369,7 +369,7 @@ void generate_execution_output_file(const char *input_file, ASTNode *ast)
     Variable variables[10];
     int var_count = 0;
 
-    fprintf(output, "🚀 PROGRAM EXECUTION TRACE:\n");
+    fprintf(output, "PROGRAM EXECUTION TRACE:\n");
     fprintf(output, "════════════════════════════════════════════════════════════════════════════\n\n");
 
     int return_value = execute_program(ast, variables, &var_count, output);
@@ -427,7 +427,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
             }
         }
 
-        fprintf(output, "🔧 Entering function: %s()\n", func_name);
+        fprintf(output, "Entering function: %s()\n", func_name);
         fprintf(output, "   ├─ Setting up local scope...\n\n");
 
         // Execute function body
@@ -465,7 +465,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
                         variables[*var_count].initialized = 0;
                         (*var_count)++;
 
-                        fprintf(output, "📝 Variable Declaration: %s\n", var_name);
+                        fprintf(output, "Variable Declaration: %s\n", var_name);
                         fprintf(output, "   ├─ Type: integer\n");
                         fprintf(output, "   └─ Initial value: uninitialized\n\n");
                     }
@@ -499,7 +499,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
                     variables[var_index].value = new_value;
                     variables[var_index].initialized = 1;
 
-                    fprintf(output, "🔄 Assignment: %s := ", var_name);
+                    fprintf(output, "Assignment: %s := ", var_name);
                     if (rvalue->type == AST_INT_LITERAL)
                     {
                         fprintf(output, "%d\n", new_value);
@@ -528,7 +528,7 @@ int execute_program(ASTNode *node, Variable *variables, int *var_count, FILE *ou
         if (node->child_count > 0)
         {
             int value = evaluate_expression(node->children[0], variables, *var_count);
-            fprintf(output, "📤 Output: write(%d)\n", value);
+            fprintf(output, "Output: write(%d)\n", value);
             fprintf(output, "   └─ Program outputs: %d\n\n", value);
         }
         break;
