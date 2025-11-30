@@ -1233,13 +1233,13 @@ void generate_architecture_design_file(const char *input_file, ASTNode *ast)
                                                                                                         : semantic_ms >= codegen_ms                             ? semantic_ms
                                                                                                                                                                 : codegen_ms);
     fprintf(arch_file, "Compilation Speed:       %s\n\n",
-            total_time < 10.0 ? "🚀 Very Fast" : total_time < 50.0 ? "⚡ Fast"
-                                             : total_time < 200.0  ? "🐌 Moderate"
-                                                                   : "⚠️  Slow");
+            total_time < 10.0 ? "Very Fast" : total_time < 50.0 ? "Fast"
+                                          : total_time < 200.0  ? "Moderate"
+                                                                : "Slow");
 
     // Memory and resources
-    fprintf(arch_file, "💾 MEMORY & RESOURCES:\n");
-    fprintf(arch_file, "─────────────────────\n");
+    fprintf(arch_file, "MEMORY & RESOURCES:\n");
+    fprintf(arch_file, "---------------------\n");
     fprintf(arch_file, "Memory Model:           Dynamic allocation\n");
     fprintf(arch_file, "Token Buffer:           %d tokens stored\n", total_tokens);
     fprintf(arch_file, "AST Memory:             %d nodes allocated\n", total_ast_nodes);
