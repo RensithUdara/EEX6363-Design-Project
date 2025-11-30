@@ -78,9 +78,7 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
     // Debug output to track AST traversal
     static int debug_level = 0;
     debug_level++;
-    
 
-    
     switch (ast->type)
     {
     case AST_PROGRAM:
@@ -98,7 +96,7 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
     case AST_FUNC_DEF:
         // Process function definition - get function name first
         char *func_name = NULL;
-        
+
         // Find function name from AST_FUNC_HEAD
         for (int i = 0; i < ast->child_count; i++)
         {
@@ -115,12 +113,12 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
                 }
             }
         }
-        
+
         if (func_name)
         {
             fprintf(output, "// Function: %s\n", func_name);
         }
-        
+
         // Process function body only (skip function head to avoid duplicate name output)
         for (int i = 0; i < ast->child_count; i++)
         {
@@ -138,7 +136,7 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
             if (ast->children && ast->children[i])
             {
                 generate_three_address_code(ast->children[i], output);
-                
+
                 // Also process siblings linked via next pointer
                 ASTNode *sibling = ast->children[i]->next;
                 while (sibling)
@@ -224,8 +222,6 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
         }
         break;
 
-
-
     case AST_FUNC_CALL_EXPR:
         if (ast->data.string_value)
         {
@@ -276,7 +272,7 @@ void generate_three_address_code(ASTNode *ast, FILE *output)
         }
         break;
     }
-    
+
     debug_level--;
 }
 
@@ -722,7 +718,7 @@ void generate_quadruple_code(ASTNode *ast, FILE *output)
 
     // Process the AST and generate quadruples
     generate_quadruples_recursive(ast, output, &quad_counter);
-    
+
     fprintf(output, "└────────────┴────────────┴────────────┴────────────┘\n");
 }
 
@@ -752,7 +748,7 @@ void generate_quadruples_recursive(ASTNode *ast, FILE *output, int *counter)
             if (ast->children && ast->children[i])
             {
                 generate_quadruples_recursive(ast->children[i], output, counter);
-                
+
                 // Process siblings
                 ASTNode *sibling = ast->children[i]->next;
                 while (sibling)
@@ -792,7 +788,7 @@ void generate_quadruples_recursive(ASTNode *ast, FILE *output, int *counter)
                 {
                     strcpy(result, ast->children[0]->children[0]->data.string_value);
                 }
-                fprintf(output, "│ %-10s │ %-10d │ %-10s │ %-10s │\n", "assign", 
+                fprintf(output, "│ %-10s │ %-10d │ %-10s │ %-10s │\n", "assign",
                         ast->children[1]->data.int_value, "-", result);
             }
             // For binary expressions like result := a * b
@@ -802,7 +798,7 @@ void generate_quadruples_recursive(ASTNode *ast, FILE *output, int *counter)
                 if (binop->child_count >= 2)
                 {
                     char arg1[20] = "", arg2[20] = "", result[20] = "";
-                    
+
                     // Get operands
                     if (binop->children[0] && binop->children[0]->child_count > 0)
                         strcpy(arg1, binop->children[0]->children[0]->data.string_value);
@@ -810,7 +806,7 @@ void generate_quadruples_recursive(ASTNode *ast, FILE *output, int *counter)
                         strcpy(arg2, binop->children[1]->children[0]->data.string_value);
                     if (ast->children[0] && ast->children[0]->child_count > 0)
                         strcpy(result, ast->children[0]->children[0]->data.string_value);
-                    
+
                     fprintf(output, "│ %-10s │ %-10s │ %-10s │ %-10s │\n", "mul", arg1, arg2, result);
                 }
             }
@@ -862,7 +858,7 @@ void generate_triple_code(ASTNode *ast, FILE *output)
 
     // Process the AST and generate triples
     generate_triples_recursive(ast, output, &triple_counter);
-    
+
     fprintf(output, "└───────┴────────────┴────────────┴────────────┘\n");
 }
 
@@ -892,7 +888,7 @@ void generate_triples_recursive(ASTNode *ast, FILE *output, int *counter)
             if (ast->children && ast->children[i])
             {
                 generate_triples_recursive(ast->children[i], output, counter);
-                
+
                 // Process siblings
                 ASTNode *sibling = ast->children[i]->next;
                 while (sibling)
@@ -910,16 +906,16 @@ void generate_triples_recursive(ASTNode *ast, FILE *output, int *counter)
             // For simple assignments like a := 10
             if (ast->children[1]->type == AST_INT_LITERAL)
             {
-                fprintf(output, "│ %-5d │ %-10s │ %-10d │ %-10s │\n", 
+                fprintf(output, "│ %-5d │ %-10s │ %-10d │ %-10s │\n",
                         (*counter)++, "assign", ast->children[1]->data.int_value, "-");
             }
-            // For binary expressions like result := a * b  
+            // For binary expressions like result := a * b
             else if (ast->children[1]->type == AST_BINARY_EXPR)
             {
                 ASTNode *binop = ast->children[1];
                 if (binop->child_count >= 2)
                 {
-                    fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n", 
+                    fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n",
                             (*counter)++, "mul", "(1)", "(2)");
                 }
             }
@@ -927,12 +923,12 @@ void generate_triples_recursive(ASTNode *ast, FILE *output, int *counter)
         break;
 
     case AST_WRITE_STMT:
-        fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n", 
+        fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n",
                 (*counter)++, "write", "(3)", "-");
         break;
 
     case AST_RETURN_STMT:
-        fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n", 
+        fprintf(output, "│ %-5d │ %-10s │ %-10s │ %-10s │\n",
                 (*counter)++, "return", "(3)", "-");
         break;
 
