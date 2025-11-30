@@ -262,21 +262,24 @@ void report_lexical_error(ErrorType type, int line, int col, const char *message
     // Print immediate feedback to both stderr and error log file
     fprintf(stderr, "❌ [%s] Lexical Error at line %d:%d: %s\n",
             error->error_code, line, col, message);
-    if (global_error_log_file) {
+    if (global_error_log_file)
+    {
         fprintf(global_error_log_file, "❌ [%s] Lexical Error at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
     if (found)
     {
         fprintf(stderr, "   ├─ Found: '%s'\n", found);
-        if (global_error_log_file) {
+        if (global_error_log_file)
+        {
             fprintf(global_error_log_file, "   ├─ Found: '%s'\n", found);
         }
     }
     if (suggestion)
     {
         fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
-        if (global_error_log_file) {
+        if (global_error_log_file)
+        {
             fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
         }
     }
@@ -318,7 +321,8 @@ void report_syntax_error_enhanced(ErrorType type, int line, int col, const char 
     // Print immediate feedback to both stderr and error log file
     fprintf(stderr, "❌ [%s] Syntax Error at line %d:%d: %s\n",
             error->error_code, line, col, message);
-    if (global_error_log_file) {
+    if (global_error_log_file)
+    {
         fprintf(global_error_log_file, "❌ [%s] Syntax Error at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
@@ -326,7 +330,8 @@ void report_syntax_error_enhanced(ErrorType type, int line, int col, const char 
     {
         fprintf(stderr, "   ├─ Expected: %s\n", expected);
         fprintf(stderr, "   ├─ Found: %s\n", found);
-        if (global_error_log_file) {
+        if (global_error_log_file)
+        {
             fprintf(global_error_log_file, "   ├─ Expected: %s\n", expected);
             fprintf(global_error_log_file, "   ├─ Found: %s\n", found);
         }
@@ -334,7 +339,8 @@ void report_syntax_error_enhanced(ErrorType type, int line, int col, const char 
     if (suggestion)
     {
         fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
-        if (global_error_log_file) {
+        if (global_error_log_file)
+        {
             fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
         }
     }
@@ -369,21 +375,24 @@ void report_semantic_error_enhanced(ErrorType type, int line, int col, const cha
     // Print immediate feedback to both stderr and error log file
     fprintf(stderr, "❌ [%s] Semantic Error at line %d:%d: %s\n",
             error->error_code, line, col, message);
-    if (global_error_log_file) {
+    if (global_error_log_file)
+    {
         fprintf(global_error_log_file, "❌ [%s] Semantic Error at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
     if (context)
     {
         fprintf(stderr, "   ├─ Context: %s\n", context);
-        if (global_error_log_file) {
+        if (global_error_log_file)
+        {
             fprintf(global_error_log_file, "   ├─ Context: %s\n", context);
         }
     }
     if (suggestion)
     {
         fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
-        if (global_error_log_file) {
+        if (global_error_log_file)
+        {
             fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
         }
     }
@@ -416,14 +425,16 @@ void report_warning(ErrorType type, int line, int col, const char *message, cons
     // Print immediate feedback to both stderr and error log file
     fprintf(stderr, "⚠️ [%s] Warning at line %d:%d: %s\n",
             error->error_code, line, col, message);
-    if (global_error_log_file) {
+    if (global_error_log_file)
+    {
         fprintf(global_error_log_file, "⚠️ [%s] Warning at line %d:%d: %s\n",
                 error->error_code, line, col, message);
     }
     if (suggestion)
     {
         fprintf(stderr, "   └─ 💡 Suggestion: %s\n", suggestion);
-        if (global_error_log_file) {
+        if (global_error_log_file)
+        {
             fprintf(global_error_log_file, "   └─ 💡 Suggestion: %s\n", suggestion);
         }
     }
@@ -1631,7 +1642,7 @@ void init_error_log_file(const char *input_file)
     {
         fclose(global_error_log_file);
     }
-    
+
     char filename[512];
     char base_name[256];
     char *dot_pos = strrchr(input_file, '.');
@@ -1648,7 +1659,7 @@ void init_error_log_file(const char *input_file)
 
     snprintf(filename, sizeof(filename), "%s_error_log.txt", base_name);
     global_error_log_file = fopen(filename, "w");
-    
+
     if (global_error_log_file)
     {
         fprintf(global_error_log_file, "================================================================================\n");
@@ -1684,19 +1695,23 @@ void close_error_log_file(void)
         fprintf(global_error_log_file, "│ Semantic Errors           │ %5d │ Type mismatches, undefined symbols       │\n", get_semantic_error_count());
         fprintf(global_error_log_file, "│ Warnings                  │ %5d │ Non-critical issues                      │\n", get_warning_count());
         fprintf(global_error_log_file, "└────────────────────────────────────────────────────────────────────────────┘\n\n");
-        
+
         int total_errors = get_total_error_count();
-        if (total_errors == 0) {
+        if (total_errors == 0)
+        {
             fprintf(global_error_log_file, "✅ SUCCESS: No errors found! Code analysis completed successfully.\n\n");
-        } else {
+        }
+        else
+        {
             fprintf(global_error_log_file, "❌ FAILED: Found %d error(s) that need to be fixed before compilation.\n\n", total_errors);
         }
-        
+
         // Add comprehensive error report like terminal
-        if (global_error_manager && (global_error_manager->lexical_errors || global_error_manager->syntax_errors || global_error_manager->semantic_errors)) {
+        if (global_error_manager && (global_error_manager->lexical_errors || global_error_manager->syntax_errors || global_error_manager->semantic_errors))
+        {
             write_comprehensive_error_report(global_error_log_file);
         }
-        
+
         fprintf(global_error_log_file, "\n================================================================================\n");
         fprintf(global_error_log_file, "                              🏁 END OF ERROR LOG                               \n");
         fprintf(global_error_log_file, "================================================================================\n");
