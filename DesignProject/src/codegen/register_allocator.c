@@ -401,6 +401,65 @@ Register find_lru_register(CodeGenContext *ctx)
     return lru_reg;
 }
 
+// Find register whose variable is used furthest in future (for optimal allocation)
+Register find_furthest_use_register(CodeGenContext *ctx)
+{
+    if (!ctx)
+        return REG_NONE;
+
+    Register furthest_reg = REG_NONE;
+    int furthest_use = -1;
+
+    for (int i = 0; i < MAX_REGISTERS; i++)
+    {
+        if (ctx->registers[i].status == REG_RESERVED)
+            continue;
+
+        if (ctx->registers[i].status == REG_ALLOCATED)
+        {
+            // Calculate future use distance (simplified heuristic)
+            int future_use = calculate_future_use_distance(ctx, ctx->registers[i].variable);
+            
+            if (future_use > furthest_use)
+            {
+                furthest_use = future_use;
+                furthest_reg = (Register)i;
+            }
+        }
+    }
+
+    return furthest_reg;
+}
+
+// Optimal allocation using future usage analysis
+Register allocate_with_optimal(CodeGenContext *ctx, Symbol *var)
+{
+    if (!ctx)
+        return REG_NONE;
+
+    Register free_reg = find_free_register(ctx);
+    if (free_reg != REG_NONE)
+    {
+        ctx->registers[free_reg].status = REG_ALLOCATED;
+        ctx->registers[free_reg].variable = var;
+        ctx->registers[free_reg].last_use = global_stats.total_allocations;
+        return free_reg;
+    }
+
+    // Find register whose variable is used furthest in future
+    Register optimal_victim = find_furthest_use_register(ctx);
+    if (optimal_victim != REG_NONE)
+    {
+        spill_register(ctx, optimal_victim);
+        ctx->registers[optimal_victim].status = REG_ALLOCATED;
+        ctx->registers[optimal_victim].variable = var;
+        ctx->registers[optimal_victim].last_use = global_stats.total_allocations;
+        return optimal_victim;
+    }
+    
+    return REG_NONE;
+}
+
 // Update last use timestamp
 void update_last_use(CodeGenContext *ctx, Register reg)
 {
@@ -548,4 +607,39 @@ int get_spill_operations(void)
 const char *get_allocation_strategy(void)
 {
     return "Linear Scan"; // Default strategy name
+}
+
+// Calculate future use distance for optimal allocation (helper function)
+static int calculate_future_use_distance(CodeGenContext *ctx, Symbol *var)
+{
+    if (!ctx || !var)
+        return INT_MAX; // Never used again
+
+    // Simplified heuristic: assume variables used recently will be used again soon
+    // In a real implementation, this would analyze the program's control flow
+    
+    // Find variable's last use time
+    int last_use = -1;
+    for (int i = 0; i < MAX_REGISTERS; i++)
+    {
+        if (ctx->registers[i].variable == var)
+        {
+            last_use = ctx->registers[i].last_use;
+            break;
+        }
+    }
+    
+    if (last_use == -1)
+        return INT_MAX; // Variable not found, assume never used
+    
+    // Simple heuristic: the longer since last use, the further the next use
+    int time_since_use = global_stats.total_allocations - last_use;
+    
+    // Variables used recently are likely to be used again soon
+    if (time_since_use < 5)
+        return time_since_use; // Near future use
+    else if (time_since_use < 20)
+        return time_since_use * 2; // Medium future use
+    else
+        return INT_MAX; // Far future use (good spill candidate)
 }
