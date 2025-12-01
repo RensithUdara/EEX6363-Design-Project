@@ -41,6 +41,7 @@ run_test_suite() {
     local suite_name="$1"
     local script_path="$2"
     local required="$3"  # true/false
+    local output_file="$4"  # optional separate output file
     
     echo -e "\n${YELLOW}▶ Running $suite_name...${NC}"
     echo "Running $suite_name..." >> "$MASTER_LOG"
@@ -48,25 +49,59 @@ run_test_suite() {
     local start_time=$(date +%s)
     local exit_code=0
     
+    # Create output file if specified
+    if [[ -n "$output_file" ]]; then
+        mkdir -p "$(dirname "$output_file")"
+        echo "$suite_name Test Results - $(date)" > "$output_file"
+        echo "=========================================" >> "$output_file"
+    fi
+    
     if [[ -f "$script_path" ]]; then
-        if "$script_path"; then
-            local end_time=$(date +%s)
-            local duration=$((end_time - start_time))
-            echo -e "${GREEN}✓ $suite_name completed successfully (${duration}s)${NC}"
-            echo "✓ $suite_name: SUCCESS (${duration}s)" >> "$MASTER_LOG"
-            return 0
-        else
-            local end_time=$(date +%s)
-            local duration=$((end_time - start_time))
-            echo -e "${RED}✗ $suite_name failed (${duration}s)${NC}"
-            echo "✗ $suite_name: FAILED (${duration}s)" >> "$MASTER_LOG"
-            
-            if [[ "$required" == "true" ]]; then
-                echo -e "${RED}❌ Required test suite failed. Stopping.${NC}"
-                exit 1
+        if [[ -n "$output_file" ]]; then
+            # Run with output redirection
+            if "$script_path" 2>&1 | tee -a "$output_file"; then
+                local end_time=$(date +%s)
+                local duration=$((end_time - start_time))
+                echo -e "${GREEN}✓ $suite_name completed successfully (${duration}s)${NC}"
+                echo "✓ $suite_name: SUCCESS (${duration}s)" >> "$MASTER_LOG"
+                echo "\nTest completed successfully in ${duration}s" >> "$output_file"
+                return 0
             else
-                echo -e "${YELLOW}⚠️ Optional test suite failed. Continuing.${NC}"
-                return 1
+                local end_time=$(date +%s)
+                local duration=$((end_time - start_time))
+                echo -e "${RED}✗ $suite_name failed (${duration}s)${NC}"
+                echo "✗ $suite_name: FAILED (${duration}s)" >> "$MASTER_LOG"
+                echo "\nTest failed after ${duration}s" >> "$output_file"
+                
+                if [[ "$required" == "true" ]]; then
+                    echo -e "${RED}❌ Required test suite failed. Stopping.${NC}"
+                    exit 1
+                else
+                    echo -e "${YELLOW}⚠️ Optional test suite failed. Continuing.${NC}"
+                    return 1
+                fi
+            fi
+        else
+            # Run without output redirection
+            if "$script_path"; then
+                local end_time=$(date +%s)
+                local duration=$((end_time - start_time))
+                echo -e "${GREEN}✓ $suite_name completed successfully (${duration}s)${NC}"
+                echo "✓ $suite_name: SUCCESS (${duration}s)" >> "$MASTER_LOG"
+                return 0
+            else
+                local end_time=$(date +%s)
+                local duration=$((end_time - start_time))
+                echo -e "${RED}✗ $suite_name failed (${duration}s)${NC}"
+                echo "✗ $suite_name: FAILED (${duration}s)" >> "$MASTER_LOG"
+                
+                if [[ "$required" == "true" ]]; then
+                    echo -e "${RED}❌ Required test suite failed. Stopping.${NC}"
+                    exit 1
+                else
+                    echo -e "${YELLOW}⚠️ Optional test suite failed. Continuing.${NC}"
+                    return 1
+                fi
             fi
         fi
     else
@@ -109,13 +144,25 @@ case "$TEST_MODE" in
     "unit")
         echo -e "${BLUE}Running unit tests only...${NC}"
         check_prerequisites
-        run_test_suite "Unit Tests" "scripts/test/unit_tests.sh" "true"
+        run_test_suite "Unit Tests" "scripts/test/unit_tests.sh" "true" "test_reports/unit/unit_test_output.txt"
         ;;
         
     "regression")
         echo -e "${BLUE}Running regression tests only...${NC}"
         check_prerequisites
-        run_test_suite "Regression Tests" "scripts/test/regression_tests.sh" "true"
+        run_test_suite "Regression Tests" "scripts/test/regression_tests.sh" "true" "test_reports/regression/regression_test_output.txt"
+        ;;
+        
+    "integration")
+        echo -e "${BLUE}Running integration tests only...${NC}"
+        check_prerequisites
+        run_test_suite "Integration Tests" "scripts/test/run_automated_tests.sh" "true" "test_reports/integration/integration_test_output.txt"
+        ;;
+        
+    "performance")
+        echo -e "${BLUE}Running performance tests only...${NC}"
+        check_prerequisites
+        run_test_suite "Performance Tests" "scripts/test/performance_tests.sh" "true" "test_reports/performance/performance_test_output.txt"
         ;;
         
     "ci")
@@ -133,24 +180,31 @@ case "$TEST_MODE" in
         SUITE_RESULTS=()
         
         # Core functionality tests
-        if run_test_suite "Unit Tests" "scripts/test/unit_tests.sh" "false"; then
+        if run_test_suite "Unit Tests" "scripts/test/unit_tests.sh" "false" "test_reports/unit/unit_test_output.txt"; then
             SUITE_RESULTS+=("Unit:PASS")
         else
             SUITE_RESULTS+=("Unit:FAIL")
         fi
         
         # Regression tests
-        if run_test_suite "Regression Tests" "scripts/test/regression_tests.sh" "false"; then
+        if run_test_suite "Regression Tests" "scripts/test/regression_tests.sh" "false" "test_reports/regression/regression_test_output.txt"; then
             SUITE_RESULTS+=("Regression:PASS")
         else
             SUITE_RESULTS+=("Regression:FAIL")
         fi
         
         # Integration tests
-        if run_test_suite "Integration Tests" "scripts/test/run_automated_tests.sh" "false"; then
+        if run_test_suite "Integration Tests" "scripts/test/run_automated_tests.sh" "false" "test_reports/integration/integration_test_output.txt"; then
             SUITE_RESULTS+=("Integration:PASS")
         else
             SUITE_RESULTS+=("Integration:FAIL")
+        fi
+        
+        # Performance tests (if available)
+        if run_test_suite "Performance Tests" "scripts/test/performance_tests.sh" "false" "test_reports/performance/performance_test_output.txt"; then
+            SUITE_RESULTS+=("Performance:PASS")
+        else
+            SUITE_RESULTS+=("Performance:FAIL")
         fi
         ;;
 esac
@@ -307,9 +361,10 @@ cat >> "test_reports/master/test_dashboard.html" << EOF
         
         <h2>📁 Available Reports</h2>
         <ul>
-            <li><a href="../unit/unit_test_results.txt">Unit Test Results</a></li>
-            <li><a href="../regression/regression_results.txt">Regression Test Results</a></li>
-            <li><a href="../test_summary.txt">Integration Test Summary</a></li>
+            <li><a href="../unit/unit_test_output.txt">Unit Test Output</a></li>
+            <li><a href="../regression/regression_test_output.txt">Regression Test Output</a></li>
+            <li><a href="../integration/integration_test_output.txt">Integration Test Output</a></li>
+            <li><a href="../performance/performance_test_output.txt">Performance Test Output</a></li>
         </ul>
         
         <p class="timestamp">
