@@ -2,7 +2,7 @@
                     GENERATED ASSEMBLY CODE OUTPUT                              
 ================================================================================
 Source File:     tests/examples/test_simple.txt
-Generated:       Nov 30 2025 23:09:18
+Generated:       Nov 30 2025 23:21:08
 Target Arch:     x86-64 (Intel/AMD 64-bit)
 Assembly Syntax: AT&T Syntax
 Compiler:        EEX6363 Design Project Compiler
