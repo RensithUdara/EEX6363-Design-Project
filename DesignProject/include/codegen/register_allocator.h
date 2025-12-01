@@ -81,6 +81,7 @@ void analyze_live_ranges(CodeGenContext *ctx, ASTNode *function);
 // Utility functions
 void update_last_use(CodeGenContext *ctx, Register reg);
 Register find_lru_register(CodeGenContext *ctx);
+Register find_furthest_use_register(CodeGenContext *ctx);
 Register find_spill_candidate(CodeGenContext *ctx);
 int calculate_spill_priority(CodeGenContext *ctx, Register reg);
 void print_allocation_stats(RegisterAllocator *allocator);
