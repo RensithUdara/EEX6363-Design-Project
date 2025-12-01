@@ -419,7 +419,7 @@ Register find_furthest_use_register(CodeGenContext *ctx)
         {
             // Calculate future use distance (simplified heuristic)
             int future_use = calculate_future_use_distance(ctx, ctx->registers[i].variable);
-            
+
             if (future_use > furthest_use)
             {
                 furthest_use = future_use;
@@ -456,7 +456,7 @@ Register allocate_with_optimal(CodeGenContext *ctx, Symbol *var)
         ctx->registers[optimal_victim].last_use = global_stats.total_allocations;
         return optimal_victim;
     }
-    
+
     return REG_NONE;
 }
 
@@ -617,7 +617,7 @@ static int calculate_future_use_distance(CodeGenContext *ctx, Symbol *var)
 
     // Simplified heuristic: assume variables used recently will be used again soon
     // In a real implementation, this would analyze the program's control flow
-    
+
     // Find variable's last use time
     int last_use = -1;
     for (int i = 0; i < MAX_REGISTERS; i++)
@@ -628,13 +628,13 @@ static int calculate_future_use_distance(CodeGenContext *ctx, Symbol *var)
             break;
         }
     }
-    
+
     if (last_use == -1)
         return INT_MAX; // Variable not found, assume never used
-    
+
     // Simple heuristic: the longer since last use, the further the next use
     int time_since_use = global_stats.total_allocations - last_use;
-    
+
     // Variables used recently are likely to be used again soon
     if (time_since_use < 5)
         return time_since_use; // Near future use
