@@ -2,7 +2,7 @@
                         PROGRAM EXECUTION OUTPUT                                
 ================================================================================
 Source File:     ./tests/examples/simple_function.txt
-Generated:       Dec  2 2025 20:38:00
+Generated:       Dec  3 2025 00:27:14
 Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
 ================================================================================
