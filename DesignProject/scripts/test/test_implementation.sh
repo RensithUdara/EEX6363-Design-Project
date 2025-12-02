@@ -12,7 +12,7 @@ echo "====================================="
 
 # Initialize
 mkdir -p tests/codegen
-mkdir -p test_reports/codegen
+# Test reports managed by master test script
 mkdir -p output/assembly
 
 # Colors
@@ -123,8 +123,7 @@ test_code_generation() {
                 esac
             done
             
-            # Archive the assembly output
-            cp output.s "test_reports/codegen/${test_name// /_}_output.s"
+            # Assembly output available in current directory
             
             if [[ $features_found -eq $total_features ]]; then
                 echo -e "[PASS] Test Result: ${GREEN}PASSED (${features_found}/${total_features} features)${NC}"
@@ -307,18 +306,7 @@ if [[ -f "output.s" ]]; then
         echo -e "[WARN] ABI Compliance: ${YELLOW}PARTIAL${NC}"
     fi
     
-    # Save analysis
-    {
-        echo "Assembly Quality Analysis - $(date)"
-        echo "================================="
-        echo "Instruction Count: $instruction_count"
-        echo "ABI Compliance: $(grep -q "pushq %rbp" output.s && echo "Yes" || echo "Partial")"
-        echo "Optimizations: $(grep -q "# Optimization" output.s && echo "Detected" || echo "Not detected")"
-        echo ""
-        echo "Generated Assembly:"
-        echo "=================="
-        cat output.s
-    } > test_reports/codegen/assembly_analysis.txt
+    # Assembly analysis results displayed above
 fi
 
 # Memory Layout Test
@@ -348,46 +336,17 @@ echo -e "Tests Failed: ${RED}$((TESTS_RUN - TESTS_PASSED))${NC}"
 success_rate=$((TESTS_PASSED * 100 / TESTS_RUN))
 echo -e "Success Rate: ${success_rate}%"
 
-# Write detailed report
-{
-    echo "Code Generation Implementation Test Report"
-    echo "Generated: $(date)"
-    echo "========================================"
-    echo ""
-    echo "Summary:"
-    echo "Tests Run: $TESTS_RUN"
-    echo "Tests Passed: $TESTS_PASSED"
-    echo "Tests Failed: $((TESTS_RUN - TESTS_PASSED))"
-    echo "Success Rate: ${success_rate}%"
-    echo ""
-    echo "Architecture: x86-64"
-    echo "Compiler: $COMPILER"
-    echo ""
-    echo "Test Categories:"
-    echo "- Simple Functions: Basic code generation"
-    echo "- Local Variables: Stack management"
-    echo "- Parameters: Argument passing"
-    echo "- Control Flow: Conditional/loop generation"
-    echo "- Expressions: Arithmetic code generation"
-    echo "- Classes: Object-oriented features"
-    echo "- Performance: Compilation speed"
-    echo ""
-    echo "Assembly Quality:"
-    echo "- ABI Compliance: x86-64 System V"
-    echo "- Memory Management: Stack-based"
-    echo "- Register Usage: General-purpose registers"
-    echo ""
-} > test_reports/codegen/implementation_report.txt
+# Detailed results captured by master test suite
 
 # Clean up temporary files
 rm -f compiler_output.txt
 
 if [[ $success_rate -ge 80 ]]; then
     echo -e "\nSUCCESS: ${GREEN}Code generation implementation test PASSED!${NC}"
-    echo "INFO: See test_reports/codegen/ for detailed analysis."
+    echo "INFO: Detailed analysis available in terminal output."
     exit 0
 else
     echo -e "\nWARNING: ${RED}Code generation needs improvement.${NC}"
-    echo "INFO: See test_reports/codegen/ for detailed analysis."
+    echo "INFO: Detailed analysis available in terminal output."
     exit 1
 fi
