@@ -23,14 +23,14 @@ This document provides comprehensive answers to all Design Project assignment qu
 **Real Project Files:**
 - `src/codegen/codegen.c` (1,200+ lines) - Working code generator
 - `src/codegen/register_allocator.c` (500+ lines) - Register allocation
-- `src/core/enhanced_compiler.c` - Main compilation pipeline
+- `src/core/compiler.c` - Main compilation pipeline
 - `src/semantic/semantic.c` - Semantic analysis (from TMA3)
 - All TMA components integrated and functional
 
 The compiler successfully integrates all TMA components (TMA01-Lexical, TMA02-Syntax, TMA03-Semantic) with a working code generation phase that produces x86-64 assembly output.
 
 **Implementation Architecture**: The compiler is organized into a modular structure with separate components for each phase:
-- **Core**: `enhanced_compiler.c`, `ast.c` - Main compilation pipeline
+- **Core**: `compiler.c`, `ast.c` - Main compilation pipeline
 - **Lexical**: `scanner.l` - Flex-based lexical analysis  
 - **Semantic**: `semantic.c`, `semantic_integration.c` - Type checking and symbol tables
 - **CodeGen**: `codegen.c`, `register_allocator.c` - Assembly generation with register allocation
@@ -773,7 +773,7 @@ Register allocate_with_lru(CodeGenContext *ctx, Symbol *var)
 #### **📊 Memory Usage Statistics**
 
 ```c
-// FROM: enhanced_compiler.c - memory reporting example pattern
+// FROM: compiler.c - memory reporting example pattern
 // (Note: Values are examples - actual usage varies by program)
 Memory Usage Analysis:
    Token Storage:       2.05 KB    // Dynamic based on token count
@@ -1058,7 +1058,7 @@ void emit_function_prologue(FunctionInfo *func, FILE *output_file) {
 }
 ```
 
-#### **🎯 Actual Compiler Pipeline (enhanced_compiler.c)**
+#### **🎯 Actual Compiler Pipeline (compiler.c)**
 
 **Real compilation phases from your project:**
 
@@ -1069,7 +1069,7 @@ void emit_function_prologue(FunctionInfo *func, FILE *output_file) {
 | **Semantic** | Type checking & symbol tables | `semantic.c` | `semantic_analysis()` |
 | **Code Generation** | x86-64 assembly output | `codegen.c` | `generate_code()` |
 
-**ACTUAL compilation flow from enhanced_compiler.c:**
+**ACTUAL compilation flow from compiler.c:**
 
 ```c
 // ACTUAL IMPLEMENTATION - Main function structure
@@ -2128,7 +2128,7 @@ Design Project Automated Test Suite
 ========================================
 Project Root: /c/cygwin64/home/USER/LexAndYaccCode/Design Project/DesignProject
 Test Directory: /c/cygwin64/home/USER/LexAndYaccCode/Design Project/DesignProject/tests
-Compiler: /c/cygwin64/home/USER/LexAndYaccCode/Design Project/DesignProject/build/enhanced_compiler
+Compiler: /c/cygwin64/home/USER/LexAndYaccCode/Design Project/DesignProject/build/compiler
 
 === PHASE 1: Basic Functionality Tests ===
 Testing Simple Valid Program... ✅ PASS
@@ -2429,13 +2429,13 @@ The compiler successfully validates against all predefined rules from TMA1, TMA2
 
 **✅ For 100% verified actual code from your project, see:**
 - **`ACTUAL_CODE_ONLY.md`** - Contains ONLY real implementations from your source files
-- **Verify against these files**: `src/codegen/codegen.c`, `src/codegen/register_allocator.c`, `src/core/enhanced_compiler.c`
+- **Verify against these files**: `src/codegen/codegen.c`, `src/codegen/register_allocator.c`, `src/core/compiler.c`
 
 **🔍 Real Implementation Summary:**
 - **Working Compiler**: 4-phase pipeline with actual assembly output
 - **Code Generation**: 1,200+ lines in `codegen.c` producing x86-64 assembly
 - **Register Allocation**: 500+ lines in `register_allocator.c` with spilling
-- **Integration**: All TMA components working together in `enhanced_compiler.c`
+- **Integration**: All TMA components working together in `compiler.c`
 
 **Your project DOES have a complete, working compiler implementation!**
 
