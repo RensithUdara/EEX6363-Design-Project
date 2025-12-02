@@ -111,7 +111,7 @@ Tests Failed: 2
 ### **Automatic Testing** ✅
 ```bash
 # Stateless compiler testing - input → output verification
-./build/enhanced_compiler input.txt -o output.s
+./build/compiler input.txt -o output.s
 # Automated comparison of expected vs actual results
 ```
 
