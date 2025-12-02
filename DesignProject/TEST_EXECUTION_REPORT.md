@@ -3,7 +3,7 @@
 ## Test Suite Execution Results
 
 ### Date: November 29, 2025
-### Compiler: enhanced_compiler.exe
+### Compiler: compiler.exe
 ### Architecture: x86-64 (AT&T Syntax)
 
 ---

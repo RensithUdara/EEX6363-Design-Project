@@ -2,7 +2,7 @@
                     GENERATED ASSEMBLY CODE OUTPUT                              
 ================================================================================
 Source File:     /tmp/perf_small.txt
-Generated:       Dec  2 2025 12:58:35
+Generated:       Dec  2 2025 20:37:56
 Target Arch:     x86-64 (Intel/AMD 64-bit)
 Assembly Syntax: AT&T Syntax
 Compiler:        EEX6363 Design Project Compiler

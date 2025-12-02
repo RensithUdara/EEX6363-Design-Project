@@ -5,7 +5,7 @@ Design Project Automated Test Suite
 ========================================
 Project Root: /home/USER/LexAndYaccCode/Design Project/DesignProject
 Test Directory: /home/USER/LexAndYaccCode/Design Project/DesignProject/tests
-Compiler: /home/USER/LexAndYaccCode/Design Project/DesignProject/build/enhanced_compiler
+Compiler: /home/USER/LexAndYaccCode/Design Project/DesignProject/build/compiler
 
 === PHASE 1: Basic Functionality Tests ===
 Testing Simple Valid Program... 

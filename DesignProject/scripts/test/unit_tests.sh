@@ -3,7 +3,7 @@
 # Tests individual phases: Lexical, Syntax, Semantic, CodeGen
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-COMPILER="\"$PROJECT_ROOT/build/enhanced_compiler\""
+COMPILER="\"$PROJECT_ROOT/build/compiler\""
 
 # Colors
 RED='\033[0;31m'

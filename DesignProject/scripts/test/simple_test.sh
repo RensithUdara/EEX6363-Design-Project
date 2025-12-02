@@ -24,7 +24,7 @@ run_test() {
     TOTAL_TESTS=$((TOTAL_TESTS + 1))
     
     # Run the compiler on the test file
-    if ./build/enhanced_compiler "$input_file" > /dev/null 2>&1; then
+    if ./build/compiler "$input_file" > /dev/null 2>&1; then
         if [ "$expected_result" = "PASS" ]; then
             echo "PASSED"
             TESTS_PASSED=$((TESTS_PASSED + 1))
@@ -114,7 +114,7 @@ echo "Testing TMA Rule Compliance:"
 
 # Test lexical analysis (TMA1)
 echo -n "  TMA1 (Lexical Analysis): "
-if ./build/enhanced_compiler tests/examples/final_test.txt > /dev/null 2>&1; then
+if ./build/compiler tests/examples/final_test.txt > /dev/null 2>&1; then
     echo "PASSED"
     TESTS_PASSED=$((TESTS_PASSED + 1))
 else
@@ -125,7 +125,7 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
 
 # Test syntax analysis (TMA2)
 echo -n "  TMA2 (Syntax Analysis): "
-if ./build/enhanced_compiler tests/examples/simple_test.txt > /dev/null 2>&1; then
+if ./build/compiler tests/examples/simple_test.txt > /dev/null 2>&1; then
     echo "PASSED"
     TESTS_PASSED=$((TESTS_PASSED + 1))
 else
@@ -136,7 +136,7 @@ TOTAL_TESTS=$((TOTAL_TESTS + 1))
 
 # Test semantic analysis (TMA3)
 echo -n "  TMA3 (Semantic Analysis): "
-if ./build/enhanced_compiler tests/examples/comprehensive_test.txt > /dev/null 2>&1; then
+if ./build/compiler tests/examples/comprehensive_test.txt > /dev/null 2>&1; then
     echo "PASSED"
     TESTS_PASSED=$((TESTS_PASSED + 1))
 else

@@ -232,7 +232,7 @@ DesignProject/
 │   │   ├── codegen.c (1460 lines)
 │   │   └── register_allocator.c (551 lines)
 │   ├── core/
-│   │   └── enhanced_compiler.c
+│   │   └── compiler.c
 │   ├── lexical/
 │   │   └── scanner.l
 │   └── semantic/

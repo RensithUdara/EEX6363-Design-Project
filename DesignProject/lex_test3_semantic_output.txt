@@ -2,7 +2,7 @@
 Semantic Analysis Output (TMA3)
 ========================================
 Input: /tmp/lex_test3.txt
-Generated: Dec  2 2025 12:58:35
+Generated: Dec  2 2025 20:37:56
 
 SYMBOL TABLE:
 -------------

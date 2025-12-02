@@ -116,7 +116,7 @@ check_prerequisites() {
     echo -e "${BLUE}Checking prerequisites...${NC}"
     
     # Check if compiler exists
-    if [[ ! -f "build/enhanced_compiler" ]]; then
+    if [[ ! -f "build/compiler" ]]; then
         echo -e "${YELLOW}WARNING: Compiler not built. Building now...${NC}"
         if make clean && make; then
             echo -e "${GREEN}[PASS] Compiler built successfully${NC}"

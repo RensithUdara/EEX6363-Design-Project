@@ -1,7 +1,7 @@
 ================================================================================
                     DESIGN PROJECT - COMPLETE TEST RESULTS
 ================================================================================
-Generated: Tue Dec  2 14:12:29 +0530 2025
+Generated: Tue Dec  2 20:53:00 +0530 2025
 Project: DesignProject
 Compiler: Enhanced Compiler with Optimal Register Allocation
 
@@ -11,10 +11,6 @@ Compiler: Enhanced Compiler with Optimal Register Allocation
 
 UNIT TESTS (Compiler Components):
 =================================
-✓ Lexical Analysis: 3/3 passed
-✓ Syntax Analysis:  3/3 passed
-✓ Semantic Analysis: 3/3 passed
-TOTAL: 9/9 passed (100%)
 
 REGRESSION TESTS (Known Issues & Fixes):
 =======================================
@@ -39,14 +35,16 @@ Performance Metrics:
 Performance Test Summary
 ========================================
 Small Program:
-  Average: 61ms
-  Range: 57ms - 67ms
+  Average: 59ms
+  Range: 56ms - 67ms
 
 Medium Program:
-  Average: 146ms
-  Range: 144ms - 149ms
+  Average: 143ms
+  Range: 137ms - 149ms
 
 Large Program:
+  Average: 149ms
+  Range: 142ms - 157ms
 
 INTEGRATION TESTS (Cross-Component):
 ====================================
@@ -58,8 +56,8 @@ TOTAL: All integration tests passed
                               FINAL RESULTS
 =================================================================================
 
-TOTAL TESTS: 26
-PASSED: 26
+TOTAL TESTS: 17
+PASSED: 17
 FAILED: 0
 SUCCESS RATE: 100%
 

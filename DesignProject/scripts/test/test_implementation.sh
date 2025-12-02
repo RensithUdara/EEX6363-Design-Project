@@ -28,14 +28,14 @@ TESTS_PASSED=0
 
 # Find compiler
 COMPILER=""
-if [[ -f "enhanced_compiler.exe" ]]; then
-    COMPILER="./enhanced_compiler.exe"
-elif [[ -f "build/enhanced_compiler" ]]; then
-    COMPILER="./build/enhanced_compiler"
+if [[ -f "compiler.exe" ]]; then
+    COMPILER="./compiler.exe"
+elif [[ -f "build/compiler" ]]; then
+    COMPILER="./build/compiler"
 else
     echo "Building compiler..."
     make clean && make
-    COMPILER="./enhanced_compiler.exe"
+    COMPILER="./compiler.exe"
 fi
 
 echo -e "${BLUE}Using compiler: $COMPILER${NC}"

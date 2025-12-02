@@ -33,7 +33,7 @@ fi
 
 # Step 3: Verify compiler exists
 echo -e "${YELLOW}Step 3: Verifying compiler...${NC}"
-if [[ -f "build/enhanced_compiler" ]]; then
+if [[ -f "build/compiler" ]]; then
     echo -e "${GREEN}✓ Compiler built successfully${NC}"
 else
     echo -e "${RED}✗ Compiler not found${NC}"
@@ -68,7 +68,7 @@ cat > ci_reports/ci_summary.md << EOF
 - $([ "$test_result" = "PASS" ] && echo "✅" || echo "⚠️") Tests: $test_result
 
 ## Artifacts Generated
-- \`build/enhanced_compiler\` - Main compiler executable
+- \`build/compiler\` - Main compiler executable
 - \`test_reports/\` - Test result reports
 - \`ci_reports/\` - CI pipeline reports
 

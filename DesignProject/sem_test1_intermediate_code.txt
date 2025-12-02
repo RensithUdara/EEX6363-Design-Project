@@ -1,7 +1,7 @@
 ================================================================================
                     INTERMEDIATE CODE GENERATION REPORT                   
 ================================================================================
-Generated: Dec  2 2025 12:58:35
+Generated: Dec  2 2025 20:37:56
 Input File: /tmp/sem_test1.txt
 Target Architecture: x86-64 Assembly (AT&T Syntax)
 Code Generation Phase: Three-Address Code, Quadruples & Triples

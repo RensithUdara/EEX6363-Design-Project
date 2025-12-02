@@ -1,0 +1,45 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /tmp/regression_1057.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+AST_PROGRAM
+  AST_CLASS_DECL
+    AST_ID (TestClass)
+    AST_FUNC_DECL
+      AST_VISIBILITY
+      AST_FUNC_HEAD
+        AST_ID (constructor)
+        AST_TYPE (void) [type: void]
+    AST_FUNC_DECL
+      AST_VISIBILITY
+      AST_FUNC_HEAD
+        AST_ID (helper)
+        AST_TYPE (void) [type: void]
+  AST_IMPL_DEF
+    AST_ID (TestClass)
+    AST_FUNC_DEF
+      AST_FUNC_HEAD
+        AST_ID (constructor)
+        AST_TYPE (void) [type: void]
+      AST_FUNC_BODY
+        AST_LOCAL_VAR_DECL
+          AST_VAR_DECL
+            AST_ID (temp)
+            AST_TYPE (integer) [type: integer]
+    AST_FUNC_DEF
+      AST_FUNC_HEAD
+        AST_ID (helper)
+        AST_TYPE (void) [type: void]
+      AST_FUNC_BODY
+        AST_WRITE_STMT
+          AST_INT_LITERAL (1) [type: integer]
+
+STATISTICS:
+-----------
+AST Nodes: 31
+Tree Depth: 8
+Syntax Errors: 0

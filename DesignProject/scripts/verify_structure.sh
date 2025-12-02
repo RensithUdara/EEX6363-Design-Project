@@ -50,7 +50,7 @@ done
 echo ""
 echo "Checking key source files..."
 source_files=(
-    "src/core/enhanced_compiler.c"
+    "src/core/compiler.c"
     "src/core/ast.c"
     "src/lexical/scanner.l"
     "src/semantic/semantic.c"

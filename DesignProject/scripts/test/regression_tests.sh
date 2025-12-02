@@ -3,7 +3,7 @@
 # Tests for known issues and fixes to prevent regressions
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-COMPILER="\"$PROJECT_ROOT/build/enhanced_compiler\""
+COMPILER="\"$PROJECT_ROOT/build/compiler\""
 REGRESSION_DIR="$PROJECT_ROOT/test_reports/regression"
 
 # Colors

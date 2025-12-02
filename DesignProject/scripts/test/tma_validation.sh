@@ -24,16 +24,16 @@ FAILED_TESTS=0
 
 # Compiler detection
 COMPILER=""
-if [[ -f "enhanced_compiler.exe" ]]; then
-    COMPILER="./enhanced_compiler.exe"
-elif [[ -f "build/enhanced_compiler" ]]; then
-    COMPILER="./build/enhanced_compiler"
-elif [[ -f "build/enhanced_compiler.exe" ]]; then
-    COMPILER="./build/enhanced_compiler.exe"
+if [[ -f "compiler.exe" ]]; then
+    COMPILER="./compiler.exe"
+elif [[ -f "build/compiler" ]]; then
+    COMPILER="./build/compiler"
+elif [[ -f "build/compiler.exe" ]]; then
+    COMPILER="./build/compiler.exe"
 else
     echo "Error: Compiler not found. Building..."
     make clean && make
-    COMPILER="./enhanced_compiler.exe"
+    COMPILER="./compiler.exe"
 fi
 
 echo -e "${BLUE}Using compiler: $COMPILER${NC}"

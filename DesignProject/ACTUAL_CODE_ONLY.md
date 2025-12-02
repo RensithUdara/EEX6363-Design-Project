@@ -288,7 +288,7 @@ void emit_function_epilogue(CodeGenContext *ctx, Symbol *func)
 }
 ```
 
-### **Main Compiler Pipeline (enhanced_compiler.c)**
+### **Main Compiler Pipeline (compiler.c)**
 
 ```c
 // ACTUAL IMPLEMENTATION - Main function structure
@@ -441,7 +441,7 @@ typedef enum
 
 **What's Really Working in Your Project:**
 
-1. **Complete 4-Phase Compiler** (enhanced_compiler.c)
+1. **Complete 4-Phase Compiler** (compiler.c)
    - Lexical analysis integration
    - Syntax analysis with AST generation  
    - Semantic analysis from TMA3
@@ -464,7 +464,7 @@ typedef enum
    - Error handling across phases
 
 **File Verification:**
-- Check `build/enhanced_compiler.exe` - Your compiled executable
+- Check `build/compiler.exe` - Your compiled executable
 - Check `src/codegen/codegen.c` - 1,200+ lines of real code
 - Check `src/codegen/register_allocator.c` - 500+ lines of real code
 - Check `output.s` - Generated assembly when you run the compiler

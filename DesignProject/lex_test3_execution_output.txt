@@ -2,7 +2,7 @@
                         PROGRAM EXECUTION OUTPUT                                
 ================================================================================
 Source File:     /tmp/lex_test3.txt
-Generated:       Dec  2 2025 13:01:07
+Generated:       Dec  2 2025 20:38:00
 Execution Mode:  AST Interpretation Simulation
 Compiler:        EEX6363 Design Project Compiler
 ================================================================================

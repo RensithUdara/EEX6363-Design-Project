@@ -1,7 +1,7 @@
 ========================================
 Design Project - Architecture Design
 ========================================
-Generated: November 30, 2025 at 23:21:14
+Generated: December 02, 2025 at 21:47:15
 
 COMPILER ARCHITECTURE ANALYSIS
 ===============================================================================
@@ -61,7 +61,7 @@ DETAILED PHASE ANALYSIS:
 PHASE 1: LEXICAL ANALYSIS
 ----------------------------
 Status:       OPERATIONAL
-Input:        Source code from tests/examples/test_simple.txt
+Input:        Source code from ./tests/examples/test_simple.txt
 Output:       41 tokens generated
 Processing:   0.00ms execution time
 Tool Used:    Flex (scanner.l)

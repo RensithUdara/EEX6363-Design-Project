@@ -1,4 +1,4 @@
-Regression Tests Test Results - Tue Dec  2 14:11:06 +0530 2025
+Regression Tests Test Results - Tue Dec  2 20:49:11 +0530 2025
 =========================================
 ========================================
 Regression Test Suite
@@ -28,10 +28,6 @@ Regression Test Summary
 Passed: 10
 Failed: 0
 Success Rate: 100%
-
-Results saved to: /home/USER/LexAndYaccCode/Design Project/DesignProject/test_reports/regression/
-- regression_results.txt: Test summary
-- regression_failures.txt: Failure details
 SUCCESS: All regression tests passed!
 RESULT: No regressions detected
 
