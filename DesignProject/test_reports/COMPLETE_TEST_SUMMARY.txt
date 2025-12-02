@@ -1,7 +1,7 @@
 ================================================================================
                     DESIGN PROJECT - COMPLETE TEST RESULTS
 ================================================================================
-Generated: Tue Dec  2 13:57:53 +0530 2025
+Generated: Tue Dec  2 14:12:29 +0530 2025
 Project: DesignProject
 Compiler: Enhanced Compiler with Optimal Register Allocation
 
@@ -39,12 +39,12 @@ Performance Metrics:
 Performance Test Summary
 ========================================
 Small Program:
-  Average: 59ms
-  Range: 56ms - 68ms
+  Average: 61ms
+  Range: 57ms - 67ms
 
 Medium Program:
-  Average: 140ms
-  Range: 136ms - 147ms
+  Average: 146ms
+  Range: 144ms - 149ms
 
 Large Program:
 
@@ -71,8 +71,8 @@ Report Location: test_reports/COMPLETE_TEST_SUMMARY.txt
 DETAILED REPORTS AVAILABLE:
 ==========================
 • Master Log: test_reports/master/master_test_log.txt
-• Unit Tests: test_reports/unit/unit_test_output_clean.txt
-• Regression: test_reports/regression/regression_test_output_clean.txt
-• Performance: test_reports/performance/performance_test_output_clean.txt
-• Integration: test_reports/integration/integration_test_output_clean.txt
+• Unit Tests: test_reports/unit/unit_test_output.txt
+• Regression: test_reports/regression/regression_test_output.txt
+• Performance: test_reports/performance/performance_test_output.txt
+• Integration: test_reports/integration/integration_test_output.txt
 • Dashboard: test_reports/master/test_dashboard.html

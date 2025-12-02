@@ -1,11 +1,12 @@
-Integration Tests Test Results - Tue Dec  2 13:47:37 +0530 2025
+Integration Tests Test Results - Tue Dec  2 14:11:14 +0530 2025
 =========================================
-[0;34m========================================[0m
-[0;34mDesign Project Automated Test Suite[0m
-[0;34m========================================[0m
+========================================
+Design Project Automated Test Suite
+========================================
 Project Root: /home/USER/LexAndYaccCode/Design Project/DesignProject
 Test Directory: /home/USER/LexAndYaccCode/Design Project/DesignProject/tests
 Compiler: /home/USER/LexAndYaccCode/Design Project/DesignProject/build/enhanced_compiler
 
-[0;34m=== PHASE 1: Basic Functionality Tests ===[0m
-Testing Simple Valid Program... \nTest completed successfully in 0s
+=== PHASE 1: Basic Functionality Tests ===
+Testing Simple Valid Program... 
+Test completed successfully in 0s
