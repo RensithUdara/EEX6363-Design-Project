@@ -1,0 +1,43 @@
+class MathUtils {
+    public constructor ();
+    public func factorial (n: integer) => integer;
+    public func fibonacci (n: integer) => integer;
+    public func processData (size: integer) => integer;
+};
+
+implement MathUtils {
+    constructor () {
+        local temp : integer;
+        temp := 0;
+    }
+    
+    func factorial (n: integer) => integer {
+        if (n <= 1) then {
+            return (1);
+        };
+        return (n * factorial(n - 1));
+    }
+
+    func fibonacci (n: integer) => integer {
+        if (n <= 1) then {
+            return (n);
+        };
+        return (fibonacci(n - 1) + fibonacci(n - 2));
+    }
+    
+    func processData (size: integer) => integer {
+        local i: integer;
+        local sum: integer;
+        local limit: integer;
+        sum := 0;
+        i := 0;
+        limit := size;
+        
+        if (limit > 100) then {
+            limit := 100;
+        };
+        
+        sum := i + limit;
+        return (sum);
+    }
+};

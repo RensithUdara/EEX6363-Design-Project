@@ -1,0 +1,51 @@
+// Comprehensive Test File for TMA03 Integration
+// This file contains various semantic errors to test the comprehensive error detection
+
+class TestClass isa NonExistentClass {
+    public:
+        // Type mismatch error - assigning float to integer
+        func main() : void {
+            local integer x;
+            x := 1.5;  // ERROR: Type mismatch - float assigned to integer
+            
+            // Undefined variable error
+            y := 10;   // ERROR: Undefined variable 'y'
+            
+            // Function call with wrong arguments
+            testFunc(x, "string");  // ERROR: Wrong argument types
+            
+            // Array access error
+            local integer arr[5];
+            arr[10] := 5;  // ERROR: Array index out of bounds
+            
+            // Missing return statement will be detected
+        }
+        
+        // Duplicate function declaration
+        func testFunc(integer a) : integer {
+            return a + 1;
+        }
+        
+        func testFunc(integer b) : integer {  // ERROR: Duplicate function
+            return b * 2;
+        }
+        
+    private:
+        attribute integer value;
+        attribute integer value;  // ERROR: Duplicate attribute
+};
+
+// Duplicate class declaration
+class TestClass {  // ERROR: Duplicate class
+    public:
+        func dummy() : void {
+        }
+};
+
+// Class with inheritance error
+class InvalidInherit isa TestClass, NonExistent {  // ERROR: NonExistent class not found
+    public:
+        func test() : integer {
+            // Missing return statement - ERROR
+        }
+};

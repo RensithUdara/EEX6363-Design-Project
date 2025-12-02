@@ -1,0 +1,93 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /tmp/stress_test_5.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+AST_PROGRAM
+  AST_CLASS_DECL
+    AST_ID (Calculator)
+    AST_FUNC_DECL
+      AST_VISIBILITY
+      AST_FUNC_HEAD
+        AST_ID (constructor)
+        AST_TYPE (void) [type: void]
+    AST_FUNC_DECL
+      AST_VISIBILITY
+      AST_FUNC_HEAD
+        AST_ID (add)
+        AST_PARAM_DECL
+          AST_ID (x)
+          AST_TYPE (integer) [type: integer]
+        AST_PARAM_DECL
+          AST_ID (y)
+          AST_TYPE (integer) [type: integer]
+        AST_TYPE (integer) [type: integer]
+    AST_FUNC_DECL
+      AST_VISIBILITY
+      AST_FUNC_HEAD
+        AST_ID (multiply)
+        AST_PARAM_DECL
+          AST_ID (x)
+          AST_TYPE (integer) [type: integer]
+        AST_PARAM_DECL
+          AST_ID (y)
+          AST_TYPE (integer) [type: integer]
+        AST_TYPE (integer) [type: integer]
+  AST_IMPL_DEF
+    AST_ID (Calculator)
+    AST_FUNC_DEF
+      AST_FUNC_HEAD
+        AST_ID (constructor)
+        AST_TYPE (void) [type: void]
+      AST_FUNC_BODY
+        AST_LOCAL_VAR_DECL
+          AST_VAR_DECL
+            AST_ID (temp)
+            AST_TYPE (integer) [type: integer]
+        AST_ASSIGN_STMT
+          AST_VARIABLE
+            AST_ID (temp)
+          AST_INT_LITERAL (0) [type: integer]
+    AST_FUNC_DEF
+      AST_FUNC_HEAD
+        AST_ID (add)
+        AST_PARAM_DECL
+          AST_ID (x)
+          AST_TYPE (integer) [type: integer]
+        AST_PARAM_DECL
+          AST_ID (y)
+          AST_TYPE (integer) [type: integer]
+        AST_TYPE (integer) [type: integer]
+      AST_FUNC_BODY
+        AST_RETURN_STMT
+          AST_BINARY_EXPR (+)
+            AST_VARIABLE
+              AST_ID (x)
+            AST_VARIABLE
+              AST_ID (y)
+    AST_FUNC_DEF
+      AST_FUNC_HEAD
+        AST_ID (multiply)
+        AST_PARAM_DECL
+          AST_ID (x)
+          AST_TYPE (integer) [type: integer]
+        AST_PARAM_DECL
+          AST_ID (y)
+          AST_TYPE (integer) [type: integer]
+        AST_TYPE (integer) [type: integer]
+      AST_FUNC_BODY
+        AST_RETURN_STMT
+          AST_BINARY_EXPR (*)
+            AST_VARIABLE
+              AST_ID (x)
+            AST_VARIABLE
+              AST_ID (y)
+
+STATISTICS:
+-----------
+AST Nodes: 79
+Tree Depth: 11
+Syntax Errors: 0

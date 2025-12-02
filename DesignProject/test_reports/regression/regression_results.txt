@@ -1,0 +1,20 @@
+Regression Test Results - Tue Dec  2 14:11:07 +0530 2025
+===========================================
+PASS: Constructor in class declaration (Issue: Constructor keyword not recognized in grammar)
+PASS: Constructor implementation (Issue: Constructor not allowed in implementation block)
+PASS: Constructor with regular functions (Issue: Constructor parsing interferes with regular functions)
+PASS: Constructor without parentheses (Issue: Should reject constructor without parentheses)
+PASS: Constructor with return type (Issue: Should reject constructor with explicit return type)
+PASS: Constructor with parameters (Issue: Constructor should support parameters)
+PASS: Multiple constructors (Issue: Multiple constructors should be allowed for overloading)
+PASS: Empty constructor body (Issue: Empty constructor should be allowed)
+PASS: Nested scopes in constructor (Issue: Nested scopes in constructor)
+PASS: Constructor basic functionality (Issue: Constructor should work with other class methods)
+
+SUMMARY:
+========
+Total Tests: 10
+Passed: 10
+Failed: 0
+Success Rate: 100%
+

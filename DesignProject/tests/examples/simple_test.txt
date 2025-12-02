@@ -1,0 +1,9 @@
+// Simple test file for TMA03 integration
+class SimpleClass {
+    public:
+        func test() : integer {
+            local integer x;
+            x := 42;
+            return x;
+        }
+};

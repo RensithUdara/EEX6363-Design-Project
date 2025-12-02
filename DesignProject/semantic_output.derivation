@@ -1,0 +1,10 @@
+prog → classOrImplOrFuncList
+classOrImplOrFuncList → classOrImplOrFunc classOrImplOrFuncList
+funcDef → classOrImplOrFunc
+funcDef → func id ( formalParameterList ) => returnType { funcBody }
+funcHead → func id ( fParams ) => returnType
+ε → fParams
+type → returnType
+integer → type
+funcBody → { varDeclOrStmtList }
+classOrImplOrFuncList → ε

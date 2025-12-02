@@ -1,0 +1,1 @@
+func test() => integer { return 42; }
