@@ -101,8 +101,8 @@ int call_tma03_analysis(const char *filename)
 // Enhanced yyparse that calls TMA03's complete workflow
 int yyparse(void)
 {
-    // This function is called by enhanced_compiler.c
-    // We don't actually do parsing here - the enhanced_compiler should call call_tma03_analysis directly
+    // This function is called by compiler.c
+    // We don't actually do parsing here - the compiler should call call_tma03_analysis directly
     printf("yyparse called - redirecting to TMA03 analysis\n");
     return 0;
 }
