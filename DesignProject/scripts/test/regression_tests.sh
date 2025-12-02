@@ -51,23 +51,18 @@ run_regression_test() {
     if $test_passed; then
         echo -e "${GREEN}PASS${NC}"
         ((PASS_COUNT++))
-        echo "PASS: $test_name ($issue_ref)" >> "$REGRESSION_DIR/regression_results.txt"
+        # Result logged by master test script
     else
         echo -e "${RED}FAIL${NC}"
         ((FAIL_COUNT++))
-        echo "FAIL: $test_name ($issue_ref)" >> "$REGRESSION_DIR/regression_results.txt"
-        echo "  Expected: $expected_result, Got exit code: $exit_code" >> "$REGRESSION_DIR/regression_results.txt"
-        echo "  Output: $output" >> "$REGRESSION_DIR/regression_failures.txt"
+        # Failure details logged by master test script
     fi
     
     # Clean up
     rm -f "$test_file"
 }
 
-# Initialize results file
-echo "Regression Test Results - $(date)" > "$REGRESSION_DIR/regression_results.txt"
-echo "===========================================" >> "$REGRESSION_DIR/regression_results.txt"
-echo "" > "$REGRESSION_DIR/regression_failures.txt"
+# Results files managed by master test script
 
 echo -e "\n${YELLOW}=== Testing Known Fixed Issues ===${NC}"
 
@@ -195,22 +190,7 @@ if [[ $((PASS_COUNT + FAIL_COUNT)) -gt 0 ]]; then
     echo -e "Success Rate: ${success_rate}%"
 fi
 
-# Generate summary
-cat >> "$REGRESSION_DIR/regression_results.txt" << EOF
-
-SUMMARY:
-========
-Total Tests: $((PASS_COUNT + FAIL_COUNT))
-Passed: $PASS_COUNT
-Failed: $FAIL_COUNT
-Success Rate: ${success_rate:-0}%
-
-EOF
-
-echo ""
-echo "Results saved to: $REGRESSION_DIR/"
-echo "- regression_results.txt: Test summary"
-echo "- regression_failures.txt: Failure details"
+# Summary displayed above - detailed results captured by master test suite
 
 if [[ $FAIL_COUNT -eq 0 ]]; then
     echo -e "${GREEN}SUCCESS: All regression tests passed!${NC}"
