@@ -1,0 +1,48 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /tmp/regression_2665.txt
+GENERATED: December 02, 2025 at 14:11:08
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ TestClass        │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │ public           │ 2    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 2    │ 12     │ variable            │
+│ IDENTIFIER      │ public           │ 3    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 3    │ 12     │ reserved            │
+│ IDENTIFIER      │ helper           │ 3    │ 17     │ variable            │
+│ OPERATOR        │ =>               │ 3    │ 27     │ arrow               │
+│ IDENTIFIER      │ void             │ 3    │ 30     │ variable            │
+│ IDENTIFIER      │ implement        │ 6    │ 1      │ variable            │
+│ IDENTIFIER      │ TestClass        │ 6    │ 11     │ variable            │
+│ IDENTIFIER      │ constructor      │ 7    │ 5      │ variable            │
+│ KEYWORD         │ local            │ 8    │ 9      │ reserved            │
+│ IDENTIFIER      │ temp             │ 8    │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 8    │ 20     │ delimiter           │
+│ KEYWORD         │ integer          │ 8    │ 22     │ reserved            │
+│ KEYWORD         │ func             │ 11   │ 5      │ reserved            │
+│ IDENTIFIER      │ helper           │ 11   │ 10     │ variable            │
+│ OPERATOR        │ =>               │ 11   │ 20     │ arrow               │
+│ IDENTIFIER      │ void             │ 11   │ 23     │ variable            │
+│ IDENTIFIER      │ write            │ 12   │ 9      │ variable            │
+│ NUMBER          │ 1                │ 12   │ 16     │ literal             │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 22                                                ║
+║ 📄 Total Lines Analyzed      : 14                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-02 14:11:08                               ║
+║ 📂 Input Source File         : /tmp/regression_2665.txt                          ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
