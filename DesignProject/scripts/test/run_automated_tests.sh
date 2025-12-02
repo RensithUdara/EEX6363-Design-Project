@@ -18,7 +18,7 @@ FAILED_TESTS=0
 
 # Project paths
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-COMPILER="$PROJECT_ROOT/build/enhanced_compiler"
+COMPILER="$PROJECT_ROOT/build/compiler"
 TEST_DIR="$PROJECT_ROOT/tests"
 EXAMPLES_DIR="$TEST_DIR/examples"
 UNIT_DIR="$TEST_DIR/unit"
