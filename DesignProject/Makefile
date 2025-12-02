@@ -20,7 +20,7 @@ OUTPUT_DIR = output
 INCLUDES = -I$(INCLUDE_DIR) -I$(INCLUDE_DIR)/core -I$(INCLUDE_DIR)/lexical -I$(INCLUDE_DIR)/syntax -I$(INCLUDE_DIR)/semantic -I$(INCLUDE_DIR)/codegen -I$(INCLUDE_DIR)/utils
 
 # Source files organized by component
-CORE_SRCS = $(SRC_DIR)/core/enhanced_compiler.c $(SRC_DIR)/core/ast.c
+CORE_SRCS = $(SRC_DIR)/core/compiler.c $(SRC_DIR)/core/ast.c
 LEXICAL_SRCS = $(SRC_DIR)/lexical/scanner.l
 SEMANTIC_SRCS = $(SRC_DIR)/semantic/semantic.c $(SRC_DIR)/semantic/semantic_integration.c
 CODEGEN_SRCS = $(SRC_DIR)/codegen/codegen.c $(SRC_DIR)/codegen/register_allocator.c
@@ -30,7 +30,7 @@ UTILS_SRCS = $(SRC_DIR)/utils/error_handler.c $(SRC_DIR)/utils/output_generator.
 LEX_OUTPUT = $(BUILD_DIR)/lex.yy.c
 
 # Object files
-CORE_OBJS = $(BUILD_DIR)/enhanced_compiler.o $(BUILD_DIR)/ast.o
+CORE_OBJS = $(BUILD_DIR)/compiler.o $(BUILD_DIR)/ast.o
 LEXICAL_OBJS = $(BUILD_DIR)/lex.yy.o
 SEMANTIC_OBJS = $(BUILD_DIR)/semantic.o $(BUILD_DIR)/semantic_integration.o
 CODEGEN_OBJS = $(BUILD_DIR)/codegen.o $(BUILD_DIR)/register_allocator.o
@@ -40,7 +40,7 @@ UTILS_OBJS = $(BUILD_DIR)/error_handler.o $(BUILD_DIR)/output_generator.o
 ALL_OBJS = $(CORE_OBJS) $(LEXICAL_OBJS) $(SEMANTIC_OBJS) $(CODEGEN_OBJS) $(UTILS_OBJS)
 
 # Executable
-TARGET = $(BUILD_DIR)/enhanced_compiler
+TARGET = $(BUILD_DIR)/compiler
 
 # Main targets
 .PHONY: all clean test help structure info
@@ -54,7 +54,7 @@ $(TARGET): $(ALL_OBJS) | $(BUILD_DIR)
 	@echo "✓ Build successful! Executable: $(TARGET)"
 
 # Core components
-$(BUILD_DIR)/enhanced_compiler.o: $(SRC_DIR)/core/enhanced_compiler.c | $(BUILD_DIR)
+$(BUILD_DIR)/compiler.o: $(SRC_DIR)/core/compiler.c | $(BUILD_DIR)
 	@echo "Compiling main compiler..."
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
@@ -169,7 +169,7 @@ help:
 	@echo "output/    - Generated assembly and reports"
 
 # Dependencies (auto-generated would be better, but this works for now)
-$(BUILD_DIR)/enhanced_compiler.o: $(INCLUDE_DIR)/utils/output_generator.h $(INCLUDE_DIR)/codegen/codegen.h $(INCLUDE_DIR)/semantic/semantic_integration.h $(INCLUDE_DIR)/codegen/register_allocator.h $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h
+$(BUILD_DIR)/compiler.o: $(INCLUDE_DIR)/utils/output_generator.h $(INCLUDE_DIR)/codegen/codegen.h $(INCLUDE_DIR)/semantic/semantic_integration.h $(INCLUDE_DIR)/codegen/register_allocator.h $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h
 $(BUILD_DIR)/ast.o: $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h
 $(BUILD_DIR)/semantic.o: $(INCLUDE_DIR)/core/ast.h $(INCLUDE_DIR)/utils/error_handler.h
 $(BUILD_DIR)/semantic_integration.o: $(INCLUDE_DIR)/semantic/semantic_integration.h
