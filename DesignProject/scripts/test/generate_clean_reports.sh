@@ -47,7 +47,7 @@ EOF
         echo "UNIT TESTS (Compiler Components):" >> "$summary_file"
         echo "=================================" >> "$summary_file"
         
-        if grep -q "9 passed" test_reports/unit/unit_test_output_clean.txt 2>/dev/null; then
+        if grep -q "9 passed" test_reports/unit/unit_test_output.txt 2>/dev/null; then
             echo "✓ Lexical Analysis: 3/3 passed" >> "$summary_file"
             echo "✓ Syntax Analysis:  3/3 passed" >> "$summary_file"
             echo "✓ Semantic Analysis: 3/3 passed" >> "$summary_file"
@@ -63,7 +63,7 @@ EOF
         echo "REGRESSION TESTS (Known Issues & Fixes):" >> "$summary_file"
         echo "=======================================" >> "$summary_file"
         
-        if grep -q "Success Rate: 100%" test_reports/regression/regression_test_output_clean.txt 2>/dev/null; then
+        if grep -q "Success Rate: 100%" test_reports/regression/regression_test_output.txt 2>/dev/null; then
             echo "✓ Constructor syntax: All tests passed" >> "$summary_file"
             echo "✓ Error conditions: All tests passed" >> "$summary_file"
             echo "✓ Edge cases: All tests passed" >> "$summary_file"
@@ -81,7 +81,7 @@ EOF
         echo "=======================================" >> "$summary_file"
         
         # Extract performance data
-        if [[ -f "test_reports/performance/performance_test_output_clean.txt" ]]; then
+        if [[ -f "test_reports/performance/performance_test_output.txt" ]]; then
             echo "✓ Small Program Test: Passed" >> "$summary_file"
             echo "✓ Medium Program Test: Passed" >> "$summary_file"  
             echo "✓ Large Program Test: Passed" >> "$summary_file"
@@ -95,7 +95,7 @@ EOF
             echo "" >> "$summary_file"
             echo "Performance Metrics:" >> "$summary_file"
             echo "-------------------" >> "$summary_file"
-            grep -A 10 "Performance Test Summary" test_reports/performance/performance_test_output_clean.txt >> "$summary_file" 2>/dev/null || echo "Metrics available in detailed report" >> "$summary_file"
+            grep -A 10 "Performance Test Summary" test_reports/performance/performance_test_output.txt >> "$summary_file" 2>/dev/null || echo "Metrics available in detailed report" >> "$summary_file"
         fi
     fi
     
@@ -146,10 +146,10 @@ EOF
     echo "DETAILED REPORTS AVAILABLE:" >> "$summary_file"
     echo "==========================" >> "$summary_file"
     echo "• Master Log: test_reports/master/master_test_log.txt" >> "$summary_file"
-    echo "• Unit Tests: test_reports/unit/unit_test_output_clean.txt" >> "$summary_file"
-    echo "• Regression: test_reports/regression/regression_test_output_clean.txt" >> "$summary_file"  
-    echo "• Performance: test_reports/performance/performance_test_output_clean.txt" >> "$summary_file"
-    echo "• Integration: test_reports/integration/integration_test_output_clean.txt" >> "$summary_file"
+    echo "• Unit Tests: test_reports/unit/unit_test_output.txt" >> "$summary_file"
+    echo "• Regression: test_reports/regression/regression_test_output.txt" >> "$summary_file"  
+    echo "• Performance: test_reports/performance/performance_test_output.txt" >> "$summary_file"
+    echo "• Integration: test_reports/integration/integration_test_output.txt" >> "$summary_file"
     echo "• Dashboard: test_reports/master/test_dashboard.html" >> "$summary_file"
     
     echo "✓ Generated master summary: $summary_file"
@@ -162,19 +162,19 @@ echo "================================"
 mkdir -p test_reports/clean
 
 # Clean unit test output
-clean_color_codes "test_reports/unit/unit_test_output.txt" "test_reports/unit/unit_test_output_clean.txt"
+clean_color_codes "test_reports/unit/unit_test_output.txt" "test_reports/unit/unit_test_output.txt"
 
 # Clean regression test output  
-clean_color_codes "test_reports/regression/regression_test_output.txt" "test_reports/regression/regression_test_output_clean.txt"
+clean_color_codes "test_reports/regression/regression_test_output.txt" "test_reports/regression/regression_test_output.txt"
 
 # Clean performance test output
-clean_color_codes "test_reports/performance/performance_test_output.txt" "test_reports/performance/performance_test_output_clean.txt"
+clean_color_codes "test_reports/performance/performance_test_output.txt" "test_reports/performance/performance_test_output.txt"
 
 # Clean integration test output
-clean_color_codes "test_reports/integration/integration_test_output.txt" "test_reports/integration/integration_test_output_clean.txt"
+clean_color_codes "test_reports/integration/integration_test_output.txt" "test_reports/integration/integration_test_output.txt"
 
 # Clean master log
-clean_color_codes "test_reports/master/master_test_log.txt" "test_reports/master/master_test_log_clean.txt"
+clean_color_codes "test_reports/master/master_test_log.txt" "test_reports/master/master_test_log.txt"
 
 # Generate comprehensive summary
 generate_master_summary
@@ -184,7 +184,7 @@ echo "✅ All clean reports generated successfully!"
 echo ""
 echo "📋 Key Files:"
 echo "   • Complete Summary: test_reports/COMPLETE_TEST_SUMMARY.txt" 
-echo "   • Clean Reports: test_reports/*/\*_clean.txt"
+echo "   • Clean Reports: test_reports/*/\*.txt"
 echo "   • Original Reports: test_reports/*/\*.txt"
 
 exit 0
