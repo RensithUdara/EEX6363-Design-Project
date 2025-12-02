@@ -10,7 +10,7 @@ This project has been reorganized into a comprehensive, well-structured director
 DesignProject/
 ├── src/                          # Source code organized by component
 │   ├── core/                     # Core compiler components
-│   │   ├── enhanced_compiler.c   # Main compiler implementation
+│   │   ├── compiler.c   # Main compiler implementation
 │   │   └── ast.c                 # Abstract Syntax Tree implementation
 │   ├── lexical/                  # Lexical analysis components
 │   │   └── scanner.l             # Flex lexical analyzer specification
@@ -38,7 +38,7 @@ DesignProject/
 │       ├── error_handler.h       # Error handling interface
 │       └── output_generator.h    # Output generation interface
 ├── build/                        # Build artifacts and executables
-│   └── enhanced_compiler         # Main executable (after build)
+│   └── compiler         # Main executable (after build)
 ├── tests/                        # Test files and outputs
 │   ├── unit/                     # Unit tests
 │   │   └── test_suite.c          # Test suite implementation
@@ -145,7 +145,7 @@ scripts\test\test_compiler.bat     # Windows
 4. **Code Generation** (`src/codegen/`) - Assembly code generation with register allocation
 
 ### Key Components
-- **Enhanced Compiler** (`src/core/enhanced_compiler.c`) - Main driver program
+- **Enhanced Compiler** (`src/core/compiler.c`) - Main driver program
 - **AST** (`src/core/ast.c`) - Abstract Syntax Tree implementation
 - **Error Handler** (`src/utils/error_handler.c`) - Comprehensive error reporting
 - **Output Generator** (`src/utils/output_generator.c`) - Multi-format output generation
