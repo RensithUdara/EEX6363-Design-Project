@@ -123,14 +123,14 @@ typedef enum {
 ### Check These Files:
 1. **src/codegen/codegen.c** - Main code generation (1200+ lines)
 2. **src/codegen/register_allocator.c** - Register management (500+ lines)  
-3. **src/core/enhanced_compiler.c** - Main compiler pipeline
+3. **src/core/compiler.c** - Main compiler pipeline
 4. **src/semantic/semantic.c** - Semantic analysis
-5. **build/enhanced_compiler.exe** - Compiled executable
+5. **build/compiler.exe** - Compiled executable
 
 ### Test Real Implementation:
 ```bash
 cd DesignProject
-echo 'func test() -> integer { return 42; }' | ./build/enhanced_compiler.exe
+echo 'func test() -> integer { return 42; }' | ./build/compiler.exe
 ```
 
 ---
