@@ -1,7 +1,7 @@
 ================================================================================
                     INTERMEDIATE CODE GENERATION REPORT                   
 ================================================================================
-Generated: Dec  2 2025 20:37:56
+Generated: Dec  3 2025 00:27:10
 Input File: ./tests/examples/simple_function.txt
 Target Architecture: x86-64 Assembly (AT&T Syntax)
 Code Generation Phase: Three-Address Code, Quadruples & Triples
