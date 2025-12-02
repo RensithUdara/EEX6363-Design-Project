@@ -103,4 +103,5 @@ Large Program:
 
 SUCCESS: All performance tests passed!
 INFO: Detailed report saved to: test_reports/performance/performance_detailed_report.txt
-\nTest completed successfully in 5s
+
+Test completed successfully in 5s
