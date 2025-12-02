@@ -329,23 +329,8 @@ for result in "${PERF_RESULTS[@]}"; do
     echo ""
 done
 
-# Save detailed results
-PERF_REPORT="test_reports/performance/performance_detailed_report.txt"
-echo "Performance Test Report - $(date)" > "$PERF_REPORT"
-echo "===============================================" >> "$PERF_REPORT"
-echo "" >> "$PERF_REPORT"
-
-for result in "${PERF_RESULTS[@]}"; do
-    IFS=':' read -r name avg min max <<< "$result"
-    echo "$name:" >> "$PERF_REPORT"
-    echo "  Average: ${avg}ms" >> "$PERF_REPORT"
-    echo "  Min: ${min}ms" >> "$PERF_REPORT"
-    echo "  Max: ${max}ms" >> "$PERF_REPORT"
-    echo "" >> "$PERF_REPORT"
-done
-
 echo "SUCCESS: All performance tests passed!"
-echo "INFO: Detailed report saved to: $PERF_REPORT"
+echo "INFO: Results captured by master test suite"
 
 # Clean up test files
 rm -f /tmp/perf_small.txt /tmp/perf_medium.txt /tmp/perf_large.txt

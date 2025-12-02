@@ -17,8 +17,8 @@
     # Program: Code generation from semantic analyzer
     # Function definition
 
-# Function: test
-test:
+# Function: typeTest
+typeTest:
     # Function prologue
     pushq %rbp
     movq %rsp, %rbp
@@ -26,11 +26,11 @@ test:
     # Processing function body statement
     # Local variable declaration
     # Variable: x allocated on stack
-    # Assignment: variable := integer_literal
-    movq $5, -8(%rbp)
+    # Return statement
+    movq $42, %rax      # Load return value
     # Additional statement found
-    # Assignment: variable := integer_literal
-    movq $5, -8(%rbp)
+    # Return statement
+    movq $42, %rax      # Load return value
     # Function epilogue
     movq %rbp, %rsp
     popq %rbp

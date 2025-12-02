@@ -24,7 +24,7 @@ echo -e "${BLUE}========================================${NC}"
 echo -e "${BLUE}Compiler Component Unit Tests${NC}"
 echo -e "${BLUE}========================================${NC}"
 
-mkdir -p "$PROJECT_ROOT/test_reports/unit"
+# Test reports directory managed by master test script
 
 # Function to test lexical analysis
 test_lexical() {
@@ -220,28 +220,7 @@ test_lexical
 test_syntax
 test_semantic
 
-# Generate unit test report
-cat > "$PROJECT_ROOT/test_reports/unit/unit_test_results.txt" << EOF
-Design Project Unit Test Results
-Generated: $(date)
-================================
-
-LEXICAL ANALYSIS:
-  Passed: $LEXICAL_PASS
-  Failed: $LEXICAL_FAIL
-  
-SYNTAX ANALYSIS:
-  Passed: $SYNTAX_PASS
-  Failed: $SYNTAX_FAIL
-  
-SEMANTIC ANALYSIS:
-  Passed: $SEMANTIC_PASS
-  Failed: $SEMANTIC_FAIL
-
-TOTAL:
-  Passed: $((LEXICAL_PASS + SYNTAX_PASS + SEMANTIC_PASS))
-  Failed: $((LEXICAL_FAIL + SYNTAX_FAIL + SEMANTIC_FAIL))
-EOF
+# Unit test results are captured by master test script
 
 echo -e "\n${BLUE}========================================${NC}"
 echo -e "${BLUE}Unit Test Summary${NC}"
