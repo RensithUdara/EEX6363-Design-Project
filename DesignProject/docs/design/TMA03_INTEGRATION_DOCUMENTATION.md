@@ -164,7 +164,7 @@ Quality Metrics:
 ## Integration Architecture
 
 ```
-Enhanced Compiler (enhanced_compiler.c)
+Enhanced Compiler (compiler.c)
 ├── Comprehensive Semantic Integration (semantic_integration.c)
 │   ├── TMA03 Semantic Analysis (6000+ lines)
 │   ├── TMA03 Error Handler (2500+ lines)
