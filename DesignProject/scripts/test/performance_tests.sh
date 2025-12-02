@@ -22,7 +22,7 @@ echo "Time: $(date)"
 echo ""
 
 # Check if compiler exists
-if [[ ! -f "build/enhanced_compiler" ]]; then
+if [[ ! -f "build/compiler" ]]; then
     echo "ERROR: Compiler not found. Run 'make' first."
     exit 1
 fi
@@ -51,7 +51,7 @@ run_performance_test() {
         local start_time=$(date +%s%N)
         
         # Run compiler (suppress output for timing)
-        if ./build/enhanced_compiler "$input_file" > /dev/null 2>&1; then
+        if ./build/compiler "$input_file" > /dev/null 2>&1; then
             local end_time=$(date +%s%N)
             local duration=$(( (end_time - start_time) / 1000000 )) # Convert to milliseconds
             
@@ -179,7 +179,7 @@ test_memory_usage() {
     
     # Run compiler with memory monitoring
     if command -v /usr/bin/time >/dev/null 2>&1; then
-        /usr/bin/time -l ./build/enhanced_compiler "$input_file" > /dev/null 2> /tmp/memory_stats.txt
+        /usr/bin/time -l ./build/compiler "$input_file" > /dev/null 2> /tmp/memory_stats.txt
         
         if [[ -f /tmp/memory_stats.txt ]]; then
             local max_mem=$(grep "maximum resident set size" /tmp/memory_stats.txt | awk '{print $1}' || echo "0")
@@ -207,7 +207,7 @@ test_compilation_phases() {
     # For now, we'll just test overall compilation time
     local start_time=$(date +%s%N)
     
-    if ./build/enhanced_compiler "$input_file" > /dev/null 2>&1; then
+    if ./build/compiler "$input_file" > /dev/null 2>&1; then
         local end_time=$(date +%s%N)
         local duration=$(( (end_time - start_time) / 1000000 ))
         echo "Total compilation time: ${duration}ms"
@@ -234,7 +234,7 @@ stress_test() {
     local start_time=$(date +%s%N)
     
     for i in $(seq 1 $num_files); do
-        if ./build/enhanced_compiler "/tmp/stress_test_$i.txt" > /dev/null 2>&1; then
+        if ./build/compiler "/tmp/stress_test_$i.txt" > /dev/null 2>&1; then
             echo "  File $i: SUCCESS"
         else
             echo "  File $i: FAILED"
