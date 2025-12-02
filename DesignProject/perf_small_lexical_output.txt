@@ -1,0 +1,37 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /tmp/perf_small.txt
+GENERATED: December 02, 2025 at 13:47:33
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ func             │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ test             │ 1    │ 6      │ variable            │
+│ OPERATOR        │ =>               │ 1    │ 14     │ arrow               │
+│ IDENTIFIER      │ void             │ 1    │ 17     │ variable            │
+│ KEYWORD         │ local            │ 2    │ 5      │ reserved            │
+│ IDENTIFIER      │ x                │ 2    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 2    │ 13     │ delimiter           │
+│ KEYWORD         │ integer          │ 2    │ 15     │ reserved            │
+│ IDENTIFIER      │ x                │ 3    │ 5      │ variable            │
+│ OPERATOR        │ :=               │ 3    │ 7      │ assignment          │
+│ NUMBER          │ 5                │ 3    │ 10     │ literal             │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 11                                                ║
+║ 📄 Total Lines Analyzed      : 4                                                 ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-02 13:47:33                               ║
+║ 📂 Input Source File         : /tmp/perf_small.txt                               ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

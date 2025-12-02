@@ -1,0 +1,22 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: debug_test.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE:
+-----------
+AST_PROGRAM
+  AST_CLASS_DECL
+    AST_ID (Test)
+    AST_FUNC_DECL
+      AST_VISIBILITY
+      AST_FUNC_HEAD
+        AST_ID (test)
+        AST_TYPE (void) [type: void]
+
+STATISTICS:
+-----------
+AST Nodes: 8
+Tree Depth: 5
+Syntax Errors: 0

@@ -1,0 +1,42 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: /tmp/regression_1776.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+  FUNC_DEF
+    FUNC_HEAD
+      ID("helper ()")
+      PARAM_LIST
+      RETURN_TYPE
+        TYPE(" void;")
+    FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+          ID("temp")
+          TYPE("integer;")
+      ASSIGNMENT
+        ID("temp ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          INT_LITERAL("42;")
+      WRITE_STMT
+        ID("(temp);")
+    FUNC_DEF
+      FUNC_HEAD
+        ID("helper ()")
+        PARAM_LIST
+        RETURN_TYPE
+          TYPE(" void {")
+      FUNC_BODY
+      WRITE_STMT
+        ID("(1);")
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 1

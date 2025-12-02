@@ -1,0 +1,71 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: debug_medium.txt
+GENERATED: December 02, 2025 at 13:40:27
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ Calculator       │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │ public           │ 2    │ 5      │ variable            │
+│ IDENTIFIER      │ x:               │ 2    │ 12     │ variable            │
+│ KEYWORD         │ integer          │ 2    │ 15     │ reserved            │
+│ IDENTIFIER      │ public           │ 3    │ 5      │ variable            │
+│ IDENTIFIER      │ y:               │ 3    │ 12     │ variable            │
+│ KEYWORD         │ integer          │ 3    │ 15     │ reserved            │
+│ IDENTIFIER      │ public           │ 4    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 4    │ 12     │ variable            │
+│ IDENTIFIER      │ public           │ 5    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 5    │ 12     │ reserved            │
+│ IDENTIFIER      │ add              │ 5    │ 17     │ variable            │
+│ OPERATOR        │ =>               │ 5    │ 24     │ arrow               │
+│ KEYWORD         │ integer          │ 5    │ 27     │ reserved            │
+│ IDENTIFIER      │ public           │ 6    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 6    │ 12     │ reserved            │
+│ IDENTIFIER      │ multiply         │ 6    │ 17     │ variable            │
+│ OPERATOR        │ =>               │ 6    │ 29     │ arrow               │
+│ KEYWORD         │ integer          │ 6    │ 32     │ reserved            │
+│ IDENTIFIER      │ implement        │ 9    │ 1      │ variable            │
+│ IDENTIFIER      │ Calculator       │ 9    │ 11     │ variable            │
+│ IDENTIFIER      │ constructor      │ 10   │ 5      │ variable            │
+│ IDENTIFIER      │ x                │ 11   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 11   │ 11     │ assignment          │
+│ NUMBER          │ 0                │ 11   │ 14     │ literal             │
+│ IDENTIFIER      │ y                │ 12   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 12   │ 11     │ assignment          │
+│ NUMBER          │ 0                │ 12   │ 14     │ literal             │
+│ KEYWORD         │ func             │ 14   │ 5      │ reserved            │
+│ IDENTIFIER      │ add              │ 14   │ 10     │ variable            │
+│ OPERATOR        │ =>               │ 14   │ 17     │ arrow               │
+│ KEYWORD         │ integer          │ 14   │ 20     │ reserved            │
+│ KEYWORD         │ return           │ 15   │ 9      │ reserved            │
+│ IDENTIFIER      │ x                │ 15   │ 17     │ variable            │
+│ OPERATOR        │ +                │ 15   │ 19     │ arithmetic          │
+│ IDENTIFIER      │ y                │ 15   │ 21     │ variable            │
+│ KEYWORD         │ func             │ 17   │ 5      │ reserved            │
+│ IDENTIFIER      │ multiply         │ 17   │ 10     │ variable            │
+│ OPERATOR        │ =>               │ 17   │ 22     │ arrow               │
+│ KEYWORD         │ integer          │ 17   │ 25     │ reserved            │
+│ KEYWORD         │ return           │ 18   │ 9      │ reserved            │
+│ IDENTIFIER      │ x                │ 18   │ 17     │ variable            │
+│ OPERATOR        │ *                │ 18   │ 19     │ arithmetic          │
+│ IDENTIFIER      │ y                │ 18   │ 21     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 45                                                ║
+║ 📄 Total Lines Analyzed      : 20                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-02 13:40:27                               ║
+║ 📂 Input Source File         : debug_medium.txt                                  ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

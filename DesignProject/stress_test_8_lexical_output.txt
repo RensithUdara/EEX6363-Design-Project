@@ -1,0 +1,82 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /tmp/stress_test_8.txt
+GENERATED: December 02, 2025 at 13:47:36
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ Calculator       │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │ public           │ 2    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 2    │ 12     │ variable            │
+│ IDENTIFIER      │ public           │ 3    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 3    │ 12     │ reserved            │
+│ IDENTIFIER      │ add              │ 3    │ 17     │ variable            │
+│ IDENTIFIER      │ x:               │ 3    │ 22     │ variable            │
+│ KEYWORD         │ integer          │ 3    │ 25     │ reserved            │
+│ IDENTIFIER      │ y:               │ 3    │ 34     │ variable            │
+│ KEYWORD         │ integer          │ 3    │ 37     │ reserved            │
+│ OPERATOR        │ =>               │ 3    │ 46     │ arrow               │
+│ KEYWORD         │ integer          │ 3    │ 49     │ reserved            │
+│ IDENTIFIER      │ public           │ 4    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 4    │ 12     │ reserved            │
+│ IDENTIFIER      │ multiply         │ 4    │ 17     │ variable            │
+│ IDENTIFIER      │ x:               │ 4    │ 27     │ variable            │
+│ KEYWORD         │ integer          │ 4    │ 30     │ reserved            │
+│ IDENTIFIER      │ y:               │ 4    │ 39     │ variable            │
+│ KEYWORD         │ integer          │ 4    │ 42     │ reserved            │
+│ OPERATOR        │ =>               │ 4    │ 51     │ arrow               │
+│ KEYWORD         │ integer          │ 4    │ 54     │ reserved            │
+│ IDENTIFIER      │ implement        │ 7    │ 1      │ variable            │
+│ IDENTIFIER      │ Calculator       │ 7    │ 11     │ variable            │
+│ IDENTIFIER      │ constructor      │ 8    │ 5      │ variable            │
+│ KEYWORD         │ local            │ 9    │ 9      │ reserved            │
+│ IDENTIFIER      │ temp             │ 9    │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 9    │ 20     │ delimiter           │
+│ KEYWORD         │ integer          │ 9    │ 22     │ reserved            │
+│ IDENTIFIER      │ temp             │ 10   │ 9      │ variable            │
+│ OPERATOR        │ :=               │ 10   │ 14     │ assignment          │
+│ NUMBER          │ 0                │ 10   │ 17     │ literal             │
+│ KEYWORD         │ func             │ 13   │ 5      │ reserved            │
+│ IDENTIFIER      │ add              │ 13   │ 10     │ variable            │
+│ IDENTIFIER      │ x:               │ 13   │ 15     │ variable            │
+│ KEYWORD         │ integer          │ 13   │ 18     │ reserved            │
+│ IDENTIFIER      │ y:               │ 13   │ 27     │ variable            │
+│ KEYWORD         │ integer          │ 13   │ 30     │ reserved            │
+│ OPERATOR        │ =>               │ 13   │ 39     │ arrow               │
+│ KEYWORD         │ integer          │ 13   │ 42     │ reserved            │
+│ KEYWORD         │ return           │ 14   │ 9      │ reserved            │
+│ IDENTIFIER      │ x                │ 14   │ 17     │ variable            │
+│ OPERATOR        │ +                │ 14   │ 19     │ arithmetic          │
+│ IDENTIFIER      │ y                │ 14   │ 21     │ variable            │
+│ KEYWORD         │ func             │ 17   │ 5      │ reserved            │
+│ IDENTIFIER      │ multiply         │ 17   │ 10     │ variable            │
+│ IDENTIFIER      │ x:               │ 17   │ 20     │ variable            │
+│ KEYWORD         │ integer          │ 17   │ 23     │ reserved            │
+│ IDENTIFIER      │ y:               │ 17   │ 32     │ variable            │
+│ KEYWORD         │ integer          │ 17   │ 35     │ reserved            │
+│ OPERATOR        │ =>               │ 17   │ 44     │ arrow               │
+│ KEYWORD         │ integer          │ 17   │ 47     │ reserved            │
+│ KEYWORD         │ return           │ 18   │ 9      │ reserved            │
+│ IDENTIFIER      │ x                │ 18   │ 17     │ variable            │
+│ OPERATOR        │ *                │ 18   │ 19     │ arithmetic          │
+│ IDENTIFIER      │ y                │ 18   │ 21     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 56                                                ║
+║ 📄 Total Lines Analyzed      : 20                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-02 13:47:36                               ║
+║ 📂 Input Source File         : /tmp/stress_test_8.txt                            ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
