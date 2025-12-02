@@ -866,3 +866,1137 @@ AST Nodes: 0
 Semantic Errors: 0
 ----------------------------------------
 
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: test_simple.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 6
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: test_corrected.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 6
+AST Nodes: 8
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 14
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 35
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 4
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 6
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 18
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 7
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1776.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 27
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/lex_test2.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 8
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/lex_test3.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 12
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/syn_test2.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 7
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/syn_test3.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 15
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/sem_test1.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 8
+AST Nodes: 10
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/sem_test2.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 10
+AST Nodes: 12
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1885.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 4
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_1885.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 6
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_medium.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 45
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_medium.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 45
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: debug_medium.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 45
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_large.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 129
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: debug_large.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 129
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/lex_test2.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 8
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/lex_test3.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 12
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/syn_test2.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 7
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/syn_test3.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 15
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/sem_test1.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 8
+AST Nodes: 10
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/sem_test2.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 10
+AST Nodes: 12
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_2374.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 4
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/regression_2374.txt
+Result: FAILED
+Compilation Time: 0.000 seconds
+Tokens Generated: 6
+AST Nodes: 0
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+
+========================================
+Complete Compiler Test Results
+Design Project - All Phases Testing
+========================================
+Generated: Dec  2 2025 12:58:35
+
+Test: /tmp/perf_small.txt
+Result: PASSED
+Compilation Time: 0.000 seconds
+Tokens Generated: 11
+AST Nodes: 14
+Semantic Errors: 0
+----------------------------------------
+

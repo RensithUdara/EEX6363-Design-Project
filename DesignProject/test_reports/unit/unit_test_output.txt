@@ -1,4 +1,4 @@
-Unit Tests Test Results - Mon Dec  1 00:36:01 +0530 2025
+Unit Tests Test Results - Tue Dec  2 13:47:28 +0530 2025
 =========================================
 [0;34m========================================[0m
 [0;34mCompiler Component Unit Tests[0m
@@ -27,5 +27,5 @@ Syntax:  [0;32m3 passed[0m, [0;31m0 failed[0m
 Semantic: [0;32m3 passed[0m, [0;31m0 failed[0m
 
 Total: [0;32m9 passed[0m, [0;31m0 failed[0m
-[0;32m🎉 All unit tests passed![0m
-\nTest completed successfully in 0s
+[0;32mSUCCESS: All unit tests passed![0m
+\nTest completed successfully in 1s

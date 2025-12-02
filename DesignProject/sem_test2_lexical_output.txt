@@ -1,0 +1,36 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /tmp/sem_test2.txt
+GENERATED: December 02, 2025 at 13:47:29
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ func             │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ typeTest         │ 1    │ 6      │ variable            │
+│ OPERATOR        │ =>               │ 1    │ 18     │ arrow               │
+│ KEYWORD         │ integer          │ 1    │ 21     │ reserved            │
+│ KEYWORD         │ local            │ 2    │ 5      │ reserved            │
+│ IDENTIFIER      │ x                │ 2    │ 11     │ variable            │
+│ PUNCTUATION     │ :                │ 2    │ 13     │ delimiter           │
+│ KEYWORD         │ integer          │ 2    │ 15     │ reserved            │
+│ KEYWORD         │ return           │ 3    │ 5      │ reserved            │
+│ NUMBER          │ 42               │ 3    │ 13     │ literal             │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 10                                                ║
+║ 📄 Total Lines Analyzed      : 4                                                 ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-02 13:47:29                               ║
+║ 📂 Input Source File         : /tmp/sem_test2.txt                                ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

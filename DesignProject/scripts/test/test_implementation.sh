@@ -7,8 +7,8 @@ set -e
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 cd "$PROJECT_ROOT"
 
-echo "🔧 Testing Code Generation Implementation"
-echo "========================================"
+echo "Testing Code Generation Implementation"
+echo "====================================="
 
 # Initialize
 mkdir -p tests/codegen
@@ -51,11 +51,11 @@ test_code_generation() {
     
     # Compile the test
     if $COMPILER "$input_file" > compiler_output.txt 2>&1; then
-        echo -e "✅ Compilation: ${GREEN}SUCCESS${NC}"
+        echo -e "[PASS] Compilation: ${GREEN}SUCCESS${NC}"
         
         # Check if assembly output was generated
         if [[ -f "output.s" ]]; then
-            echo -e "✅ Assembly Output: ${GREEN}GENERATED${NC}"
+            echo -e "[PASS] Assembly Output: ${GREEN}GENERATED${NC}"
             
             # Analyze assembly output
             local features_found=0
@@ -66,58 +66,58 @@ test_code_generation() {
                 case $feature in
                     "x86_prologue")
                         if grep -q "pushq.*%rbp\|movq.*%rsp.*%rbp" output.s; then
-                            echo -e "  ✅ x86-64 Function Prologue: ${GREEN}FOUND${NC}"
+                            echo -e "  [PASS] x86-64 Function Prologue: ${GREEN}FOUND${NC}"
                             ((features_found++))
                         else
-                            echo -e "  ❌ x86-64 Function Prologue: ${RED}MISSING${NC}"
+                            echo -e "  [FAIL] x86-64 Function Prologue: ${RED}MISSING${NC}"
                         fi
                         ;;
                     "x86_epilogue")
                         if grep -q "movq.*%rbp.*%rsp\|popq.*%rbp\|ret" output.s; then
-                            echo -e "  ✅ x86-64 Function Epilogue: ${GREEN}FOUND${NC}"
+                            echo -e "  [PASS] x86-64 Function Epilogue: ${GREEN}FOUND${NC}"
                             ((features_found++))
                         else
-                            echo -e "  ❌ x86-64 Function Epilogue: ${RED}MISSING${NC}"
+                            echo -e "  [FAIL] x86-64 Function Epilogue: ${RED}MISSING${NC}"
                         fi
                         ;;
                     "stack_allocation")
                         if grep -q "subq.*%rsp\|addq.*%rsp" output.s; then
-                            echo -e "  ✅ Stack Allocation: ${GREEN}FOUND${NC}"
+                            echo -e "  [PASS] Stack Allocation: ${GREEN}FOUND${NC}"
                             ((features_found++))
                         else
-                            echo -e "  ❌ Stack Allocation: ${RED}MISSING${NC}"
+                            echo -e "  [FAIL] Stack Allocation: ${RED}MISSING${NC}"
                         fi
                         ;;
                     "register_usage")
                         if grep -q "%rax\|%rbx\|%rcx\|%rdx" output.s; then
-                            echo -e "  ✅ Register Usage: ${GREEN}FOUND${NC}"
+                            echo -e "  [PASS] Register Usage: ${GREEN}FOUND${NC}"
                             ((features_found++))
                         else
-                            echo -e "  ❌ Register Usage: ${RED}MISSING${NC}"
+                            echo -e "  [FAIL] Register Usage: ${RED}MISSING${NC}"
                         fi
                         ;;
                     "memory_operations")
                         if grep -q "movq.*(%rbp)\|movq.*%rbp" output.s; then
-                            echo -e "  ✅ Memory Operations: ${GREEN}FOUND${NC}"
+                            echo -e "  [PASS] Memory Operations: ${GREEN}FOUND${NC}"
                             ((features_found++))
                         else
-                            echo -e "  ❌ Memory Operations: ${RED}MISSING${NC}"
+                            echo -e "  [FAIL] Memory Operations: ${RED}MISSING${NC}"
                         fi
                         ;;
                     "arithmetic")
                         if grep -q "addq\|subq\|imulq\|idivq" output.s; then
-                            echo -e "  ✅ Arithmetic Instructions: ${GREEN}FOUND${NC}"
+                            echo -e "  [PASS] Arithmetic Instructions: ${GREEN}FOUND${NC}"
                             ((features_found++))
                         else
-                            echo -e "  ❌ Arithmetic Instructions: ${RED}MISSING${NC}"
+                            echo -e "  [FAIL] Arithmetic Instructions: ${RED}MISSING${NC}"
                         fi
                         ;;
                     "control_flow")
                         if grep -q "jmp\|je\|jne\|jl\|jg\|cmpq" output.s; then
-                            echo -e "  ✅ Control Flow: ${GREEN}FOUND${NC}"
+                            echo -e "  [PASS] Control Flow: ${GREEN}FOUND${NC}"
                             ((features_found++))
                         else
-                            echo -e "  ❌ Control Flow: ${RED}MISSING${NC}"
+                            echo -e "  [FAIL] Control Flow: ${RED}MISSING${NC}"
                         fi
                         ;;
                 esac
@@ -127,16 +127,16 @@ test_code_generation() {
             cp output.s "test_reports/codegen/${test_name// /_}_output.s"
             
             if [[ $features_found -eq $total_features ]]; then
-                echo -e "✅ Test Result: ${GREEN}PASSED (${features_found}/${total_features} features)${NC}"
+                echo -e "[PASS] Test Result: ${GREEN}PASSED (${features_found}/${total_features} features)${NC}"
                 ((TESTS_PASSED++))
             else
-                echo -e "❌ Test Result: ${RED}PARTIAL (${features_found}/${total_features} features)${NC}"
+                echo -e "[FAIL] Test Result: ${RED}PARTIAL (${features_found}/${total_features} features)${NC}"
             fi
         else
-            echo -e "❌ Assembly Output: ${RED}NOT GENERATED${NC}"
+            echo -e "[FAIL] Assembly Output: ${RED}NOT GENERATED${NC}"
         fi
     else
-        echo -e "❌ Compilation: ${RED}FAILED${NC}"
+        echo -e "[FAIL] Compilation: ${RED}FAILED${NC}"
         echo "Compiler output:"
         cat compiler_output.txt
     fi
@@ -145,8 +145,8 @@ test_code_generation() {
 # Test 1: Simple Function
 echo -e "\n${BLUE}=== TEST 1: Simple Function ===${NC}"
 cat > tests/codegen/simple_function.txt << 'EOF'
-func test() => integer {
-    return 42;
+func test () => integer {
+    return (42);
 }
 EOF
 
@@ -155,14 +155,14 @@ test_code_generation "Simple Function" "tests/codegen/simple_function.txt" "x86_
 # Test 2: Function with Local Variables
 echo -e "\n${BLUE}=== TEST 2: Local Variables ===${NC}"
 cat > tests/codegen/local_variables.txt << 'EOF'
-func test_locals() => integer {
+func test_locals () => integer {
     local x: integer;
     local y: integer;
     
     x := 10;
     y := 20;
     
-    return x + y;
+    return (x + y);
 }
 EOF
 
@@ -171,10 +171,10 @@ test_code_generation "Local Variables" "tests/codegen/local_variables.txt" "x86_
 # Test 3: Function with Parameters
 echo -e "\n${BLUE}=== TEST 3: Function Parameters ===${NC}"
 cat > tests/codegen/function_parameters.txt << 'EOF'
-func add(a: integer, b: integer) => integer {
+func add (a: integer, b: integer) => integer {
     local result: integer;
     result := a + b;
-    return result;
+    return (result);
 }
 EOF
 
@@ -183,11 +183,11 @@ test_code_generation "Function Parameters" "tests/codegen/function_parameters.tx
 # Test 4: Control Flow
 echo -e "\n${BLUE}=== TEST 4: Control Flow ===${NC}"
 cat > tests/codegen/control_flow.txt << 'EOF'
-func factorial(n: integer) => integer {
+func factorial (n: integer) => integer {
     if (n <= 1) then {
-        return 1;
+        return (1);
     } else {
-        return n * factorial(n - 1);
+        return (n * factorial(n - 1));
     }
 }
 EOF
@@ -197,8 +197,11 @@ test_code_generation "Control Flow" "tests/codegen/control_flow.txt" "x86_prolog
 # Test 5: Complex Expression
 echo -e "\n${BLUE}=== TEST 5: Complex Expression ===${NC}"
 cat > tests/codegen/complex_expression.txt << 'EOF'
-func complex_calc() => integer {
-    local a, b, c, result: integer;
+func complex_calc () => integer {
+    local a: integer;
+    local b: integer;
+    local c: integer;
+    local result: integer;
     
     a := 5;
     b := 10;  
@@ -206,7 +209,7 @@ func complex_calc() => integer {
     
     result := (a + b) * c - (a - b) / 2;
     
-    return result;
+    return (result);
 }
 EOF
 
@@ -216,21 +219,21 @@ test_code_generation "Complex Expression" "tests/codegen/complex_expression.txt"
 echo -e "\n${BLUE}=== TEST 6: Class Implementation ===${NC}"
 cat > tests/codegen/class_implementation.txt << 'EOF'
 class Calculator {
-    public constructor();
-    public func multiply(x: integer, y: integer) => integer;
+    public constructor ();
+    public func multiply (x: integer, y: integer) => integer;
 };
 
 implement Calculator {
-    constructor() {
+    constructor () {
         local temp: integer;
         temp := 1;
-        write(temp);
+        write (temp);
     }
     
-    func multiply(x: integer, y: integer) => integer {
-        return x * y;
+    func multiply (x: integer, y: integer) => integer {
+        return (x * y);
     }
-};
+}
 EOF
 
 test_code_generation "Class Implementation" "tests/codegen/class_implementation.txt" "x86_prologue x86_epilogue arithmetic register_usage"
@@ -239,27 +242,27 @@ test_code_generation "Class Implementation" "tests/codegen/class_implementation.
 echo -e "\n${BLUE}=== PERFORMANCE TEST ===${NC}"
 cat > tests/codegen/performance_test.txt << 'EOF'
 class PerformanceTest {
-    public func fibonacci(n: integer) => integer;
-    public func factorial(n: integer) => integer;
+    public func fibonacci (n: integer) => integer;
+    public func factorial (n: integer) => integer;
 };
 
 implement PerformanceTest {
-    func fibonacci(n: integer) => integer {
+    func fibonacci (n: integer) => integer {
         if (n <= 1) then {
-            return n;
+            return (n);
         } else {
-            return fibonacci(n - 1) + fibonacci(n - 2);
+            return (fibonacci(n - 1) + fibonacci(n - 2));
         }
     }
     
-    func factorial(n: integer) => integer {
+    func factorial (n: integer) => integer {
         if (n <= 1) then {
-            return 1;
+            return (1);
         } else {
-            return n * factorial(n - 1);
+            return (n * factorial(n - 1));
         }
     }
-};
+}
 EOF
 
 echo -e "${YELLOW}Testing compilation time...${NC}"
@@ -267,13 +270,13 @@ start_time=$(date +%s.%N)
 if $COMPILER tests/codegen/performance_test.txt > /dev/null 2>&1; then
     end_time=$(date +%s.%N)
     compile_time=$(echo "$end_time - $start_time" | bc -l 2>/dev/null || echo "0.1")
-    echo -e "✅ Compilation Time: ${GREEN}${compile_time} seconds${NC}"
+    echo -e "[PASS] Compilation Time: ${GREEN}${compile_time} seconds${NC}"
     
     if (( $(echo "$compile_time < 3.0" | bc -l 2>/dev/null || echo "1") )); then
-        echo -e "✅ Performance: ${GREEN}EXCELLENT${NC} (< 3 seconds)"
+        echo -e "[PASS] Performance: ${GREEN}EXCELLENT${NC} (< 3 seconds)"
         ((TESTS_PASSED++))
     else
-        echo -e "⚠️ Performance: ${YELLOW}ACCEPTABLE${NC} (> 3 seconds)"
+        echo -e "[WARN] Performance: ${YELLOW}ACCEPTABLE${NC} (> 3 seconds)"
     fi
     ((TESTS_RUN++))
 else
@@ -292,16 +295,16 @@ if [[ -f "output.s" ]]; then
     
     # Check for optimizations
     if grep -q "# Optimization" output.s; then
-        echo -e "✅ Optimizations: ${GREEN}DETECTED${NC}"
+        echo -e "[PASS] Optimizations: ${GREEN}DETECTED${NC}"
     else
-        echo -e "⚠️ Optimizations: ${YELLOW}NOT DETECTED${NC}"
+        echo -e "[WARN] Optimizations: ${YELLOW}NOT DETECTED${NC}"
     fi
     
     # Check ABI compliance
     if grep -q "pushq %rbp" output.s && grep -q "movq %rsp, %rbp" output.s; then
-        echo -e "✅ ABI Compliance: ${GREEN}x86-64 System V${NC}"
+        echo -e "[PASS] ABI Compliance: ${GREEN}x86-64 System V${NC}"
     else
-        echo -e "⚠️ ABI Compliance: ${YELLOW}PARTIAL${NC}"
+        echo -e "[WARN] ABI Compliance: ${YELLOW}PARTIAL${NC}"
     fi
     
     # Save analysis
@@ -323,16 +326,16 @@ echo -e "\n${BLUE}=== MEMORY LAYOUT TEST ===${NC}"
 if [[ -f "output.s" ]]; then
     # Check for proper stack frame setup
     if grep -q "subq.*%rsp" output.s; then
-        echo -e "✅ Stack Frame: ${GREEN}PROPER ALLOCATION${NC}"
+        echo -e "[PASS] Stack Frame: ${GREEN}PROPER ALLOCATION${NC}"
     else
-        echo -e "⚠️ Stack Frame: ${YELLOW}SIMPLE ALLOCATION${NC}"
+        echo -e "[WARN] Stack Frame: ${YELLOW}SIMPLE ALLOCATION${NC}"
     fi
     
     # Check for local variable management
     if grep -q "(%rbp)" output.s; then
-        echo -e "✅ Local Variables: ${GREEN}FRAME-BASED ACCESS${NC}"
+        echo -e "[PASS] Local Variables: ${GREEN}FRAME-BASED ACCESS${NC}"
     else
-        echo -e "⚠️ Local Variables: ${YELLOW}REGISTER-ONLY${NC}"
+        echo -e "[WARN] Local Variables: ${YELLOW}REGISTER-ONLY${NC}"
     fi
 fi
 
@@ -380,11 +383,11 @@ echo -e "Success Rate: ${success_rate}%"
 rm -f compiler_output.txt
 
 if [[ $success_rate -ge 80 ]]; then
-    echo -e "\n🎉 ${GREEN}Code generation implementation test PASSED!${NC}"
-    echo "See test_reports/codegen/ for detailed analysis."
+    echo -e "\nSUCCESS: ${GREEN}Code generation implementation test PASSED!${NC}"
+    echo "INFO: See test_reports/codegen/ for detailed analysis."
     exit 0
 else
-    echo -e "\n⚠️ ${RED}Code generation needs improvement.${NC}"
-    echo "See test_reports/codegen/ for detailed analysis."
+    echo -e "\nWARNING: ${RED}Code generation needs improvement.${NC}"
+    echo "INFO: See test_reports/codegen/ for detailed analysis."
     exit 1
 fi

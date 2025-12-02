@@ -1,39 +1,11 @@
-Integration Tests Test Results - Mon Dec  1 00:43:22 +0530 2025
+Integration Tests Test Results - Tue Dec  2 13:47:37 +0530 2025
 =========================================
 [0;34m========================================[0m
 [0;34mDesign Project Automated Test Suite[0m
 [0;34m========================================[0m
-Project Root: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject
-Test Directory: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/tests
-Compiler: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/build/enhanced_compiler
+Project Root: /home/USER/LexAndYaccCode/Design Project/DesignProject
+Test Directory: /home/USER/LexAndYaccCode/Design Project/DesignProject/tests
+Compiler: /home/USER/LexAndYaccCode/Design Project/DesignProject/build/enhanced_compiler
 
 [0;34m=== PHASE 1: Basic Functionality Tests ===[0m
-Testing Simple Valid Program... [0;31mFAIL[0m
-Testing Minimal Valid Program... [0;32mPASS[0m
-
-[0;34m=== PHASE 2: Error Handling Tests ===[0m
-Testing Syntax Error Detection... [0;32mPASS[0m
-Testing Deliberate Syntax Error... [0;32mPASS[0m
-
-[0;34m=== PHASE 3: Comprehensive Language Feature Tests ===[0m
-Testing Class and Inheritance... [0;32mPASS[0m
-Testing Arrays and Expressions... [0;31mFAIL[0m
-Testing Control Structures... [0;32mPASS[0m
-
-[0;34m=== PHASE 4: Edge Cases and Error Recovery ===[0m
-Testing Empty Class... [0;32mPASS[0m
-Testing Multiple Syntax Errors... [0;32mPASS[0m
-
-[0;34m=== PHASE 5: Existing Test Files ===[0m
-Testing Existing: comprehensive_test... [0;31mFAIL[0m
-Testing Existing: error_test... [0;32mPASS[0m
-Testing Existing: error_test_error_log... [0;32mPASS[0m
-Testing Existing: minimal_test... [0;32mPASS[0m
-Testing Existing: minimal_test_architecture_design... [0;31mFAIL[0m
-Testing Existing: minimal_test_error_log... [0;32mPASS[0m
-Testing Existing: minimal_test_integration_test... [0;31mFAIL[0m
-Testing Existing: minimal_test_output... [0;31mFAIL[0m
-Testing Existing: minimal_test_performance_report... [0;31mFAIL[0m
-Testing Existing: sample_input... [0;31mFAIL[0m
-Testing Existing: simple_function... [0;32mPASS[0m
-Testing Existing: simple_test... 
+Testing Simple Valid Program... \nTest completed successfully in 0s

@@ -1,4 +1,4 @@
-Regression Tests Test Results - Mon Dec  1 00:37:16 +0530 2025
+Regression Tests Test Results - Tue Dec  2 13:47:30 +0530 2025
 =========================================
 [0;34m========================================[0m
 [0;34mRegression Test Suite[0m
@@ -29,9 +29,9 @@ Testing: Constructor basic functionality... [0;32mPASS[0m
 [0;31mFailed: 0[0m
 Success Rate: 100%
 
-Results saved to: /Users/rensithudaragonalagoda/Desktop/EEX6363-Design-Project/DesignProject/test_reports/regression/
+Results saved to: /home/USER/LexAndYaccCode/Design Project/DesignProject/test_reports/regression/
 - regression_results.txt: Test summary
 - regression_failures.txt: Failure details
-[0;32m🎉 All regression tests passed![0m
-[0;32m✓ No regressions detected[0m
-\nTest completed successfully in 0s
+[0;32mSUCCESS: All regression tests passed![0m
+[0;32mRESULT: No regressions detected[0m
+\nTest completed successfully in 2s

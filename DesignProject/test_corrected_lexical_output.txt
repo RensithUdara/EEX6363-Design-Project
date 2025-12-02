@@ -1,0 +1,32 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: test_corrected.txt
+GENERATED: December 02, 2025 at 13:05:58
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ func             │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ test             │ 1    │ 6      │ variable            │
+│ OPERATOR        │ =>               │ 1    │ 14     │ arrow               │
+│ KEYWORD         │ integer          │ 1    │ 17     │ reserved            │
+│ KEYWORD         │ return           │ 1    │ 27     │ reserved            │
+│ NUMBER          │ 42               │ 1    │ 35     │ literal             │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 6                                                 ║
+║ 📄 Total Lines Analyzed      : 1                                                 ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-02 13:05:58                               ║
+║ 📂 Input Source File         : test_corrected.txt                                ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

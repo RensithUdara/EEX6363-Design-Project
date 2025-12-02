@@ -1,0 +1,58 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                            LEXICAL ANALYSIS REPORT                           ║
+║                              Complete Token Stream                           ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+INPUT FILE: /tmp/syn_test1.txt
+GENERATED: December 02, 2025 at 13:47:29
+ANALYZER: Enhanced Lexical Scanner v2.0
+PHASE: Phase 1 - Lexical Analysis
+
+┌─────────────────┬──────────────────┬──────┬────────┬─────────────────────┐
+│   Token Type    │     Lexeme       │ Line │ Column │     Attributes      │
+├─────────────────┼──────────────────┼──────┼────────┼─────────────────────┤
+│ KEYWORD         │ class            │ 1    │ 1      │ reserved            │
+│ IDENTIFIER      │ Calculator       │ 1    │ 7      │ variable            │
+│ IDENTIFIER      │ public           │ 2    │ 5      │ variable            │
+│ IDENTIFIER      │ constructor      │ 2    │ 12     │ variable            │
+│ IDENTIFIER      │ public           │ 3    │ 5      │ variable            │
+│ KEYWORD         │ func             │ 3    │ 12     │ reserved            │
+│ IDENTIFIER      │ add              │ 3    │ 17     │ variable            │
+│ IDENTIFIER      │ x:               │ 3    │ 22     │ variable            │
+│ KEYWORD         │ integer          │ 3    │ 25     │ reserved            │
+│ IDENTIFIER      │ y:               │ 3    │ 34     │ variable            │
+│ KEYWORD         │ integer          │ 3    │ 37     │ reserved            │
+│ OPERATOR        │ =>               │ 3    │ 46     │ arrow               │
+│ KEYWORD         │ integer          │ 3    │ 49     │ reserved            │
+│ IDENTIFIER      │ implement        │ 6    │ 1      │ variable            │
+│ IDENTIFIER      │ Calculator       │ 6    │ 11     │ variable            │
+│ IDENTIFIER      │ constructor      │ 7    │ 5      │ variable            │
+│ KEYWORD         │ local            │ 8    │ 9      │ reserved            │
+│ IDENTIFIER      │ temp             │ 8    │ 15     │ variable            │
+│ PUNCTUATION     │ :                │ 8    │ 20     │ delimiter           │
+│ KEYWORD         │ integer          │ 8    │ 22     │ reserved            │
+│ KEYWORD         │ func             │ 11   │ 5      │ reserved            │
+│ IDENTIFIER      │ add              │ 11   │ 10     │ variable            │
+│ IDENTIFIER      │ x:               │ 11   │ 15     │ variable            │
+│ KEYWORD         │ integer          │ 11   │ 18     │ reserved            │
+│ IDENTIFIER      │ y:               │ 11   │ 27     │ variable            │
+│ KEYWORD         │ integer          │ 11   │ 30     │ reserved            │
+│ OPERATOR        │ =>               │ 11   │ 39     │ arrow               │
+│ KEYWORD         │ integer          │ 11   │ 42     │ reserved            │
+│ KEYWORD         │ return           │ 12   │ 9      │ reserved            │
+│ IDENTIFIER      │ x                │ 12   │ 17     │ variable            │
+│ OPERATOR        │ +                │ 12   │ 19     │ arithmetic          │
+│ IDENTIFIER      │ y                │ 12   │ 21     │ variable            │
+└─────────────────┴──────────────────┴──────┴────────┴─────────────────────┘
+
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║                        LEXICAL ANALYSIS SUMMARY REPORT                           ║
+╠═══════════════════════════════════════════════════════════════════════════════════╣
+║ 📊 Total Tokens Processed    : 32                                                ║
+║ 📄 Total Lines Analyzed      : 14                                                ║
+║ ⚠️  Lexical Errors Found      : 0                                                 ║
+║ 🕐 Generation Timestamp      : 2025-12-02 13:47:29                               ║
+║ 📂 Input Source File         : /tmp/syn_test1.txt                                ║
+║ 🔧 Lexical Analyzer Version  : TMA01 Enhanced v2.0                               ║
+║  Analysis Status           : COMPLETED SUCCESSFULLY                            ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝

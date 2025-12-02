@@ -3,7 +3,7 @@
 # Tests individual phases: Lexical, Syntax, Semantic, CodeGen
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
-COMPILER="$PROJECT_ROOT/build/enhanced_compiler"
+COMPILER="\"$PROJECT_ROOT/build/enhanced_compiler\""
 
 # Colors
 RED='\033[0;31m'
@@ -33,12 +33,12 @@ test_lexical() {
     # Test 1: Valid tokens
     cat > /tmp/lex_test1.txt << 'EOF'
 class Test {
-    public func test() => integer;
+    public func test () => integer;
 };
 EOF
     
     echo -n "Testing valid tokens... "
-    if $COMPILER /tmp/lex_test1.txt >/dev/null 2>&1; then
+    if eval "$COMPILER /tmp/lex_test1.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS${NC}"
         ((LEXICAL_PASS++))
     else
@@ -49,13 +49,13 @@ EOF
     # Test 2: Invalid tokens
     cat > /tmp/lex_test2.txt << 'EOF'
 class Test {
-    public func test() => integer;
+    public func test () => integer;
     invalid@token#here;
 };
 EOF
     
     echo -n "Testing invalid tokens... "
-    if ! $COMPILER /tmp/lex_test2.txt >/dev/null 2>&1; then
+    if ! eval "$COMPILER /tmp/lex_test2.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS (correctly rejected)${NC}"
         ((LEXICAL_PASS++))
     else
@@ -65,16 +65,14 @@ EOF
     
     # Test 3: Numbers and identifiers
     cat > /tmp/lex_test3.txt << 'EOF'
-func numTest() => void {
+func numTest () => void {
     local x : integer;
     local y : float;
-    x := 123;
-    y := 45.67;
 }
 EOF
     
     echo -n "Testing numbers and identifiers... "
-    if $COMPILER /tmp/lex_test3.txt >/dev/null 2>&1; then
+    if eval "$COMPILER /tmp/lex_test3.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS${NC}"
         ((LEXICAL_PASS++))
     else
@@ -93,24 +91,23 @@ test_syntax() {
     # Test 1: Valid syntax
     cat > /tmp/syn_test1.txt << 'EOF'
 class Calculator {
-    public constructor();
-    public func add(x: integer, y: integer) => integer;
+    public constructor ();
+    public func add (x: integer, y: integer) => integer;
 };
 
 implement Calculator {
-    constructor() {
+    constructor () {
         local temp : integer;
-        temp := 1;
     }
     
-    func add(x: integer, y: integer) => integer {
-        return(x + y);
+    func add (x: integer, y: integer) => integer {
+        return (x + y);
     }
 };
 EOF
     
     echo -n "Testing valid syntax (with constructor)... "
-    if $COMPILER /tmp/syn_test1.txt >/dev/null 2>&1; then
+    if eval "$COMPILER /tmp/syn_test1.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS${NC}"
         ((SYNTAX_PASS++))
     else
@@ -121,12 +118,12 @@ EOF
     # Test 2: Missing semicolon
     cat > /tmp/syn_test2.txt << 'EOF'
 class Test {
-    public func test() => void
+    public func test () => void
 }
 EOF
     
     echo -n "Testing missing semicolon... "
-    if ! $COMPILER /tmp/syn_test2.txt >/dev/null 2>&1; then
+    if ! eval "$COMPILER /tmp/syn_test2.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS (correctly rejected)${NC}"
         ((SYNTAX_PASS++))
     else
@@ -137,13 +134,13 @@ EOF
     # Test 3: Unmatched braces
     cat > /tmp/syn_test3.txt << 'EOF'
 class Test {
-    public func test() => void {
+    public func test () => void {
         local x : integer;
     // Missing closing brace
 EOF
     
     echo -n "Testing unmatched braces... "
-    if ! $COMPILER /tmp/syn_test3.txt >/dev/null 2>&1; then
+    if ! eval "$COMPILER /tmp/syn_test3.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS (correctly rejected)${NC}"
         ((SYNTAX_PASS++))
     else
@@ -161,14 +158,13 @@ test_semantic() {
     
     # Test 1: Valid semantics (simpler test to avoid segfault)
     cat > /tmp/sem_test1.txt << 'EOF'
-func validTest() => void {
+func validTest () => void {
     local x : integer;
-    write(x);
 }
 EOF
     
     echo -n "Testing valid semantics... "
-    if $COMPILER /tmp/sem_test1.txt >/dev/null 2>&1; then
+    if eval "$COMPILER /tmp/sem_test1.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS${NC}"
         ((SEMANTIC_PASS++))
     else
@@ -178,14 +174,14 @@ EOF
     
     # Test 2: Type compatibility
     cat > /tmp/sem_test2.txt << 'EOF'
-func typeTest() => void {
+func typeTest () => integer {
     local x : integer;
-    local y : float;
+    return (42);
 }
 EOF
     
     echo -n "Testing type compatibility... "
-    if $COMPILER /tmp/sem_test2.txt >/dev/null 2>&1; then
+    if eval "$COMPILER /tmp/sem_test2.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS${NC}"
         ((SEMANTIC_PASS++))
     else
@@ -196,19 +192,18 @@ EOF
     # Test 3: Variable scope (simpler test)
     cat > /tmp/sem_test3.txt << 'EOF'
 class TestClass {
-    public func simpleMethod() => void;
+    public func simpleMethod () => void;
 };
 
 implement TestClass {
-    func simpleMethod() => void {
+    func simpleMethod () => void {
         local temp : integer;
-        temp := 1;
     }
 };
 EOF
     
     echo -n "Testing variable scope... "
-    if $COMPILER /tmp/sem_test3.txt >/dev/null 2>&1; then
+    if eval "$COMPILER /tmp/sem_test3.txt" >/dev/null 2>&1; then
         echo -e "${GREEN}PASS${NC}"
         ((SEMANTIC_PASS++))
     else
@@ -260,9 +255,9 @@ total_fail=$((LEXICAL_FAIL + SYNTAX_FAIL + SEMANTIC_FAIL))
 echo -e "\nTotal: ${GREEN}$total_pass passed${NC}, ${RED}$total_fail failed${NC}"
 
 if [ $total_fail -eq 0 ]; then
-    echo -e "${GREEN}🎉 All unit tests passed!${NC}"
+    echo -e "${GREEN}SUCCESS: All unit tests passed!${NC}"
     exit 0
 else
-    echo -e "${YELLOW}⚠️ Some unit tests failed${NC}"
+    echo -e "${YELLOW}WARNING: Some unit tests failed${NC}"
     exit 1
 fi

@@ -1,0 +1,39 @@
+================================================================================
+                        PROGRAM EXECUTION OUTPUT                                
+================================================================================
+Source File:     /tmp/perf_small.txt
+Generated:       Dec  2 2025 13:01:07
+Execution Mode:  AST Interpretation Simulation
+Compiler:        EEX6363 Design Project Compiler
+================================================================================
+
+PROGRAM EXECUTION TRACE:
+════════════════════════════════════════════════════════════════════════════
+
+Starting program execution...
+
+Entering function: test()
+   ├─ Setting up local scope...
+
+Variable Declaration: x
+   ├─ Type: integer
+   └─ Initial value: uninitialized
+
+Assignment: x := 5
+   └─ x now contains: 5
+
+
+════════════════════════════════════════════════════════════════════════════
+EXECUTION SUMMARY:
+════════════════════════════════════════════════════════════════════════════
+
+FINAL VARIABLE STATES:
+   ├─ x = 5
+
+PROGRAM RESULT:
+   └─ Return Value: 0
+   └─ Execution Status: SUCCESS
+
+================================================================================
+                           END OF EXECUTION                                     
+================================================================================

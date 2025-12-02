@@ -17,9 +17,9 @@ TEST_MODE="${1:-full}"
 
 cd "$PROJECT_ROOT"
 
-echo -e "${PURPLE}╔════════════════════════════════════════╗${NC}"
-echo -e "${PURPLE}║     Design Project Master Test Suite   ║${NC}"
-echo -e "${PURPLE}╚════════════════════════════════════════╝${NC}"
+echo -e "${PURPLE}========================================${NC}"
+echo -e "${PURPLE}    Design Project Master Test Suite    ${NC}"
+echo -e "${PURPLE}========================================${NC}"
 echo ""
 echo -e "Mode: ${BLUE}$TEST_MODE${NC}"
 echo -e "Project: $(basename "$PROJECT_ROOT")"
@@ -43,7 +43,7 @@ run_test_suite() {
     local required="$3"  # true/false
     local output_file="$4"  # optional separate output file
     
-    echo -e "\n${YELLOW}▶ Running $suite_name...${NC}"
+    echo -e "\n${YELLOW}Running $suite_name...${NC}"
     echo "Running $suite_name..." >> "$MASTER_LOG"
     
     local start_time=$(date +%s)
@@ -62,22 +62,22 @@ run_test_suite() {
             if "$script_path" 2>&1 | tee -a "$output_file"; then
                 local end_time=$(date +%s)
                 local duration=$((end_time - start_time))
-                echo -e "${GREEN}✓ $suite_name completed successfully (${duration}s)${NC}"
-                echo "✓ $suite_name: SUCCESS (${duration}s)" >> "$MASTER_LOG"
+                echo -e "${GREEN}[PASS] $suite_name completed successfully (${duration}s)${NC}"
+                echo "[PASS] $suite_name: SUCCESS (${duration}s)" >> "$MASTER_LOG"
                 echo "\nTest completed successfully in ${duration}s" >> "$output_file"
                 return 0
             else
                 local end_time=$(date +%s)
                 local duration=$((end_time - start_time))
-                echo -e "${RED}✗ $suite_name failed (${duration}s)${NC}"
-                echo "✗ $suite_name: FAILED (${duration}s)" >> "$MASTER_LOG"
+                echo -e "${RED}[FAIL] $suite_name failed (${duration}s)${NC}"
+                echo "[FAIL] $suite_name: FAILED (${duration}s)" >> "$MASTER_LOG"
                 echo "\nTest failed after ${duration}s" >> "$output_file"
                 
                 if [[ "$required" == "true" ]]; then
-                    echo -e "${RED}❌ Required test suite failed. Stopping.${NC}"
+                    echo -e "${RED}ERROR: Required test suite failed. Stopping.${NC}"
                     exit 1
                 else
-                    echo -e "${YELLOW}⚠️ Optional test suite failed. Continuing.${NC}"
+                    echo -e "${YELLOW}WARNING: Optional test suite failed. Continuing.${NC}"
                     return 1
                 fi
             fi
@@ -86,51 +86,51 @@ run_test_suite() {
             if "$script_path"; then
                 local end_time=$(date +%s)
                 local duration=$((end_time - start_time))
-                echo -e "${GREEN}✓ $suite_name completed successfully (${duration}s)${NC}"
-                echo "✓ $suite_name: SUCCESS (${duration}s)" >> "$MASTER_LOG"
+                echo -e "${GREEN}[PASS] $suite_name completed successfully (${duration}s)${NC}"
+                echo "[PASS] $suite_name: SUCCESS (${duration}s)" >> "$MASTER_LOG"
                 return 0
             else
                 local end_time=$(date +%s)
                 local duration=$((end_time - start_time))
-                echo -e "${RED}✗ $suite_name failed (${duration}s)${NC}"
-                echo "✗ $suite_name: FAILED (${duration}s)" >> "$MASTER_LOG"
+                echo -e "${RED}[FAIL] $suite_name failed (${duration}s)${NC}"
+                echo "[FAIL] $suite_name: FAILED (${duration}s)" >> "$MASTER_LOG"
                 
                 if [[ "$required" == "true" ]]; then
-                    echo -e "${RED}❌ Required test suite failed. Stopping.${NC}"
+                    echo -e "${RED}ERROR: Required test suite failed. Stopping.${NC}"
                     exit 1
                 else
-                    echo -e "${YELLOW}⚠️ Optional test suite failed. Continuing.${NC}"
+                    echo -e "${YELLOW}WARNING: Optional test suite failed. Continuing.${NC}"
                     return 1
                 fi
             fi
         fi
     else
-        echo -e "${YELLOW}⚠️ $suite_name script not found: $script_path${NC}"
-        echo "⚠️ $suite_name: NOT FOUND" >> "$MASTER_LOG"
+        echo -e "${YELLOW}WARNING: $suite_name script not found: $script_path${NC}"
+        echo "[WARN] $suite_name: NOT FOUND" >> "$MASTER_LOG"
         return 1
     fi
 }
 
 # Function to check prerequisites
 check_prerequisites() {
-    echo -e "${BLUE}▶ Checking prerequisites...${NC}"
+    echo -e "${BLUE}Checking prerequisites...${NC}"
     
     # Check if compiler exists
     if [[ ! -f "build/enhanced_compiler" ]]; then
-        echo -e "${YELLOW}⚠️ Compiler not built. Building now...${NC}"
+        echo -e "${YELLOW}WARNING: Compiler not built. Building now...${NC}"
         if make clean && make; then
-            echo -e "${GREEN}✓ Compiler built successfully${NC}"
+            echo -e "${GREEN}[PASS] Compiler built successfully${NC}"
         else
-            echo -e "${RED}❌ Failed to build compiler${NC}"
+            echo -e "${RED}ERROR: Failed to build compiler${NC}"
             exit 1
         fi
     else
-        echo -e "${GREEN}✓ Compiler found${NC}"
+        echo -e "${GREEN}[PASS] Compiler found${NC}"
     fi
     
     # Check directories
     mkdir -p test_reports/{unit,regression,integration,master}
-    echo -e "${GREEN}✓ Test directories ready${NC}"
+    echo -e "${GREEN}[PASS] Test directories ready${NC}"
 }
 
 # Main test execution based on mode
@@ -210,9 +210,9 @@ case "$TEST_MODE" in
 esac
 
 # Generate master report
-echo -e "\n${PURPLE}╔════════════════════════════════════════╗${NC}"
-echo -e "${PURPLE}║            Test Results Summary         ║${NC}"
-echo -e "${PURPLE}╚════════════════════════════════════════╝${NC}"
+echo -e "\n${PURPLE}========================================${NC}"
+echo -e "${PURPLE}          Test Results Summary           ${NC}"
+echo -e "${PURPLE}========================================${NC}"
 
 # Count results if we have them
 if [[ ${#SUITE_RESULTS[@]} -gt 0 ]]; then
@@ -228,10 +228,10 @@ if [[ ${#SUITE_RESULTS[@]} -gt 0 ]]; then
         status=$(echo "$result" | cut -d: -f2)
         
         if [[ "$status" == "PASS" ]]; then
-            echo -e "${GREEN}✓ $suite: PASSED${NC}"
+            echo -e "${GREEN}[PASS] $suite: PASSED${NC}"
             ((pass_count++))
         else
-            echo -e "${RED}✗ $suite: FAILED${NC}"
+            echo -e "${RED}[FAIL] $suite: FAILED${NC}"
             ((fail_count++))
         fi
         echo "$suite: $status" >> "$MASTER_LOG"
@@ -314,7 +314,7 @@ cat > "test_reports/master/test_dashboard.html" << EOF
 <body>
     <div class="container">
         <div class="header">
-            <h1>🧪 Design Project Test Dashboard</h1>
+            <h1>Design Project Test Dashboard</h1>
             <p class="timestamp">Generated: $(date)</p>
             <p>Mode: <strong>$TEST_MODE</strong></p>
         </div>
@@ -331,14 +331,14 @@ if [[ ${#SUITE_RESULTS[@]} -gt 0 ]]; then
         if [[ "$status" == "PASS" ]]; then
             cat >> "test_reports/master/test_dashboard.html" << EOF
             <div class="status-card pass">
-                <h3>✅ $suite Tests</h3>
+                <h3>$suite Tests - PASSED</h3>
                 <p>Status: PASSED</p>
             </div>
 EOF
         else
             cat >> "test_reports/master/test_dashboard.html" << EOF
             <div class="status-card fail">
-                <h3>❌ $suite Tests</h3>
+                <h3>$suite Tests - FAILED</h3>
                 <p>Status: FAILED</p>
             </div>
 EOF
@@ -347,7 +347,7 @@ EOF
 else
     cat >> "test_reports/master/test_dashboard.html" << EOF
             <div class="status-card info">
-                <h3>ℹ️ Test Mode: $TEST_MODE</h3>
+                <h3>Test Mode: $TEST_MODE</h3>
                 <p>Check individual test reports</p>
             </div>
 EOF
@@ -356,10 +356,10 @@ fi
 cat >> "test_reports/master/test_dashboard.html" << EOF
         </div>
         
-        <h2>📋 Test Log</h2>
+        <h2>Test Log</h2>
         <div class="logs">$(cat "$MASTER_LOG" | head -50)</div>
         
-        <h2>📁 Available Reports</h2>
+        <h2>Available Reports</h2>
         <ul>
             <li><a href="../unit/unit_test_output.txt">Unit Test Output</a></li>
             <li><a href="../regression/regression_test_output.txt">Regression Test Output</a></li>
@@ -377,10 +377,10 @@ cat >> "test_reports/master/test_dashboard.html" << EOF
 EOF
 
 echo ""
-echo -e "${BLUE}📊 Reports Generated:${NC}"
-echo -e "  • Master Log: ${MASTER_LOG}"
-echo -e "  • Dashboard: test_reports/master/test_dashboard.html"
-echo -e "  • Individual reports in test_reports/ subdirectories"
+echo -e "${BLUE}Reports Generated:${NC}"
+echo -e "  - Master Log: ${MASTER_LOG}"
+echo -e "  - Dashboard: test_reports/master/test_dashboard.html"
+echo -e "  - Individual reports in test_reports/ subdirectories"
 
 # Final exit code
 if [[ ${#SUITE_RESULTS[@]} -gt 0 ]]; then
@@ -392,13 +392,13 @@ if [[ ${#SUITE_RESULTS[@]} -gt 0 ]]; then
     done
     
     if [[ $failed_suites -eq 0 ]]; then
-        echo -e "\n${GREEN}🎉 All test suites completed successfully!${NC}"
+        echo -e "\n${GREEN}SUCCESS: All test suites completed successfully!${NC}"
         exit 0
     else
-        echo -e "\n${YELLOW}⚠️ $failed_suites test suite(s) had failures${NC}"
+        echo -e "\n${YELLOW}WARNING: $failed_suites test suite(s) had failures${NC}"
         exit 1
     fi
 else
-    echo -e "\n${GREEN}✓ Test execution completed${NC}"
+    echo -e "\n${GREEN}INFO: Test execution completed${NC}"
     exit 0
 fi

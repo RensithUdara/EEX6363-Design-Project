@@ -1,0 +1,115 @@
+========================================
+Syntax Analysis Output (TMA2)
+========================================
+Input: debug_large.txt
+Grammar: Complete language grammar from TMA2
+
+PARSE TREE (Generated from Input Analysis):
+-------------------------------------------
+PROGRAM
+  FUNC_DEF
+    FUNC_HEAD
+      ID("factorial (n: integer)")
+      PARAM_LIST
+      RETURN_TYPE
+        TYPE(" integer;")
+    FUNC_BODY
+    FUNC_DEF
+      FUNC_HEAD
+        ID("fibonacci (n: integer)")
+        PARAM_LIST
+        RETURN_TYPE
+          TYPE(" integer;")
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+          ID("temp")
+          TYPE("integer;")
+      ASSIGNMENT
+        ID("temp ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          INT_LITERAL("0;")
+    FUNC_DEF
+      FUNC_HEAD
+        ID("factorial (n: integer)")
+        PARAM_LIST
+        RETURN_TYPE
+          TYPE(" integer {")
+      FUNC_BODY
+      RETURN_STMT
+        ID("(1);")
+      RETURN_STMT
+        ID("(n * factorial(n - 1));")
+    FUNC_DEF
+      FUNC_HEAD
+        ID("fibonacci (n: integer)")
+        PARAM_LIST
+        RETURN_TYPE
+          TYPE(" integer {")
+      FUNC_BODY
+      RETURN_STMT
+        ID("(n);")
+      RETURN_STMT
+        ID("(fibonacci(n - 1) + fibonacci(n - 2));")
+    FUNC_DEF
+      FUNC_HEAD
+        ID("processData (size: integer)")
+        PARAM_LIST
+        RETURN_TYPE
+          TYPE(" integer;")
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+          ID("temp")
+          TYPE("integer;")
+      ASSIGNMENT
+        ID("temp ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          INT_LITERAL("100;")
+    FUNC_DEF
+      FUNC_HEAD
+        ID("processData (size: integer)")
+        PARAM_LIST
+        RETURN_TYPE
+          TYPE(" integer {")
+      FUNC_BODY
+      LOCAL_VAR_DECL
+        VAR_DECL
+      LOCAL_VAR_DECL
+        VAR_DECL
+      ASSIGNMENT
+        ID("sum ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          INT_LITERAL("0;")
+      ASSIGNMENT
+        ID("i ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          INT_LITERAL("0;")
+      ASSIGNMENT
+        ID("sum ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          BINARY_OP
+            ID("sum")
+            OPERATOR("+")
+            ID("i;")
+      ASSIGNMENT
+        ID("i ")
+        ASSIGN_OP(":=")
+        EXPRESSION
+          BINARY_OP
+            ID("i")
+            OPERATOR("+")
+            INT_LITERAL("1;")
+      RETURN_STMT
+        ID("(sum);")
+
+STATISTICS:
+-----------
+AST Nodes: 45 (estimated)
+Tree Depth: 8 (estimated)
+Syntax Errors: 5

@@ -1,0 +1,18 @@
+Performance Test Report - Tue Dec  2 13:47:37 +0530 2025
+===============================================
+
+Small Program:
+  Average: 59ms
+  Min: 56ms
+  Max: 68ms
+
+Medium Program:
+  Average: 140ms
+  Min: 136ms
+  Max: 147ms
+
+Large Program:
+  Average: 140ms
+  Min: 139ms
+  Max: 143ms
+
