@@ -2,7 +2,7 @@
 Semantic Analysis Output (TMA3)
 ========================================
 Input: ./tests/examples/simple_function.txt
-Generated: Dec  2 2025 20:37:56
+Generated: Dec  3 2025 00:27:10
 
 SYMBOL TABLE:
 -------------
