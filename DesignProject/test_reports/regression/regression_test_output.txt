@@ -1,37 +1,38 @@
 Regression Tests Test Results - Tue Dec  2 14:11:06 +0530 2025
 =========================================
-[0;34m========================================[0m
-[0;34mRegression Test Suite[0m
-[0;34m========================================[0m
+========================================
+Regression Test Suite
+========================================
 
-[1;33m=== Testing Known Fixed Issues ===[0m
-Testing: Constructor in class declaration... [0;32mPASS[0m
-Testing: Constructor implementation... [0;32mPASS[0m
-Testing: Constructor with regular functions... [0;32mPASS[0m
+=== Testing Known Fixed Issues ===
+Testing: Constructor in class declaration... PASS
+Testing: Constructor implementation... PASS
+Testing: Constructor with regular functions... PASS
 
-[1;33m=== Testing Error Conditions ===[0m
-Testing: Constructor without parentheses... [0;32mPASS[0m
-Testing: Constructor with return type... [0;32mPASS[0m
+=== Testing Error Conditions ===
+Testing: Constructor without parentheses... PASS
+Testing: Constructor with return type... PASS
 
-[1;33m=== Testing Edge Cases ===[0m
-Testing: Constructor with parameters... [0;32mPASS[0m
-Testing: Multiple constructors... [0;32mPASS[0m
-Testing: Empty constructor body... [0;32mPASS[0m
+=== Testing Edge Cases ===
+Testing: Constructor with parameters... PASS
+Testing: Multiple constructors... PASS
+Testing: Empty constructor body... PASS
 
-[1;33m=== Testing Language Features ===[0m
-Testing: Nested scopes in constructor... [0;32mPASS[0m
-Testing: Constructor basic functionality... [0;32mPASS[0m
+=== Testing Language Features ===
+Testing: Nested scopes in constructor... PASS
+Testing: Constructor basic functionality... PASS
 
-[0;34m========================================[0m
-[0;34mRegression Test Summary[0m
-[0;34m========================================[0m
-[0;32mPassed: 10[0m
-[0;31mFailed: 0[0m
+========================================
+Regression Test Summary
+========================================
+Passed: 10
+Failed: 0
 Success Rate: 100%
 
 Results saved to: /home/USER/LexAndYaccCode/Design Project/DesignProject/test_reports/regression/
 - regression_results.txt: Test summary
 - regression_failures.txt: Failure details
-[0;32mSUCCESS: All regression tests passed![0m
-[0;32mRESULT: No regressions detected[0m
-\nTest completed successfully in 2s
+SUCCESS: All regression tests passed!
+RESULT: No regressions detected
+
+Test completed successfully in 2s
