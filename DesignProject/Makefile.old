@@ -20,7 +20,7 @@ INCLUDE_DIR = include
 INCLUDES = -I$(INCLUDE_DIR) -I$(INCLUDE_DIR)/core -I$(INCLUDE_DIR)/lexical -I$(INCLUDE_DIR)/syntax -I$(INCLUDE_DIR)/semantic -I$(INCLUDE_DIR)/codegen -I$(INCLUDE_DIR)/utils
 
 # Source files
-ENHANCED_COMPILER_SRC = $(SRC_DIR)/core/enhanced_compiler.c
+compiler_SRC = $(SRC_DIR)/core/compiler.c
 CODEGEN_SRC = $(SRC_DIR)/codegen/codegen.c
 REGISTER_SRC = $(SRC_DIR)/codegen/register_allocator.c
 
@@ -48,12 +48,12 @@ ERROR_OBJ = $(BUILD_DIR)/error_handler.o
 # All object files
 SEMANTIC_INT_OBJ = $(BUILD_DIR)/semantic_integration.o
 OUTPUT_GEN_OBJ = $(BUILD_DIR)/output_generator.o
-ENHANCED_COMPILER_OBJ = $(BUILD_DIR)/enhanced_compiler.o
-ALL_OBJS = $(ENHANCED_COMPILER_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(SEMANTIC_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
+compiler_OBJ = $(BUILD_DIR)/compiler.o
+ALL_OBJS = $(compiler_OBJ) $(CODEGEN_OBJ) $(REGISTER_OBJ) $(LEX_OBJ) $(AST_OBJ) $(SEMANTIC_OBJ) $(ERROR_OBJ) $(SEMANTIC_INT_OBJ)
 
 # Target executables
 TARGET = $(BUILD_DIR)/compiler
-ENHANCED_TARGET = enhanced_compiler
+ENHANCED_TARGET = compiler
 
 # Test files
 TEST_DIR = tests
@@ -138,9 +138,9 @@ $(OUTPUT_GEN_OBJ): output_generator.c output_generator.h | $(BUILD_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c output_generator.c -o $(OUTPUT_GEN_OBJ)
 
 # Compile enhanced compiler
-$(ENHANCED_COMPILER_OBJ): enhanced_compiler.c output_generator.h codegen.h register_allocator.h semantic_integration.h | $(BUILD_DIR)
+$(compiler_OBJ): compiler.c output_generator.h codegen.h register_allocator.h semantic_integration.h | $(BUILD_DIR)
 	@echo "Compiling enhanced compiler..."
-	$(CC) $(CFLAGS) $(INCLUDES) -c enhanced_compiler.c -o $(ENHANCED_COMPILER_OBJ)
+	$(CC) $(CFLAGS) $(INCLUDES) -c compiler.c -o $(compiler_OBJ)
 
 # Link final executable
 $(TARGET): $(ALL_OBJS)
