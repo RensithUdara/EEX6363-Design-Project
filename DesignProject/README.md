@@ -22,7 +22,7 @@ Source Code → [Lexical] → [Syntax] → [Semantic] → [Code Gen] → Assembl
 Design Project/
 ├── src/                              # Source code (modular organization)
 │   ├── core/                        # Core compiler components
-│   │   └── enhanced_compiler.c      # Main compiler orchestrator
+│   │   └── compiler.c      # Main compiler orchestrator
 │   ├── lexical/                     # Lexical analysis (TMA1)
 │   │   ├── scanner.l                # Flex lexical analyzer
 │   │   └── error_handler.c          # Error reporting system
@@ -124,10 +124,10 @@ make all
 ### 2. Test the Compiler
 ```bash
 # Run with test input
-./enhanced_compiler tests/examples/test_simple.txt
+./compiler tests/examples/test_simple.txt
 
 # Run with sample programs
-./enhanced_compiler tests/examples/sample_input.txt -o output.s
+./compiler tests/examples/sample_input.txt -o output.s
 ```
 
 ### 3. View Results
@@ -178,7 +178,7 @@ make test-codegen     # Test code generation
 #### Performance Tests
 ```bash
 # Performance benchmarking
-./enhanced_compiler tests/examples/comprehensive_test.txt
+./compiler tests/examples/comprehensive_test.txt
 # View performance_report.txt for detailed metrics
 ```
 
