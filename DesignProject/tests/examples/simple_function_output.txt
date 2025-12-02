@@ -1,7 +1,7 @@
 ===============================================================================
                         COMPILATION OUTPUT EXPLANATION                        
 ===============================================================================
-Generated: December 02, 2025 at 21:50:25
+Generated: December 03, 2025 at 00:27:29
 Input File: ./tests/examples/simple_function.txt
 Assembly File: output.s
 Status: Compilation Successful (No Errors)
