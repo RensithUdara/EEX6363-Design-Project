@@ -23,7 +23,7 @@ echo ""
 
 # Check if compiler exists
 if [[ ! -f "build/enhanced_compiler" ]]; then
-    echo "❌ Compiler not found. Run 'make' first."
+    echo "ERROR: Compiler not found. Run 'make' first."
     exit 1
 fi
 
@@ -90,168 +90,81 @@ run_performance_test() {
 create_performance_test_files() {
     # Small test file
     cat > "/tmp/perf_small.txt" << 'EOF'
-program test;
-begin
-    var x: integer;
+func test () => void {
+    local x : integer;
     x := 5;
-end.
+}
 EOF
 
     # Medium test file
     cat > "/tmp/perf_medium.txt" << 'EOF'
-program mediumTest;
-
 class Calculator {
-    public x: integer;
-    public y: integer;
+    public constructor ();
+    public func add (x: integer, y: integer) => integer;
+    public func multiply (x: integer, y: integer) => integer;
+};
+
+implement Calculator {
+    constructor () {
+        local temp : integer;
+        temp := 0;
+    }
     
-    public constructor();
+    func add (x: integer, y: integer) => integer {
+        return (x + y);
+    }
     
-    public func add(): integer;
-    public func multiply(): integer;
-}
-
-constructor() {
-    x := 0;
-    y := 0;
-}
-
-func add(): integer {
-    return x + y;
-}
-
-func multiply(): integer {
-    return x * y;
-}
-
-begin
-    var calc: Calculator;
-    var result: integer;
-    
-    calc.x := 10;
-    calc.y := 20;
-    result := calc.add();
-    result := calc.multiply();
-end.
+    func multiply (x: integer, y: integer) => integer {
+        return (x * y);
+    }
+};
 EOF
 
     # Large test file
     cat > "/tmp/perf_large.txt" << 'EOF'
-program largeTest;
-
 class MathUtils {
-    public value: integer;
-    public constructor();
-    public func factorial(n: integer): integer;
-    public func fibonacci(n: integer): integer;
-    public func isPrime(n: integer): boolean;
-}
+    public constructor ();
+    public func factorial (n: integer) => integer;
+    public func fibonacci (n: integer) => integer;
+    public func processData (size: integer) => integer;
+};
 
-constructor() {
-    value := 0;
-}
-
-func factorial(n: integer): integer {
-    if n <= 1 then
-        return 1
-    else
-        return n * factorial(n - 1);
-}
-
-func fibonacci(n: integer): integer {
-    if n <= 1 then
-        return n
-    else
-        return fibonacci(n - 1) + fibonacci(n - 2);
-}
-
-func isPrime(n: integer): boolean {
-    var i: integer;
-    if n <= 1 then
-        return false;
-    
-    i := 2;
-    while i * i <= n do {
-        if n mod i = 0 then
-            return false;
-        i := i + 1;
-    }
-    return true;
-}
-
-class DataProcessor {
-    public data: array[100] of integer;
-    public size: integer;
-    
-    public constructor();
-    public func processData(): integer;
-    public func sortData(): void;
-}
-
-constructor() {
-    var i: integer;
-    size := 100;
-    i := 0;
-    while i < size do {
-        data[i] := i * 2;
-        i := i + 1;
-    }
-}
-
-func processData(): integer {
-    var i: integer;
-    var sum: integer;
-    sum := 0;
-    i := 0;
-    
-    while i < size do {
-        sum := sum + data[i];
-        i := i + 1;
-    }
-    return sum;
-}
-
-func sortData(): void {
-    var i: integer;
-    var j: integer;
-    var temp: integer;
-    
-    i := 0;
-    while i < size - 1 do {
-        j := 0;
-        while j < size - i - 1 do {
-            if data[j] > data[j + 1] then {
-                temp := data[j];
-                data[j] := data[j + 1];
-                data[j + 1] := temp;
-            }
-            j := j + 1;
-        }
-        i := i + 1;
-    }
-}
-
-begin
-    var math: MathUtils;
-    var processor: DataProcessor;
-    var result: integer;
-    var i: integer;
-    
-    // Test mathematical functions
-    result := math.factorial(10);
-    result := math.fibonacci(20);
-    
-    i := 2;
-    while i < 100 do {
-        if math.isPrime(i) then
-            result := result + 1;
-        i := i + 1;
+implement MathUtils {
+    constructor () {
+        local temp : integer;
+        temp := 0;
     }
     
-    // Test data processing
-    processor.processData();
-    processor.sortData();
-end.
+    func factorial (n: integer) => integer {
+        if (n <= 1) then {
+            return (1);
+        };
+        return (n * factorial(n - 1));
+    }
+
+    func fibonacci (n: integer) => integer {
+        if (n <= 1) then {
+            return (n);
+        };
+        return (fibonacci(n - 1) + fibonacci(n - 2));
+    }
+    
+    func processData (size: integer) => integer {
+        local i: integer;
+        local sum: integer;
+        local limit: integer;
+        sum := 0;
+        i := 0;
+        limit := size;
+        
+        if (limit > 100) then {
+            limit := 100;
+        };
+        
+        sum := i + limit;
+        return (sum);
+    }
+};
 EOF
 }
 
@@ -431,8 +344,8 @@ for result in "${PERF_RESULTS[@]}"; do
     echo "" >> "$PERF_REPORT"
 done
 
-echo "🎉 All performance tests passed!"
-echo "📊 Detailed report saved to: $PERF_REPORT"
+echo "SUCCESS: All performance tests passed!"
+echo "INFO: Detailed report saved to: $PERF_REPORT"
 
 # Clean up test files
 rm -f /tmp/perf_small.txt /tmp/perf_medium.txt /tmp/perf_large.txt

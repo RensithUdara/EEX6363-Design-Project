@@ -2,6 +2,9 @@
 #include "../../include/codegen/register_allocator.h"
 #include <limits.h>
 
+// Forward declarations
+static int calculate_future_use_distance(CodeGenContext *ctx, Symbol *var);
+
 // Global allocation statistics
 static AllocationStats global_stats = {0, 0, 0, 0, 0.0};
 
